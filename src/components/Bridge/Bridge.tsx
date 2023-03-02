@@ -1,6 +1,26 @@
 import { CodeBracketIcon, GlobeAltIcon } from "@heroicons/react/24/solid";
+import { motion, Variants } from "framer-motion";
 import React from "react";
 import { NoOpsSymbol } from "../NoOpsSymbol";
+
+const noOpVariants: Variants = {
+  hidden: { opacity: 0, y: 0, scale: 0 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { delay: 0.2, duration: 0.3 },
+  },
+};
+
+const lineVariants: Variants = {
+  hidden: { y: 0, width: "0%" },
+  visible: {
+    y: 0,
+    width: "100%",
+    transition: { delay: 0.6, duration: 0.3 },
+  },
+};
 
 const Bridge = () => {
   return (
@@ -29,14 +49,32 @@ const Bridge = () => {
               </div>
             </div>
             <div className="flex-1 relative h-4">
-              <div className="absolute h-4 top-0 right-0 w-full bg-gradient-to-r from-gray-700 via-gray-400 to-gray-400"></div>
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={lineVariants}
+                className="absolute h-4 top-0 right-0 w-full bg-gradient-to-r from-gray-700 via-gray-400 to-gray-400"
+              />
             </div>
-            <div className="w-16 h-16 sm:w-24 sm:h-24 flex shadow-md items-center justify-center bg-gradient-to-br from-gray-600 via-slate-800 to-slate-900 rounded-md">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              variants={noOpVariants}
+              viewport={{ once: true }}
+              className="w-16 h-16 sm:w-24 sm:h-24 flex shadow-md items-center justify-center bg-gradient-to-br from-gray-600 via-slate-800 to-slate-900 rounded-md"
+            >
               <NoOpsSymbol className="absolute p-6 sm:p-5 blur-md opacity-80 text-white" />
               <NoOpsSymbol className="absolute p-6 sm:p-5 text-blue-50" />
-            </div>
+            </motion.div>
             <div className="flex-1 relative h-4">
-              <div className="absolute h-4 top-0 left-0 w-full bg-gradient-to-r from-gray-400 via-gray-400 to-gray-700"></div>
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={lineVariants}
+                className="absolute h-4 top-0 left-0 w-full bg-gradient-to-r from-gray-400 via-gray-400 to-gray-700"
+              />
             </div>
             <div className="w-16 h-16 sm:w-24 sm:h-24 flex shadow-md items-center justify-center bg-gradient-to-br from-gray-600 via-slate-800 to-slate-900 rounded-md">
               <div className="relative w-full h-full">

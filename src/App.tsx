@@ -90,6 +90,7 @@ function App() {
 
         <Bridge />
 
+        {/* TODO: Add a clickable link to learn more about Bond */}
         <Steps />
 
         <Features />
@@ -108,12 +109,15 @@ function App() {
                 Here is the bond file.
               */}
         <Skeptic />
+        {/* TODO: add a learn more about bond button below skeptic */}
 
         {/* FAQ? */}
         <FAQ />
 
         {/* CTA */}
         <CTA />
+
+        {/* Need a footer */}
       </main>
     </div>
   );
