@@ -13,7 +13,15 @@ const steps = [
     title: "Configure your Descriptor File",
     subject: "Describe",
     description:
-      "Create a descriptor file using our Open Source Data Schema, Bond. This file will be used to configure your product and its infrastructure. Learn more about Bond.",
+      "Create a descriptor file using our Open Source Data Schema, Bond. This file will be used to configure your product and its infrastructure.",
+    cta: (
+      <a
+        href="#"
+        className="block w-fit text-blue-400 transition hover:text-blue-500"
+      >
+        Learn more about Bond {"→"}
+      </a>
+    ),
   },
   {
     title: "Deploy your Product",
@@ -31,7 +39,7 @@ const Steps = () => {
       <div className="mx-auto max-w-7xl text-center">
         <div className="space-y-6">
           <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-            <span className="text-transparent bg-clip-text bg-gradient-to-t from-cloud-text-gradient-1 via-cloud-text-gradient-2 to-cloud-text-gradient-3">
+            <span className="bg-gradient-to-t from-cloud-text-gradient-1 via-cloud-text-gradient-2 to-cloud-text-gradient-3 bg-clip-text text-transparent">
               Easy as
             </span>
           </h2>
@@ -41,22 +49,22 @@ const Steps = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-3 gap-x-8 my-16 select-none">
+        <div className="my-16 grid select-none grid-cols-3 gap-x-8">
           {steps.map((step, index) => (
             <div
               onClick={() => setSelectedIndex(index)}
               key={index}
               className={classNames(
                 index != selectedIndex && "opacity-80",
-                "text-left relative cursor-pointer group transition"
+                "group relative cursor-pointer text-left transition"
               )}
             >
-              <div className="absolute inset-0 bg-transparent rounded-md group-hover:bg-slate-50 scale-90 group-hover:scale-100 transition" />
-              <div className="relative p-3 space-y-2">
+              <div className="absolute inset-0 scale-90 rounded-md bg-transparent transition group-hover:scale-100 group-hover:bg-slate-50" />
+              <div className="relative space-y-2 p-3">
                 <div
                   className={classNames(
                     index == selectedIndex ? "bg-sky-500" : "bg-slate-400",
-                    " h-8 w-8 flex items-center justify-center rounded-md text-white font-medium transition"
+                    " flex h-8 w-8 items-center justify-center rounded-md font-medium text-white transition"
                   )}
                 >
                   {index + 1}
@@ -88,17 +96,18 @@ const Steps = () => {
                   )}
                 >
                   {step.description}
+                  {step?.cta && step.cta}
                 </p>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="my-10 bg-slate-50 rounded-md w-full border border-slate-100 p-4 overflow-hidden">
+        <div className="my-10 w-full overflow-hidden rounded-md border border-slate-100 bg-slate-50 p-4">
           <div className="flex p-1">
-            <div className="bg-white w-[52rem] h-96 shadow shadow-slate-200 rounded-xl"></div>
-            <div className="bg-white w-[52rem] h-96 shadow shadow-slate-200 rounded-xl"></div>
-            <div className="bg-white w-[52rem] h-96 shadow shadow-slate-200 rounded-xl"></div>
+            <div className="h-96 w-[52rem] rounded-xl bg-white shadow shadow-slate-200"></div>
+            <div className="h-96 w-[52rem] rounded-xl bg-white shadow shadow-slate-200"></div>
+            <div className="h-96 w-[52rem] rounded-xl bg-white shadow shadow-slate-200"></div>
           </div>
         </div>
       </div>

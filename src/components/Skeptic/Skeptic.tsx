@@ -160,8 +160,7 @@ const Skeptic = () => {
             Don't believe us? Here are all our Bond descriptor files for NoOps:
           </p>
         </div>
-
-        <div className="w-full mt-12 bg-slate-800 p-2 rounded-xl text-sky-100">
+        <div className="mt-12 w-full rounded-xl bg-slate-800 p-2 text-sky-100">
           <div className="flex sm:text-lg">
             {tabs.map((tab, i) => (
               <div
@@ -178,7 +177,7 @@ const Skeptic = () => {
                   selectedTab.name === tab.name
                     ? "bg-slate-900/50"
                     : "hover:bg-slate-900/30",
-                  "flex-1 rounded-t-lg  py-3 px-4 transition cursor-pointer text-slate-300 font-medium"
+                  "flex-1 cursor-pointer  rounded-t-lg py-3 px-4 font-medium text-slate-300 transition"
                 )}
               >
                 {tab.name}
@@ -189,7 +188,7 @@ const Skeptic = () => {
             className={classNames(
               selectedTab.name != tabs[0].name && "rounded-tl-lg",
               selectedTab.name != tabs[2].name && "rounded-tr-lg",
-              "bg-slate-900/50 p-4 rounded-b-lg transition"
+              "rounded-b-lg bg-slate-900/50 p-4 transition"
             )}
           >
             <AnimatePresence mode="wait">
@@ -199,12 +198,17 @@ const Skeptic = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.2 }}
-                className="text-orange-300 overflow-x-auto"
+                className="overflow-x-auto text-orange-300"
               >
                 {DisplayFile(selectedTab.name)}
               </motion.div>
             </AnimatePresence>
           </div>
+        </div>
+        <div className="mt-8 flex justify-center">
+          <button className="rounded-full border-2 border-sky-600 bg-sky-500 px-4 py-1.5 text-lg font-medium text-white shadow-xl shadow-sky-600/40 transition hover:border-sky-700 hover:bg-sky-600">
+            Learn more about Bond
+          </button>
         </div>
       </div>
     </div>
