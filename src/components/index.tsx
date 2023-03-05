@@ -7,3 +7,4 @@ export { Pricing } from "./Pricing";
 export { FAQ } from "./FAQ";
 export { CTA } from "./CTA";
 export { Skeptic } from "./Skeptic";
+export { RoleSelect } from "./RoleSelect";

@@ -165,6 +165,7 @@ const Skeptic = () => {
           <div className="flex sm:text-lg">
             {tabs.map((tab, i) => (
               <div
+                key={i}
                 onClick={() => setSelectedTab(tab)}
                 className={classNames(
                   i == 0 &&

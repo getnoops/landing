@@ -94,13 +94,13 @@ const Steps = () => {
           ))}
         </div>
 
-        <div className="my-10 bg-slate-50 rounded-md w-full border border-slate-100 p-4 overflow-hidden">
+        {/* <div className="my-10 bg-slate-50 rounded-md w-full border border-slate-100 p-4 overflow-hidden">
           <div className="flex p-1">
             <div className="bg-white w-[52rem] h-96 shadow shadow-slate-200 rounded-xl"></div>
             <div className="bg-white w-[52rem] h-96 shadow shadow-slate-200 rounded-xl"></div>
             <div className="bg-white w-[52rem] h-96 shadow shadow-slate-200 rounded-xl"></div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

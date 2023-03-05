@@ -8,6 +8,7 @@ import {
   Features,
   Navbar,
   Pricing,
+  RoleSelect,
   Skeptic,
   Steps,
 } from "./components";
@@ -89,6 +90,9 @@ function App() {
         </div>
 
         <Bridge />
+
+        {/* Relevant Page */}
+        {/* <RoleSelect /> */}
 
         {/* TODO: Add a clickable link to learn more about Bond */}
         <Steps />

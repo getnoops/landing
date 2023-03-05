@@ -27,6 +27,7 @@ const Navbar = () => {
             <div className="hidden md:flex md:gap-x-6">
               {nav.map((item) => (
                 <a
+                  key={item.name}
                   className="inline-block rounded-lg py-1.5 px-4 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900 transition"
                   href={item.href}
                 >
