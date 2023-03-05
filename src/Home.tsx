@@ -101,17 +101,11 @@ function App() {
 
         {/* Testimonials */}
 
-        {/* Heard enough? */}
+        {/* Heard enough? CTA in the middle of the flow? */}
 
         {/* Pricing */}
         <Pricing />
 
-        {/* 
-          Potential Section: 
-            - Still Skeptic?
-                This site is deployed with NoOps.
-                Here is the bond file.
-              */}
         <Skeptic />
         {/* TODO: add a learn more about bond button below skeptic */}
 
