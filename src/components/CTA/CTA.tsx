@@ -2,9 +2,9 @@ import React from "react";
 
 const CTA = () => {
   return (
-    <div className="bg-gradient-to-r to-cloud-text-gradient-1 via-cloud-text-gradient-2 from-cloud-text-gradient-3">
-      <div className="mx-auto max-w-7xl py-16 px-6 sm:py-24 lg:px-8 ">
-        <div className="w-full h-full p-8 flex items-center justify-between">
+    <div className="bg-gradient-to-r from-cloud-text-gradient-3 via-cloud-text-gradient-2 to-cloud-text-gradient-1">
+      <div className="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8 ">
+        <div className="flex h-full w-full items-center justify-between p-8">
           <div>
             <h1 className="text-4xl font-bold text-white">
               Still not convinced?
@@ -17,11 +17,11 @@ const CTA = () => {
           <div>
             <a
               href="#"
-              className="bg-gradient-radial to-sky-800 from-sky-600 px-4 py-3 rounded-md relative cursor-pointer group/button"
+              className="group/button relative cursor-pointer rounded-md bg-gradient-radial from-sky-600 to-sky-800 px-4 py-4"
             >
-              <div className="absolute pointer-events-none  bg-gradient-radial to-sky-800 from-sky-600 sky-xl inset-0 blur-lg opacity-60" />
-              <div className="absolute pointer-events-none bg-sky-50 rounded-[5px] m-px inset-0 group-hover/button:opacity-0 transition" />
-              <span className="relative text-sky-900 font-medium group-hover/button:text-white transition">
+              <div className="sky-xl pointer-events-none  absolute inset-0 bg-gradient-radial from-sky-600 to-sky-800 opacity-60 blur-lg" />
+              <div className="pointer-events-none absolute inset-0 m-px rounded-[5px] bg-sky-50 transition group-hover/button:opacity-0" />
+              <span className="relative font-medium text-sky-900 transition group-hover/button:text-white">
                 Try a Deployment
               </span>
             </a>

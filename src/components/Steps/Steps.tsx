@@ -4,10 +4,10 @@ import React, { useState } from "react";
 
 const steps = [
   {
-    title: "Create your Product",
-    subject: "Create",
+    title: "Write your Code",
+    subject: "Write",
     description:
-      "Create your product however you want, using whatever tools you want. NoOps is flexible and will fit into your workflow.",
+      "Write your code however you want, using whatever tools you want. NoOps is flexible and will fit into your workflow.",
   },
   {
     title: "Configure your Descriptor File",
@@ -17,14 +17,14 @@ const steps = [
     cta: (
       <a
         href="#"
-        className="block w-fit text-blue-400 transition hover:text-blue-500"
+        className="block w-fit text-sky-400 transition hover:text-sky-500"
       >
         Learn more about Bond {"→"}
       </a>
     ),
   },
   {
-    title: "Deploy your Product",
+    title: "And You're Off",
     subject: "Deploy",
     description:
       "Thats it. Deploy. NoOps will automatically create the infrastructure needed to run your product with 24/7 monitoring and alerting.",
@@ -35,7 +35,7 @@ const Steps = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   return (
-    <section className="py-24 px-6 sm:py-32 lg:px-8">
+    <section className="px-6 py-24 sm:py-32 lg:px-8">
       <div className="mx-auto max-w-7xl text-center">
         <div className="space-y-6">
           <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">

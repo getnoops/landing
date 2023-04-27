@@ -53,10 +53,10 @@ const Pricing = () => {
   const [frequency, setFrequency] = useState(frequencies[0]);
 
   return (
-    <div className="bg-white py-24 sm:py-32 overflow-hidden relative">
-      <div className="absolute -left-1/2 right-1/2 top-0 bottom-1/2 bg-gradient-to-r from-purple-500 -rotate-45 to-cloud-text-gradient-1 rounded-full blur-3xl opacity-50" />
-      <div className="absolute -right-1/2 left-1/2 bottom-0 top-1/2 bg-gradient-to-r to-purple-500 -rotate-45 from-cloud-text-gradient-1 rounded-full blur-3xl opacity-50" />
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 relative">
+    <div className="relative overflow-hidden bg-white py-24 sm:py-32">
+      <div className="absolute -left-1/2 bottom-1/2 right-1/2 top-0 -rotate-45 rounded-full bg-gradient-to-r from-purple-500 to-cloud-text-gradient-1 opacity-50 blur-3xl" />
+      <div className="absolute -right-1/2 bottom-0 left-1/2 top-1/2 -rotate-45 rounded-full bg-gradient-to-r from-cloud-text-gradient-1 to-purple-500 opacity-50 blur-3xl" />
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <div className="relative">
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="text-base font-semibold leading-7 text-sky-600">
@@ -86,7 +86,7 @@ const Pricing = () => {
                   className={({ checked }) =>
                     classNames(
                       checked ? "text-white" : "text-slate-500",
-                      "cursor-pointer rounded-full py-1 px-2.5 relative transition"
+                      "relative cursor-pointer rounded-full px-2.5 py-1 transition"
                     )
                   }
                 >
@@ -94,7 +94,7 @@ const Pricing = () => {
                     <>
                       {checked && (
                         <motion.div
-                          className="absolute bg-sky-600 inset-0 rounded-full"
+                          className="absolute inset-0 rounded-full bg-sky-600"
                           layoutId="checked_bg"
                         />
                       )}
@@ -111,9 +111,9 @@ const Pricing = () => {
                 key={tier.id}
                 className={classNames(
                   tier.featured
-                    ? "bg-slate-900 border-slate-900"
+                    ? "border-slate-900 bg-slate-900"
                     : "border-slate-100 bg-white bg-opacity-50 backdrop-blur-md ",
-                  "rounded-3xl p-8 border xl:p-10"
+                  "rounded-3xl border p-8 xl:p-10"
                 )}
               >
                 <p className="mb-6 flex items-baseline gap-x-1 font-mono">
@@ -164,7 +164,7 @@ const Pricing = () => {
                     tier.featured
                       ? "bg-white/10 text-white hover:bg-white/20 focus-visible:outline-white"
                       : "bg-sky-500 text-white shadow-sm hover:bg-sky-400 focus-visible:outline-sky-500",
-                    "mt-6 block rounded-full py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 transition"
+                    "mt-6 block rounded-full px-3 py-2 text-center text-sm font-semibold leading-6 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
                   )}
                 >
                   {tier.cta}

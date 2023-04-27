@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./Home";
+import App from "./pages/Home";
 import AppRoutes from "./AppRoutes";
 import "./index.css";
 

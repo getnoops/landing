@@ -178,7 +178,7 @@ const Skeptic = () => {
                   selectedTab.name === tab.name
                     ? "bg-slate-900/50"
                     : "hover:bg-slate-900/30",
-                  "flex-1 cursor-pointer  rounded-t-lg py-3 px-4 font-medium text-slate-300 transition"
+                  "flex-1 cursor-pointer  rounded-t-lg px-4 py-3 font-medium text-slate-300 transition"
                 )}
               >
                 {tab.name}

@@ -8,3 +8,4 @@ export { FAQ } from "./FAQ";
 export { CTA } from "./CTA";
 export { Skeptic } from "./Skeptic";
 export { RoleSelect } from "./RoleSelect";
+export { Hero } from "./Hero";

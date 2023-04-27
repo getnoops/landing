@@ -8,6 +8,8 @@ module.exports = {
         "cloud-text-gradient-1": "#2081B8",
         "cloud-text-gradient-2": "#379AE9",
         "cloud-text-gradient-3": "#3DBDFF",
+        "cloud-logo-1": "#4F8DD9",
+        "cloud-logo-2": "#3BB3F9",
       },
       spacing: {
         112: "28rem",
@@ -17,6 +19,7 @@ module.exports = {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
       },
+      fontFamily: {},
     },
   },
   plugins: [],

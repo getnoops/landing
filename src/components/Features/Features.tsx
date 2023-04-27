@@ -74,10 +74,10 @@ const features = [
 
 const Features = () => {
   return (
-    <div className="bg-slate-900 py-24 sm:py-32 relative overflow-hidden">
+    <div className="relative overflow-hidden bg-slate-900 py-24 sm:py-32">
       <div className="relative">
-        <div className="absolute pointer-events-none w-full inset-y-0 blur-3xl rounded-full opacity-20 bg-gradient-to-r from-sky-900 via-cloud-text-gradient-3 to-sky-900"></div>
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 relative">
+        <div className="pointer-events-none absolute inset-y-0 w-full rounded-full bg-gradient-to-r from-sky-900 via-cloud-text-gradient-3 to-sky-900 opacity-20 blur-3xl"></div>
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl sm:text-center">
             <h2 className="text-base font-semibold leading-7 text-sky-400">
               What about Ops?
@@ -91,13 +91,13 @@ const Features = () => {
             </p>
           </div>
         </div>
-        <div className="mx-auto mt-16 max-w-7xl px-6 sm:mt-20 md:mt-24 lg:px-8 relative">
+        <div className="relative mx-auto mt-16 max-w-7xl px-6 sm:mt-20 md:mt-24 lg:px-8">
           <dl className="mx-auto grid max-w-2xl grid-cols-1 gap-x-6 gap-y-10 text-base leading-7 text-slate-300 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-x-8 lg:gap-y-16">
             {features.map((feature) => (
               <div key={feature.name} className="relative pl-9">
                 <dt className="inline font-semibold text-white">
                   <feature.icon
-                    className="absolute top-1 left-1 h-5 w-5 text-sky-500"
+                    className="absolute left-1 top-1 h-5 w-5 text-sky-500"
                     aria-hidden="true"
                   />
                   {feature.name}
