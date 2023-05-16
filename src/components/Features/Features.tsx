@@ -74,12 +74,12 @@ const features = [
 
 const Features = () => {
   return (
-    <div className="relative overflow-hidden bg-slate-900 py-24 sm:py-32">
+    <div className="relative overflow-hidden bg-gray-900 py-24 sm:py-32">
       <div className="relative">
-        <div className="pointer-events-none absolute inset-y-0 w-full rounded-full bg-gradient-to-r from-sky-900 via-cloud-text-gradient-3 to-sky-900 opacity-20 blur-3xl"></div>
+        <div className="pointer-events-none absolute inset-y-0 w-full rounded-full bg-gradient-to-r from-noops-900  to-noops-900 opacity-20 blur-3xl"></div>
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl sm:text-center">
-            <h2 className="text-base font-semibold leading-7 text-sky-400">
+            <h2 className="text-base font-semibold leading-7 text-noops-400">
               What about Ops?
             </h2>
             <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
@@ -97,7 +97,7 @@ const Features = () => {
               <div key={feature.name} className="relative pl-9">
                 <dt className="inline font-semibold text-white">
                   <feature.icon
-                    className="absolute left-1 top-1 h-5 w-5 text-sky-500"
+                    className="absolute left-1 top-1 h-5 w-5 text-noops-500"
                     aria-hidden="true"
                   />
                   {feature.name}

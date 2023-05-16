@@ -26,7 +26,7 @@ function App() {
         <Bridge />
 
         {/* Relevant Page */}
-        <RoleSelect />
+        {/* <RoleSelect /> */}
 
         {/* TODO: Add a clickable link to learn more about Bond */}
         <Steps />

@@ -34,9 +34,9 @@ const Bridge = () => {
         <p className="mt-6 text-lg leading-8 text-gray-600">
           NoOps acts as a bridge between your application and end-users by
           automating your infrastructure and ensuring your application runs
-          <span className="font-medium italic text-sky-600"> smoothly </span>
+          <span className="font-medium italic text-noops-600"> smoothly </span>
           and
-          <span className="font-medium italic text-sky-600"> securely</span>,
+          <span className="font-medium italic text-noops-600"> securely</span>,
           without the need for a dedicated operations team.
         </p>
 
@@ -45,7 +45,7 @@ const Bridge = () => {
             <div className="flex h-16 w-16 items-center justify-center rounded-md bg-gradient-to-br from-gray-600 via-slate-800 to-slate-900 shadow-md sm:h-24 sm:w-24">
               <div className="relative h-full w-full">
                 <CodeBracketIcon className="absolute p-1 text-white opacity-100 blur-md sm:p-5" />
-                <CodeBracketIcon className="absolute p-1 text-sky-50 sm:p-5" />
+                <CodeBracketIcon className="absolute p-1 text-noops-50 sm:p-5" />
               </div>
             </div>
             <div className="relative h-4 flex-1">
@@ -65,7 +65,7 @@ const Bridge = () => {
               className="flex h-16 w-16 items-center justify-center rounded-md bg-gradient-to-br from-gray-600 via-slate-800 to-slate-900 shadow-md sm:h-24 sm:w-24"
             >
               <NoOpsSymbol className="absolute p-6 text-white opacity-80 blur-md sm:p-5" />
-              <NoOpsSymbol className="absolute p-6 text-sky-50 sm:p-5" />
+              <NoOpsSymbol className="absolute p-6 text-noops-50 sm:p-5" />
             </motion.div>
             <div className="relative h-4 flex-1">
               <motion.div
@@ -79,7 +79,7 @@ const Bridge = () => {
             <div className="flex h-16 w-16 items-center justify-center rounded-md bg-gradient-to-br from-gray-600 via-slate-800 to-slate-900 shadow-md sm:h-24 sm:w-24">
               <div className="relative h-full w-full">
                 <GlobeAltIcon className="absolute p-1 text-white opacity-80 blur-md sm:p-5" />
-                <GlobeAltIcon className="absolute p-1 text-sky-50 sm:p-5" />
+                <GlobeAltIcon className="absolute p-1 text-noops-50 sm:p-5" />
               </div>
             </div>
           </div>

@@ -43,7 +43,7 @@ const faqs = [
 const FAQ = () => {
   return (
     <div className="bg-white">
-      <div className="mx-auto max-w-7xl py-16 px-6 sm:py-24 lg:px-8">
+      <div className="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-2xl font-bold leading-10 tracking-tight text-gray-900">
             Frequently asked questions
@@ -53,7 +53,7 @@ const FAQ = () => {
             for? Reach out to our support team by{" "}
             <a
               href="#"
-              className="font-semibold text-indigo-600 hover:text-indigo-500"
+              className="font-semibold text-noops-600 hover:text-noops-500"
             >
               sending us an email
             </a>{" "}

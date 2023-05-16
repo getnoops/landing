@@ -20,9 +20,9 @@ const RoleSelect = () => {
               to="#"
               className="group/button relative cursor-pointer rounded-md bg-gradient-to-br from-cloud-text-gradient-1 via-cloud-text-gradient-2 to-cloud-text-gradient-3 px-4 py-3"
             >
-              <div className="sky-xl pointer-events-none absolute inset-0 bg-gradient-to-br from-cloud-text-gradient-1 via-cloud-text-gradient-2 to-cloud-text-gradient-3 opacity-60 blur-md" />
-              <div className="pointer-events-none absolute inset-0 m-px rounded-[5px] bg-sky-50 transition group-hover/button:opacity-0" />
-              <span className="relative font-medium text-sky-900 transition group-hover/button:text-white">
+              <div className="noops-xl pointer-events-none absolute inset-0 bg-gradient-to-br from-cloud-text-gradient-1 via-cloud-text-gradient-2 to-cloud-text-gradient-3 opacity-60 blur-md" />
+              <div className="pointer-events-none absolute inset-0 m-px rounded-[5px] bg-noops-50 transition group-hover/button:opacity-0" />
+              <span className="relative font-medium text-noops-900 transition group-hover/button:text-white">
                 CxO / Head of Application or Engineering
               </span>
             </Link>
@@ -30,9 +30,9 @@ const RoleSelect = () => {
               to="#"
               className="group/button relative cursor-pointer rounded-md bg-gradient-to-br from-cloud-text-gradient-1 via-cloud-text-gradient-2 to-cloud-text-gradient-3 px-4 py-3"
             >
-              <div className="sky-xl pointer-events-none absolute inset-0 bg-gradient-to-br from-cloud-text-gradient-1 via-cloud-text-gradient-2 to-cloud-text-gradient-3 opacity-60 blur-md" />
-              <div className="pointer-events-none absolute inset-0 m-px rounded-[5px] bg-sky-50 transition group-hover/button:opacity-0" />
-              <span className="relative font-medium text-sky-900 transition group-hover/button:text-white">
+              <div className="noops-xl pointer-events-none absolute inset-0 bg-gradient-to-br from-cloud-text-gradient-1 via-cloud-text-gradient-2 to-cloud-text-gradient-3 opacity-60 blur-md" />
+              <div className="pointer-events-none absolute inset-0 m-px rounded-[5px] bg-noops-50 transition group-hover/button:opacity-0" />
+              <span className="relative font-medium text-noops-900 transition group-hover/button:text-white">
                 DevOps Engineer
               </span>
             </Link>
@@ -40,9 +40,9 @@ const RoleSelect = () => {
               to="#"
               className="group/button relative cursor-pointer rounded-md bg-gradient-to-br from-cloud-text-gradient-1 via-cloud-text-gradient-2 to-cloud-text-gradient-3 px-4 py-3"
             >
-              <div className="sky-xl pointer-events-none absolute inset-0 bg-gradient-to-br from-cloud-text-gradient-1 via-cloud-text-gradient-2 to-cloud-text-gradient-3 opacity-60 blur-md" />
-              <div className="pointer-events-none absolute inset-0 m-px rounded-[5px] bg-sky-50 transition group-hover/button:opacity-0" />
-              <span className="relative font-medium text-sky-900 transition group-hover/button:text-white">
+              <div className="noops-xl pointer-events-none absolute inset-0 bg-gradient-to-br from-cloud-text-gradient-1 via-cloud-text-gradient-2 to-cloud-text-gradient-3 opacity-60 blur-md" />
+              <div className="pointer-events-none absolute inset-0 m-px rounded-[5px] bg-noops-50 transition group-hover/button:opacity-0" />
+              <span className="relative font-medium text-noops-900 transition group-hover/button:text-white">
                 Software Engineer
               </span>
             </Link>

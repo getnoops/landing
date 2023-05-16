@@ -92,7 +92,7 @@ const Skeptic = () => {
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
 
   return (
-    <div className="relative isolate overflow-hidden bg-slate-900 py-24 sm:py-32">
+    <div className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
       <div className="relative lg:order-last lg:col-span-5">
         <svg
           className="absolute -top-44 left-1 -z-10 h-[64rem] w-[175.5rem] -translate-x-1/2 stroke-slate-50/5 [mask-image:radial-gradient(64rem_64rem_at_111.5rem_0%,white,transparent)]"
@@ -135,8 +135,8 @@ const Skeptic = () => {
             y2="1091.63"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#379AE9" />
-            <stop offset={1} stopColor="#39A7F1" />
+            <stop stopColor="#af84fb" />
+            <stop offset={1} stopColor="#6f22ce" />
           </linearGradient>
         </defs>
       </svg>
@@ -145,22 +145,22 @@ const Skeptic = () => {
           <h1 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
             Still Skeptic?
           </h1>
-          <p className="mt-6 text-xl leading-8 text-sky-200">
+          <p className="mt-6 text-xl leading-8 text-noops-200">
             At Context Cloud, we don't just provide NoOps solutions, we live and
             breathe it. That's why we trust our own NoOps platform to manage and
             deploy all of our products with ease and efficiency.
           </p>
-          <p className="mt-6 text-xl leading-8 text-sky-200">
+          <p className="mt-6 text-xl leading-8 text-noops-200">
             Thats right, we use our own NoOps platform to host the very site you
             are using right now, as well as the NoOps Portal and NoOps
             Documentation Site. This way, you can be assured that we stand
             behind our product and use it ourselves for all our offerings.
           </p>
-          <p className="mt-6 text-2xl leading-8 text-sky-300">
+          <p className="mt-6 text-2xl leading-8 text-noops-300">
             Don't believe us? Here are all our Bond descriptor files for NoOps:
           </p>
         </div>
-        <div className="mt-12 w-full rounded-xl bg-slate-800 p-2 text-sky-100">
+        <div className="mt-12 w-full rounded-xl bg-slate-800 p-2 text-noops-100">
           <div className="flex sm:text-lg">
             {tabs.map((tab, i) => (
               <div
@@ -207,7 +207,7 @@ const Skeptic = () => {
           </div>
         </div>
         <div className="mt-8 flex justify-center">
-          <button className="rounded-full border-2 border-sky-600 bg-sky-500 px-4 py-1.5 text-lg font-medium text-white shadow-xl shadow-sky-600/40 transition hover:border-sky-700 hover:bg-sky-600">
+          <button className="rounded-full bg-noops-600 px-6 py-1.5  font-semibold  text-white shadow-xl transition hover:bg-noops-700">
             Learn more about Bond
           </button>
         </div>

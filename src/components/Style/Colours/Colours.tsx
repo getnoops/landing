@@ -9,7 +9,7 @@ const Colours = () => {
 
         <div className="mb-4">
           <div className="grid grid-cols-2 gap-4  md:grid-cols-3 lg:grid-cols-5">
-            <div className="flex h-36 flex-col justify-between rounded-lg bg-cloud-blue p-4 shadow">
+            <div className="flex h-36 flex-col justify-between rounded-lg bg-noops-600 p-4 shadow">
               <div>
                 <h2 className="text-xl font-semibold tracking-wide text-white">
                   Blue
@@ -73,6 +73,12 @@ const Colours = () => {
               </div>
             </div>
           </div>
+        </div>
+
+        <div className="mb-6 grid h-36 grid-cols-10 overflow-clip rounded-md shadow-md">
+          <div className="col-span-6 bg-white"></div>
+          <div className="col-span-3 bg-noops-600"></div>
+          <div className="col-span-1 bg-[#f97316]"></div>
         </div>
 
         <h2 className="mb-2 text-2xl font-bold text-slate-800">Application</h2>

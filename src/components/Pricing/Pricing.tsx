@@ -54,12 +54,12 @@ const Pricing = () => {
 
   return (
     <div className="relative overflow-hidden bg-white py-24 sm:py-32">
-      <div className="absolute -left-1/2 bottom-1/2 right-1/2 top-0 -rotate-45 rounded-full bg-gradient-to-r from-purple-500 to-cloud-text-gradient-1 opacity-50 blur-3xl" />
-      <div className="absolute -right-1/2 bottom-0 left-1/2 top-1/2 -rotate-45 rounded-full bg-gradient-to-r from-cloud-text-gradient-1 to-purple-500 opacity-50 blur-3xl" />
+      <div className="absolute -left-1/2 bottom-1/2 right-1/2 top-0 -rotate-45 rounded-full bg-gradient-to-r from-noops-600 to-noops-800 opacity-50 blur-3xl" />
+      <div className="absolute -right-1/2 bottom-0 left-1/2 top-1/2 -rotate-45 rounded-full bg-gradient-to-r from-noops-800 to-noops-600 opacity-50 blur-3xl" />
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <div className="relative">
           <div className="mx-auto max-w-4xl text-center">
-            <h2 className="text-base font-semibold leading-7 text-sky-600">
+            <h2 className="text-base font-semibold leading-7 text-noops-600">
               Pricing
             </h2>
             <p className="mt-2 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
@@ -94,7 +94,7 @@ const Pricing = () => {
                     <>
                       {checked && (
                         <motion.div
-                          className="absolute inset-0 rounded-full bg-sky-600"
+                          className="absolute inset-0 rounded-full bg-noops-600"
                           layoutId="checked_bg"
                         />
                       )}
@@ -163,7 +163,7 @@ const Pricing = () => {
                   className={classNames(
                     tier.featured
                       ? "bg-white/10 text-white hover:bg-white/20 focus-visible:outline-white"
-                      : "bg-sky-500 text-white shadow-sm hover:bg-sky-400 focus-visible:outline-sky-500",
+                      : "bg-noops-500 text-white shadow-sm hover:bg-noops-400 focus-visible:outline-noops-500",
                     "mt-6 block rounded-full px-3 py-2 text-center text-sm font-semibold leading-6 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
                   )}
                 >
@@ -180,7 +180,7 @@ const Pricing = () => {
                     <li key={feature} className="flex gap-x-3">
                       <CheckCircleIcon
                         className={classNames(
-                          tier.featured ? "text-white" : "text-sky-600",
+                          tier.featured ? "text-white" : "text-noops-600",
                           "h-6 w-5 flex-none"
                         )}
                         aria-hidden="true"

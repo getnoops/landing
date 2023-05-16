@@ -23,7 +23,7 @@ const Logo = () => {
         <h5 className="mb-2 text-2xl font-bold text-slate-800">Logomark</h5>
         <div className="my-4 grid grid-cols-3">
           <div className="flex items-center justify-center">
-            <NoOpsSymbol className="text-cloud-blue " />
+            <NoOpsSymbol className="text-noops-600 " />
           </div>
           <div className="flex items-center justify-center rounded-lg bg-white py-8">
             <NoOpsSymbol className="text-black " />

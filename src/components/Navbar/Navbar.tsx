@@ -23,7 +23,7 @@ const nav = [
         href: "#",
         icon: ChartPieIcon,
         start: "from-green-500",
-        end: "to-sky-800",
+        end: "to-noops-800",
       },
       {
         name: "DevOps Engineer",
@@ -67,7 +67,7 @@ const NavItem = ({ item }: any) => {
   return (
     <Popover key={item.name} className="z-50">
       <div className="mx-auto px-2">
-        <Popover.Button className="inline-flex cursor-pointer items-center gap-x-2 rounded-lg px-4 py-1.5 text-sm text-sky-700 transition hover:bg-slate-100 hover:text-slate-900">
+        <Popover.Button className="inline-flex cursor-pointer items-center gap-x-2 rounded-lg px-4 py-1.5 text-sm text-noops-700 transition hover:bg-slate-100 hover:text-slate-900">
           {item.name}
           <ChevronDownIcon className="h-5 w-5" aria-hidden="true" />
         </Popover.Button>
@@ -131,7 +131,7 @@ const Navbar = () => {
         <nav className=" z-50 flex justify-between">
           <div className="bottom-0 flex items-center md:gap-x-12">
             <div className="relative z-50">
-              <div className="absolute -bottom-1/2 -right-1/4 select-none rounded-full bg-sky-200 px-3 text-sm text-sky-500">
+              <div className="absolute -bottom-1/2 -right-1/4 select-none rounded-full bg-noops-200 px-3 text-sm text-noops-500">
                 alpha
               </div>
               <a aria-label="Home" href="/#" className="relative">
@@ -155,7 +155,7 @@ const Navbar = () => {
               </a>
             </div>
             <a
-              className="group inline-flex items-center justify-center rounded-full bg-cloud-blue px-4 py-2 text-sm font-semibold text-white transition hover:bg-sky-600 hover:text-sky-50 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500 active:bg-sky-800 active:text-sky-100"
+              className="group inline-flex items-center justify-center rounded-full bg-noops-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-noops-600 hover:text-noops-50 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-noops-500 active:bg-noops-800 active:text-noops-100"
               href="/register"
             >
               Start deploying

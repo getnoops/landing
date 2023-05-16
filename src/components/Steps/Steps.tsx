@@ -17,7 +17,7 @@ const steps = [
     cta: (
       <a
         href="#"
-        className="block w-fit text-sky-400 transition hover:text-sky-500"
+        className="block w-fit text-noops-400 transition hover:text-noops-500"
       >
         Learn more about Bond {"→"}
       </a>
@@ -39,7 +39,7 @@ const Steps = () => {
       <div className="mx-auto max-w-7xl text-center">
         <div className="space-y-6">
           <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-            <span className="bg-gradient-to-t from-cloud-text-gradient-1 via-cloud-text-gradient-2 to-cloud-text-gradient-3 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-t from-noops-700 to-noops-400 bg-clip-text text-transparent">
               Easy as
             </span>
           </h2>
@@ -63,7 +63,7 @@ const Steps = () => {
               <div className="relative space-y-2 p-3">
                 <div
                   className={classNames(
-                    index == selectedIndex ? "bg-sky-500" : "bg-slate-400",
+                    index == selectedIndex ? "bg-noops-500" : "bg-slate-400",
                     " flex h-8 w-8 items-center justify-center rounded-md font-medium text-white transition"
                   )}
                 >
@@ -71,7 +71,9 @@ const Steps = () => {
                 </div>
                 <h5
                   className={classNames(
-                    index == selectedIndex ? "text-sky-700" : "text-slate-500",
+                    index == selectedIndex
+                      ? "text-noops-700"
+                      : "text-slate-500",
                     "text-sm font-medium transition"
                   )}
                 >
