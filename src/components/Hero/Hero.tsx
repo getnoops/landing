@@ -3,7 +3,7 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <div className="relative pt-28 sm:pt-40">
+    <div className="relative  pt-28 sm:pt-40">
       <div className="relative py-24 sm:py-32">
         <div className="absolute inset-x-0 top-10 -z-10 flex scale-y-150 transform-gpu justify-center overflow-hidden blur-xl sm:scale-y-100 sm:blur-3xl md:-top-10 lg:-top-36">
           <motion.img

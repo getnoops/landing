@@ -62,7 +62,7 @@ const Pricing = () => {
             <h2 className="text-base font-semibold leading-7 text-noops-600">
               Pricing
             </h2>
-            <p className="mt-2 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
+            <p className="mt-2 text-4xl font-bold tracking-tight text-slate-800 sm:text-5xl">
               Transparent Pricing that Scales with You
             </p>
           </div>
@@ -119,7 +119,7 @@ const Pricing = () => {
                 <p className="mb-6 flex items-baseline gap-x-1 font-mono">
                   <span
                     className={classNames(
-                      tier.featured ? "text-white" : "text-slate-900",
+                      tier.featured ? "text-white" : "text-slate-800",
                       "text-4xl font-bold tracking-tight"
                     )}
                   >
@@ -142,7 +142,7 @@ const Pricing = () => {
                 <h3
                   id={tier.id}
                   className={classNames(
-                    tier.featured ? "text-white" : "text-slate-900",
+                    tier.featured ? "text-white" : "text-slate-800",
                     "text-lg font-semibold leading-8"
                   )}
                 >

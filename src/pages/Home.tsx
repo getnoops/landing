@@ -20,6 +20,7 @@ function App() {
 
       <main className="relative">
         {/* Hero */}
+        {/* animation idea cycle between different products e.g. focus on your... app, website, tooling then land on product */}
         <Hero />
 
         {/* We need some devops tooling logos behind the noops logo. */}
@@ -41,7 +42,6 @@ function App() {
         <Pricing />
 
         <Skeptic />
-        {/* TODO: add a learn more about bond button below skeptic */}
 
         {/* FAQ? */}
         <FAQ />

@@ -82,7 +82,7 @@ const Steps = () => {
                 <h3
                   className={classNames(
                     index == selectedIndex
-                      ? "text-slate-900"
+                      ? "text-slate-800"
                       : "text-slate-700",
                     " text-xl transition"
                   )}

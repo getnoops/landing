@@ -67,7 +67,7 @@ const NavItem = ({ item }: any) => {
   return (
     <Popover key={item.name} className="z-50">
       <div className="mx-auto px-2">
-        <Popover.Button className="inline-flex cursor-pointer items-center gap-x-2 rounded-lg px-4 py-1.5 text-sm text-noops-700 transition hover:bg-slate-100 hover:text-slate-900">
+        <Popover.Button className="inline-flex cursor-pointer items-center gap-x-2 rounded-lg px-4 py-1.5 text-sm text-noops-700 transition hover:bg-slate-100 hover:text-slate-800">
           {item.name}
           <ChevronDownIcon className="h-5 w-5" aria-hidden="true" />
         </Popover.Button>
@@ -83,7 +83,7 @@ const NavItem = ({ item }: any) => {
         leaveTo="opacity-0 -translate-y-1"
       >
         <Popover.Panel className="absolute left-0 top-full w-screen cursor-pointer bg-white py-4 shadow-lg ring-1 ring-gray-900/5">
-          <h2 className="mx-auto max-w-7xl px-3 text-xl font-bold text-slate-900">
+          <h2 className="mx-auto max-w-7xl px-3 text-xl font-bold text-slate-800">
             Solutions
           </h2>
           <div className="mx-auto grid max-w-7xl grid-cols-1 gap-2 px-6 py-6 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-4 sm:pb-6 sm:pt-4 lg:grid-cols-4 lg:gap-8">
@@ -148,7 +148,7 @@ const Navbar = () => {
           <div className="flex items-center gap-x-5 md:gap-x-8">
             <div className="hidden md:block">
               <a
-                className="inline-block rounded-lg px-4 py-1.5 text-sm text-slate-700 transition hover:bg-slate-100 hover:text-slate-900"
+                className="inline-block rounded-lg px-4 py-1.5 text-sm text-slate-700 transition hover:bg-slate-100 hover:text-slate-800"
                 href="/login"
               >
                 Sign in

@@ -8,7 +8,7 @@ const StyleGuide = () => {
       <div className="mx-auto max-w-7xl py-16">
         <div className="flex">
           <div className="flex-1">
-            <h2 className="text-5xl font-black uppercase text-cloud-blue">
+            <h2 className="text-5xl font-black uppercase text-noops-600">
               Style Guide
             </h2>
             <p className="text-lg text-slate-600">
@@ -17,7 +17,7 @@ const StyleGuide = () => {
             </p>
           </div>
           <div className="flex flex-1 items-center justify-center ">
-            <NoOpsSymbol className="text-cloud-blue " />
+            <NoOpsSymbol className="text-noops-600 " />
           </div>
         </div>
       </div>

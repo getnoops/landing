@@ -1,4 +1,18 @@
 /** @type {import('tailwindcss').Config} */
+
+// NoOps Colours
+// 50 f8f5ff hsl(260 100% 98%)
+// 100 eee6ff hsl(260 100% 95%)
+// 200 e4d6ff hsl(260 99% 92%)
+// 300 caaefe hsl(261 98% 84%)
+// 400 af84fb hsl(262 93% 75%)
+// 500 9655f6 hsl(264 90% 65%)
+// 600 8335e9 hsl(266 80% 56%)
+// 700 6f22ce hsl(267 72% 47%)
+// 800 5821a6 hsl(265 67% 39%)
+// 900 471c87 hsl(264 66% 32%)
+// 950 2a075f hsl(264 87% 20%)
+
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
