@@ -46,7 +46,16 @@ module.exports = {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
       },
-      fontFamily: {},
+      animation: {
+        twinkle: "twinkle 1s infinite",
+      },
+      keyframes: {
+        twinkle: {
+          "0%": { opacity: 1 },
+          "50%": { opacity: 0.5 },
+          "100%": { opacity: 1 },
+        },
+      },
     },
   },
   plugins: [],

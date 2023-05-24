@@ -61,7 +61,7 @@ const technologies = [
   [
     {
       name: "Slack",
-      logo: "https://assets.stickpng.com/images/5cb480cd5f1b6d3fbadece79.png",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Slack_icon_2019.svg/2048px-Slack_icon_2019.svg.png",
     },
     {
       name: "NoOps",
@@ -106,9 +106,11 @@ const technologies = [
   ],
 ];
 
+// - mt because we want to move the section up as there is a transition gradient element above this one that we want to go over.
+
 const Bridge = () => {
   return (
-    <section className="px-6 py-24 sm:py-32 lg:px-8">
+    <section className="relative -mt-[40rem] px-6 py-24 sm:py-32 md:-mt-144 lg:px-8">
       <div className="mx-auto max-w-5xl text-center">
         <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
           <span className="bg-gradient-to-t from-slate-600 to-slate-900 bg-clip-text text-transparent">
@@ -128,8 +130,8 @@ const Bridge = () => {
           <div className="mt-10 flex items-center justify-center text-white">
             <div className="flex h-16 w-16 items-center justify-center rounded-xl border border-slate-100 bg-white bg-gradient-to-br shadow-md sm:h-24 sm:w-24">
               <div className="relative h-full w-full">
-                <CodeBracketIcon className="absolute p-1 text-noops-600 opacity-100 blur-md sm:p-5" />
-                <CodeBracketIcon className="absolute p-1 text-noops-600 sm:p-5" />
+                <CodeBracketIcon className="absolute p-2 text-noops-600 opacity-100 blur-md sm:p-5" />
+                <CodeBracketIcon className="absolute p-2 text-noops-600 sm:p-5" />
               </div>
             </div>
             <div className="relative h-4 flex-1">
@@ -147,30 +149,33 @@ const Bridge = () => {
               whileInView="visible"
               variants={noOpVariants}
               viewport={{ once: true }}
-              className="flex w-28 items-center justify-around gap-6 rounded-xl bg-gradient-to-br sm:h-96"
+              className="relative flex w-28 items-center justify-around gap-2 rounded-xl bg-gradient-to-br sm:h-96 sm:gap-1 md:gap-4 lg:gap-6"
             >
               {technologies.map((tech, i) => (
                 <div
                   className={classNames(
-                    "flex h-full flex-col items-center justify-center gap-6"
+                    i % 2 != 0 && "hidden sm:flex",
+                    "flex h-full flex-col items-center justify-center gap-2 sm:gap-1 md:gap-4 lg:gap-6"
                   )}
                 >
                   {tech.map((t) => (
                     <div
                       className={classNames(
-                        t.name === "NoOps" ? "h-28 w-28" : "h-20 w-20",
-                        "relative z-10 flex items-center justify-center rounded-xl border border-slate-100 bg-white text-black shadow-lg"
+                        t.name === "NoOps"
+                          ? "h-16 sm:h-20 md:h-28 "
+                          : " h-12 sm:h-16 md:h-20 ",
+                        "relative z-10 flex aspect-square items-center justify-center rounded-xl border border-slate-100 bg-white text-black shadow-lg"
                       )}
                     >
                       {t.name === "NoOps" && (
                         <img
                           src={t.logo}
-                          className="absolute h-full object-contain p-5 opacity-80 blur-md "
+                          className="absolute h-full object-contain p-1 opacity-80 blur-md sm:p-5 "
                         />
                       )}
                       <img
                         src={t.logo}
-                        className=" h-full object-contain p-5"
+                        className=" h-full object-contain p-3 sm:p-5"
                       />
                     </div>
                   ))}
@@ -189,8 +194,8 @@ const Bridge = () => {
             </div>
             <div className="flex h-16 w-16 items-center justify-center rounded-xl border border-slate-100 bg-white bg-gradient-to-br shadow-md sm:h-24 sm:w-24">
               <div className="relative h-full w-full">
-                <GlobeAltIcon className="absolute p-1 text-noops-600 opacity-80 blur-md sm:p-5" />
-                <GlobeAltIcon className="absolute p-1 text-noops-600 sm:p-5" />
+                <GlobeAltIcon className="absolute p-2 text-noops-600 opacity-80 blur-md sm:p-5" />
+                <GlobeAltIcon className="absolute p-2 text-noops-600  sm:p-5" />
               </div>
             </div>
           </div>
