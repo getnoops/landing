@@ -104,7 +104,7 @@ const Hero = () => {
       <div className="relative -mt-48 h-[1066px] overflow-hidden">
         <img
           className="absolute inset-0 h-full w-full object-cover object-center"
-          src="/images/bg.png"
+          src="/images/bg.webp"
           draggable={false}
           alt=""
         />
