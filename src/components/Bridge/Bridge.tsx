@@ -153,13 +153,15 @@ const Bridge = () => {
             >
               {technologies.map((tech, i) => (
                 <div
+                  key={i}
                   className={classNames(
                     i % 2 != 0 && "hidden sm:flex",
                     "flex h-full flex-col items-center justify-center gap-2 sm:gap-1 md:gap-4 lg:gap-6"
                   )}
                 >
-                  {tech.map((t) => (
+                  {tech.map((t, k) => (
                     <div
+                      key={t.name + i + k}
                       className={classNames(
                         t.name === "NoOps"
                           ? "h-16 sm:h-20 md:h-28 "

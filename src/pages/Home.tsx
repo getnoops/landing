@@ -16,6 +16,7 @@ import {
 function App() {
   return (
     <div className="relative">
+      {/* solutions animation scuffed */}
       <Navbar />
 
       <main className="relative">
@@ -23,13 +24,12 @@ function App() {
         {/* animation idea cycle between different products e.g. focus on your... app, website, tooling then land on product */}
         <Hero />
 
-        {/* We need some devops tooling logos behind the noops logo. */}
+        {/* change images */}
         <Bridge />
 
         {/* Relevant Page */}
         {/* <RoleSelect /> */}
 
-        {/* TODO: Add a clickable link to learn more about Bond */}
         <Steps />
 
         <Features />
@@ -38,7 +38,7 @@ function App() {
 
         {/* Heard enough? CTA in the middle of the flow? */}
 
-        {/* Pricing */}
+        {/* Pricing: need to add a */}
         <Pricing />
 
         <Skeptic />
