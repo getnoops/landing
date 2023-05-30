@@ -56,12 +56,12 @@ const nav = [
     ],
   },
   {
-    name: "Pricing",
+    name: "Values",
     dropdown: false,
     href: "#",
   },
   {
-    name: "FAQ",
+    name: "Contact Us",
     dropdown: false,
     href: "#",
   },
@@ -89,8 +89,6 @@ const Dropdown = ({ open, setOpen }: DropdownProps) => {
       document.removeEventListener("click", handleClickOutside);
     };
   }, [ref]);
-
-  console.log("open", open != null);
 
   return (
     <Transition
@@ -184,7 +182,7 @@ const Navbar = () => {
                     onClick={() => {
                       setDropdown(item);
                     }}
-                    className="inline-flex cursor-pointer items-center gap-x-2 rounded-lg px-4 py-1.5 text-sm text-noops-500 transition hover:bg-slate-100 hover:text-slate-800"
+                    className="inline-flex cursor-pointer items-center gap-x-2 rounded-full border border-transparent px-4 py-1.5 text-sm text-noops-500 transition hover:border-noops-500/60 hover:bg-noops-600 hover:bg-opacity-10 hover:shadow-lg hover:shadow-noops-400/10"
                   >
                     {item.name}
                     <ChevronDownIcon className="h-5 w-5" aria-hidden="true" />
@@ -192,7 +190,7 @@ const Navbar = () => {
                 ) : (
                   <a
                     href={item.href}
-                    className="inline-flex cursor-pointer items-center gap-x-2 rounded-lg px-4 py-1.5 text-sm text-noops-500 transition hover:bg-slate-100 hover:text-slate-800"
+                    className="inline-flex cursor-pointer items-center gap-x-2 rounded-full border border-transparent px-4 py-1.5 text-sm text-noops-500 transition hover:border-noops-500/60 hover:bg-noops-600 hover:bg-opacity-10 hover:shadow-lg hover:shadow-noops-400/10"
                   >
                     {item.name}
                   </a>
@@ -203,7 +201,7 @@ const Navbar = () => {
           <div className="flex flex-shrink items-center justify-end gap-x-5 md:gap-x-8">
             <div className="hidden md:block">
               <a
-                className="inline-block rounded-lg px-4 py-1.5 text-sm text-slate-400 transition hover:bg-slate-100 hover:text-slate-800"
+                className="inline-flex cursor-pointer items-center gap-x-2 rounded-full border border-transparent px-4 py-1.5 text-sm text-neutral-200 transition hover:border-white/60 hover:bg-white hover:bg-opacity-10 hover:shadow-lg hover:shadow-white/10"
                 href="/login"
               >
                 Sign in

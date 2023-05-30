@@ -17,7 +17,6 @@ function App() {
   return (
     <div className="relative">
       {/* solutions animation scuffed */}
-      <Navbar />
 
       <main className="relative">
         {/* Hero */}
