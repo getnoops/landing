@@ -10,6 +10,7 @@ import {
   SquaresPlusIcon,
 } from "@heroicons/react/20/solid";
 import classNames from "classnames";
+import { AnimatePresence, motion } from "framer-motion";
 import React, { Fragment, useEffect, useRef, useState } from "react";
 
 const nav = [
@@ -67,7 +68,7 @@ const nav = [
 ];
 
 interface DropdownProps {
-  open: null;
+  open: null | any;
   setOpen: React.Dispatch<React.SetStateAction<null>>;
 }
 
@@ -89,52 +90,62 @@ const Dropdown = ({ open, setOpen }: DropdownProps) => {
     };
   }, [ref]);
 
+  console.log("open", open != null);
+
   return (
     <Transition
       show={open != null}
-      enter="transition ease-out duration-200"
-      enterFrom="blur-xl"
-      enterTo="opacity-100 "
-      leave="transition ease-in duration-150"
-      leaveFrom="opacity-100"
-      leaveTo="blur-xl"
+      enter="transition-all ease-out duration-200"
+      enterFrom="backdrop-blur-lg opacity-0 -translate-y-2"
+      enterTo="backdrop-blur-lg opacity-100 translate-y-0"
+      leave="transition-all ease-in duration-150"
+      leaveFrom="backdrop-blur-lg opacity-100 translate-y-0"
+      leaveTo="backdrop-blur-lg opacity-0 -translate-y-2"
     >
       <div
         ref={ref}
-        className=" top-full mx-2 mt-3 rounded-3xl border border-white/30 bg-white bg-opacity-10 py-4  shadow-lg ring-1 ring-gray-900/5 backdrop-blur-lg transition-all sm:mx-4 md:mx-6 lg:mx-12 "
+        className=" top-full mx-2 mt-3 rounded-3xl border border-accent/30 bg-accent bg-opacity-[0.15] py-4  shadow-lg shadow-accent/10 ring-1 ring-gray-900/5 backdrop-blur-lg transition-all duration-1000 sm:mx-4 md:mx-6 lg:mx-12 "
       >
-        <h2 className="mx-auto max-w-7xl px-3 text-xl font-bold text-neutral-400">
-          Solutions
-        </h2>
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-2 px-6 py-6 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-4 sm:pb-6 sm:pt-4 lg:grid-cols-4 lg:gap-8">
-          {/* {item.solutions &&
-      item.solutions.map((solution: any) => (
-        <div
-          key={solution.name}
-          className={classNames(
-            solution.start,
-            solution.end,
-            "group relative -mx-3 flex h-36 cursor-pointer justify-end gap-6 rounded-xl bg-gradient-to-br  p-3 text-sm leading-6 shadow-lg transition sm:flex-col sm:p-6"
+        <AnimatePresence>
+          {open?.solutions && (
+            <motion.div exit={{ opacity: 0 }}>
+              <h2 className="mx-auto max-w-7xl px-3 text-xl font-bold text-noops-400">
+                {open?.name}
+              </h2>
+              <div className="mx-auto grid max-w-7xl grid-cols-1 gap-2 px-6 py-6 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-4 sm:pb-6 sm:pt-4 lg:grid-cols-4 lg:gap-8">
+                {open?.solutions.map((solution: any) => (
+                  <div
+                    key={solution.name}
+                    className={classNames(
+                      solution.start,
+                      solution.end,
+                      "group relative -mx-3 flex h-36 cursor-pointer justify-end gap-6 rounded-xl bg-gradient-to-br  p-3 text-sm leading-6 shadow-lg transition sm:flex-col sm:p-6"
+                    )}
+                  >
+                    <div className="absolute inset-y-0 right-0 transition-all group-hover:right-2">
+                      <solution.icon
+                        className="h-full w-full text-white/10  transition group-hover:text-white/20"
+                        aria-hidden="true"
+                      />
+                    </div>
+                    <div className="relative">
+                      <a
+                        href={solution.href}
+                        className="font-semibold text-white"
+                      >
+                        {solution.name}
+                        <span className="absolute inset-0" />
+                      </a>
+                      <p className="mt-1 text-white opacity-80 ">
+                        {solution.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
           )}
-        >
-          <div className="absolute inset-y-0 right-0 transition-all group-hover:right-2">
-            <solution.icon
-              className="h-full w-full text-white/10  transition group-hover:text-white/20"
-              aria-hidden="true"
-            />
-          </div>
-          <div className="relative">
-            <a href={solution.href} className="font-semibold text-white">
-              {solution.name}
-              <span className="absolute inset-0" />
-            </a>
-            <p className="mt-1 text-white opacity-80 ">
-              {solution.description}
-            </p>
-          </div>
-        </div>
-      ))} */}
-        </div>
+        </AnimatePresence>
       </div>
     </Transition>
   );
@@ -171,8 +182,6 @@ const Navbar = () => {
                 {item.dropdown ? (
                   <button
                     onClick={() => {
-                      if (dropdown === item) return;
-                      console.log("yo");
                       setDropdown(item);
                     }}
                     className="inline-flex cursor-pointer items-center gap-x-2 rounded-lg px-4 py-1.5 text-sm text-noops-500 transition hover:bg-slate-100 hover:text-slate-800"
