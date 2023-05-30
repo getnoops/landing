@@ -12,6 +12,7 @@ import {
 import classNames from "classnames";
 import { AnimatePresence, motion } from "framer-motion";
 import React, { Fragment, useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 const nav = [
   {
@@ -40,7 +41,7 @@ const nav = [
         name: "Software Engineer",
         description:
           "Responsible for building, maintaining, and delivering software",
-        href: "#",
+        href: "/solutions/software-engineer",
         icon: FingerPrintIcon,
         start: "from-amber-500",
         end: "to-orange-800",
@@ -61,7 +62,7 @@ const nav = [
     href: "#",
   },
   {
-    name: "Contact Us",
+    name: "Contact",
     dropdown: false,
     href: "#",
   },
@@ -99,25 +100,28 @@ const Dropdown = ({ open, setOpen }: DropdownProps) => {
       leave="transition-all ease-in duration-150"
       leaveFrom="backdrop-blur-lg opacity-100 translate-y-0"
       leaveTo="backdrop-blur-lg opacity-0 -translate-y-2"
+      className="mx-auto  max-w-7xl rounded-3xl px-2 transition-all duration-1000 sm:px-4 md:px-6 lg:px-12"
     >
       <div
         ref={ref}
-        className=" top-full mx-2 mt-3 rounded-3xl border border-accent/30 bg-accent bg-opacity-[0.15] py-4  shadow-lg shadow-accent/10 ring-1 ring-gray-900/5 backdrop-blur-lg transition-all duration-1000 sm:mx-4 md:mx-6 lg:mx-12 "
+        className=" mt-3 max-h-144 overflow-y-auto rounded-3xl border border-accent/30 bg-accent bg-opacity-[0.15] shadow-lg shadow-accent/10 ring-1 ring-gray-900/5 "
       >
         <AnimatePresence>
           {open?.solutions && (
-            <motion.div exit={{ opacity: 0 }}>
-              <h2 className="mx-auto max-w-7xl px-3 text-xl font-bold text-noops-400">
+            <motion.div exit={{ opacity: 0 }} className="p-5">
+              <h2 className="mx-auto max-w-7xl text-xl font-bold text-noops-400">
                 {open?.name}
               </h2>
-              <div className="mx-auto grid max-w-7xl grid-cols-1 gap-2 px-6 py-6 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-4 sm:pb-6 sm:pt-4 lg:grid-cols-4 lg:gap-8">
+              <div className="mx-auto grid max-w-7xl grid-cols-1 gap-2 pt-2 sm:grid-cols-2 lg:grid-cols-4">
                 {open?.solutions.map((solution: any) => (
-                  <div
+                  <Link
                     key={solution.name}
+                    to={solution.href}
+                    onClick={() => setOpen(null)}
                     className={classNames(
                       solution.start,
                       solution.end,
-                      "group relative -mx-3 flex h-36 cursor-pointer justify-end gap-6 rounded-xl bg-gradient-to-br  p-3 text-sm leading-6 shadow-lg transition sm:flex-col sm:p-6"
+                      "group relative flex h-36 cursor-pointer justify-end gap-6 rounded-xl bg-gradient-to-br  p-3 text-sm leading-6 shadow-lg transition sm:flex-col sm:p-6"
                     )}
                   >
                     <div className="absolute inset-y-0 right-0 transition-all group-hover:right-2">
@@ -127,18 +131,14 @@ const Dropdown = ({ open, setOpen }: DropdownProps) => {
                       />
                     </div>
                     <div className="relative">
-                      <a
-                        href={solution.href}
-                        className="font-semibold text-white"
-                      >
+                      <h5 className="font-semibold text-white">
                         {solution.name}
-                        <span className="absolute inset-0" />
-                      </a>
+                      </h5>
                       <p className="mt-1 text-white opacity-80 ">
                         {solution.description}
                       </p>
                     </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
             </motion.div>
@@ -201,7 +201,7 @@ const Navbar = () => {
           <div className="flex flex-shrink items-center justify-end gap-x-5 md:gap-x-8">
             <div className="hidden md:block">
               <a
-                className="inline-flex cursor-pointer items-center gap-x-2 rounded-full border border-transparent px-4 py-1.5 text-sm text-neutral-200 transition hover:border-white/60 hover:bg-white hover:bg-opacity-10 hover:shadow-lg hover:shadow-white/10 focus-visible:outline focus-visible:outline-white/60"
+                className="inline-flex cursor-pointer items-center gap-x-2 rounded-full border border-transparent px-4 py-1.5 text-sm text-neutral-400 transition hover:border-neutral-400/60 hover:bg-neutral-400 hover:bg-opacity-30 hover:shadow-lg hover:shadow-white/10 focus-visible:outline focus-visible:outline-white/60"
                 href="/login"
               >
                 Sign in

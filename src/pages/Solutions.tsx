@@ -1,13 +1,11 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import SoftwareEngineer from "./SoftwareEngineer";
 
 const Solutions = () => {
   return (
     <Routes>
-      {/* App Pages */}
-      {/* <Route path="/" element={<Home />} />
-      <Route path="/solutions" element={<Solutions />} />
-      <Route path="/style" element={<StyleGuide />} /> */}
+      <Route path="/software-engineer" element={<SoftwareEngineer />} />
     </Routes>
   );
 };
