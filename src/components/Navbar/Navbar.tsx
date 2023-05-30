@@ -165,11 +165,11 @@ const Navbar = () => {
               {/* <div className="absolute -bottom-1/2 -right-1/4 select-none rounded-full bg-noops-200 px-3 text-sm text-noops-500 opacity-70">
                 alpha
               </div> */}
-              <a aria-label="Home" href="/#" className="relative">
+              <a aria-label="Home" href="/" className="relative">
                 <img
                   src="/logo_smile.svg"
                   alt="Logo"
-                  className="ml-3 mt-0.5 h-6 w-auto"
+                  className="ml-3 mt-0.5 h-6 w-auto "
                 />
               </a>
             </div>
@@ -182,7 +182,7 @@ const Navbar = () => {
                     onClick={() => {
                       setDropdown(item);
                     }}
-                    className="inline-flex cursor-pointer items-center gap-x-2 rounded-full border border-transparent px-4 py-1.5 text-sm text-noops-500 transition hover:border-noops-500/60 hover:bg-noops-600 hover:bg-opacity-10 hover:shadow-lg hover:shadow-noops-400/10"
+                    className="inline-flex cursor-pointer items-center gap-x-2 rounded-full border border-transparent px-4 py-1.5 text-sm text-noops-500 transition hover:border-noops-500/60 hover:bg-noops-600 hover:bg-opacity-10 hover:shadow-lg hover:shadow-noops-400/10 focus-visible:outline focus-visible:outline-noops-500/60"
                   >
                     {item.name}
                     <ChevronDownIcon className="h-5 w-5" aria-hidden="true" />
@@ -190,7 +190,7 @@ const Navbar = () => {
                 ) : (
                   <a
                     href={item.href}
-                    className="inline-flex cursor-pointer items-center gap-x-2 rounded-full border border-transparent px-4 py-1.5 text-sm text-noops-500 transition hover:border-noops-500/60 hover:bg-noops-600 hover:bg-opacity-10 hover:shadow-lg hover:shadow-noops-400/10"
+                    className="inline-flex cursor-pointer items-center gap-x-2 rounded-full border border-transparent px-4 py-1.5 text-sm text-noops-500 transition hover:border-noops-500/60 hover:bg-noops-600 hover:bg-opacity-10 hover:shadow-lg hover:shadow-noops-400/10 focus-visible:outline focus-visible:outline-noops-500/60"
                   >
                     {item.name}
                   </a>
@@ -201,7 +201,7 @@ const Navbar = () => {
           <div className="flex flex-shrink items-center justify-end gap-x-5 md:gap-x-8">
             <div className="hidden md:block">
               <a
-                className="inline-flex cursor-pointer items-center gap-x-2 rounded-full border border-transparent px-4 py-1.5 text-sm text-neutral-200 transition hover:border-white/60 hover:bg-white hover:bg-opacity-10 hover:shadow-lg hover:shadow-white/10"
+                className="inline-flex cursor-pointer items-center gap-x-2 rounded-full border border-transparent px-4 py-1.5 text-sm text-neutral-200 transition hover:border-white/60 hover:bg-white hover:bg-opacity-10 hover:shadow-lg hover:shadow-white/10 focus-visible:outline focus-visible:outline-white/60"
                 href="/login"
               >
                 Sign in
