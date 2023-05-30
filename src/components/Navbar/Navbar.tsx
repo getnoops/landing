@@ -95,16 +95,16 @@ const Dropdown = ({ open, setOpen }: DropdownProps) => {
     <Transition
       show={open != null}
       enter="transition-all ease-out duration-200"
-      enterFrom="backdrop-blur-lg opacity-0 -translate-y-2"
-      enterTo="backdrop-blur-lg opacity-100 translate-y-0"
+      enterFrom="opacity-0 -translate-y-2"
+      enterTo="opacity-100 translate-y-0"
       leave="transition-all ease-in duration-150"
-      leaveFrom="backdrop-blur-lg opacity-100 translate-y-0"
-      leaveTo="backdrop-blur-lg opacity-0 -translate-y-2"
-      className="mx-auto  max-w-7xl rounded-3xl px-2 transition-all duration-1000 sm:px-4 md:px-6 lg:px-12"
+      leaveFrom="opacity-100 translate-y-0"
+      leaveTo="opacity-0 -translate-y-2"
+      className="mt-3 max-w-7xl rounded-3xl backdrop-blur-lg transition-all duration-1000"
     >
       <div
         ref={ref}
-        className=" mt-3 max-h-144 overflow-y-auto rounded-3xl border border-accent/30 bg-accent bg-opacity-[0.15] shadow-lg shadow-accent/10 ring-1 ring-gray-900/5 "
+        className=" max-h-144 overflow-y-auto  rounded-3xl border border-accent/30 bg-accent bg-opacity-[0.15] shadow-lg shadow-accent/10 ring-1 ring-gray-900/5 "
       >
         <AnimatePresence>
           {open?.solutions && (
@@ -217,7 +217,9 @@ const Navbar = () => {
         </nav>
       </div>
 
-      <Dropdown open={dropdown} setOpen={setDropdown} />
+      <div className="flex w-full justify-center px-2 transition-all duration-1000 sm:px-4 md:px-6 lg:px-12">
+        <Dropdown open={dropdown} setOpen={setDropdown} />
+      </div>
     </header>
   );
 };
