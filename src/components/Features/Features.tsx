@@ -23,12 +23,6 @@ const features = [
     icon: CloudArrowUpIcon,
   },
   {
-    name: "SSL certificates.",
-    description:
-      "Secure your application and build trust with your users with built-in SSL certificates and HTTPS support.",
-    icon: LockClosedIcon,
-  },
-  {
     name: "Advanced security.",
     description:
       "Protect your application and data with modern industry security standards.",
@@ -41,12 +35,6 @@ const features = [
     icon: ClockIcon,
   },
   {
-    name: "Developer-friendly APIs and integrations.",
-    description:
-      "Integrate with your favorite tools and services using our developer-friendly APIs and integrations, and streamline your development workflow.",
-    icon: CodeBracketSquareIcon,
-  },
-  {
     name: "Automated backups and disaster recovery.",
     description:
       "Protect your data and ensure business continuity with automated backups and disaster recovery features.",
@@ -57,12 +45,6 @@ const features = [
     description:
       "Ensure code quality and prevent issues with automated testing and quality assurance features, including unit tests and integration tests.",
     icon: BeakerIcon,
-  },
-  {
-    name: "Cloud-agnostic infrastructure.",
-    description:
-      "Deploy your application to any cloud provider or on-premises infrastructure, with support for multiple cloud providers and a cloud-agnostic approach.",
-    icon: CloudIcon,
   },
   {
     name: "Multi-region deployment.",

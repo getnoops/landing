@@ -73,10 +73,8 @@ const SoftwareEngineer = () => {
       {/* Hero */}
       <SEHero />
 
-      <div className="h-72 bg-gradient-to-b from-noops-1000 to-slate-950"></div>
-
       {/* content */}
-      <div className="bg-slate-950 pb-24 sm:pb-32">
+      <div className="bg-noops-1000 pb-24 sm:pb-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:text-center">
             <h2 className="text-base font-semibold leading-7 text-noops-400">

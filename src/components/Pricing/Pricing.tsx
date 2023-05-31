@@ -1,5 +1,12 @@
 import { RadioGroup } from "@headlessui/react";
-import { CheckCircleIcon } from "@heroicons/react/24/outline";
+import { ClockIcon } from "@heroicons/react/20/solid";
+import {
+  CheckCircleIcon,
+  ExclamationTriangleIcon,
+  CubeIcon,
+  CubeTransparentIcon,
+} from "@heroicons/react/24/outline";
+import { AcademicCapIcon, BriefcaseIcon } from "@heroicons/react/24/solid";
 import classNames from "classnames";
 import { motion } from "framer-motion";
 import React, { useState } from "react";
@@ -14,21 +21,31 @@ const tiers = [
     name: "Starter",
     id: "tier-starter",
     href: "#",
-    price: { monthly: "$12", annually: "$120" },
+    price: { monthly: "$??", annually: "$??" },
     description: "Everything you need to get started with your project.",
-    features: ["Feature 1", "Feature 2", "Feature 3", "Feature 4"],
+    features: [],
     featured: false,
     cta: "Purchase",
+
+    iconBg: "bg-noops-200",
+    iconBorder: "border-noops-300",
+    iconColor: "text-noops-600",
+    Icon: CubeTransparentIcon,
   },
   {
-    name: "Scale",
-    id: "tier-scale",
+    name: "Standard",
+    id: "tier-standard",
     href: "#",
-    price: { monthly: "$25", annually: "$250" },
+    price: { monthly: "$??", annually: "$??" },
     description: "Everything you need to scale your project to the next level.",
-    features: ["Feature 1", "Feature 2", "Feature 3", "Feature 4", "Feature 5"],
+    features: [],
     featured: false,
     cta: "Purchase",
+
+    iconBg: "bg-noops-200",
+    iconBorder: "border-noops-300",
+    iconColor: "text-noops-600",
+    Icon: CubeIcon,
   },
   {
     name: "Enterprise",
@@ -36,16 +53,14 @@ const tiers = [
     href: "#",
     price: "Get in touch",
     description: "Got a large team? We can help you scale your project.",
-    features: [
-      "Feature 1",
-      "Feature 2",
-      "Feature 3",
-      "Feature 4",
-      "Feature 5",
-      "Feature 6",
-    ],
+    features: [],
     featured: true,
     cta: "Contact",
+
+    iconBg: "bg-slate-800",
+    iconBorder: "border-slate-400",
+    iconColor: "text-slate-400",
+    Icon: BriefcaseIcon,
   },
 ];
 
@@ -88,7 +103,7 @@ const Pricing = () => {
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <div className="relative">
-          <div className="mx-auto max-w-4xl text-center">
+          <div className="mx-auto max-w-5xl text-center">
             <h2 className="text-base font-semibold leading-7 text-noops-600">
               Pricing
             </h2>
@@ -96,45 +111,17 @@ const Pricing = () => {
               Transparent Pricing that Scales with You
             </p>
           </div>
-          <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-slate-600">
-            We offer a range of pricing options that cater to individual
-            developers and enterprises of all sizes.
-          </p>
-          <div className="mt-16 flex justify-center">
-            <RadioGroup
-              value={frequency}
-              onChange={setFrequency}
-              className="grid grid-cols-2 gap-x-1 rounded-full p-1 text-center text-xs font-semibold leading-5 ring-1 ring-inset ring-slate-200"
-            >
-              <RadioGroup.Label className="sr-only">
-                Payment frequency
-              </RadioGroup.Label>
-              {frequencies.map((option) => (
-                <RadioGroup.Option
-                  key={option.value}
-                  value={option}
-                  className={({ checked }) =>
-                    classNames(
-                      checked ? "text-white" : "text-slate-500",
-                      "relative cursor-pointer rounded-full px-2.5 py-1 transition"
-                    )
-                  }
-                >
-                  {({ checked }) => (
-                    <>
-                      {checked && (
-                        <motion.div
-                          className="absolute inset-0 rounded-full bg-noops-600"
-                          layoutId="checked_bg"
-                        />
-                      )}
-                      <span className="relative">{option.label}</span>
-                    </>
-                  )}
-                </RadioGroup.Option>
-              ))}
-            </RadioGroup>
+
+          <div className="mx-auto mt-6 flex max-w-2xl items-center gap-x-2 rounded-xl border border-yellow-500/30 bg-yellow-600 bg-opacity-10 p-4 text-yellow-800">
+            <div className="flex-initial">
+              <ExclamationTriangleIcon className="h-14 w-14 " />
+            </div>
+            <div className="flex-1 sm:text-lg">
+              We haven't quite figured out our pricing model yet, but it will
+              probably look something like this
+            </div>
           </div>
+
           <div className="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
             {tiers.map((tier) => (
               <div
@@ -146,7 +133,7 @@ const Pricing = () => {
                   "rounded-3xl border p-8 xl:p-10"
                 )}
               >
-                <p className="mb-6 flex items-baseline gap-x-1 font-mono">
+                {/* <p className="mb-6 flex items-baseline gap-x-1 font-mono">
                   <span
                     className={classNames(
                       tier.featured ? "text-white" : "text-slate-800",
@@ -167,17 +154,32 @@ const Pricing = () => {
                       {frequency.priceSuffix}
                     </span>
                   ) : null}
-                </p>
+                </p> */}
 
                 <h3
                   id={tier.id}
                   className={classNames(
                     tier.featured ? "text-white" : "text-slate-800",
-                    "text-lg font-semibold leading-8"
+                    "text-2xl font-semibold leading-8"
                   )}
                 >
                   {tier.name}
                 </h3>
+
+                <div
+                  className={classNames(
+                    tier.iconBg,
+                    tier.iconBorder,
+                    "my-3 flex items-center justify-center rounded-xl border border-opacity-20 bg-opacity-60 p-4"
+                  )}
+                >
+                  <tier.Icon
+                    className={classNames(
+                      tier.iconColor,
+                      "h-1/2 w-1/2 text-opacity-30"
+                    )}
+                  />
+                </div>
 
                 <p
                   className={classNames(
@@ -187,7 +189,7 @@ const Pricing = () => {
                 >
                   {tier.description}
                 </p>
-                <a
+                {/* <a
                   href={tier.href}
                   aria-describedby={tier.id}
                   className={classNames(
@@ -198,8 +200,8 @@ const Pricing = () => {
                   )}
                 >
                   {tier.cta}
-                </a>
-                <ul
+                </a> */}
+                {/* <ul
                   role="list"
                   className={classNames(
                     tier.featured ? "text-slate-300" : "text-slate-600",
@@ -218,7 +220,7 @@ const Pricing = () => {
                       {feature}
                     </li>
                   ))}
-                </ul>
+                </ul> */}
               </div>
             ))}
           </div>

@@ -73,15 +73,8 @@ const SEHero = () => {
                   Write{" "}
                 </span>
                 <span className="bg-gradient-to-br from-noops-400  to-noops-700 bg-clip-text text-transparent">
-                  your code,{" "}
+                  your code, your way.
                 </span>{" "}
-                <br className="hidden sm:block" />
-                <span className="bg-gradient-to-br from-noops-400  to-noops-700 bg-clip-text text-transparent">
-                  your way
-                </span>
-                <span className="bg-gradient-to-t from-noops-50 to-noops-100 bg-clip-text text-transparent">
-                  , we'll handle the rest
-                </span>
               </h1>
               <p className="my-4 font-medium text-slate-300">
                 Noops is a platform for developers and engineers to build and
