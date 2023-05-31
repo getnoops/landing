@@ -27,41 +27,6 @@ const features = [
   },
 ];
 
-const ScrollAnimation = () => {
-  const { scrollYProgress } = useScroll();
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0.5, 1], [1, 1.5]);
-
-  return (
-    <div className="relative flex h-screen items-center justify-center bg-black">
-      <motion.div
-        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform text-4xl text-white"
-        style={{
-          opacity,
-          scale,
-        }}
-      >
-        <motion.div
-          className="rounded-md bg-white p-6"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-        >
-          No...
-        </motion.div>
-        <motion.div
-          className="mt-6 rounded-md bg-black p-6 text-white"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-        >
-          Surprises!
-        </motion.div>
-      </motion.div>
-    </div>
-  );
-};
-
 const SoftwareEngineer = () => {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -75,6 +40,9 @@ const SoftwareEngineer = () => {
   const noScale = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
   const noPosition = useTransform(scrollYProgress, (pos) =>
     pos < 0.5 ? "fixed" : "relative"
+  );
+  const surBottom = useTransform(scrollYProgress, (pos) =>
+    pos < 0.5 ? "-100%" : "50%"
   );
   const surPosition = useTransform(scrollYProgress, (pos) =>
     pos > 0.5 && pos < 1 ? "fixed" : "relative"
@@ -139,19 +107,23 @@ const SoftwareEngineer = () => {
       >
         <motion.h1
           style={{ bottom: noBottom, scale: noScale, position: noPosition }}
-          className="inset-x-0 text-center text-8xl font-black tracking-wide text-white"
+          className="inset-x-0 text-center text-6xl font-black tracking-wide text-white sm:text-8xl"
         >
           No
         </motion.h1>
         <motion.h1
-          style={{ position: surPosition, opacity: surOpacity }}
-          className="inset-x-0 bottom-1/2 text-center text-8xl font-black tracking-wide text-noops-1000"
+          style={{
+            position: surPosition,
+            opacity: surOpacity,
+            bottom: surBottom,
+          }}
+          className="inset-x-0  text-center text-6xl font-black tracking-wide text-noops-1000 sm:text-8xl"
         >
           Surprises!
         </motion.h1>
       </motion.div>
 
-      <div className="relative bg-white">
+      <div className="relative mb-28 bg-white">
         {/* <div className="absolute top-3/4 aspect-square w-1/3 -translate-y-1/2 rounded-full bg-noops-300/30 blur-3xl"></div> */}
         <div className="absolute inset-0 bg-gradient-to-tr from-noops-300/50 via-transparent to-noops-300/50 blur-3xl"></div>
         <div className="relative px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
@@ -197,7 +169,7 @@ const SoftwareEngineer = () => {
 
             <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-noops-300">
               Bond is our open source interfacing schema that allows us to
-              connect to your application and deploy it automatically.
+              connect to your application to deploy and scale it automatically.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
@@ -211,7 +183,7 @@ const SoftwareEngineer = () => {
         </div>
       </div>
 
-      <div className="mx-auto max-w-7xl pb-14">
+      <div className="mx-auto max-w-7xl px-2 pb-14">
         <div className="relative">
           <div className="absolute inset-0 rounded-xl bg-opacity-30 bg-gradient-to-br from-noops-300/50 via-transparent to-noops-400/50 blur-xl"></div>
           <div className="relative mt-24 rounded-xl border border-noops-400/30 bg-noops-300/10 p-4 backdrop-blur-lg">

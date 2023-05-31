@@ -63,31 +63,32 @@ const SEHero = () => {
           <StarryBackground />
         </div>
         <div className="relative z-10 mx-auto max-w-9xl px-2 lg:px-8">
-          <div className="items-center gap-x-8 sm:flex">
-            <div className="flex-1">
-              <h3 className="mb-2 text-sm font-medium uppercase text-noops-100">
+          <div className="items-center gap-8 xl:flex">
+            <div className="mb-8 flex-1">
+              <h3 className="mb-2 text-center text-sm font-medium uppercase text-noops-100 xl:text-left">
                 SOFTWARE ENGINEERS
               </h3>
-              <h1 className="text-4xl font-semibold tracking-tight text-slate-800 sm:text-6xl md:leading-[4rem]">
+              <h1 className="text-center text-4xl font-semibold tracking-tight text-slate-800 sm:text-6xl md:leading-[4rem] xl:text-left">
                 <span className="bg-gradient-to-t from-noops-50 to-noops-100 bg-clip-text text-transparent ">
                   Write{" "}
                 </span>
                 <span className="bg-gradient-to-br from-noops-400  to-noops-700 bg-clip-text text-transparent">
-                  your code, your way.
+                  <i>your code, your way. </i>
                 </span>{" "}
               </h1>
-              <p className="my-4 font-medium text-slate-300">
-                Noops is a platform for developers and engineers to build and
-                deploy their applications. We provide the infrastructure and
-                tools to build your applications, so you can focus on what
-                matters most.
+              <p className="my-4 text-center text-noops-200  xl:text-left">
+                NoOps is a platform for developers and engineers to deploy their
+                applications without having to stress about the underlying
+                infrastructure. We provide the infrastructure and tools to build
+                and monitor your applications, so you can focus on what matters
+                most.
               </p>
             </div>
 
-            <div className="relative flex flex-1 justify-center">
+            <div className="max-w-1/2 relative flex flex-1 justify-center overflow-clip ">
               <div className="absolute inset-0 rounded-xl border-2 border-noops-500 bg-noops-600 bg-opacity-5 blur-3xl"></div>
               <div className="absolute inset-0 rounded-xl bg-gradient-to-tr from-noops-300/10 via-transparent to-noops-400/10  blur-2xl"></div>
-              <div className="relative w-full max-w-3xl overflow-clip rounded-xl border border-slate-600/10 bg-slate-900 bg-opacity-30 p-4">
+              <div className="relative w-full overflow-clip rounded-xl border border-slate-600/10 bg-slate-900 bg-opacity-30 p-4 ">
                 <div className="flex gap-x-2">
                   <div className="h-3 w-3 rounded-full border border-slate-700"></div>
                   <div className="h-3 w-3 rounded-full border border-slate-700"></div>
