@@ -74,6 +74,23 @@ const FAQ = () => {
             ))}
           </dl>
         </div>
+
+        <div className="relative">
+          <div className="absolute inset-0 rounded-xl bg-opacity-30 bg-gradient-to-br from-noops-300/50 via-transparent to-noops-400/50 blur-xl"></div>
+          <div className="relative mt-24 rounded-xl border border-noops-400/30 bg-noops-300/10 p-4 backdrop-blur-lg">
+            <h5 className="mb-2 text-center text-2xl font-medium leading-10 text-noops-950">
+              Want to know more?
+            </h5>
+            <p className="text-center font-medium text-noops-900">
+              If you have any questions about NoOps, or would like to learn more
+              about how it can help your business, please send an email to{" "}
+              <br />
+              <span className="mx-auto mt-1 block w-fit select-all font-semibold">
+                sam@getnoops.com
+              </span>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );
