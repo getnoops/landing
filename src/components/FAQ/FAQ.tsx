@@ -83,7 +83,7 @@ const FAQ = () => {
             </h5>
             <p className="text-center font-medium text-noops-900">
               If you have any questions about NoOps, or would like to learn more
-              about how it can help your business, please send an email to{" "}
+              about how we can help your business, please send an email to{" "}
               <br />
               <span className="mx-auto mt-1 block w-fit select-all font-semibold">
                 sam@getnoops.com
