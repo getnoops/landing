@@ -10,3 +10,4 @@ export { Skeptic } from "./Skeptic";
 export { RoleSelect } from "./RoleSelect";
 export { Hero } from "./Hero";
 export { Body } from "./Body";
+export { SEHero } from "./SEHero";

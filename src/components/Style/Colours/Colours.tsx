@@ -373,6 +373,20 @@ const Colours = () => {
               </h4>
             </div>
           </div>
+          <div className="flex h-36 flex-col justify-between rounded-lg bg-noops-1000 p-4 shadow">
+            <div>
+              <h2 className="text-xl font-semibold tracking-wide text-noops-50">
+                1000
+              </h2>
+              <p className="text-sm font-medium text-noops-50 opacity-90"></p>
+            </div>
+            <div>
+              <h4 className="text-md text-noops-50 opacity-80">noops-1000</h4>
+              <h4 className="text-md select-all uppercase text-noops-50 opacity-80">
+                #0b0217
+              </h4>
+            </div>
+          </div>
         </div>
 
         <div className="my-4 rounded-lg border border-slate-100 bg-slate-50 p-4">

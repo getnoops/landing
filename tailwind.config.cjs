@@ -36,6 +36,7 @@ module.exports = {
         "noops-800": "#5821a6",
         "noops-900": "#471c87",
         "noops-950": "#2a075f",
+        "noops-1000": "#0b0217",
         accent: "#b980fa",
       },
       spacing: {

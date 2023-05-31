@@ -1,80 +1,127 @@
 import React from "react";
+import { SparklesIcon, TruckIcon, ClockIcon } from "@heroicons/react/24/solid";
+import {
+  motion,
+  useViewportScroll,
+  useTransform,
+  useScroll,
+} from "framer-motion";
+import { SEHero } from "../components";
 
-const StarryBackground: React.FC = () => {
-  const stars = Array.from({ length: 100 }, () => ({
-    cx: `${Math.random() * 100}%`,
-    cy: `${Math.random() * 100}%`,
-    r: Math.random(),
-  }));
+const features = [
+  {
+    name: "Stop Delays",
+    description:
+      "Eliminate Delays and hit your deadlines with our streamlined solutions.",
+    href: "#",
+    icon: ClockIcon,
+  },
+  {
+    name: "Focus on Core Delivery",
+    description:
+      "Don't waste time perfecting your deployment process, perfect your code instead. We'll handle it.",
+    href: "#",
+    icon: TruckIcon,
+  },
+  {
+    name: "Simple & Intuitive",
+    description:
+      "Inefficiency can hinder productivity. We've crafted our platform to be remarkably simple and intuitive, maximising your output.",
+    href: "#",
+    icon: SparklesIcon,
+  },
+];
+
+const ScrollAnimation = () => {
+  const { scrollYProgress } = useScroll();
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0.5, 1], [1, 1.5]);
 
   return (
-    <svg
-      className="h-full w-full object-cover"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <rect width="100%" height="100%" fill="transparent" />
-      <g fill="white">
-        {stars.map((star, i) => (
-          <circle
-            className="animate-twinkle"
-            key={i}
-            cx={star.cx}
-            cy={star.cy}
-            r={star.r}
-            style={{
-              animationDuration: `${Math.random() * 2 + 1}s`,
-              animationDelay: `${Math.random() * 2}s`,
-            }}
-          />
-        ))}
-      </g>
-    </svg>
+    <div className="relative flex h-screen items-center justify-center bg-black">
+      <motion.div
+        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform text-4xl text-white"
+        style={{
+          opacity,
+          scale,
+        }}
+      >
+        <motion.div
+          className="rounded-md bg-white p-6"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          No...
+        </motion.div>
+        <motion.div
+          className="mt-6 rounded-md bg-black p-6 text-white"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          Surprises!
+        </motion.div>
+      </motion.div>
+    </div>
   );
 };
 
 const SoftwareEngineer = () => {
   return (
-    <div className="relative  bg-[#1f252a]">
-      <div className="relative py-36">
-        <div className="absolute inset-0 z-10">
-          <StarryBackground />
-        </div>
-        <div className="relative z-10 mx-auto max-w-9xl px-2 lg:px-8">
-          <div className="flex items-center">
-            <div className="flex-1">
-              <h3 className="mb-2 text-sm font-medium uppercase text-noops-100">
-                SOFTWARE ENGINEERS
-              </h3>
-              <h1 className="text-4xl font-semibold tracking-tight text-slate-800 sm:text-6xl md:leading-[4rem]">
-                <span className="bg-gradient-to-t from-noops-50 to-noops-100 bg-clip-text text-transparent ">
-                  Focus on{" "}
-                </span>
-                <span className="bg-gradient-to-br from-noops-400  to-noops-700 bg-clip-text text-transparent">
-                  your product,{" "}
-                </span>{" "}
-                <br className="hidden sm:block" />
-                <span className="bg-gradient-to-t from-noops-50 to-noops-100 bg-clip-text text-transparent">
-                  not{" "}
-                </span>
-                <span className="bg-gradient-to-br from-noops-400  to-noops-700 bg-clip-text text-transparent">
-                  your infrastructure
-                </span>
-              </h1>
-              <p className="my-4 font-medium text-slate-300">
-                NoOps allows you to focus on your product, not your
-                infrastructure. NoOps is a platform that allows you to deploy
-                your code to the cloud without having to worry about the
-                underlying infrastructure.
-              </p>
-            </div>
-            <div className="flex flex-1 justify-center">
-              <div className="h-96 w-96 overflow-clip  break-words bg-gradient-radial from-noops-500 via-[#1f252a] via-70% to-[#1f252a] bg-clip-text text-5xl font-bold text-transparent">
-                10010100101000101001010100101001010001010010101001010010100010100101010010100101000101001010100101001010001010010101001010010100010100101010010100101000101001010100101001010001010010101001010010100010100101010010100101000101001010
-              </div>
-            </div>
+    <div>
+      {/* Hero */}
+      <SEHero />
+
+      <div className="h-72 bg-gradient-to-b from-noops-1000 to-slate-950"></div>
+
+      {/* content */}
+      <div className="bg-slate-950 pb-24 sm:pb-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl lg:text-center">
+            <h2 className="text-base font-semibold leading-7 text-noops-400">
+              The NoOps Platform
+            </h2>
+            <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+              Why NoOps?
+            </p>
+            <p className="mt-6 text-lg leading-8 text-slate-300">
+              Stop wasting time on DevOps and prioritize what sets your product
+              apart. Leave the complexity of operations management to us, so you
+              can focus on what you do best.
+            </p>
+          </div>
+          <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+            <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
+              {features.map((feature) => (
+                <div key={feature.name} className="flex flex-col">
+                  <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-white">
+                    <feature.icon
+                      className="h-5 w-5 flex-none text-noops-400"
+                      aria-hidden="true"
+                    />
+                    {feature.name}
+                  </dt>
+                  <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-slate-300">
+                    <p className="flex-auto">{feature.description}</p>
+                    {/* <p className="mt-6">
+                      <a
+                        href={feature.href}
+                        className="text-sm font-semibold leading-6 text-noops-400"
+                      >
+                        Learn more <span aria-hidden="true">→</span>
+                      </a>
+                    </p> */}
+                  </dd>
+                </div>
+              ))}
+            </dl>
           </div>
         </div>
       </div>
+
+      {/* NO SURPRISES ANIMATION */}
+      <ScrollAnimation />
     </div>
   );
 };
