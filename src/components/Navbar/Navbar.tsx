@@ -165,13 +165,13 @@ const Navbar = () => {
               {/* <div className="absolute -bottom-1/2 -right-1/4 select-none rounded-full bg-noops-200 px-3 text-sm text-noops-500 opacity-70">
                 alpha
               </div> */}
-              <a aria-label="Home" href="/" className="relative">
+              <Link aria-label="Home" to="/" className="relative">
                 <img
                   src="/logo_smile.svg"
                   alt="Logo"
                   className="ml-3 mt-0.5 h-6 w-auto "
                 />
-              </a>
+              </Link>
             </div>
           </div>
           <div className="hidden flex-grow justify-center md:flex md:gap-x-3 lg:gap-x-6">

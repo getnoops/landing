@@ -43,6 +43,11 @@ module.exports = {
         128: "32rem",
         144: "36rem",
       },
+      maxWidth: {
+        "8xl": "88rem" /* 1408px */,
+        "9xl": "96rem" /* 1536px */,
+        "10xl": "104rem" /* 1664px */,
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
       },
