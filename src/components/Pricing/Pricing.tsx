@@ -64,17 +64,16 @@ const tiers = [
   },
 ];
 
-const Pricing = () => {
+interface PricingProps {
+  title: string;
+  subtitle: string;
+}
+
+const Pricing = ({ title, subtitle }: PricingProps) => {
   const [frequency, setFrequency] = useState(frequencies[0]);
 
   return (
     <div className="relative overflow-hidden bg-white py-24 sm:py-32">
-      {/* <img
-        draggable={false}
-        className="absolute inset-0  h-full w-full object-cover object-left-top"
-        src="/images/background2.png"
-        alt=""
-      /> */}
       <div
         className="absolute inset-0 transform-gpu blur-3xl"
         aria-hidden="true"
@@ -105,14 +104,14 @@ const Pricing = () => {
         <div className="relative">
           <div className="mx-auto max-w-5xl text-center">
             <h2 className="text-base font-semibold leading-7 text-noops-600">
-              Pricing
+              {subtitle}
             </h2>
             <p className="mt-2 text-4xl font-bold tracking-tight text-slate-800 sm:text-5xl">
-              Transparent Pricing that Scales with You
+              {title}
             </p>
           </div>
 
-          <div className="mx-auto mt-6 flex max-w-2xl items-center gap-x-2 rounded-xl border border-yellow-500/30 bg-yellow-600 bg-opacity-10 p-4 text-yellow-800">
+          <div className="mx-auto mt-6 flex max-w-2xl items-center gap-x-2 rounded-xl border border-noops-500/30 bg-noops-600 bg-opacity-10 p-4 text-noops-800">
             <div className="flex-initial">
               <ExclamationTriangleIcon className="h-14 w-14 " />
             </div>

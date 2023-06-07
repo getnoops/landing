@@ -16,6 +16,7 @@
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    typography: require("./typography.cjs"),
     extend: {
       colors: {
         "cloud-blue": "#379AE9",
@@ -64,7 +65,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-  ],
+  plugins: [require("@tailwindcss/typography")],
 };

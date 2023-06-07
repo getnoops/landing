@@ -88,7 +88,14 @@ const DisplayFile = (name: string) => {
   }
 };
 
-const Skeptic = () => {
+interface SkepticProps {
+  title: string;
+  description: string;
+  prompt: string;
+  cta: string;
+}
+
+const Skeptic = ({ title, description, prompt, cta }: SkepticProps) => {
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
 
   return (
@@ -143,22 +150,12 @@ const Skeptic = () => {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto lg:mx-0">
           <h1 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Still Skeptic?
+            {title}
           </h1>
-          <p className="mt-6 text-xl leading-8 text-noops-200">
-            At Context Cloud, we don't just provide NoOps solutions, we live and
-            breathe it. That's why we trust our own NoOps platform to manage and
-            deploy all of our products with ease and efficiency.
+          <p className="whitespace- mt-6 text-xl leading-8 text-noops-200">
+            {description}
           </p>
-          <p className="mt-6 text-xl leading-8 text-noops-200">
-            Thats right, we use our own NoOps platform to host the very site you
-            are using right now, as well as the NoOps Portal and NoOps
-            Documentation Site. This way, you can be assured that we stand
-            behind our product and use it ourselves for all our offerings.
-          </p>
-          <p className="mt-6 text-2xl leading-8 text-noops-300">
-            Don't believe us? Here are all our Bond descriptor files for NoOps:
-          </p>
+          <p className="mt-6 text-2xl leading-8 text-noops-300">{prompt}</p>
         </div>
         <div className="mt-12 w-full rounded-xl bg-slate-800 p-2 text-noops-100">
           <div className="flex sm:text-lg">
@@ -208,7 +205,7 @@ const Skeptic = () => {
         </div>
         <div className="mt-8 flex justify-center">
           <button className="rounded-full bg-noops-600 px-6 py-1.5  font-semibold  text-white shadow-xl transition hover:bg-noops-700">
-            Learn more about Bond
+            {cta}
           </button>
         </div>
       </div>

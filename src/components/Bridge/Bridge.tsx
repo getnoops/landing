@@ -108,23 +108,21 @@ const technologies = [
 
 // - mt because we want to move the section up as there is a transition gradient element above this one that we want to go over.
 
-const Bridge = () => {
+interface BridgeProps {
+  title?: string;
+  description?: string;
+}
+
+const Bridge = ({ title, description }: BridgeProps) => {
   return (
     <section className="relative -mt-[40rem] px-6 py-24 sm:py-32 md:-mt-144 lg:px-8">
       <div className="mx-auto max-w-5xl text-center">
         <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
           <span className="bg-gradient-to-t from-slate-600 to-slate-900 bg-clip-text text-transparent">
-            The Bridge
+            {title}
           </span>
         </h2>
-        <p className="mt-6 text-lg leading-8 text-gray-600">
-          NoOps acts as a bridge between your application and end-users by
-          automating your infrastructure and ensuring your application runs
-          <span className="font-medium italic text-noops-600"> smoothly </span>
-          and
-          <span className="font-medium italic text-noops-600"> securely</span>,
-          without the need for a dedicated operations team.
-        </p>
+        <p className="mt-6 text-lg leading-8 text-gray-600">{description}</p>
 
         <div>
           <div className="mt-10 flex items-center justify-center text-white">

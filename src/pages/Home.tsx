@@ -1,54 +1,68 @@
-import { motion } from "framer-motion";
-import { useState } from "react";
 import {
   Bridge,
   CTA,
   FAQ,
   Features,
   Hero,
-  Navbar,
   Pricing,
-  RoleSelect,
   Skeptic,
   Steps,
 } from "../components";
+import HomeContent from "../content/Home";
 
 function App() {
+  const { hero, bridge, steps, features, pricing, skeptic, faqs, cta } =
+    HomeContent;
+
   return (
     <div className="relative">
-      {/* solutions animation scuffed */}
-
       <main className="relative">
         {/* Hero */}
         {/* animation idea cycle between different products e.g. focus on your... app, website, tooling then land on product */}
-        <Hero />
+        <Hero description={hero.description} />
 
         {/* change images */}
-        <Bridge />
+        <Bridge title={bridge.title} description={bridge.description} />
 
         {/* Relevant Page */}
         {/* <RoleSelect /> */}
+        <Steps
+          title={steps.title}
+          description={steps.description}
+          steps={steps.steps}
+        />
 
-        <Steps />
-
-        <Features />
+        <Features
+          title={features.title}
+          subtitle={features.subtitle}
+          description={features.description}
+          features={features.features}
+        />
 
         {/* Testimonials */}
 
         {/* Heard enough? CTA in the middle of the flow? */}
 
-        {/* Pricing: need to add a */}
-        <Pricing />
+        <Pricing title={pricing.title} subtitle={pricing.subtitle} />
 
-        <Skeptic />
+        <Skeptic
+          title={skeptic.title}
+          description={skeptic.description}
+          prompt={skeptic.prompt}
+          cta={skeptic.cta}
+        />
 
         {/* FAQ? */}
-        <FAQ />
+        <FAQ
+          title={faqs.title}
+          description={faqs.description}
+          faqs={faqs.faqs}
+        />
 
         {/* CTA */}
-        <CTA />
+        <CTA line1={cta.line1} line2={cta.line2} cta={cta.cta} />
 
-        {/* Need a footer */}
+        {/* Need a footer? */}
       </main>
     </div>
   );

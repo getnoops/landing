@@ -1,75 +1,36 @@
-import React from "react";
-import {
-  ArrowPathIcon,
-  BeakerIcon,
-  CloudArrowUpIcon,
-  Cog6ToothIcon,
-  FingerPrintIcon,
-  LockClosedIcon,
-  ServerIcon,
-} from "@heroicons/react/20/solid";
-import {
-  ClockIcon,
-  CloudIcon,
-  CodeBracketSquareIcon,
-  GlobeAltIcon,
-} from "@heroicons/react/24/solid";
+interface Feature {
+  name: string;
+  description: string;
+  icon: any;
+}
 
-const features = [
-  {
-    name: "Push to deploy.",
-    description:
-      "Automatically deploy changes to your application as soon as they are ready, with no downtime and no manual intervention required.",
-    icon: CloudArrowUpIcon,
-  },
-  {
-    name: "Advanced security.",
-    description:
-      "Protect your application and data with modern industry security standards.",
-    icon: FingerPrintIcon,
-  },
-  {
-    name: "24/7 monitoring and alerting.",
-    description:
-      "Monitor your application's performance and health around the clock, with real-time alerts and notifications to keep you informed.",
-    icon: ClockIcon,
-  },
-  {
-    name: "Automated backups and disaster recovery.",
-    description:
-      "Protect your data and ensure business continuity with automated backups and disaster recovery features.",
-    icon: ServerIcon,
-  },
-  {
-    name: "Automated testing and quality assurance.",
-    description:
-      "Ensure code quality and prevent issues with automated testing and quality assurance features, including unit tests and integration tests.",
-    icon: BeakerIcon,
-  },
-  {
-    name: "Multi-region deployment.",
-    description:
-      " Deploy your application to multiple regions and data centers around the world, for increased availability and reduced latency.",
-    icon: GlobeAltIcon,
-  },
-];
+interface FeaturesProps {
+  title: string;
+  subtitle: string;
+  description: string;
+  features: Feature[];
+}
 
-const Features = () => {
+const Features = ({
+  title,
+  description,
+  features,
+  subtitle,
+}: FeaturesProps) => {
   return (
     <div className="relative overflow-hidden bg-gray-900 py-24 sm:py-32">
       <div className="relative">
         <div className="pointer-events-none absolute inset-y-0 w-full rounded-full bg-gradient-to-r from-noops-900  to-noops-900 opacity-20 blur-3xl"></div>
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl sm:text-center">
-            <h2 className="text-base font-semibold leading-7 text-noops-400">
-              What about Ops?
+            <h4 className="text-base font-semibold leading-7 text-noops-400">
+              {subtitle}
+            </h4>
+            <h2 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+              {title}
             </h2>
-            <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Painless Operations Management
-            </p>
             <p className="mt-6 text-lg leading-8 text-slate-300">
-              Gone are the days of manual infrastructure management. Rest easy
-              knowing that your infrastructure is being managed automatically
+              {description}
             </p>
           </div>
         </div>

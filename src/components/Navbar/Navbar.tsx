@@ -9,6 +9,7 @@ import {
   RectangleGroupIcon,
   SquaresPlusIcon,
 } from "@heroicons/react/20/solid";
+import { CodeBracketIcon, ServerStackIcon } from "@heroicons/react/24/solid";
 import classNames from "classnames";
 import { AnimatePresence, motion } from "framer-motion";
 import React, { Fragment, useEffect, useRef, useState } from "react";
@@ -33,7 +34,7 @@ const nav = [
         description:
           "Responsible for DevOps environments used by developers and engineers",
         href: "#",
-        icon: CursorArrowRaysIcon,
+        icon: ServerStackIcon,
         start: "from-pink-500",
         end: "to-purple-800",
       },
@@ -42,7 +43,7 @@ const nav = [
         description:
           "Responsible for building, maintaining, and delivering software",
         href: "/solutions/software-engineer",
-        icon: FingerPrintIcon,
+        icon: CodeBracketIcon,
         start: "from-amber-500",
         end: "to-orange-800",
       },

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import React from "react";
+import React, { PropsWithChildren } from "react";
 
 const StarryBackground: React.FC = () => {
   const stars = Array.from({ length: 100 }, () => ({
@@ -41,21 +41,6 @@ const Hero = ({ description }: HomeProps) => {
   return (
     <div className="relative  bg-[#1f252a] pt-28 sm:pt-40">
       <div className="relative py-24 sm:py-32">
-        {/* <div className="absolute inset-x-0 top-10 z-10 flex scale-y-150 transform-gpu justify-center overflow-hidden blur-xl sm:scale-y-100 sm:blur-3xl md:-top-10 lg:-top-36">
-          <motion.img
-            animate={{
-              y: [0, 23, 0, -20, -3, 13],
-              rotateZ: [0, 5, 0, -8, 0],
-              scale: [1, 1.1, 1.2, 1.05, 1, 0.8, 1],
-              transition: {
-                repeat: Infinity,
-                duration: 10,
-                repeatType: "reverse",
-              },
-            }}
-            src="/blob.svg"
-          />
-        </div> */}
         <div className="absolute inset-0 z-10">
           <StarryBackground />
         </div>

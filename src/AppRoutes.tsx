@@ -21,7 +21,6 @@ const AppRoutes = () => {
         <Routes>
           {/* App Pages */}
           <Route path="/" element={<Home />} />
-          <Route path="/homemdx" element={<HomeMDX />} />
           <Route path="/solutions/*" element={<Solutions />} />
           <Route path="/style" element={<StyleGuide />} />
           <Route path="/test" element={<Testing />} />
