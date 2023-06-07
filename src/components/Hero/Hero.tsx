@@ -33,7 +33,11 @@ const StarryBackground: React.FC = () => {
   );
 };
 
-const Hero = () => {
+interface HomeProps {
+  description?: string;
+}
+
+const Hero = ({ description }: HomeProps) => {
   return (
     <div className="relative  bg-[#1f252a] pt-28 sm:pt-40">
       <div className="relative py-24 sm:py-32">
@@ -73,9 +77,7 @@ const Hero = () => {
               </span>
             </h1>
             <p className="mt-6 text-lg leading-8 text-noops-100">
-              NoOps allows you to stop worrying about the complexities of
-              infrastructure management so you can focus on creating a product
-              that truly stands out.
+              {description}
             </p>
 
             <div className="mt-10 flex items-center justify-center gap-x-6">

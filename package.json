@@ -11,6 +11,8 @@
   "dependencies": {
     "@headlessui/react": "^1.7.12",
     "@heroicons/react": "^2.0.16",
+    "@mdx-js/react": "^2.3.0",
+    "@mdx-js/rollup": "^2.3.0",
     "classnames": "^2.3.2",
     "framer-motion": "^10.0.1",
     "prism-react-renderer": "^2.0.4",
@@ -19,6 +21,8 @@
     "react-router-dom": "^6.8.2"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.9",
+    "@types/mdx": "^2.0.5",
     "@types/node": "^18.14.2",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
