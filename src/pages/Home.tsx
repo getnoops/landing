@@ -47,7 +47,6 @@ function App() {
 
         <Skeptic
           title={skeptic.title}
-          description={skeptic.description}
           prompt={skeptic.prompt}
           cta={skeptic.cta}
         />

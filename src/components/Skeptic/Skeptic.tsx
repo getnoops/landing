@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { AnimatePresence, motion } from "framer-motion";
-import React, { useState } from "react";
+import { useState } from "react";
 
 const tabs = [
   {
@@ -90,7 +90,7 @@ const DisplayFile = (name: string) => {
 
 interface SkepticProps {
   title: string;
-  description: string;
+  description?: string;
   prompt: string;
   cta: string;
 }
@@ -153,7 +153,11 @@ const Skeptic = ({ title, description, prompt, cta }: SkepticProps) => {
             {title}
           </h1>
           <p className="whitespace- mt-6 text-xl leading-8 text-noops-200">
-            {description}
+            {/* {description} */}
+            We don't just provide NoOps solutions, we live and breathe it.
+            <br />
+            That's why we trust our own NoOps platform to manage and deploy all
+            of our products with ease and efficiency.
           </p>
           <p className="mt-6 text-2xl leading-8 text-noops-300">{prompt}</p>
         </div>

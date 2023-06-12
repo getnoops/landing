@@ -1,10 +1,10 @@
 import {
+  BeakerIcon,
+  ClockIcon,
   CloudArrowUpIcon,
   FingerPrintIcon,
-  ClockIcon,
-  ServerIcon,
-  BeakerIcon,
   GlobeAltIcon,
+  ServerIcon,
 } from "@heroicons/react/20/solid";
 
 const HomeContent = {
@@ -32,16 +32,16 @@ const HomeContent = {
           "Write your code however you want, using whatever tools you want. NoOps is flexible and will fit into your workflow.",
       },
       {
-        title: "Configure your Descriptor File",
+        title: "Configure your Stack File",
         subject: "Describe",
         description:
-          "Create a descriptor file using our Open Source Data Schema, Bond. This file will be used to configure your product and its infrastructure.",
+          "Create a stack file which will be used to configure your product and its infrastructure.",
         cta: (
           <a
             href="#"
             className="block w-fit text-noops-400 transition hover:text-noops-500"
           >
-            Learn more about Bond {"→"}
+            Learn more about stack files {"→"}
           </a>
         ),
       },
@@ -86,9 +86,9 @@ const HomeContent = {
         icon: ServerIcon,
       },
       {
-        name: "Automated testing and quality assurance.",
+        name: "Full stack automation",
         description:
-          "Ensure code quality and prevent issues with automated testing and quality assurance features, including unit tests and integration tests.",
+          "Frontend, backend and data are all handled by our team at NoOps.",
         icon: BeakerIcon,
       },
       {
@@ -101,19 +101,15 @@ const HomeContent = {
   },
 
   pricing: {
-    title: "Transparent Pricing that Scales with You",
+    title: "Simple pricing model that works for you",
     subtitle: "Pricing",
   },
 
   skeptic: {
-    title: "Still Skeptic?",
-    description: `At Context Cloud, we don't just provide NoOps solutions, we live and breathe it. That's why we trust our own NoOps platform to manage and deploy all of our products with ease and efficiency.
-  
-        Thats right, we use our own NoOps platform to host the very site you are using right now, as well as the NoOps Portal and NoOps Documentation Site. This way, you can be assured that we stand behind our product and use it ourselves for all our offerings.`,
+    title: "Still Unconvinced?",
 
-    prompt:
-      "Don't believe us? Here are all our Bond descriptor files for NoOps:",
-    cta: "Learn more about Bond",
+    prompt: "Here are our some of our Stack files for NoOps:",
+    cta: "Learn more",
   },
 
   faqs: {
@@ -135,9 +131,9 @@ const HomeContent = {
     faqs: [
       {
         id: 1,
-        question: "What is NoOps?",
+        question: "How does NoOps differ from DevOps?",
         answer:
-          "NoOps is a methodology that aims to eliminate the need for IT operations personnel in software development and deployment processes, by automating the process of deploying and managing applications in production.",
+          "DevOps focuses on collaboration and automation between development and operations teams, sharing responsibility for the application lifecycle, while NoOps aims to automate and abstract away operational tasks entirely, empowering developers to take full control of application deployment and management without a dedicated operations team.",
       },
       {
         id: 2,
@@ -147,10 +143,9 @@ const HomeContent = {
       },
       {
         id: 3,
-        question:
-          "What benefits does NoOps offer over traditional operations management?",
+        question: "How does NoOps impact scalability and performance?",
         answer:
-          "NoOps can help reduce the time and cost associated with deploying and managing applications, as well as improve the reliability and security of your infrastructure. It can also help improve collaboration between development and operations teams, and enable faster time-to-market for new products and features.",
+          "NoOps positively impacts scalability and performance by automating scaling processes, providing elastic infrastructure, and fostering continuous optimization. It enables rapid deployment and rollback, reduces operational overhead, and allows developers to proactively optimize resource usage, resulting in efficient scalability and improved application performance.",
       },
       {
         id: 4,
