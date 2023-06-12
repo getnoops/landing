@@ -24,7 +24,7 @@ const nav = [
         name: "CxO / Head of Application or Engineering",
         description:
           "For those that manage efficiencies and costs of a team or group",
-        href: "#",
+        href: "/solutions/cxo",
         icon: ChartPieIcon,
         start: "from-green-500",
         end: "to-noops-800",

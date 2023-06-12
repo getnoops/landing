@@ -11,3 +11,5 @@ export { RoleSelect } from "./RoleSelect";
 export { Hero } from "./Hero";
 export { Body } from "./Body";
 export { SEHero } from "./SEHero";
+export { SEFeatures } from "./SEFeatures";
+export { CxOHero } from "./CxOHero";
