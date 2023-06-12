@@ -18,14 +18,25 @@ const frequencies = [
 
 const tiers = [
   {
-    name: "Starter",
-    id: "tier-starter",
+    name: "Free Tier >",
+    id: "tier-free",
     href: "#",
     price: { monthly: "$??", annually: "$??" },
-    description: "Everything you need to get started with your project.",
-    features: [],
+    description: "A free playground to experience zero-effort deployments in your development workflow.",
+    description2: "A free playground to try our platform and its features for 30 days.",
+    description3: "Get hooked on our platform in 30 days for free.",
+    descriptionLong: "TBC",
+    features: [
+      "No commitments, no Credit Cards",
+      "Limited resource types available",
+      "Limited number of resources can be provisioned",
+      "Limited to 30 days",
+      "Not suitable for Production workloads",
+      "Full knowledge base access",
+      "Best-effort online support"
+    ],
     featured: false,
-    cta: "Purchase",
+    cta: "Start Deploying",
 
     iconBg: "bg-noops-200",
     iconBorder: "border-noops-300",
@@ -33,14 +44,42 @@ const tiers = [
     Icon: CubeTransparentIcon,
   },
   {
-    name: "Standard",
-    id: "tier-standard",
+    name: "Starter >",
+    id: "tier-starter",
     href: "#",
     price: { monthly: "$??", annually: "$??" },
-    description: "Everything you need to scale your project to the next level.",
-    features: [],
+    description: "Everything you need to run Production workloads in the Cloud. Best suited for Startups and SMBs.",
+    features: [
+      "Zero-trust security",
+      "No minimum resource commitments", 
+      "Online support via ServiceDesk",
+      "Backup/restore",
+      "DR",
+      "Access to NoOps Marketplace"
+    ],
     featured: false,
-    cta: "Purchase",
+    cta: "Sign Up",
+
+    iconBg: "bg-noops-200",
+    iconBorder: "border-noops-300",
+    iconColor: "text-noops-600",
+    Icon: CubeIcon,
+  },
+  {
+    name: "Scale-Up >",
+    id: "tier-scale",
+    href: "#",
+    price: { monthly: "$??", annually: "$??" },
+    description: "All Starter feaures plus extras, needed for larger organisations. By committing to run 20 resources monthly you get a discounted management fee.",
+    features: [
+      "SSO",
+      "Infrastructure Scheduler. Turn your infra on/off and save",
+      "Advanced cost reporting and forecasts",
+      "Multi-region environments",
+      "Sell on NoOps Marketplace"
+    ],
+    featured: false,
+    cta: "Sign Up",
 
     iconBg: "bg-noops-200",
     iconBorder: "border-noops-300",
@@ -52,9 +91,14 @@ const tiers = [
     id: "tier-enterprise",
     href: "#",
     price: "Get in touch",
-    description: "Got a large team? We can help you scale your project.",
-    features: [],
-    featured: true,
+    description: "All Scale-up features plus additional compliance and audit controls.",
+    features: [
+      "Multi-cloud features",
+      "Advanced networking (connectivity with on-prem/DC)",
+      "Advanced compliance controls and reporting",
+      "9/7 phone support"
+    ],
+    featured: false,
     cta: "Contact",
 
     iconBg: "bg-slate-800",
@@ -111,15 +155,58 @@ const Pricing = ({ title, subtitle }: PricingProps) => {
             </p>
           </div>
 
-          <div className="mx-auto mt-6 flex max-w-2xl items-center gap-x-2 rounded-xl border border-noops-500/30 bg-noops-600 bg-opacity-10 p-4 text-noops-800">
+
+          <div className="mx-auto mt-6 flex max-w-3xl items-center gap-x-2 rounded-xl border border-noops-500/30 bg-noops-600 bg-opacity-10 p-4 text-noops-800">
             <div className="flex-initial">
               <ExclamationTriangleIcon className="h-14 w-14 " />
             </div>
             <div className="flex-1 sm:text-lg">
-              We haven't quite figured out our pricing model yet, but it will
-              probably look something like this
+              Our pricing model is still Work in Progress, but it will
+              look something like this:
             </div>
           </div>
+
+          <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-slate-600">
+            We pass on the Cloud cost to you as-is. <br/>
+            We charge a small management fee on top of it and it gets cheaper as you grow.
+          </p>
+
+          {/* <div className="mt-16 flex justify-center">
+            <RadioGroup
+              value={frequency}
+              onChange={setFrequency}
+              className="grid grid-cols-2 gap-x-1 rounded-full p-1 text-center text-xs font-semibold leading-5 ring-1 ring-inset ring-slate-200"
+            >
+              <RadioGroup.Label className="sr-only">
+                Payment frequency
+              </RadioGroup.Label>
+              {frequencies.map((option) => (
+                <RadioGroup.Option
+                  key={option.value}
+                  value={option}
+                  className={({ checked }) =>
+                    classNames(
+                      checked ? "text-white" : "text-slate-500",
+                      "relative cursor-pointer rounded-full px-2.5 py-1 transition"
+                    )
+                  }
+                >
+                  {({ checked }) => (
+                    <>
+                      {checked && (
+                        <motion.div
+                          className="absolute inset-0 rounded-full bg-noops-600"
+                          layoutId="checked_bg"
+                        />
+                      )}
+                      <span className="relative">{option.label}</span>
+                    </>
+                  )}
+                </RadioGroup.Option>
+              ))}
+            </RadioGroup>
+            </div> */}
+
 
           <div className="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
             {tiers.map((tier) => (
@@ -165,7 +252,7 @@ const Pricing = ({ title, subtitle }: PricingProps) => {
                   {tier.name}
                 </h3>
 
-                <div
+                {/* <div
                   className={classNames(
                     tier.iconBg,
                     tier.iconBorder,
@@ -178,7 +265,7 @@ const Pricing = ({ title, subtitle }: PricingProps) => {
                       "h-1/2 w-1/2 text-opacity-30"
                     )}
                   />
-                </div>
+                </div> */}
 
                 <p
                   className={classNames(
@@ -188,19 +275,8 @@ const Pricing = ({ title, subtitle }: PricingProps) => {
                 >
                   {tier.description}
                 </p>
-                {/* <a
-                  href={tier.href}
-                  aria-describedby={tier.id}
-                  className={classNames(
-                    tier.featured
-                      ? "bg-white/10 text-white hover:bg-white/20 focus-visible:outline-white"
-                      : "bg-noops-500 text-white shadow-sm hover:bg-noops-400 focus-visible:outline-noops-500",
-                    "mt-6 block rounded-full px-3 py-2 text-center text-sm font-semibold leading-6 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
-                  )}
-                >
-                  {tier.cta}
-                </a> */}
-                {/* <ul
+                
+                <ul
                   role="list"
                   className={classNames(
                     tier.featured ? "text-slate-300" : "text-slate-600",
@@ -219,7 +295,21 @@ const Pricing = ({ title, subtitle }: PricingProps) => {
                       {feature}
                     </li>
                   ))}
-                </ul> */}
+                </ul> 
+
+                <a
+                  href={tier.href}
+                  aria-describedby={tier.id}
+                  className={classNames(
+                    tier.featured
+                      ? "bg-white/10 text-white hover:bg-white/20 focus-visible:outline-white"
+                      : "bg-noops-500 text-white shadow-sm hover:bg-noops-400 focus-visible:outline-noops-500",
+                    "mt-6 block rounded-full px-3 py-2 text-center text-sm font-semibold leading-6 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+                  )}
+                >
+                  {tier.cta}
+                </a> 
+
               </div>
             ))}
           </div>

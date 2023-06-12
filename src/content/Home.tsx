@@ -101,7 +101,7 @@ const HomeContent = {
   },
 
   pricing: {
-    title: "Transparent Pricing that Scales with You",
+    title: "Simple pricing model that works for you",
     subtitle: "Pricing",
   },
 
