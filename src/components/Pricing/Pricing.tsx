@@ -1,15 +1,12 @@
-import { RadioGroup } from "@headlessui/react";
-import { ClockIcon } from "@heroicons/react/20/solid";
 import {
-  CheckCircleIcon,
-  ExclamationTriangleIcon,
   CubeIcon,
   CubeTransparentIcon,
+  ExclamationTriangleIcon,
+  Squares2X2Icon,
 } from "@heroicons/react/24/outline";
-import { AcademicCapIcon, BriefcaseIcon } from "@heroicons/react/24/solid";
+import { BriefcaseIcon } from "@heroicons/react/24/solid";
 import classNames from "classnames";
-import { motion } from "framer-motion";
-import React, { useState } from "react";
+import { useState } from "react";
 
 const frequencies = [
   { value: "monthly", label: "Monthly", priceSuffix: "/month" },
@@ -18,11 +15,28 @@ const frequencies = [
 
 const tiers = [
   {
+    name: "Free Tier",
+    id: "tier-free",
+    href: "#",
+    price: { monthly: "$??", annually: "$??" },
+    description:
+      "A free playground to experience zero-effort deployments in your development workflow.",
+    features: [],
+    featured: false,
+    cta: "Start deploying",
+
+    iconBg: "bg-noops-200",
+    iconBorder: "border-noops-300",
+    iconColor: "text-noops-600",
+    Icon: Squares2X2Icon,
+  },
+  {
     name: "Starter",
     id: "tier-starter",
     href: "#",
     price: { monthly: "$??", annually: "$??" },
-    description: "Everything you need to get started with your project.",
+    description:
+      "Everything you need to run Production workloads in the Cloud. Best suited for Startups and SMBs.",
     features: [],
     featured: false,
     cta: "Purchase",
@@ -33,11 +47,12 @@ const tiers = [
     Icon: CubeTransparentIcon,
   },
   {
-    name: "Standard",
-    id: "tier-standard",
+    name: "Scale-Up",
+    id: "tier-scale-up",
     href: "#",
     price: { monthly: "$??", annually: "$??" },
-    description: "Everything you need to scale your project to the next level.",
+    description:
+      "All Starter features plus extras, needed for larger organisations. By committing to run 20 resources monthly you get a discounted management fee.",
     features: [],
     featured: false,
     cta: "Purchase",
@@ -52,7 +67,8 @@ const tiers = [
     id: "tier-enterprise",
     href: "#",
     price: "Get in touch",
-    description: "Got a large team? We can help you scale your project.",
+    description:
+      "All Scale-up features plus additional compliance and audit controls.",
     features: [],
     featured: true,
     cta: "Contact",
@@ -111,17 +127,24 @@ const Pricing = ({ title, subtitle }: PricingProps) => {
             </p>
           </div>
 
-          <div className="mx-auto mt-6 flex max-w-2xl items-center gap-x-2 rounded-xl border border-noops-500/30 bg-noops-600 bg-opacity-10 p-4 text-noops-800">
+          <div className="mx-auto mt-6 flex max-w-3xl items-center gap-x-2 rounded-xl border border-noops-500/30 bg-noops-600 bg-opacity-10 p-4 text-noops-800">
             <div className="flex-initial">
               <ExclamationTriangleIcon className="h-14 w-14 " />
             </div>
             <div className="flex-1 sm:text-lg">
-              We haven't quite figured out our pricing model yet, but it will
-              probably look something like this
+              Our pricing model is still a Work in Progress, but it will look
+              something like this:
             </div>
           </div>
 
-          <div className="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+          <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-slate-600">
+            We pass on the Cloud cost to you as-is.
+            <br />
+            We charge a small management fee on top, which gets cheaper as you
+            grow.
+          </p>
+
+          <div className="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-4">
             {tiers.map((tier) => (
               <div
                 key={tier.id}
