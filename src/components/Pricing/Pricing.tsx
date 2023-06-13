@@ -152,7 +152,7 @@ const Pricing = ({ title, subtitle }: PricingProps) => {
                   tier.featured
                     ? "border-slate-900 bg-slate-900"
                     : "border-slate-200/50 bg-white bg-opacity-50 shadow-lg shadow-slate-100 backdrop-blur-md ",
-                  "rounded-3xl border p-8 xl:p-10"
+                  "rounded-3xl border p-8 "
                 )}
               >
                 {/* <p className="mb-6 flex items-baseline gap-x-1 font-mono">

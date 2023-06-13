@@ -2,44 +2,10 @@ import React, { useRef } from "react";
 import { SparklesIcon, TruckIcon, ClockIcon } from "@heroicons/react/24/solid";
 import { motion, useTransform, useScroll } from "framer-motion";
 import { SEFeatures, SEHero } from "../components";
-
-const SEContent = {
-  hero: {},
-
-  features: {
-    title: "Why NoOps?",
-    description:
-      "Stop wasting time on DevOps and prioritize what sets your product apart. Leave the complexity of operations management to us, so you can focus on what you do best.",
-    subtitle: "The NoOps Platform ",
-
-    features: [
-      {
-        name: "Stop Delays",
-        description:
-          "Eliminate Delays and hit your deadlines with our streamlined solutions.",
-        href: "#",
-        icon: ClockIcon,
-      },
-      {
-        name: "Focus on Core Delivery",
-        description:
-          "Don't waste time perfecting your deployment process, perfect your code instead. We'll handle it.",
-        href: "#",
-        icon: TruckIcon,
-      },
-      {
-        name: "Simple & Intuitive",
-        description:
-          "Inefficiency can hinder productivity. We've crafted our platform to be remarkably simple and intuitive, maximising your output.",
-        href: "#",
-        icon: SparklesIcon,
-      },
-    ],
-  },
-};
+import SEContent from "../content/SoftwareEngineer";
 
 const SoftwareEngineer = () => {
-  const { hero, features } = SEContent;
+  const { hero, features, section3, section4 } = SEContent;
 
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -65,7 +31,11 @@ const SoftwareEngineer = () => {
   return (
     <div>
       {/* Hero */}
-      <SEHero />
+      <SEHero
+        title={hero.title}
+        description={hero.description}
+        subtitle={hero.subtitle}
+      />
 
       {/* content */}
       <SEFeatures
@@ -104,24 +74,21 @@ const SoftwareEngineer = () => {
         <div className="absolute inset-0 bg-gradient-to-tr from-noops-300/50 via-transparent to-noops-300/50 blur-3xl"></div>
         <div className="relative px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-noops-900 sm:text-4xl">
-              No Catches
-              <br />
-              Build Whatever, However
+            <h2 className="whitespace-pre text-3xl font-bold tracking-tight text-noops-900 sm:text-4xl">
+              {section3.title}
             </h2>
             <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-noops-600">
-              NoOps will fit into your workflow. Use our CLI or our Portal to
-              deploy your application. We'll take care of the rest.
+              {section3.description}
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
-                href="#"
+                href={section3.ctaHref}
                 className="rounded-full bg-noops-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-noops-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-noops-600"
               >
-                Get started
+                {section3.cta}
               </a>
               <a
-                href="#"
+                href={section3.href}
                 className="inline-flex cursor-pointer items-center gap-x-2 rounded-full border border-transparent px-4 py-1.5 text-sm text-noops-500 transition hover:border-noops-500/60 hover:bg-noops-600 hover:bg-opacity-10 hover:shadow-lg hover:shadow-noops-400/10 focus-visible:outline focus-visible:outline-noops-500/60"
               >
                 Learn more <span aria-hidden="true">→</span>
@@ -135,21 +102,16 @@ const SoftwareEngineer = () => {
         <div className="absolute inset-0 top-1/4 aspect-square rounded-full bg-gradient-radial from-noops-600/10 to-accent/10 blur-3xl"></div>
         <div className="relative isolate mx-auto max-w-7xl overflow-hidden py-24 sm:px-6 sm:py-32 lg:px-8 ">
           <div className="relative    px-6 py-24 text-center   sm:px-16">
-            <h2 className="mx-auto max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              But... How? <br />
-              Introducing{" "}
-              <span className="bg-gradient-to-r from-noops-600  to-accent bg-clip-text text-transparent">
-                Bond
-              </span>
+            <h2 className="mx-auto max-w-2xl whitespace-pre text-3xl font-bold tracking-tight text-white sm:text-4xl">
+              {section4.title}
             </h2>
 
             <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-noops-300">
-              Bond is our open source interfacing schema that allows us to
-              connect to your application to deploy and scale it automatically.
+              {section4.description}
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
-                href="#"
+                href={section4.href}
                 className="inline-flex cursor-pointer items-center gap-x-2 rounded-full border border-transparent px-4 py-1.5 text-sm font-medium text-noops-500 transition hover:border-noops-500/60 hover:bg-noops-600 hover:bg-opacity-10 hover:shadow-lg hover:shadow-noops-400/10 focus-visible:outline focus-visible:outline-noops-500/60"
               >
                 Learn more <span aria-hidden="true">→</span>

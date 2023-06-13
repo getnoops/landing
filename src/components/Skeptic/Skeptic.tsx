@@ -208,9 +208,12 @@ const Skeptic = ({ title, description, prompt, cta }: SkepticProps) => {
           </div>
         </div>
         <div className="mt-8 flex justify-center">
-          <button className="rounded-full bg-noops-600 px-6 py-1.5  font-semibold  text-white shadow-xl transition hover:bg-noops-700">
-            {cta}
-          </button>
+          <a
+            href="#"
+            className="inline-flex cursor-pointer items-center gap-x-2 rounded-full border border-transparent px-4 py-1.5 text-sm font-medium text-white transition hover:border-white/60 hover:bg-white hover:bg-opacity-10 hover:shadow-lg hover:shadow-white/10 focus-visible:outline focus-visible:outline-white/60"
+          >
+            {cta} <span aria-hidden="true">→</span>
+          </a>
         </div>
       </div>
     </div>

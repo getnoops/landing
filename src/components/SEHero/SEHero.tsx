@@ -34,7 +34,13 @@ const StarryBackground: React.FC = () => {
   );
 };
 
-const SEHero = () => {
+interface SEHeroProps {
+  title: string | JSX.Element;
+  description: string | JSX.Element;
+  subtitle: string | JSX.Element;
+}
+
+const SEHero = ({ title, description, subtitle }: SEHeroProps) => {
   const functionString = `function totallyRealFunction(input: string): string {
         // solves P versus NP
         let interimResult = input
@@ -66,22 +72,13 @@ const SEHero = () => {
           <div className="items-center gap-8 xl:flex">
             <div className="mb-8 flex-1">
               <h3 className="mb-2 text-center text-sm font-medium uppercase text-noops-100 xl:text-left">
-                SOFTWARE ENGINEERS
+                {subtitle}
               </h3>
               <h1 className="text-center text-4xl font-semibold tracking-tight text-slate-800 sm:text-6xl md:leading-[4rem] xl:text-left">
-                <span className="bg-gradient-to-t from-noops-50 to-noops-100 bg-clip-text text-transparent ">
-                  Write{" "}
-                </span>
-                <span className="bg-gradient-to-br from-noops-400  to-noops-700 bg-clip-text text-transparent">
-                  <i>your code, your way. </i>
-                </span>{" "}
+                {title}
               </h1>
               <p className="my-4 text-center text-noops-200  xl:text-left">
-                NoOps is a platform for developers and engineers to deploy their
-                applications without having to stress about the underlying
-                infrastructure. We provide the infrastructure and tools to build
-                and monitor your applications, so you can focus on what matters
-                most.
+                {description}
               </p>
             </div>
 
