@@ -12,7 +12,6 @@ import Solutions from "./pages/Solutions";
 import StyleGuide from "./pages/StyleGuide";
 
 import Testing from "./pages/Testing.mdx";
-import HomeMDX from "./pages/Home.mdx";
 
 const AppRoutes = () => {
   return (

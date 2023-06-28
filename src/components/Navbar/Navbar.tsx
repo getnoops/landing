@@ -9,6 +9,7 @@ import {
   RectangleGroupIcon,
   SquaresPlusIcon,
 } from "@heroicons/react/20/solid";
+import { Bars3Icon } from "@heroicons/react/24/outline";
 import { CodeBracketIcon, ServerStackIcon } from "@heroicons/react/24/solid";
 import classNames from "classnames";
 import { AnimatePresence, motion } from "framer-motion";
@@ -33,7 +34,7 @@ const nav = [
         name: "DevOps Engineer",
         description:
           "Responsible for DevOps environments used by developers and engineers",
-        href: "#",
+        href: "/solutions/devops",
         icon: ServerStackIcon,
         start: "from-pink-500",
         end: "to-purple-800",
@@ -46,14 +47,6 @@ const nav = [
         icon: CodeBracketIcon,
         start: "from-amber-500",
         end: "to-orange-800",
-      },
-      {
-        name: "Dev",
-        description: "Dev",
-        href: "#",
-        icon: SquaresPlusIcon,
-        start: "from-red-500",
-        end: "to-red-800",
       },
     ],
   },
@@ -113,7 +106,7 @@ const Dropdown = ({ open, setOpen }: DropdownProps) => {
               <h2 className="mx-auto max-w-7xl text-xl font-bold text-noops-400">
                 {open?.name}
               </h2>
-              <div className="mx-auto grid max-w-7xl grid-cols-1 gap-2 pt-2 sm:grid-cols-2 lg:grid-cols-4">
+              <div className="mx-auto grid max-w-7xl grid-cols-1 gap-2 pt-2 sm:grid-cols-2 lg:grid-cols-3">
                 {open?.solutions.map((solution: any) => (
                   <Link
                     key={solution.name}
@@ -122,7 +115,7 @@ const Dropdown = ({ open, setOpen }: DropdownProps) => {
                     className={classNames(
                       solution.start,
                       solution.end,
-                      "group relative flex h-36 cursor-pointer justify-end gap-6 rounded-xl bg-gradient-to-br  p-3 text-sm leading-6 shadow-lg transition sm:flex-col sm:p-6"
+                      "group relative flex h-36 cursor-pointer items-center gap-6 rounded-xl bg-gradient-to-br p-3  text-sm leading-6 shadow-lg transition sm:flex-col sm:justify-end sm:p-6"
                     )}
                   >
                     <div className="absolute inset-y-0 right-0 transition-all group-hover:right-2">
@@ -154,7 +147,7 @@ const Navbar = () => {
   const [dropdown, setDropdown] = useState<null | any>(null);
 
   return (
-    <header className="fixed z-50 w-full py-4 ">
+    <header className="absolute z-50 w-full  py-4 ">
       <div
         className="mx-2 rounded-full border border-noops-500/30 bg-noops-600 bg-opacity-10 px-1.5 py-1.5 backdrop-blur-lg transition-all duration-1000 sm:mx-4 md:mx-6 lg:mx-12"
         id="header"
@@ -202,18 +195,16 @@ const Navbar = () => {
           <div className="flex flex-shrink items-center justify-end gap-x-5 md:gap-x-8">
             <div className="hidden md:block">
               <a
-                className="inline-flex cursor-pointer items-center gap-x-2 rounded-full border border-transparent px-4 py-1.5 text-sm text-neutral-400 transition hover:border-neutral-400/60 hover:bg-neutral-400 hover:bg-opacity-30 hover:shadow-lg hover:shadow-white/10 focus-visible:outline focus-visible:outline-white/60"
+                className="inline-flex cursor-pointer items-center gap-x-2 rounded-full border border-transparent px-4 py-1.5 text-sm text-neutral-100 transition hover:border-white/60 hover:bg-white hover:bg-opacity-30 hover:shadow-lg hover:shadow-white/10 focus-visible:outline focus-visible:outline-white/60"
                 href="/login"
               >
                 Sign in
               </a>
             </div>
-            <a
-              className="group inline-flex items-center justify-center rounded-full bg-noops-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-noops-600 hover:text-noops-50 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-noops-500 active:bg-noops-800 active:text-noops-100"
-              href="/register"
-            >
-              Start deploying
-            </a>
+
+            <button className="mr-0.5 inline-flex cursor-pointer items-center gap-x-2 rounded-full border border-transparent p-1.5 text-sm text-neutral-100 transition hover:border-white/60 hover:bg-white hover:bg-opacity-30 hover:shadow-lg hover:shadow-white/10 focus-visible:outline focus-visible:outline-white/60 md:hidden">
+              <Bars3Icon className="h-7" />
+            </button>
           </div>
         </nav>
       </div>

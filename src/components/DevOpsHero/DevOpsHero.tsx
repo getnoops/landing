@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import { Highlight, themes } from "prism-react-renderer";
 import classNames from "classnames";
+import { CircleStackIcon, ServerIcon } from "@heroicons/react/24/outline";
 
 const StarryBackground: React.FC = () => {
   const stars = Array.from({ length: 100 }, () => ({
@@ -34,13 +35,13 @@ const StarryBackground: React.FC = () => {
   );
 };
 
-interface CxOHeroProps {
+interface DevOpsHeroProps {
   title: string | JSX.Element;
   description: string;
   subtitle: string;
 }
 
-const CxOHero = ({ title, description, subtitle }: CxOHeroProps) => {
+const DevOpsHero = ({ title, description, subtitle }: DevOpsHeroProps) => {
   const bars = [
     "h-[30%]",
     "h-[33%]",
@@ -78,64 +79,29 @@ const CxOHero = ({ title, description, subtitle }: CxOHeroProps) => {
             </div>
 
             <div className=" relative flex h-80 flex-1 sm:h-112 md:h-128 lg:h-144 xl:h-112">
-              <div className="absolute left-1/3 top-1/3 h-2/3 w-2/3">
+              <div className="absolute h-full w-full">
                 <div className="relative h-full w-full rounded-xl border border-noops-600/10 bg-slate-900 bg-opacity-30 p-4">
                   <div className="absolute inset-0 rounded-xl border-2 border-noops-400 blur-3xl"></div>
                   <div className="absolute inset-0 rounded-xl bg-gradient-to-tr from-noops-300/10 via-transparent to-noops-400/10 blur-2xl"></div>
-                  <div className="h-full w-full border-b border-noops-400/50 pb-1.5">
-                    <svg
-                      viewBox="0 0 446 256"
-                      className="h-full w-full fill-none"
-                      preserveAspectRatio="none"
-                    >
-                      <defs>
-                        <linearGradient
-                          id="Gradient1"
-                          x1="0"
-                          x2="0"
-                          y1="0"
-                          y2="1"
-                        >
-                          <stop
-                            offset="0%"
-                            stopColor="#b980fa"
-                            stop-opacity={0.4}
-                          />
-                          <stop
-                            offset="100%"
-                            stopColor="#471c87"
-                            stop-opacity={0.05}
-                          />
-                        </linearGradient>
-                      </defs>
-                      <path
-                        d="M0,256 C150,100 300,170 446,0 L446,256 L0,256 Z"
-                        fill="url(#Gradient1)"
-                      />
-                      <path
-                        className="stroke-noops-600"
-                        d="M0,256 C150,100 300,170 446,0"
-                        stroke-linecap="round"
-                        stroke-width="2"
-                      />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-
-              <div className="absolute h-2/3 w-2/3">
-                <div className="relative h-full w-full rounded-xl border border-noops-600/10 bg-slate-900 bg-opacity-30 p-4">
-                  <div className="absolute inset-0 rounded-xl border-2 border-noops-400 blur-3xl"></div>
-                  <div className="absolute inset-0 rounded-xl bg-gradient-to-tr from-noops-300/10 via-transparent to-noops-400/10 blur-2xl"></div>
-                  <div className="flex h-full w-full items-end gap-3 border-b border-noops-400/50 py-1.5 ">
-                    {bars.map((bar) => (
-                      <div
-                        className={classNames(
-                          bar,
-                          "flex-1 rounded-t-sm border border-noops-900 bg-gradient-to-b from-noops-400/80 to-noops-900/50"
-                        )}
-                      ></div>
-                    ))}
+                  <div className="relative flex h-full">
+                    <div className="flex flex-1 items-center ">
+                      <ServerIcon className="w-full text-noops-600" />
+                    </div>
+                    <div className="relative flex flex-1 items-center justify-center">
+                      <div className="w-full border border-noops-600" />
+                      <div className="absolute h-2/3 w-1/2 translate-x-1/2 rounded-l-lg border-2 border-r-0 border-noops-600" />
+                    </div>
+                    <div className="flex h-full flex-1 flex-col">
+                      <div className="relative flex flex-1 items-center justify-center">
+                        <CircleStackIcon className="absolute h-full text-noops-600" />
+                      </div>
+                      <div className="relative flex flex-1 items-center justify-center">
+                        <CircleStackIcon className="absolute h-full text-noops-600" />
+                      </div>
+                      <div className="relative flex flex-1 items-center justify-center">
+                        <CircleStackIcon className="absolute h-full text-noops-600" />
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -147,4 +113,4 @@ const CxOHero = ({ title, description, subtitle }: CxOHeroProps) => {
   );
 };
 
-export default CxOHero;
+export default DevOpsHero;

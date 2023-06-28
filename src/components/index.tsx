@@ -13,3 +13,5 @@ export { Body } from "./Body";
 export { SEHero } from "./SEHero";
 export { SEFeatures } from "./SEFeatures";
 export { CxOHero } from "./CxOHero";
+export { Blocks } from "./Blocks";
+export { DevOpsHero } from "./DevOpsHero";

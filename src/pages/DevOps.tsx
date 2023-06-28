@@ -1,26 +1,16 @@
 import React, { useRef } from "react";
-import {
-  SparklesIcon,
-  TruckIcon,
-  ClockIcon,
-  LockClosedIcon,
-  FaceSmileIcon,
-  BanknotesIcon,
-  CreditCardIcon,
-  CurrencyDollarIcon,
-} from "@heroicons/react/24/solid";
-import { motion, useTransform, useScroll } from "framer-motion";
-import { Blocks, CxOHero, SEFeatures, SEHero } from "../components";
-import {} from "@heroicons/react/20/solid";
-import CxOContent from "../content/CxO";
 
-const SoftwareEngineer = () => {
-  const { hero, features, blocks, section4, section5 } = CxOContent;
+import { Blocks, DevOpsHero, SEFeatures } from "../components";
+
+import DevOpsContent from "../content/DevOps";
+
+const DevOps = () => {
+  const { hero, features, blocks, section4, section5 } = DevOpsContent;
 
   return (
     <div>
       {/* Hero */}
-      <CxOHero
+      <DevOpsHero
         title={hero.title}
         description={hero.description}
         subtitle={hero.subtitle}
@@ -114,4 +104,4 @@ const SoftwareEngineer = () => {
   );
 };
 
-export default SoftwareEngineer;
+export default DevOps;
