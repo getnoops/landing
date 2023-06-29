@@ -1,6 +1,3 @@
-import React, { Fragment } from "react";
-import { Highlight, themes } from "prism-react-renderer";
-import classNames from "classnames";
 import { CircleStackIcon, ServerIcon } from "@heroicons/react/24/outline";
 
 const StarryBackground: React.FC = () => {
@@ -88,8 +85,8 @@ const DevOpsHero = ({ title, description, subtitle }: DevOpsHeroProps) => {
                       <ServerIcon className="w-full text-noops-600" />
                     </div>
                     <div className="relative flex flex-1 items-center justify-center">
-                      <div className="w-full border border-noops-600" />
-                      <div className="absolute h-2/3 w-1/2 translate-x-1/2 rounded-l-lg border-2 border-r-0 border-noops-600" />
+                      <div className="w-full border-2 border-noops-600" />
+                      <div className="absolute h-2/3 w-1/2 translate-x-1/2 rounded-l-lg border-4 border-r-0 border-noops-600" />
                     </div>
                     <div className="flex h-full flex-1 flex-col">
                       <div className="relative flex flex-1 items-center justify-center">

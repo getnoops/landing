@@ -1,5 +1,3 @@
-import React, { Fragment } from "react";
-import { Highlight, themes } from "prism-react-renderer";
 import classNames from "classnames";
 
 const StarryBackground: React.FC = () => {

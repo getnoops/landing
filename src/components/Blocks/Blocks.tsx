@@ -1,5 +1,3 @@
-import React from "react";
-
 interface BlocksProps {
   title: string;
   description: string;
@@ -8,10 +6,10 @@ interface BlocksProps {
     title: string;
     description: string;
     Icon: React.ForwardRefExoticComponent<
-      React.SVGProps<SVGSVGElement> & {
+      Omit<React.SVGProps<SVGSVGElement>, "ref"> & {
         title?: string | undefined;
         titleId?: string | undefined;
-      }
+      } & React.RefAttributes<SVGSVGElement>
     >;
   }[];
 }

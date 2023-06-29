@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import React, { PropsWithChildren } from "react";
+import type React from "react";
 
 const StarryBackground: React.FC = () => {
   const stars = Array.from({ length: 100 }, () => ({

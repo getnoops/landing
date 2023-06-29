@@ -16,7 +16,7 @@ const lineVariants: Variants = {
   visible: {
     y: 0,
     width: "100%",
-    transition: { delay: 0.6, duration: 0.3 },
+    transition: { delay: 0.3, duration: 0.3 },
   },
 };
 
@@ -72,7 +72,7 @@ const Bridge = ({ title, description }: BridgeProps) => {
           <div className="mt-10 flex items-center justify-center text-white">
             <div className="relative flex items-center justify-around gap-2 rounded-xl bg-gradient-to-br sm:h-96 sm:gap-1 md:gap-4 lg:gap-6">
               <div className="flex h-16 w-16 items-center justify-center rounded-xl border border-slate-100 bg-white bg-gradient-to-br shadow-md sm:h-24 sm:w-24">
-                <div className="relative h-full w-full transition hover:scale-105">
+                <div className="relative h-full w-full transition">
                   <CodeBracketIcon className="absolute p-2 text-noops-600 opacity-100 blur-md sm:p-5" />
                   <CodeBracketIcon className="absolute p-2 text-noops-600 sm:p-5" />
                 </div>
@@ -80,7 +80,7 @@ const Bridge = ({ title, description }: BridgeProps) => {
 
               <div className="absolute left-20 flex h-full flex-col items-center justify-center gap-2 sm:left-32 sm:gap-1 md:gap-4 lg:gap-6">
                 {devTech.map(({ name, logo }) => (
-                  <div className="relative z-10 flex aspect-square h-12 items-center justify-center rounded-xl border border-slate-100 bg-white text-black shadow-lg transition hover:scale-105 sm:h-16 md:h-20">
+                  <div className="relative z-10 flex aspect-square h-12 items-center justify-center rounded-xl border border-slate-100 bg-white text-black shadow-lg transition sm:h-16 md:h-20">
                     <img
                       className="h-full object-contain p-3 sm:p-5"
                       key={name}
@@ -113,11 +113,13 @@ const Bridge = ({ title, description }: BridgeProps) => {
                 <div className="relative z-10 flex aspect-square h-16 items-center justify-center rounded-xl border border-slate-100 bg-white text-black shadow-lg transition hover:scale-110 sm:h-20 md:h-28">
                   <img
                     src="/logo_symbol.svg"
+                    alt="NoOps Logo blur"
                     className="absolute h-full object-contain p-1 opacity-80 blur-md sm:p-5"
                   />
 
                   <img
                     src="/logo_symbol.svg"
+                    alt="NoOps Logo"
                     className=" h-full object-contain p-3 sm:p-5"
                   />
                 </div>
@@ -137,7 +139,7 @@ const Bridge = ({ title, description }: BridgeProps) => {
             <div className="relative flex items-center justify-around gap-2 rounded-xl bg-gradient-to-br sm:h-96 sm:gap-1 md:gap-4 lg:gap-6">
               <div className="absolute right-20 flex h-full flex-col items-center justify-center gap-2 sm:right-32 sm:gap-1 md:gap-4 lg:gap-6">
                 {cloudTech.map(({ name, logo }) => (
-                  <div className="relative z-10 flex aspect-square h-12 items-center justify-center rounded-xl border border-slate-100 bg-white text-black shadow-lg transition hover:scale-105 sm:h-16 md:h-20">
+                  <div className="relative z-10 flex aspect-square h-12 items-center justify-center rounded-xl border border-slate-100 bg-white text-black shadow-lg transition sm:h-16 md:h-20">
                     <img
                       className="h-full object-contain p-3 sm:p-5"
                       key={name}
@@ -149,7 +151,7 @@ const Bridge = ({ title, description }: BridgeProps) => {
               </div>
 
               <div className="flex h-16 w-16 items-center justify-center rounded-xl border border-slate-100 bg-white bg-gradient-to-br shadow-md sm:h-24 sm:w-24">
-                <div className="relative h-full w-full transition hover:scale-105">
+                <div className="relative h-full w-full transition">
                   <GlobeAltIcon className="absolute p-2 text-noops-600 opacity-80 blur-md sm:p-5" />
                   <GlobeAltIcon className="absolute p-2 text-noops-600  sm:p-5" />
                 </div>

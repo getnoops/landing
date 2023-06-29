@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const RoleSelect = () => {
   return (
@@ -16,8 +15,8 @@ const RoleSelect = () => {
             I am a...
           </p>
           <div className="my-4 flex items-center justify-center gap-x-16">
-            <Link
-              to="#"
+            <a
+              href="#"
               className="group/button relative cursor-pointer rounded-md bg-gradient-to-br from-cloud-text-gradient-1 via-cloud-text-gradient-2 to-cloud-text-gradient-3 px-4 py-3"
             >
               <div className="noops-xl pointer-events-none absolute inset-0 bg-gradient-to-br from-cloud-text-gradient-1 via-cloud-text-gradient-2 to-cloud-text-gradient-3 opacity-60 blur-md" />
@@ -25,9 +24,9 @@ const RoleSelect = () => {
               <span className="relative font-medium text-noops-900 transition group-hover/button:text-white">
                 CxO / Head of Application or Engineering
               </span>
-            </Link>
-            <Link
-              to="#"
+            </a>
+            <a
+              href="#"
               className="group/button relative cursor-pointer rounded-md bg-gradient-to-br from-cloud-text-gradient-1 via-cloud-text-gradient-2 to-cloud-text-gradient-3 px-4 py-3"
             >
               <div className="noops-xl pointer-events-none absolute inset-0 bg-gradient-to-br from-cloud-text-gradient-1 via-cloud-text-gradient-2 to-cloud-text-gradient-3 opacity-60 blur-md" />
@@ -35,9 +34,9 @@ const RoleSelect = () => {
               <span className="relative font-medium text-noops-900 transition group-hover/button:text-white">
                 DevOps Engineer
               </span>
-            </Link>
-            <Link
-              to="#"
+            </a>
+            <a
+              href="#"
               className="group/button relative cursor-pointer rounded-md bg-gradient-to-br from-cloud-text-gradient-1 via-cloud-text-gradient-2 to-cloud-text-gradient-3 px-4 py-3"
             >
               <div className="noops-xl pointer-events-none absolute inset-0 bg-gradient-to-br from-cloud-text-gradient-1 via-cloud-text-gradient-2 to-cloud-text-gradient-3 opacity-60 blur-md" />
@@ -45,7 +44,7 @@ const RoleSelect = () => {
               <span className="relative font-medium text-noops-900 transition group-hover/button:text-white">
                 Software Engineer
               </span>
-            </Link>
+            </a>
           </div>
           <div className="mt-10 flex items-center justify-center gap-x-6"></div>
           <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-300">

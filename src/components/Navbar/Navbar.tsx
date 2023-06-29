@@ -14,7 +14,6 @@ import { CodeBracketIcon, ServerStackIcon } from "@heroicons/react/24/solid";
 import classNames from "classnames";
 import { AnimatePresence, motion } from "framer-motion";
 import React, { Fragment, useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
 
 const nav = [
   {
@@ -108,9 +107,9 @@ const Dropdown = ({ open, setOpen }: DropdownProps) => {
               </h2>
               <div className="mx-auto grid max-w-7xl grid-cols-1 gap-2 pt-2 sm:grid-cols-2 lg:grid-cols-3">
                 {open?.solutions.map((solution: any) => (
-                  <Link
+                  <a
                     key={solution.name}
-                    to={solution.href}
+                    href={solution.href}
                     onClick={() => setOpen(null)}
                     className={classNames(
                       solution.start,
@@ -132,7 +131,7 @@ const Dropdown = ({ open, setOpen }: DropdownProps) => {
                         {solution.description}
                       </p>
                     </div>
-                  </Link>
+                  </a>
                 ))}
               </div>
             </motion.div>
@@ -159,13 +158,13 @@ const Navbar = () => {
               {/* <div className="absolute -bottom-1/2 -right-1/4 select-none rounded-full bg-noops-200 px-3 text-sm text-noops-500 opacity-70">
                 alpha
               </div> */}
-              <Link aria-label="Home" to="/" className="relative">
+              <a aria-label="Home" href="/" className="relative">
                 <img
                   src="/logo_smile.svg"
                   alt="Logo"
                   className="ml-3 mt-0.5 h-6 w-auto "
                 />
-              </Link>
+              </a>
             </div>
           </div>
           <div className="hidden flex-grow justify-center md:flex md:gap-x-3 lg:gap-x-6">
