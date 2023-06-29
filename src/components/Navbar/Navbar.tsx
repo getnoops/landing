@@ -1,19 +1,10 @@
-import { Popover, Transition } from "@headlessui/react";
-import {
-  ChartPieIcon,
-  ChevronDownIcon,
-  CursorArrowRaysIcon,
-  FingerPrintIcon,
-  PhoneIcon,
-  PlayCircleIcon,
-  RectangleGroupIcon,
-  SquaresPlusIcon,
-} from "@heroicons/react/20/solid";
+import { Transition } from "@headlessui/react";
+import { ChartPieIcon, ChevronDownIcon } from "@heroicons/react/20/solid";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import { CodeBracketIcon, ServerStackIcon } from "@heroicons/react/24/solid";
 import classNames from "classnames";
 import { AnimatePresence, motion } from "framer-motion";
-import React, { Fragment, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const nav = [
   {
