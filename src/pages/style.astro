@@ -1,0 +1,44 @@
+---
+// Component Imports
+import { NoOpsSymbol } from "../components";
+import { Logo, Colours, Typography } from "../components/Style";
+
+import HomeContent from "../content/Home";
+
+import Body from "../layouts/Body.astro";
+
+const { hero, bridge, steps, features, pricing, skeptic, faqs, cta } =
+  HomeContent;
+
+// Full Astro Component Syntax:
+// https://docs.astro.build/core-concepts/astro-components/
+---
+
+<Body>
+  <div class="min-h-screen bg-slate-50 p-4">
+    <div class="mx-auto max-w-7xl py-24">
+      <div class="flex">
+        <div class="flex-1">
+          <h2 class="text-5xl font-black uppercase text-noops-600">
+            Style Guide
+          </h2>
+          <p class="text-lg text-slate-600">
+            This is a style guide for the NoOps website. It is a work in
+            progress.
+          </p>
+        </div>
+        <div class="flex flex-1 items-center justify-center">
+          <NoOpsSymbol className="text-noops-600" />
+        </div>
+      </div>
+    </div>
+
+    <div class="space-y-12">
+      <Logo />
+
+      <Colours />
+
+      <Typography />
+    </div>
+  </div>
+</Body>
