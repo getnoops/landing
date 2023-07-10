@@ -1,6 +1,10 @@
 import { Transition } from "@headlessui/react";
-import { ChartPieIcon, ChevronDownIcon } from "@heroicons/react/20/solid";
-import { Bars3Icon } from "@heroicons/react/24/outline";
+import {
+  ChartPieIcon,
+  ChevronDownIcon,
+  ChevronRightIcon,
+} from "@heroicons/react/20/solid";
+import { ArrowRightCircleIcon, Bars3Icon } from "@heroicons/react/24/outline";
 import { CodeBracketIcon, ServerStackIcon } from "@heroicons/react/24/solid";
 import classNames from "classnames";
 import { AnimatePresence, motion } from "framer-motion";
@@ -10,9 +14,9 @@ const nav = [
   {
     name: "Solutions",
     dropdown: true,
-    solutions: [
+    blocks: [
       {
-        name: "CxO / Head of Application or Engineering",
+        name: "CxO / Head of Application",
         description:
           "For those that manage efficiencies and costs of a team or group",
         href: "/solutions/cxo",
@@ -52,9 +56,11 @@ const nav = [
   },
 ];
 
+// 😬 this got a bit out of hand, i was forced to do it like this because the blur filter stutters when animating in and it looked disgusting
+
 interface DropdownProps {
   open: null | any;
-  setOpen: React.Dispatch<React.SetStateAction<null>>;
+  setOpen: React.Dispatch<React.SetStateAction<any>>;
 }
 
 const Dropdown = ({ open, setOpen }: DropdownProps) => {
@@ -75,6 +81,20 @@ const Dropdown = ({ open, setOpen }: DropdownProps) => {
     };
   }, [ref]);
 
+  // event listener to track how wide the screen is
+  useEffect(() => {
+    function handleResize() {
+      if (open === true && window.innerWidth >= 768) {
+        setOpen(null);
+      }
+    }
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [open]);
+
   return (
     <Transition
       show={open != null}
@@ -84,47 +104,131 @@ const Dropdown = ({ open, setOpen }: DropdownProps) => {
       leave="transition-all ease-in duration-150"
       leaveFrom="opacity-100 translate-y-0"
       leaveTo="opacity-0 -translate-y-2"
-      className="mt-3 max-w-7xl rounded-3xl backdrop-blur-lg transition-all duration-1000"
+      className="mt-3 max-w-7xl w-full rounded-3xl backdrop-blur-lg transition-all duration-1000"
     >
       <div
         ref={ref}
-        className=" max-h-144 overflow-y-auto  rounded-3xl border border-accent/30 bg-accent bg-opacity-[0.15] shadow-lg shadow-accent/10 ring-1 ring-gray-900/5 "
+        className="w-full max-h-full overflow-y-auto  rounded-3xl border border-accent/30 bg-accent bg-opacity-[0.15] shadow-lg shadow-accent/10 ring-1 ring-gray-900/5 "
       >
         <AnimatePresence>
-          {open?.solutions && (
-            <motion.div exit={{ opacity: 0 }} className="p-5">
-              <h2 className="mx-auto max-w-7xl text-xl font-bold text-noops-400">
-                {open?.name}
-              </h2>
-              <div className="mx-auto grid max-w-7xl grid-cols-1 gap-2 pt-2 sm:grid-cols-2 lg:grid-cols-3">
-                {open?.solutions.map((solution: any) => (
-                  <a
-                    key={solution.name}
-                    href={solution.href}
-                    onClick={() => setOpen(null)}
-                    className={classNames(
-                      solution.start,
-                      solution.end,
-                      "group relative flex h-36 cursor-pointer items-center gap-6 rounded-xl bg-gradient-to-br p-3  text-sm leading-6 shadow-lg transition sm:flex-col sm:justify-end sm:p-6"
-                    )}
-                  >
-                    <div className="absolute inset-y-0 right-0 transition-all group-hover:right-2">
-                      <solution.icon
-                        className="h-full w-full text-white/10  transition group-hover:text-white/20"
-                        aria-hidden="true"
-                      />
+          {open && (
+            <motion.div exit={{ opacity: 0 }} className="py-3 px-3">
+              {nav.map((item, i) => (
+                <div className="mx-auto max-w-7xl w-full mt-2 first:mt-0 md:mt-0">
+                  {item.dropdown && (
+                    <div
+                      onClick={() => setOpen(item == open ? true : item)}
+                      className="md:hidden flex justify-between cursor-pointer items-center text-xl font-bold text-noops-400 px-2 py-0.5 rounded-xl  border border-transparent transition hover:bg-accent/10 hover:border-accent/20 "
+                    >
+                      <div>{item.name}</div>
+
+                      <div>
+                        <ChevronDownIcon
+                          className={classNames(
+                            item.name == open.name && "rotate-180",
+                            "h-8 transition"
+                          )}
+                        />
+                      </div>
                     </div>
-                    <div className="relative">
-                      <h5 className="font-semibold text-white">
-                        {solution.name}
-                      </h5>
-                      <p className="mt-1 text-white opacity-80 ">
-                        {solution.description}
-                      </p>
+                  )}
+
+                  {!item.dropdown && (
+                    <a
+                      href={item.href}
+                      className=" flex md:hidden justify-between cursor-pointer items-center text-xl font-bold text-noops-400 px-2 py-0.5  rounded-xl border border-transparent transition hover:bg-accent/10 hover:border-accent/20 "
+                    >
+                      <div>{item.name}</div>
+
+                      <div>
+                        <ChevronRightIcon className="h-8" />
+                      </div>
+                    </a>
+                  )}
+
+                  {item.name == open.name && item?.blocks && (
+                    <div className="mx-auto hidden  md:grid max-w-7xl grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3 p-2 overflow-hidden  ">
+                      {item?.blocks.map((block: any) => (
+                        <a
+                          key={block.name}
+                          href={block.href}
+                          onClick={() => setOpen(null)}
+                          className={classNames(
+                            block.start,
+                            block.end,
+                            "group relative flex h-36 cursor-pointer items-center gap-6 rounded-xl  bg-gradient-to-br p-3  text-sm leading-6 shadow-lg transition sm:flex-col sm:justify-end sm:p-6"
+                          )}
+                        >
+                          <div className="absolute inset-y-0 right-0 transition-all group-hover:right-2">
+                            <block.icon
+                              className="h-full w-full text-white/10  transition group-hover:text-white/20"
+                              aria-hidden="true"
+                            />
+                          </div>
+                          <div className="relative">
+                            <h5 className="font-semibold text-white">
+                              {block.name}
+                            </h5>
+                            <p className="mt-1 text-white opacity-80 ">
+                              {block.description}
+                            </p>
+                          </div>
+                        </a>
+                      ))}
                     </div>
-                  </a>
-                ))}
-              </div>
+                  )}
+
+                  <div className="md:hidden">
+                    <motion.div
+                      initial="closed"
+                      animate={
+                        item.dropdown && item.name == open.name
+                          ? "open"
+                          : "closed"
+                      }
+                      variants={{
+                        open: {
+                          opacity: 1,
+                          height: "auto",
+                          marginTop: "0.5rem",
+                        },
+                        closed: { opacity: 0, height: 0, marginTop: "0rem" },
+                      }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="mx-auto grid max-w-7xl grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3 px-2 overflow-hidden "
+                    >
+                      {item?.blocks &&
+                        item?.blocks.map((block: any) => (
+                          <a
+                            key={block.name}
+                            href={block.href}
+                            onClick={() => setOpen(null)}
+                            className={classNames(
+                              block.start,
+                              block.end,
+                              "group relative flex h-36 cursor-pointer items-center gap-6 rounded-xl bg-gradient-to-br p-3  text-sm leading-6 shadow-lg transition sm:flex-col sm:justify-end sm:p-6"
+                            )}
+                          >
+                            <div className="absolute inset-y-0 right-0 transition-all group-hover:right-2">
+                              <block.icon
+                                className="h-full w-full text-white/10  transition group-hover:text-white/20"
+                                aria-hidden="true"
+                              />
+                            </div>
+                            <div className="relative">
+                              <h5 className="font-semibold text-white">
+                                {block.name}
+                              </h5>
+                              <p className="mt-1 text-white opacity-80 ">
+                                {block.description}
+                              </p>
+                            </div>
+                          </a>
+                        ))}
+                    </motion.div>
+                  </div>
+                </div>
+              ))}
             </motion.div>
           )}
         </AnimatePresence>
@@ -137,9 +241,9 @@ const Navbar = () => {
   const [dropdown, setDropdown] = useState<null | any>(null);
 
   return (
-    <header className="absolute z-50 w-full  py-4 ">
+    <header className="absolute z-50 w-full  p-4 ">
       <div
-        className="mx-2 rounded-full border border-noops-500/30 bg-noops-600 bg-opacity-10 px-1.5 py-1.5 backdrop-blur-lg transition-all duration-1000 sm:mx-4 md:mx-6 lg:mx-12"
+        className="max-w-7xl mx-auto rounded-full border border-noops-500/30 bg-noops-600 bg-opacity-10 px-1.5 py-1.5 backdrop-blur-lg transition-all duration-1000"
         id="header"
       >
         {/* <div className="absolute inset-0 bg-noops-600 opacity-5 blur-md"></div> */}
@@ -182,24 +286,27 @@ const Navbar = () => {
               </React.Fragment>
             ))}
           </div>
-          <div className="flex flex-shrink items-center justify-end gap-x-5 md:gap-x-8">
-            <div className="hidden md:block">
+          <div className="flex flex-shrink items-center justify-end gap-x-2 md:gap-x-8">
+            <div className="">
               <a
                 className="inline-flex cursor-pointer items-center gap-x-2 rounded-full border border-transparent px-4 py-1.5 text-sm text-neutral-100 transition hover:border-white/60 hover:bg-white hover:bg-opacity-30 hover:shadow-lg hover:shadow-white/10 focus-visible:outline focus-visible:outline-white/60"
-                href="/login"
+                href="https://portal.getnoops.com/login"
               >
                 Sign in
               </a>
             </div>
 
-            <button className="mr-0.5 inline-flex cursor-pointer items-center gap-x-2 rounded-full border border-transparent p-1.5 text-sm text-neutral-100 transition hover:border-white/60 hover:bg-white hover:bg-opacity-30 hover:shadow-lg hover:shadow-white/10 focus-visible:outline focus-visible:outline-white/60 md:hidden">
+            <button
+              onClick={() => setDropdown(true)}
+              className="mr-0.5 inline-flex cursor-pointer items-center gap-x-2 rounded-full border border-transparent p-1.5 text-sm text-neutral-100 transition hover:border-white/60 hover:bg-white hover:bg-opacity-30 hover:shadow-lg hover:shadow-white/10 focus-visible:outline focus-visible:outline-white/60 md:hidden"
+            >
               <Bars3Icon className="h-7" />
             </button>
           </div>
         </nav>
       </div>
 
-      <div className="flex w-full justify-center px-2 transition-all duration-1000 sm:px-4 md:px-6 lg:px-12">
+      <div className="flex w-full justify-center transition-all duration-1000">
         <Dropdown open={dropdown} setOpen={setDropdown} />
       </div>
     </header>
