@@ -206,17 +206,18 @@ const Colours = () => {
 
       <h2 className="mb-2 text-xl font-semibold text-slate-800">Purples</h2>
       {/* // NoOps Colours
-// 50 f8f5ff hsl(260 100% 98%)
-// 100 eee6ff hsl(260 100% 95%)
-// 200 e4d6ff hsl(260 99% 92%)
-// 300 caaefe hsl(261 98% 84%)
-// 400 af84fb hsl(262 93% 75%)
-// 500 9655f6 hsl(264 90% 65%)
-// 600 8335e9 hsl(266 80% 56%)
-// 700 6f22ce hsl(267 72% 47%)
-// 800 5821a6 hsl(265 67% 39%)
-// 900 471c87 hsl(264 66% 32%)
-// 950 2a075f hsl(264 87% 20%) */}
+        '50': 'hsl(255, 100%, 98%)',
+        '100': 'hsl(254, 91%, 95%)',
+        '200': 'hsl(253, 90%, 92%)',
+        '300': 'hsl(257, 92%, 85%)',
+        '400': 'hsl(259, 88%, 76%)',
+        '500': 'hsl(262, 86%, 66%)',
+        '600': 'hsl(266, 80%, 56%)',
+        '700': 'hsl(267, 68%, 50%)',
+        '800': 'hsl(267, 67%, 42%)',
+        '900': 'hsl(267, 65%, 35%)',
+        '950': 'hsl(265, 71%, 23%)',
+      */}
       <div>
         <div className="grid grid-cols-3 gap-2  md:grid-cols-5 lg:grid-cols-8">
           <div className="flex h-36 flex-col justify-between rounded-lg bg-noops-50 p-4 shadow">
@@ -229,7 +230,7 @@ const Colours = () => {
             <div>
               <h4 className="text-md text-noops-600 opacity-80">noops-50</h4>
               <h4 className="text-md select-all uppercase text-noops-600 opacity-80">
-                #f8f5ff
+                #f7f5ff
               </h4>
             </div>
           </div>
@@ -243,7 +244,7 @@ const Colours = () => {
             <div>
               <h4 className="text-md text-noops-600 opacity-80">noops-100</h4>
               <h4 className="text-md select-all uppercase text-noops-600 opacity-80">
-                #eee6ff
+                #ece7fe
               </h4>
             </div>
           </div>
@@ -257,7 +258,7 @@ const Colours = () => {
             <div>
               <h4 className="text-md text-noops-600 opacity-80">noops-200</h4>
               <h4 className="text-md select-all uppercase text-noops-600 opacity-80">
-                #e4d6ff
+                #e0d8fd
               </h4>
             </div>
           </div>
@@ -271,7 +272,7 @@ const Colours = () => {
             <div>
               <h4 className="text-md text-noops-700 opacity-80">noops-300</h4>
               <h4 className="text-md select-all uppercase text-noops-700 opacity-80">
-                #caaefe
+                #cab6fc
               </h4>
             </div>
           </div>
@@ -285,7 +286,7 @@ const Colours = () => {
             <div>
               <h4 className="text-md text-noops-100 opacity-80">noops-400</h4>
               <h4 className="text-md select-all uppercase text-noops-100 opacity-80">
-                #af84fb
+                #ae8cf8
               </h4>
             </div>
           </div>
@@ -299,7 +300,7 @@ const Colours = () => {
             <div>
               <h4 className="text-md text-noops-50 opacity-80">noops-500</h4>
               <h4 className="text-md select-all uppercase text-noops-50 opacity-80">
-                #9655f6
+                #945ef3
               </h4>
             </div>
           </div>
@@ -327,7 +328,7 @@ const Colours = () => {
             <div>
               <h4 className="text-md text-noops-50 opacity-80">noops-700</h4>
               <h4 className="text-md select-all uppercase text-noops-50 opacity-80">
-                #6f22ce
+                #7729d6
               </h4>
             </div>
           </div>
@@ -341,7 +342,7 @@ const Colours = () => {
             <div>
               <h4 className="text-md text-noops-50 opacity-80">noops-800</h4>
               <h4 className="text-md select-all uppercase text-noops-50 opacity-80">
-                #5821a6
+                #6423b3
               </h4>
             </div>
           </div>
@@ -355,7 +356,7 @@ const Colours = () => {
             <div>
               <h4 className="text-md text-noops-50 opacity-80">noops-900</h4>
               <h4 className="text-md select-all uppercase text-noops-50 opacity-80">
-                #471c87
+                #531f93
               </h4>
             </div>
           </div>
@@ -369,7 +370,7 @@ const Colours = () => {
             <div>
               <h4 className="text-md text-noops-50 opacity-80">noops-950</h4>
               <h4 className="text-md select-all uppercase text-noops-50 opacity-80">
-                #2a075f
+                #341164
               </h4>
             </div>
           </div>
@@ -396,6 +397,16 @@ const Colours = () => {
             brand simply named, "noops". It is not a default TailwindCSS colour
             palette, but is in-between the default Tailwind violet and purple
             palettes.
+            <br /> <br />
+            They were generated using{" "}
+            <a
+              className="font-medium text-noops-500 transition hover:text-noops-600"
+              href="https://uicolors.app/create"
+            >
+              uicolors.app
+            </a>{" "}
+            with the primary brand colour{" "}
+            <span className="text-noops-600">#8335e9</span>.
           </p>
         </div>
       </div>
