@@ -16,3 +16,4 @@ export { Blocks } from "./Blocks";
 export { DevOpsHero } from "./DevOpsHero";
 export { Stack } from "./Stack";
 export { NoSurprises } from "./NoSurprises";
+export { Footer } from "./Footer";
