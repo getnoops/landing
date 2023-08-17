@@ -10,7 +10,7 @@ import {
 const HomeContent = {
   hero: {
     description:
-      "NoOps acts as a bridge between your application and end-users by automating your infrastructure and ensuring your application runs smoothly and securely, without the need for a dedicated operations team.",
+      "NoOps is a fully managed cloud platform that automates your infrastructure and operations, so you can focus on building your product.",
   },
 
   bridge: {

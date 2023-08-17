@@ -80,10 +80,12 @@ const Bridge = ({ title, description }: BridgeProps) => {
 
               <div className="absolute left-20 flex h-full flex-col items-center justify-center gap-2 sm:left-32 sm:gap-1 md:gap-4 lg:gap-6">
                 {devTech.map(({ name, logo }) => (
-                  <div className="relative z-10 flex aspect-square h-12 items-center justify-center rounded-xl border border-slate-100 bg-white text-black shadow-lg transition sm:h-16 md:h-20">
+                  <div
+                    key={name}
+                    className="relative z-10 flex aspect-square h-12 items-center justify-center rounded-xl border border-slate-100 bg-white text-black shadow-lg transition sm:h-16 md:h-20"
+                  >
                     <img
                       className="h-full object-contain p-3 sm:p-5"
-                      key={name}
                       alt={name}
                       src={logo}
                     />
@@ -138,11 +140,13 @@ const Bridge = ({ title, description }: BridgeProps) => {
 
             <div className="relative flex items-center justify-around gap-2 rounded-xl bg-gradient-to-br sm:h-96 sm:gap-1 md:gap-4 lg:gap-6">
               <div className="absolute right-20 flex h-full flex-col items-center justify-center gap-2 sm:right-32 sm:gap-1 md:gap-4 lg:gap-6">
-                {cloudTech.map(({ name, logo }) => (
-                  <div className="relative z-10 flex aspect-square h-12 items-center justify-center rounded-xl border border-slate-100 bg-white text-black shadow-lg transition sm:h-16 md:h-20">
+                {cloudTech.map(({ name, logo }, i) => (
+                  <div
+                    key={name}
+                    className="relative z-10 flex aspect-square h-12 items-center justify-center rounded-xl border border-slate-100 bg-white text-black shadow-lg transition sm:h-16 md:h-20"
+                  >
                     <img
                       className="h-full object-contain p-3 sm:p-5"
-                      key={name}
                       alt={name}
                       src={logo}
                     />

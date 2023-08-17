@@ -25,52 +25,54 @@ const { hero, bridge, steps, features, pricing, skeptic, faqs, cta } =
 
 <Body>
   {/* Hero */}
-  {
-    /* animation idea cycle between different products e.g. focus on your... app, website, tooling then land on product */
-  }
-  <Hero description={hero.description} />
+  <div class="bg-noops-50">
+    {
+      /* animation idea cycle between different products e.g. focus on your... app, website, tooling then land on product */
+    }
+    <Hero description={hero.description} client:load />
 
-  {/* change images */}
-  <Bridge
-    title={bridge.title}
-    description={bridge.description}
-    client:visible
-  />
+    {/* change images */}
+    <Bridge
+      title={bridge.title}
+      description={bridge.description}
+      client:visible
+    />
 
-  {/* Relevant Page */}
-  {/* <RoleSelect /> */}
-  <Steps
-    title={steps.title}
-    description={steps.description}
-    steps={steps.steps}
-  />
+    {/* Relevant Page */}
+    {/* <RoleSelect /> */}
+    <Steps
+      title={steps.title}
+      description={steps.description}
+      steps={steps.steps}
+    />
 
-  <Features
-    title={features.title}
-    subtitle={features.subtitle}
-    description={features.description}
-    features={features.features}
-  />
+    <Features
+      title={features.title}
+      subtitle={features.subtitle}
+      description={features.description}
+      features={features.features}
+    />
 
-  {/* Testimonials */}
+    {/* Testimonials */}
 
-  {/* Heard enough? CTA in the middle of the flow? */}
+    {/* Heard enough? CTA in the middle of the flow? */}
 
-  <Pricing title={pricing.title} subtitle={pricing.subtitle} />
+    <Pricing title={pricing.title} subtitle={pricing.subtitle} />
 
-  <Skeptic
-    title={skeptic.title}
-    prompt={skeptic.prompt}
-    cta={skeptic.cta}
-    client:visible
-  />
+    <Skeptic
+      title={skeptic.title}
+      prompt={skeptic.prompt}
+      cta={skeptic.cta}
+      client:visible
+    />
 
-  {/* FAQ? */}
-  <FAQ title={faqs.title} description={faqs.description} faqs={faqs.faqs} />
+    {/* FAQ? */}
+    <FAQ title={faqs.title} description={faqs.description} faqs={faqs.faqs} />
 
-  {/* CTA */}
-  <!-- <CTA line1={cta.line1} line2={cta.line2} cta={cta.cta} /> -->
+    {/* CTA */}
+    <!-- <CTA line1={cta.line1} line2={cta.line2} cta={cta.cta} /> -->
 
-  {/* Need a footer? */}
-  <Footer />
+    {/* Need a footer? */}
+    <Footer />
+  </div>
 </Body>
