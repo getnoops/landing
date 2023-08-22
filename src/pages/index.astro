@@ -10,6 +10,7 @@ import {
   FAQ,
   CTA,
   Footer,
+  Streamline,
 } from "../components";
 
 import HomeContent from "../content/Home";
@@ -32,7 +33,7 @@ const { hero, bridge, steps, features, pricing, skeptic, faqs, cta } =
     <Hero description={hero.description} client:load />
 
     {/* change images */}
-    <Bridge
+    <Streamline
       title={bridge.title}
       description={bridge.description}
       client:visible
@@ -40,34 +41,34 @@ const { hero, bridge, steps, features, pricing, skeptic, faqs, cta } =
 
     {/* Relevant Page */}
     {/* <RoleSelect /> */}
-    <Steps
+    <!-- <Steps
       title={steps.title}
       description={steps.description}
       steps={steps.steps}
-    />
+    /> -->
 
-    <Features
+    <!-- <Features
       title={features.title}
       subtitle={features.subtitle}
       description={features.description}
       features={features.features}
-    />
+    /> -->
 
     {/* Testimonials */}
 
     {/* Heard enough? CTA in the middle of the flow? */}
 
-    <Pricing title={pricing.title} subtitle={pricing.subtitle} />
+    <!-- <Pricing title={pricing.title} subtitle={pricing.subtitle} /> -->
 
-    <Skeptic
+    <!-- <Skeptic
       title={skeptic.title}
       prompt={skeptic.prompt}
       cta={skeptic.cta}
       client:visible
-    />
+    /> -->
 
     {/* FAQ? */}
-    <FAQ title={faqs.title} description={faqs.description} faqs={faqs.faqs} />
+    <!-- <FAQ title={faqs.title} description={faqs.description} faqs={faqs.faqs} /> -->
 
     {/* CTA */}
     <!-- <CTA line1={cta.line1} line2={cta.line2} cta={cta.cta} /> -->

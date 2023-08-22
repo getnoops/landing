@@ -49,6 +49,11 @@ module.exports = {
           "50%": { opacity: 0.5 },
           "100%": { opacity: 1 },
         },
+        shimmer: {
+          "100%": {
+            transform: "translateX(100%)",
+          },
+        },
       },
     },
   },

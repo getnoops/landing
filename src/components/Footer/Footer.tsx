@@ -1,5 +1,4 @@
 import { ArrowRightIcon } from "@heroicons/react/20/solid";
-import React from "react";
 import Blob from "./Blob/Blob";
 
 const Links = [
@@ -47,7 +46,7 @@ const Links = [
 const Footer = () => {
   return (
     <div className="bg-noops-1000 overflow-clip">
-      <div className="min-h-[28rem]   mx-auto relative text-white ">
+      <div className="min-h-[28rem]    relative text-white  mx-auto">
         <div className="relative z-10 grid sm:grid-cols-4 px-16 py-24 gap-8 sm:gap-4">
           <div className="">
             <img
@@ -71,7 +70,7 @@ const Footer = () => {
                   {link.links.map((l) => (
                     <a
                       href={l.href}
-                      className="mt-4 text-base flex group items-center gap-x-2 tracking-wide text-noops-200 transition hover:text-noops-400 max-w-fit"
+                      className="mt-4 text-base flex group  gap-x-2 tracking-wide items-center text-noops-200 transition hover:text-noops-400 max-w-fit"
                     >
                       {l.title}
                       <ArrowRightIcon className="h-5 opacity-0 transition group-hover:opacity-100 text-noops-200 group-hover:text-noops-400" />

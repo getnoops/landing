@@ -47,12 +47,12 @@ const Hero = ({ description }: HomeProps) => {
         <div className="relative py-28 sm:py-40">
           <div className="relative z-10 mx-auto max-w-7xl px-2 lg:px-8">
             <div className="relative mx-auto text-center">
-              <h1 className="text-6xl font-semibold tracking-tight text-slate-800 sm:text-7xl md:leading-[5rem]">
+              <h1 className="text-6xl font-semibold tracking-tight  sm:text-7xl md:leading-[5rem]">
                 <span className="bg-gradient-to-b from-noops-100 to-noops-300 bg-clip-text text-transparent ">
                   DevOps{" "}
                 </span>
 
-                <span className="bg-gradient-to-r from-noops-400 font-extrabold  to-noops-700 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-noops-600 font-extrabold  to-accent bg-clip-text text-transparent">
                   slowing{" "}
                 </span>
 
