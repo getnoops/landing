@@ -31,11 +31,6 @@ const codeWeight = 5;
 const ModernK8 = {
   infra: [
     {
-      name: "Setup UPC",
-      Icon: CloudIcon,
-      weight: 3,
-    },
-    {
       name: "Create DBs",
       Icon: CircleStackIcon,
       weight: 3,
@@ -78,11 +73,6 @@ const ModernK8 = {
 const ModernASG = {
   infra: [
     {
-      name: "Setup UPC",
-      Icon: CloudIcon,
-      weight: 3,
-    },
-    {
       name: "Create DBs",
       Icon: CircleStackIcon,
       weight: 3,
@@ -120,11 +110,6 @@ const ModernASG = {
 const OldSchool = {
   infra: [
     {
-      name: "Setup UPC",
-      Icon: CloudIcon,
-      weight: 3,
-    },
-    {
       name: "Create DBs",
       Icon: CircleStackIcon,
       weight: 3,
@@ -159,49 +144,13 @@ const OldSchool = {
   ],
 };
 
-const OnPrem = {
-  infra: [],
-  dev: [
-    {
-      name: "Buy Parts",
-      Icon: CurrencyDollarIcon,
-      weight: 3,
-    },
-    {
-      name: "Build Server",
-      Icon: ServerStackIcon,
-      weight: 1,
-    },
-    {
-      name: "RMA Broken Parts",
-      Icon: CpuChipIcon,
-      weight: 2,
-    },
-    {
-      name: "Rebuild Server",
-      Icon: ServerStackIcon,
-      weight: 1,
-    },
-    {
-      name: "Requirements Change",
-      Icon: RocketLaunchIcon,
-      weight: 1,
-    },
-    {
-      name: "Give Up",
-      Icon: RocketLaunchIcon,
-      weight: 10,
-    },
-  ],
-};
-
 const Streamline = ({ title, description }: StreamlineProps) => {
   const [codeWeight, setCodeWeight] = useState(5);
 
   return (
     <section className="relative -mt-[40rem] px-6 py-24 sm:py-32 md:-mt-144 lg:px-8">
       <div className="mx-auto max-w-5xl text-center">
-        <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+        <h2 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-6xl">
           <span className="bg-gradient-to-r from-noops-600 to-accent bg-clip-text text-transparent">
             Streamline{" "}
           </span>
@@ -209,7 +158,7 @@ const Streamline = ({ title, description }: StreamlineProps) => {
             your pipeline
           </span>
         </h2>
-        <p className="mt-6 text-lg leading-8 text-gray-600">{description}</p>
+        <p className="mt-6 text-lg leading-8 text-slate-600">{description}</p>
       </div>
 
       <div className="relative mx-auto mt-12 max-w-6xl ">
@@ -268,13 +217,6 @@ const Streamline = ({ title, description }: StreamlineProps) => {
               Old School
             </h5>
             <DualBars infraSteps={OldSchool.infra} devSteps={OldSchool.dev} />
-
-            <h5 className="text-right font-mono text-xl font-medium tracking-tight text-noops-300">
-              On Prem
-            </h5>
-            <div className="col-span-6">
-              <OnPremBar steps={OnPrem.dev} />
-            </div>
           </div>
         </div>
       </div>

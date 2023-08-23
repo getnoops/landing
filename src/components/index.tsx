@@ -18,3 +18,4 @@ export { Stack } from "./Stack";
 export { NoSurprises } from "./NoSurprises";
 export { Footer } from "./Footer";
 export { Streamline } from "./Streamline";
+export { Environment } from "./Environment";
