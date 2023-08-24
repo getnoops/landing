@@ -138,7 +138,7 @@ const technologies = [
 // Probably want to improve this, but for now its alright
 const YourTech = () => {
   return (
-    <section className="relative px-6 py-24 sm:py-32 lg:px-8">
+    <section className="relative overflow-x-clip px-6 py-24 sm:py-32 lg:px-8">
       <div className="mx-auto max-w-5xl text-center">
         <h2 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-6xl">
           <span className="bg-gradient-to-t from-slate-600 to-slate-900 bg-clip-text text-transparent">
@@ -153,7 +153,7 @@ const YourTech = () => {
         </p>
       </div>
 
-      <div className="relative mx-auto mt-12 max-w-6xl ">
+      <div className="relative mx-auto mt-12 max-w-6xl  ">
         {/* <div className="absolute -inset-4  rounded-[32px] border border-noops-200 bg-noops-600 bg-opacity-5"></div> */}
         <div className=" absolute -inset-[20%] bg-gradient-to-r from-accent/20 via-transparent to-accent/20 blur-3xl"></div>
 
