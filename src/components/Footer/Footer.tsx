@@ -47,7 +47,7 @@ const Footer = () => {
   return (
     <div className="overflow-clip bg-noops-1000">
       <div className="relative    mx-auto min-h-[20rem]  text-white">
-        <div className="relative z-10 grid gap-8 px-16 py-20 sm:grid-cols-4 sm:gap-4">
+        <div className="relative z-10 mx-auto grid max-w-7xl gap-8 px-16 py-20 sm:grid-cols-4 sm:gap-4">
           <div className="">
             <img
               src="/logo_smile.svg"
