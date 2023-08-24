@@ -169,8 +169,8 @@ const Streamline = ({ title, description }: StreamlineProps) => {
         <div className="relative w-full overflow-clip rounded-2xl border border-noops-100 bg-noops-1000 p-6 opacity-100  shadow-lg shadow-noops-200">
           <div className=" absolute inset-0 bg-gradient-to-r from-accent/20 via-transparent to-accent/20"></div>
 
-          <div className="relative grid grid-cols-7 items-center gap-4">
-            <div className="relative flex justify-end">
+          <div className="relative grid items-center gap-4 md:grid-cols-7">
+            <div className="relative flex md:justify-end">
               <img src="/logo_smile.svg" draggable={false} className="h-8" />
               <img
                 src="/logo_smile.svg"
@@ -200,12 +200,12 @@ const Streamline = ({ title, description }: StreamlineProps) => {
               />
             </div>
 
-            <h5 className="text-right font-mono text-xl font-medium tracking-tight text-noops-300">
+            <h5 className="font-mono text-xl font-medium tracking-tight text-noops-300 md:text-right">
               Modern K8
             </h5>
             <DualBars infraSteps={ModernK8.infra} devSteps={ModernK8.dev} />
 
-            <h5 className="text-right font-mono text-xl font-medium tracking-tight text-noops-300">
+            <h5 className="font-mono text-xl font-medium tracking-tight text-noops-300 md:text-right">
               Modern ASG
             </h5>
 
@@ -213,7 +213,7 @@ const Streamline = ({ title, description }: StreamlineProps) => {
               <DualBars infraSteps={ModernASG.infra} devSteps={ModernASG.dev} />
             </div>
 
-            <h5 className="text-right font-mono text-xl font-medium tracking-tight text-noops-300">
+            <h5 className="font-mono text-xl font-medium tracking-tight text-noops-300 md:text-right">
               Old School
             </h5>
             <DualBars infraSteps={OldSchool.infra} devSteps={OldSchool.dev} />

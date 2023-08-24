@@ -41,7 +41,7 @@ const Hero = ({ description }: HomeProps) => {
   return (
     <>
       <div className="relative  bg-noops-1000 pt-28 sm:pt-40">
-        <div className="absolute inset-x-0 top-0 h-[750px] sm:h-[900px] z-10">
+        <div className="absolute inset-x-0 top-0 z-10 h-[750px] sm:h-[900px]">
           <StarryBackground />
         </div>
         <div className="relative py-28 sm:py-40">
@@ -52,7 +52,7 @@ const Hero = ({ description }: HomeProps) => {
                   DevOps{" "}
                 </span>
 
-                <span className="bg-gradient-to-r from-noops-600 font-extrabold  to-accent bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-noops-600 to-accent  bg-clip-text font-extrabold text-transparent">
                   slowing{" "}
                 </span>
 

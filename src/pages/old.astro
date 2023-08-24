@@ -1,6 +1,5 @@
 ---
 // Component Imports
-import { ArrowLeftOnRectangleIcon } from "@heroicons/react/24/solid";
 import {
   Hero,
   Bridge,
@@ -13,7 +12,6 @@ import {
   Footer,
   Streamline,
   Environment,
-  YourTech,
 } from "../components";
 
 import HomeContent from "../content/Home";
@@ -37,19 +35,6 @@ const { hero, bridge, steps, features, pricing, skeptic, faqs, cta } =
 <Body>
   {/* Hero */}
   <div class="bg-noops-50">
-    <div
-      class="absolute top-0 z-50 flex h-16 w-full justify-between px-4 py-4 sm:px-8"
-    >
-      <img src="/logo_smile.svg" />
-      <a
-        class="inline-flex items-center gap-x-1 text-noops-300 transition hover:text-noops-400"
-        href="https://portal.getnoops.com/login"
-      >
-        <ArrowLeftOnRectangleIcon className="h-6" />
-        Login</a
-      >
-    </div>
-
     {
       /* animation idea cycle between different products e.g. focus on your... app, website, tooling then land on product */
     }
@@ -61,45 +46,43 @@ const { hero, bridge, steps, features, pricing, skeptic, faqs, cta } =
       client:visible
     />
 
-    <YourTech client:visible />
-
     <Environment client:visible />
 
     {/* Relevant Page */}
     {/* <RoleSelect /> */}
-    <!-- <Steps
+    <Steps
       title={steps.title}
       description={steps.description}
       steps={steps.steps}
-    /> -->
+    />
 
-    <!-- <Features
+    <Features
       title={features.title}
       subtitle={features.subtitle}
       description={features.description}
       features={features.features}
-    /> -->
+    />
 
     {/* Testimonials */}
 
     {/* Heard enough? CTA in the middle of the flow? */}
 
-    <!-- <Pricing title={pricing.title} subtitle={pricing.subtitle} /> -->
+    <Pricing title={pricing.title} subtitle={pricing.subtitle} />
 
-    <!-- <Skeptic
+    <Skeptic
       title={skeptic.title}
       prompt={skeptic.prompt}
       cta={skeptic.cta}
       client:visible
-    /> -->
+    />
 
     {/* FAQ? */}
-    <!-- <FAQ title={faqs.title} description={faqs.description} faqs={faqs.faqs} /> -->
+    <FAQ title={faqs.title} description={faqs.description} faqs={faqs.faqs} />
 
     {/* CTA */}
-    <!-- <CTA line1={cta.line1} line2={cta.line2} cta={cta.cta} /> -->
+    <CTA line1={cta.line1} line2={cta.line2} cta={cta.cta} />
 
     {/* Need a footer? */}
-    <Footer />
+    <!-- <Footer /> -->
   </div>
 </Body>
