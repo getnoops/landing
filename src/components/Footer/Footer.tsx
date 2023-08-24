@@ -45,9 +45,9 @@ const Links = [
 
 const Footer = () => {
   return (
-    <div className="bg-noops-1000 overflow-clip">
-      <div className="min-h-[28rem]    relative text-white  mx-auto">
-        <div className="relative z-10 grid sm:grid-cols-4 px-16 py-24 gap-8 sm:gap-4">
+    <div className="overflow-clip bg-noops-1000">
+      <div className="relative    mx-auto min-h-[20rem]  text-white">
+        <div className="relative z-10 grid gap-8 px-16 py-20 sm:grid-cols-4 sm:gap-4">
           <div className="">
             <img
               src="/logo_smile.svg"
@@ -56,24 +56,24 @@ const Footer = () => {
               draggable={false}
             />
           </div>
-          <div className="col-span-3 gap-8 sm:gap-4 grid grid-cols-2 lg:grid-cols-3">
+          <div className="col-span-3 grid grid-cols-2 gap-8 sm:gap-4 lg:grid-cols-3">
             {Links.map((link) => (
               <div className="">
                 <div>
-                  <h6 className="text-base  text-noops-300 tracking-[0.25rem] UPPERCASE">
+                  <h6 className="UPPERCASE  text-sm tracking-[0.25rem] text-noops-300">
                     {link.title}
                   </h6>
-                  <div className="w-full max-w-[200px] mt-1 h-px bg-noops-300"></div>
+                  <div className="mt-1 h-px w-full max-w-[200px] bg-noops-300"></div>
                 </div>
 
                 <div className="space-y-4">
                   {link.links.map((l) => (
                     <a
                       href={l.href}
-                      className="mt-4 text-base flex group  gap-x-2 tracking-wide items-center text-noops-200 transition hover:text-noops-400 max-w-fit"
+                      className="group mt-4 flex max-w-fit  items-center gap-x-2 text-sm tracking-wide text-noops-200 transition hover:text-noops-400"
                     >
                       {l.title}
-                      <ArrowRightIcon className="h-5 opacity-0 transition group-hover:opacity-100 text-noops-200 group-hover:text-noops-400" />
+                      <ArrowRightIcon className="h-5 text-noops-200 opacity-0 transition group-hover:text-noops-400 group-hover:opacity-100" />
                     </a>
                   ))}
                 </div>
@@ -83,17 +83,17 @@ const Footer = () => {
         </div>
         {/* BLOB */}
         <div className="absolute inset-0 ">
-          <div className="absolute w-full h-144 top-[80%] -left-[80%] sm:top-[60%] sm:-left-[20%] lg:top-1/2 lg:-left-[5%] flex items-center justify-center">
+          <div className="absolute -left-[80%] top-[80%] flex h-144 w-full items-center justify-center sm:-left-[20%] sm:top-[60%] lg:-left-[5%] lg:top-1/2">
             <Blob
-              className="absolute blur-[120px]  h-[100%] left-0"
+              className="absolute left-0  h-[100%] blur-[120px]"
               fill="#ae8cf8"
             />
             <Blob
-              className="absolute blur-[120px] mix-blend-overlay h-[100%] left-0"
+              className="absolute left-0 h-[100%] mix-blend-overlay blur-[120px]"
               fill="#cab6fc"
             />
             <Blob
-              className="absolute blur-[120px]  h-[50%] mix-blend-overlay left-0"
+              className="absolute left-0  h-[50%] mix-blend-overlay blur-[120px]"
               fill="#ece7fe"
             />
 

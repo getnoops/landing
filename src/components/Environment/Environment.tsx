@@ -44,7 +44,7 @@ const Environment = () => {
           </span>
         </h2>
         <p className="mt-6 text-lg leading-8 text-slate-600">
-          Easily deploy your code wherever and whenever you want
+          Easily deploy your code whenever and wherever you want
         </p>
       </div>
 
