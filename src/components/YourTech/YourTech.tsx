@@ -153,7 +153,7 @@ const YourTech = () => {
         </p>
       </div>
 
-      <div className="relative mx-auto mt-12 max-w-6xl  ">
+      <div className="relative mx-auto mt-12 max-w-6xl">
         {/* <div className="absolute -inset-4  rounded-[32px] border border-noops-200 bg-noops-600 bg-opacity-5"></div> */}
         <div className=" absolute -inset-[20%] bg-gradient-to-r from-accent/20 via-transparent to-accent/20 blur-3xl"></div>
 

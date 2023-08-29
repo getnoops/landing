@@ -20,3 +20,5 @@ export { Footer } from "./Footer";
 export { Streamline } from "./Streamline";
 export { Environment } from "./Environment";
 export { YourTech } from "./YourTech";
+export { TopBar } from "./TopBar";
+export { TrialForm } from "./TrialForm";

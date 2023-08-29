@@ -1,3 +1,7 @@
+import {
+  ArrowLongRightIcon,
+  ArrowSmallRightIcon,
+} from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
 import type React from "react";
 
@@ -47,23 +51,35 @@ const Hero = ({ description }: HomeProps) => {
         <div className="relative py-28 sm:py-40">
           <div className="relative z-10 mx-auto max-w-7xl px-2 lg:px-8">
             <div className="relative mx-auto text-center">
-              <h1 className="text-6xl font-semibold tracking-tight  sm:text-7xl md:leading-[5rem]">
-                <span className="bg-gradient-to-b from-noops-100 to-noops-300 bg-clip-text text-transparent ">
+              <h1 className="text-6xl font-bold tracking-tight  sm:text-7xl md:leading-[5rem]">
+                <span className="bg-gradient-to-b from-noops-100 to-noops-300 bg-clip-text py-1 text-transparent">
                   DevOps{" "}
                 </span>
 
-                <span className="bg-gradient-to-r from-noops-600 to-accent  bg-clip-text font-extrabold text-transparent">
+                <span className="bg-gradient-to-r from-noops-600 to-accent  bg-clip-text py-1 font-extrabold text-transparent">
                   slowing{" "}
                 </span>
 
-                <span className="bg-gradient-to-b from-noops-100 to-noops-300 bg-clip-text text-transparent ">
+                <span className="bg-gradient-to-b from-noops-100 to-noops-300 bg-clip-text py-1 text-transparent ">
                   you down?
                 </span>
               </h1>
               <p className="mt-6 text-xl leading-8 text-noops-200">
-                That new technology you're learning right now... stop it, it
-                will be gone tomorrow
+                Deploy your projects faster than ever while keeping best
+                practices and security in mind
               </p>
+
+              <a
+                href="/sign-up"
+                className="group relative mt-9 inline-block rounded-[10px] border-2 border-noops-700 bg-gradient-to-b from-noops-400 to-noops-600 px-6 py-2 font-medium text-white"
+              >
+                <div className="absolute inset-0.5 rounded-md bg-noops-600 transition group-hover:opacity-30" />
+                <div className="pointer-events-none absolute -inset-3 rounded-2xl border border-noops-700/30 bg-noops-900/30 "></div>
+
+                <div className="relative inline-flex w-full items-center gap-x-1">
+                  Try the Alpha <ArrowLongRightIcon className="h-6" />
+                </div>
+              </a>
             </div>
           </div>
         </div>

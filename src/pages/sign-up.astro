@@ -1,0 +1,62 @@
+---
+// Component Imports
+import { Footer, TopBar, TrialForm } from "../components";
+
+import Body from "../layouts/Body.astro";
+
+// Full Astro Component Syntax:
+// https://docs.astro.build/core-concepts/astro-components/
+---
+
+<Body>
+  {/* Hero */}
+  <div class="bg-noops-50">
+    <TopBar />
+
+    <div class="bg-noops-1000">
+      <div class="relative isolate pt-28">
+        <div
+          class="relative mx-auto max-w-7xl overflow-y-clip py-24 sm:py-32 lg:pb-40"
+        >
+          <div
+            class="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-noops-500/50 to-transparent"
+          >
+          </div>
+          <div
+            class="absolute inset-x-0 bottom-0 mx-auto aspect-square h-full translate-y-1/2 rounded-full bg-noops-800/30 blur-[140px]"
+          >
+          </div>
+          <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="mx-auto max-w-2xl text-center">
+              <h1
+                class="text-6xl font-bold tracking-tight sm:text-7xl md:leading-[5rem]"
+              >
+                <span
+                  class="bg-gradient-to-b from-noops-100 to-noops-300 bg-clip-text py-1 text-transparent"
+                >
+                  Try the {" "}
+                </span>
+
+                <span
+                  class="bg-gradient-to-r from-noops-600 to-accent bg-clip-text py-1 font-extrabold text-transparent"
+                >
+                  Alpha{" "}
+                </span>
+              </h1>
+              <p class="text-no-300 mt-6 text-lg leading-8 text-noops-300">
+                We are currently in the process of building out the platform,
+                but you can try what we have so far by completing the form below
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative mx-auto max-w-7xl overflow-y-clip p-8 pb-40 pt-28">
+          <TrialForm client:visible />
+        </div>
+      </div>
+    </div>
+
+    <Footer />
+  </div>
+</Body>

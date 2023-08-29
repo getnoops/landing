@@ -15,6 +15,7 @@ import {
   Streamline,
   Environment,
   YourTech,
+  TopBar,
 } from "../components";
 
 import HomeContent from "../content/Home";
@@ -38,31 +39,8 @@ const { hero, bridge, steps, features, pricing, skeptic, faqs, cta } =
 <Body>
   {/* Hero */}
   <div class="bg-noops-50">
-    <div
-      class="absolute inset-x-0 top-0 z-50 mx-auto flex h-16 w-full max-w-7xl justify-between px-4 py-4 sm:px-8"
-    >
-      <img src="/logo_smile.svg" />
-      <div class="flex items-center gap-x-4">
-        <a
-          class="inline-flex items-center gap-x-1 text-noops-300 transition hover:text-noops-400"
-          href="https://hub.getnoops.com"
-        >
-          <DocumentDuplicateIcon className="h-6" />
-          Docs</a
-        >
-        <a
-          class="inline-flex items-center gap-x-1 text-noops-300 transition hover:text-noops-400"
-          href="https://portal.getnoops.com/login"
-        >
-          <ArrowLeftOnRectangleIcon className="h-6" />
-          Login</a
-        >
-      </div>
-    </div>
+    <TopBar />
 
-    {
-      /* animation idea cycle between different products e.g. focus on your... app, website, tooling then land on product */
-    }
     <Hero description={hero.description} client:load />
 
     <Streamline
