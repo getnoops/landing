@@ -1,0 +1,26 @@
+---
+// Component Imports
+import { Footer, EmailQuickLinks, TopBar } from "../components";
+
+import Body from "../layouts/Body.astro";
+
+// Full Astro Component Syntax:
+// https://docs.astro.build/core-concepts/astro-components/
+---
+
+<Body>
+  {/* Hero */}
+  <div class="bg-noops-50">
+    <TopBar />
+
+    <div class="bg-noops-1000">
+      <div class="relative isolate pt-10">
+        <div class="relative mx-auto max-w-7xl p-8 pb-40 pt-28">
+          <EmailQuickLinks client:load />
+        </div>
+      </div>
+    </div>
+
+    <Footer />
+  </div>
+</Body>

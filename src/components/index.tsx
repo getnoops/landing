@@ -22,3 +22,6 @@ export { Environment } from "./Environment";
 export { YourTech } from "./YourTech";
 export { TopBar } from "./TopBar";
 export { TrialForm } from "./TrialForm";
+export { QueryProviderHOC } from "./QueryProviderHOC";
+export { SelectMenu } from "./SelectMenu";
+export { EmailQuickLinks } from "./EmailQuickLinks";

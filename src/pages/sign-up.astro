@@ -1,6 +1,6 @@
 ---
 // Component Imports
-import { Footer, TopBar, TrialForm } from "../components";
+import { Footer,  TopBar, TrialForm } from "../components";
 
 import Body from "../layouts/Body.astro";
 
@@ -52,7 +52,7 @@ import Body from "../layouts/Body.astro";
         </div>
 
         <div class="relative mx-auto max-w-7xl overflow-y-clip p-8 pb-40 pt-28">
-          <TrialForm client:visible />
+          <TrialForm client:load />
         </div>
       </div>
     </div>
