@@ -1,18 +1,13 @@
 FROM node:19 as build
 
-WORKDIR /usr/src/app
-
-COPY package.json package*.json *.tgz ./
+WORKDIR /app
+COPY package*.json ./
 RUN npm ci
-
 COPY . .
 RUN npm run build
 
-FROM nginx:stable
+FROM nginx:alpine
 
-COPY nginx.conf /etc/nginx/nginx.conf
-RUN mkdir -p /app
-WORKDIR /app
-COPY --from=build /usr/src/app/dist /app/build
-
-CMD ["nginx"]
+COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
+COPY --from=build /app/dist /usr/share/nginx/html
+EXPOSE 8080
