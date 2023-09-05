@@ -1,16 +1,7 @@
 ---
 // Component Imports
-import { DocumentDuplicateIcon } from "@heroicons/react/24/outline";
-import { ArrowLeftOnRectangleIcon } from "@heroicons/react/24/solid";
 import {
   Hero,
-  Bridge,
-  Steps,
-  Features,
-  Pricing,
-  Skeptic,
-  FAQ,
-  CTA,
   Footer,
   Streamline,
   Environment,
@@ -22,8 +13,7 @@ import HomeContent from "../content/Home";
 
 import Body from "../layouts/Body.astro";
 
-const { hero, bridge, steps, features, pricing, skeptic, faqs, cta } =
-  HomeContent;
+const { hero, bridge } = HomeContent;
 
 // Our Story
 // DevOps slowing you down?
@@ -53,41 +43,6 @@ const { hero, bridge, steps, features, pricing, skeptic, faqs, cta } =
 
     <Environment client:visible />
 
-    {/* Relevant Page */}
-    {/* <RoleSelect /> */}
-    <!-- <Steps
-      title={steps.title}
-      description={steps.description}
-      steps={steps.steps}
-    /> -->
-
-    <!-- <Features
-      title={features.title}
-      subtitle={features.subtitle}
-      description={features.description}
-      features={features.features}
-    /> -->
-
-    {/* Testimonials */}
-
-    {/* Heard enough? CTA in the middle of the flow? */}
-
-    <!-- <Pricing title={pricing.title} subtitle={pricing.subtitle} /> -->
-
-    <!-- <Skeptic
-      title={skeptic.title}
-      prompt={skeptic.prompt}
-      cta={skeptic.cta}
-      client:visible
-    /> -->
-
-    {/* FAQ? */}
-    <!-- <FAQ title={faqs.title} description={faqs.description} faqs={faqs.faqs} /> -->
-
-    {/* CTA */}
-    <!-- <CTA line1={cta.line1} line2={cta.line2} cta={cta.cta} /> -->
-
-    {/* Need a footer? */}
     <Footer />
   </div>
 </Body>

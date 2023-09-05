@@ -2,7 +2,7 @@ import {
   ArrowTopRightOnSquareIcon,
   EnvelopeOpenIcon,
 } from "@heroicons/react/24/outline";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 
 const emailProviders = [
   {
@@ -73,7 +73,7 @@ const EmailQuickLinks = () => {
               <EnvelopeOpenIcon className="h-6 w-6" />
               Quick Links
             </h2>
-            <ul className="">
+            <ul>
               {emailProviders.map((provider) => (
                 <a
                   href={provider.domain}
@@ -109,7 +109,7 @@ const EmailQuickLinks = () => {
       </div>
       <div className="mt-6">
         <div className="text-center text-sm text-noops-300">
-          If you don't see the email, please check your spam folder. <br />
+          If you don't see the email, please check your spam folder.
         </div>
       </div>
     </div>
