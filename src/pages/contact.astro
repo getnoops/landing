@@ -1,0 +1,53 @@
+---
+// Component Imports
+import { Footer, ContactUsForm, TopBar } from "../components";
+import Curve from "../components/SVGs/Curve/Curve";
+
+import Body from "../layouts/Body.astro";
+
+// Full Astro Component Syntax:
+// https://docs.astro.build/core-concepts/astro-components/
+---
+
+<Body>
+  <div class="bg-noops-50">
+    <TopBar />
+
+    <div class="bg-noops-1000">
+      <div class="relative overflow-clip pt-10">
+        <div
+          class="absolute -bottom-0 -right-0 h-1/3 w-[1679px] blur-[80px] transition-all md:h-1/2 xl:h-2/3 2xl:h-[70%]"
+        >
+          <Curve fill="#b980fa" className="absolute right-0 h-full " />
+        </div>
+        <div
+          class="absolute -bottom-0 -right-0 h-1/3 w-[1679px] mix-blend-overlay blur-[80px] transition-all md:h-1/2 xl:h-2/3 2xl:h-[70%]"
+        >
+          <Curve fill="#cab6fc" className="absolute right-0 h-full " />
+        </div>
+
+        <div class="mx-auto w-full max-w-7xl items-center lg:flex">
+          <div
+            class="relative mx-auto w-full flex-1 space-y-4 p-8 pt-20 lg:pb-40 lg:pt-28"
+          >
+            <h6 class="text-noops-300">Contact Us</h6>
+            <h1 class="text-5xl font-bold text-noops-100">
+              Whatever's on your mind, let us know
+            </h1>
+            <p class="text-2xl text-noops-200">
+              We can't wait to hear from you
+            </p>
+          </div>
+
+          <div
+            class="relative mx-auto w-full flex-1 px-8 pb-12 pt-8 lg:pb-40 lg:pt-32"
+          >
+            <ContactUsForm client:load />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <Footer />
+  </div>
+</Body>

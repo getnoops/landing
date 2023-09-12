@@ -25,3 +25,4 @@ export { TrialForm } from "./TrialForm";
 export { QueryProviderHOC } from "./QueryProviderHOC";
 export { SelectMenu } from "./SelectMenu";
 export { EmailQuickLinks } from "./EmailQuickLinks";
+export { ContactUsForm } from "./ContactUsForm";

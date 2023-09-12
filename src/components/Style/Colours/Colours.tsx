@@ -63,7 +63,7 @@ const Colours = () => {
           <div className="my-4 rounded-lg border border-slate-100 bg-slate-50 p-4">
             <h2 className="text-lg font-semibold text-slate-800">Comment</h2>
             <p className="text-base text-slate-600">
-              The color purple was chosen for NoOps as it sparks a sense of
+              The color purple was chosen for No_Ops as it sparks a sense of
               Innovation and Creativity, symbolizing our forward-thinking
               approach to technology. Simultaneously, it conveys an idea of
               Sophistication, reflecting the intricacy of IT operations and the
@@ -393,7 +393,7 @@ const Colours = () => {
         <div className="my-4 rounded-lg border border-slate-100 bg-slate-50 p-4">
           <h2 className="text-lg font-semibold text-slate-800">Comment</h2>
           <p className="text-base text-slate-600">
-            This purple colour palette is a custom colour palette for the Noops
+            This purple colour palette is a custom colour palette for the No_Ops
             brand simply named, "noops". It is not a default TailwindCSS colour
             palette, but is in-between the default Tailwind violet and purple
             palettes.
@@ -557,7 +557,7 @@ const Colours = () => {
       <div className="rounded-lg border border-slate-100 bg-slate-50 p-4">
         <h2 className="text-lg font-semibold text-slate-800">Comment</h2>
         <p className="text-base text-slate-600">
-          Most of the NoOps Application theme consists of a purple foreground
+          Most of the No_Ops Application theme consists of a purple foreground
           with a white/light-gray background.
           <br />
           The purple is used for the primary buttons, links, and other

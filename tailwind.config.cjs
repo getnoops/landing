@@ -25,6 +25,7 @@ module.exports = {
         "noops-950": "hsl(265, 71%, 23%)",
 
         "noops-1000": "#0b0217",
+        "noops-1050": "hsl(266, 81%, 3%)",
         accent: "#b980fa",
       },
       spacing: {
