@@ -84,6 +84,9 @@ const Footer = () => {
         {/* BLOB */}
         <div className="absolute inset-0 ">
           <div className="absolute -left-[80%] top-[80%] flex h-144 w-full items-center justify-center sm:-left-[20%] sm:top-[60%] lg:-left-[5%] lg:top-1/2">
+            {/* b980fa for a more pink-ish look
+                ae8cf8 for a more blue-ish look
+             */}
             <Blob
               className="absolute left-0  h-[100%] blur-[120px]"
               fill="#ae8cf8"
