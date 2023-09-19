@@ -26,3 +26,4 @@ export { QueryProviderHOC } from "./QueryProviderHOC";
 export { SelectMenu } from "./SelectMenu";
 export { EmailQuickLinks } from "./EmailQuickLinks";
 export { ContactUsForm } from "./ContactUsForm";
+export { AWSManaged } from "./AWSManaged";

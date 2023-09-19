@@ -1,5 +1,3 @@
-import React from "react";
-
 const technologies = [
   {
     name: "Next.js",
