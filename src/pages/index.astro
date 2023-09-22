@@ -7,7 +7,7 @@ import {
   Environment,
   YourTech,
   TopBar,
-AWSManaged,
+  AWSManaged,
 } from "../components";
 
 import HomeContent from "../content/Home";
@@ -34,6 +34,8 @@ const { hero, bridge } = HomeContent;
 
     <Hero description={hero.description} client:load />
 
+    <AWSManaged client:visible />
+
     <Streamline
       title={bridge.title}
       description={bridge.description}
@@ -43,8 +45,6 @@ const { hero, bridge } = HomeContent;
     <YourTech client:visible />
 
     <Environment client:visible />
-
-    <!-- <AWSManaged client:visible /> -->
 
     <Footer />
   </div>

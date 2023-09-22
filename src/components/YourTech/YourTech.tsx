@@ -159,7 +159,10 @@ const YourTech = () => {
 
         <div className="relative grid grid-cols-2 gap-4 text-noops-300 sm:grid-cols-3 sm:gap-8">
           {technologies.map((tech) => (
-            <div className="flex items-center justify-center rounded-2xl border border-noops-200 bg-noops-600 bg-opacity-5 p-4 shadow-md shadow-noops-200">
+            <div
+              key={tech.name}
+              className="flex items-center justify-center rounded-2xl border border-noops-200 bg-noops-600 bg-opacity-5 p-4 shadow-md shadow-noops-200"
+            >
               {tech.svg}
             </div>
           ))}

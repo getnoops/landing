@@ -374,6 +374,20 @@ const Colours = () => {
               </h4>
             </div>
           </div>
+          <div className="flex h-36 flex-col justify-between rounded-lg bg-noops-975 p-4 shadow">
+            <div>
+              <h2 className="text-xl font-semibold tracking-wide text-noops-50">
+                975
+              </h2>
+              <p className="text-sm font-medium text-noops-50 opacity-90"></p>
+            </div>
+            <div>
+              <h4 className="text-md text-noops-50 opacity-80">noops-975</h4>
+              <h4 className="text-md select-all uppercase text-noops-50 opacity-80">
+                #16072c
+              </h4>
+            </div>
+          </div>
           <div className="flex h-36 flex-col justify-between rounded-lg bg-noops-1000 p-4 shadow">
             <div>
               <h2 className="text-xl font-semibold tracking-wide text-noops-50">
@@ -385,6 +399,20 @@ const Colours = () => {
               <h4 className="text-md text-noops-50 opacity-80">noops-1000</h4>
               <h4 className="text-md select-all uppercase text-noops-50 opacity-80">
                 #0b0217
+              </h4>
+            </div>
+          </div>
+          <div className="flex h-36 flex-col justify-between rounded-lg bg-noops-1050 p-4 shadow">
+            <div>
+              <h2 className="text-xl font-semibold tracking-wide text-noops-50">
+                1050
+              </h2>
+              <p className="text-sm font-medium text-noops-50 opacity-90"></p>
+            </div>
+            <div>
+              <h4 className="text-md text-noops-50 opacity-80">noops-1050</h4>
+              <h4 className="text-md select-all uppercase text-noops-50 opacity-80">
+                #07010e
               </h4>
             </div>
           </div>

@@ -73,25 +73,9 @@ const Environment = () => {
             {/* TOP LINES */}
             <motion.path
               variants={draw}
-              custom={[1, 1.5]}
-              d="M0 65H202.619H474.5"
-              stroke="#8335E9"
-            />
-            <motion.path
-              variants={draw}
               custom={[0.1, 1.2]}
               opacity="0.1"
               d="M0 65C0 65 137 65 191.5 65C246 65 246.5 10 301 10C355.5 10 419.5 10 419.5 10"
-              stroke="#8335E9"
-              strokeWidth="4"
-            />
-
-            {/* MIDDLE LINES */}
-            <motion.path
-              variants={draw}
-              custom={[0.1, 1]}
-              opacity="0.1"
-              d="M0 65H202.619H474.5"
               stroke="#8335E9"
               strokeWidth="4"
             />
@@ -100,6 +84,22 @@ const Environment = () => {
               custom={[1, 1.7]}
               d="M0 65C0 65 137 65 191.5 65C246 65 246.5 10 301 10C355.5 10 419.5 10 419.5 10"
               stroke="#8335E9"
+            />
+
+            {/* MIDDLE LINES */}
+            <motion.path
+              variants={draw}
+              custom={[1, 1.5]}
+              d="M0 65H202.619H474.5"
+              stroke="#8335E9"
+            />
+            <motion.path
+              variants={draw}
+              custom={[0.1, 1]}
+              opacity="0.1"
+              d="M0 65H202.619H474.5"
+              stroke="#8335E9"
+              strokeWidth="4"
             />
 
             {/* BOTTOM LINES */}

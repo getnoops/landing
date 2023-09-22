@@ -8,17 +8,12 @@ import {
   ServerStackIcon,
   Square3Stack3DIcon,
   DocumentTextIcon,
-  CurrencyDollarIcon,
-  EnvelopeIcon,
-  CpuChipIcon,
   ArchiveBoxIcon,
-  CloudIcon,
   ClipboardDocumentCheckIcon,
 } from "@heroicons/react/20/solid";
-import { CloudArrowUpIcon, SparklesIcon } from "@heroicons/react/24/solid";
-import { motion, Variants } from "framer-motion";
-import { useEffect, useState } from "react";
-import { DevBar, InfraBar, NoOpsBar, OnPremBar } from "../Bars";
+import { CloudArrowUpIcon } from "@heroicons/react/24/solid";
+import { useState } from "react";
+import { NoOpsBar } from "../Bars";
 import DualBars from "../Bars/DualBars";
 
 interface StreamlineProps {
@@ -148,7 +143,7 @@ const Streamline = ({ title, description }: StreamlineProps) => {
   const [codeWeight, setCodeWeight] = useState(5);
 
   return (
-    <section className="relative -mt-[40rem] px-6 py-24 sm:py-32 md:-mt-144 lg:px-8">
+    <section className="relative  px-6 py-24 sm:py-32 lg:px-8">
       <div className="mx-auto max-w-5xl text-center">
         <h2 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-6xl">
           <span className="bg-gradient-to-r from-noops-600 to-accent bg-clip-text text-transparent">
