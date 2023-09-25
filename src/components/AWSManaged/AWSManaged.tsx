@@ -1,29 +1,4 @@
-import { motion, Variants } from "framer-motion";
-import React from "react";
 import AWSGraphic from "./AWSGraphic/AWSGraphic";
-
-const variants: Variants = {
-  hidden: {
-    opacity: 0,
-    filter: "blur(0px)",
-  },
-  animate: {
-    opacity: [0, 1, 1, 0],
-    filter: [
-      "blur(20px)",
-      "blur(20px)",
-      "blur(10px)",
-      "blur(5px)",
-      "blur(0px)",
-    ],
-    transition: {
-      duration: 2.5,
-      opacity: {
-        duration: 3,
-      },
-    },
-  },
-};
 
 const AWSManaged = () => {
   return (
@@ -39,7 +14,7 @@ const AWSManaged = () => {
         </h2>
         <p className="mt-6 text-lg leading-8 text-slate-600">
           We handle AWS intricacies and complexity for you, ensuring optimal
-          performance and security.
+          performance and security
         </p>
       </div>
 
@@ -48,17 +23,9 @@ const AWSManaged = () => {
         {/* maybe */}
         {/* <div className="absolute inset-x-0 top-1/2 h-1/2 bg-gradient-to-r from-noops-600 to-accent blur-3xl"></div> */}
 
-        <div className="relative w-full overflow-clip rounded-2xl border border-noops-100 bg-noops-1000 px-4 py-6 opacity-100 shadow-lg shadow-noops-200  md:px-6 md:py-16">
+        <div className="relative w-full overflow-hidden rounded-2xl border border-noops-100 bg-noops-1000 px-4 py-6 opacity-100 shadow-lg shadow-noops-200  md:px-6 md:py-16">
           <div className=" pointer-events-none absolute inset-0 bg-gradient-to-r from-accent/20 via-transparent to-accent/20"></div>
-          <div className="relative mx-auto md:w-[80%]">
-            <motion.div
-              variants={variants}
-              initial="hidden"
-              // animate="animate"
-              className="absolute top-[46.2%] aspect-square w-[12.5%] overflow-hidden rounded-[12%] bg-accent blur-md"
-            >
-              <motion.div className="absolute inset-0 "></motion.div>
-            </motion.div>
+          <div className="relative left-1/2 mx-auto w-[140%] -translate-x-1/2 transform md:left-0 md:w-[85%] md:translate-x-0">
             <AWSGraphic />
           </div>
         </div>
