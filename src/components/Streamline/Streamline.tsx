@@ -153,7 +153,9 @@ const Streamline = ({ title, description }: StreamlineProps) => {
             your pipeline
           </span>
         </h2>
-        <p className="mt-6 text-lg leading-8 text-slate-600">{description}</p>
+        <p className="mt-6 text-lg leading-8 text-slate-600">
+          Enhance your pipeline’s reliability while accelerating delivery
+        </p>
       </div>
 
       <div className="relative mx-auto mt-12 max-w-6xl ">

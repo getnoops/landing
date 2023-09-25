@@ -60,8 +60,7 @@ const DualBars = ({ infraSteps, devSteps }: DualBarProps) => {
         animate={animationComplete ? "animate" : "initial"}
         className="absolute inset-0 z-50 flex h-full w-full items-center justify-center text-center text-2xl font-black text-noops-200"
       >
-        <SparklesIcon className="mr-0.5 h-6 scale-x-[-100%]" /> Deployed{" "}
-        <SparklesIcon className="h-6" />
+        Deployed
       </motion.div>
     </div>
   );

@@ -10,11 +10,7 @@ import {
   AWSManaged,
 } from "../components";
 
-import HomeContent from "../content/Home";
-
 import Body from "../layouts/Body.astro";
-
-const { hero, bridge } = HomeContent;
 
 // Our Story
 // DevOps slowing you down?
@@ -22,6 +18,8 @@ const { hero, bridge } = HomeContent;
 // Use Your Tech
 // Any environment any time
 // Observe more
+
+// todo: pull out the headers and the descriptions and put them in their own astro files so they're displayed without js
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
@@ -32,15 +30,11 @@ const { hero, bridge } = HomeContent;
   <div class="bg-noops-50">
     <TopBar />
 
-    <Hero description={hero.description} client:load />
+    <Hero />
 
     <AWSManaged client:visible />
 
-    <Streamline
-      title={bridge.title}
-      description={bridge.description}
-      client:visible
-    />
+    <Streamline client:visible />
 
     <YourTech client:visible />
 
