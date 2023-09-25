@@ -1,14 +1,10 @@
 ---
 // Component Imports
-import {
-  Hero,
-  Footer,
-  Streamline,
-  Environment,
-  YourTech,
-  TopBar,
-  AWSManaged,
-} from "../components";
+import { Hero, Footer, TopBar } from "../components";
+import AWSManaged from "../content/AWSManaged.astro";
+import Environment from "../content/Environment.astro";
+import Streamline from "../content/Streamline.astro";
+import YourTech from "../content/YourTech.astro";
 
 import Body from "../layouts/Body.astro";
 
@@ -18,8 +14,6 @@ import Body from "../layouts/Body.astro";
 // Use Your Tech
 // Any environment any time
 // Observe more
-
-// todo: pull out the headers and the descriptions and put them in their own astro files so they're displayed without js
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
@@ -32,13 +26,13 @@ import Body from "../layouts/Body.astro";
 
     <Hero />
 
-    <AWSManaged client:visible />
+    <AWSManaged />
 
-    <Streamline client:visible />
+    <Streamline />
 
-    <YourTech client:visible />
+    <YourTech />
 
-    <Environment client:visible />
+    <Environment />
 
     <Footer />
   </div>

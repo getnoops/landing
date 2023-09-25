@@ -17,13 +17,14 @@ export { DevOpsHero } from "./DevOpsHero";
 export { Stack } from "./Stack";
 export { NoSurprises } from "./NoSurprises";
 export { Footer } from "./Footer";
-export { Streamline } from "./Streamline";
-export { Environment } from "./Environment";
-export { YourTech } from "./YourTech";
 export { TopBar } from "./TopBar";
 export { TrialForm } from "./TrialForm";
 export { QueryProviderHOC } from "./QueryProviderHOC";
 export { SelectMenu } from "./SelectMenu";
 export { EmailQuickLinks } from "./EmailQuickLinks";
 export { ContactUsForm } from "./ContactUsForm";
-export { AWSManaged } from "./AWSManaged";
+
+export { AWSGraphic } from "./AWSGraphic";
+export { StreamlineGraphic } from "./StreamlineGraphic";
+export { YourTechGraphic } from "./YourTechGraphic";
+export { EnvironmentGraphic } from "./EnvironmentGraphic";
