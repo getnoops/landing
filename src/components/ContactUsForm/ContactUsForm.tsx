@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -7,6 +7,7 @@ import { useCreateTrialUser } from "../../api/service";
 import { QueryProviderHOC } from "../QueryProviderHOC";
 import { SelectMenu } from "../SelectMenu";
 import { PencilSquareIcon } from "@heroicons/react/24/outline";
+import { Alert } from "../Alert";
 
 const schema = yup
   .object({
@@ -35,27 +36,11 @@ const ContactUsForm = () => {
       message: "",
     },
   });
-  // const { mutateAsync, isLoading } = useCreateTrialUser();
 
-  const onSubmit = async (data: any) => {
-    // await mutateAsync(
-    //   {
-    //     data: {
-    //       name: data.name,
-    //       email: data.email,
-    //       company: data.company,
-    //       company_size: data.company_size,
-    //     },
-    //   },
-    //   {
-    //     onSuccess: () => {
-    //       // store email in localstorage
-    //       localStorage.setItem("signup-email", data.email);
-    //       // redirect to email quick links page
-    //       window.location.href = "/check-email";
-    //     },
-    //   }
-    // );
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const onSubmit = () => {
+    setIsSubmitted(true);
   };
 
   return (
@@ -66,7 +51,11 @@ const ContactUsForm = () => {
         Send us a message
         <PencilSquareIcon className="h-8" />
       </h1>
-      <form className="relative space-y-6" onSubmit={handleSubmit(onSubmit)}>
+      <form
+        id="contact-us-form"
+        className="relative space-y-6"
+        onSubmit={handleSubmit(onSubmit)}
+      >
         <div>
           <label
             htmlFor="name"
@@ -160,11 +149,16 @@ const ContactUsForm = () => {
           </div>
         </div>
 
+        {isSubmitted && (
+          <Alert
+            content="Hang tight, we'll get back to you as soon as possbile"
+            title="Submission received!"
+            variant="success"
+          />
+        )}
+
         <div className="flex flex-row-reverse justify-between">
-          <button
-            type="submit"
-            className="group relative  inline-block rounded-[10px] border-2 border-noops-700 bg-gradient-to-b from-noops-400 to-noops-600 px-6 py-2 font-medium text-noops-300 outline-0 transition focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-noops-1000"
-          >
+          <button className="group relative  inline-block rounded-[10px] border-2 border-noops-700 bg-gradient-to-b from-noops-400 to-noops-600 px-6 py-2 font-medium text-noops-300 outline-0 transition focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-noops-1000">
             <div className="absolute inset-0.5 rounded-md bg-noops-600 transition group-hover:opacity-30" />
             {/* <div className="pointer-events-none absolute -inset-3 rounded-2xl border border-noops-700/30 bg-noops-900/30 "></div> */}
 
