@@ -58,7 +58,7 @@ const DualBars = ({ infraSteps, devSteps }: DualBarProps) => {
           letterSpacing: { duration: 1.5, ease: "easeOut" },
         }}
         animate={animationComplete ? "animate" : "initial"}
-        className="absolute inset-0 z-50 flex h-full w-full items-center justify-center text-center text-2xl font-black text-noops-200"
+        className="absolute inset-0 z-50 flex h-full w-full transform-gpu items-center justify-center text-center text-2xl font-black text-noops-200"
       >
         Deployed
       </motion.div>

@@ -10,6 +10,10 @@ const Links = [
         href: "/",
       },
       {
+        title: "Who We Help",
+        href: "/who-we-help",
+      },
+      {
         title: "Leaders",
         href: "/leaders",
       },

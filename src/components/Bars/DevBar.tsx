@@ -128,11 +128,11 @@ const DevBar = ({
             }
             viewport={{ once: true }}
             onAnimationComplete={handleNextAnimation}
-            className="relative z-50 flex h-full w-full items-center justify-end bg-gradient-to-r from-noops-800 to-noops-600  shadow-lg"
+            className="relative z-50 flex h-full w-full transform-gpu items-center justify-end bg-gradient-to-r from-noops-800 to-noops-600  shadow-lg"
           >
             {/* Shimmer effect */}
             {!finished && (
-              <div className="absolute inset-0 -translate-x-full animate-[shimmer_2s_infinite] border-y border-noops-100 bg-gradient-to-r from-transparent via-noops-100 to-transparent opacity-[0.15]"></div>
+              <div className="absolute inset-0 -translate-x-full transform-gpu animate-[shimmer_2s_infinite] border-y border-noops-100 bg-gradient-to-r from-transparent via-noops-100 to-transparent opacity-[0.15]"></div>
             )}
             <div className="absolute left-full h-full w-1 bg-gradient-to-r from-noops-900 opacity-50 "></div>
 
@@ -147,7 +147,7 @@ const DevBar = ({
                 exit: { opacity: 0 },
               }}
               transition={{ duration: 0.5 }}
-              className="z-20 flex items-center gap-x-1 whitespace-nowrap pr-2 font-mono font-medium text-noops-200"
+              className="z-20 flex transform-gpu items-center gap-x-1 whitespace-nowrap pr-2 font-mono font-medium text-noops-200"
             >
               {waiting && (
                 <>

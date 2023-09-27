@@ -50,8 +50,8 @@ const Hero = ({ description }: HomeProps) => {
         </div>
         <div className="relative py-28 sm:py-40">
           <div className="relative z-10 mx-auto max-w-7xl px-2 lg:px-8">
-            <div className="relative mx-auto text-center">
-              <h1 className="text-6xl font-bold tracking-tight  sm:text-7xl md:leading-[5rem]">
+            <div className="relative mx-auto text-center ">
+              <h1 className="text-6xl font-bold tracking-tight [text-wrap:balance]  sm:text-7xl md:leading-[5rem]">
                 <span className="bg-gradient-to-b from-noops-100 to-noops-300 bg-clip-text py-1 text-transparent">
                   DevOps{" "}
                 </span>
@@ -64,7 +64,7 @@ const Hero = ({ description }: HomeProps) => {
                   you down?
                 </span>
               </h1>
-              <p className="mt-6 text-xl leading-8 text-noops-200">
+              <p className=" mt-6 text-xl leading-8 text-noops-200 [text-wrap:balance]">
                 Deploy your projects faster than ever while keeping best
                 practices and security in mind
               </p>
