@@ -91,9 +91,8 @@ const MediumLargeBusiness = () => {
               ))}
             </ul>
             <p className="mt-8">
-              This is a nightmare, and unfortunately a reality for many products
-              and teams at scale. No_Ops has been built to help teams at scale
-              rest easy.
+              Finally, you can take that next step with confidence. We'll help
+              you get there.
             </p>
           </div>
         </div>
