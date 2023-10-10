@@ -1,0 +1,256 @@
+---
+// Component Imports
+
+import {
+  BriefcaseIcon,
+  CubeIcon,
+  CubeTransparentIcon,
+  KeyIcon,
+  LinkIcon,
+  LockClosedIcon,
+} from "@heroicons/react/24/outline";
+import { motion } from "framer-motion";
+import { Footer, HowItWorksHeroGradient, TopBar } from "../components";
+import Body from "../layouts/Body.astro";
+
+const sizes = [
+  {
+    name: "Startup",
+    href: "#startup",
+    description:
+      "You're a small team with big dreams. You need to get your product to market fast, and you need to do it right. We can help you get there.",
+    Icon: CubeTransparentIcon,
+  },
+  {
+    name: "Medium / Large Business",
+    href: "#medium-large-business",
+    description:
+      "You're a medium to large business with a lot of moving parts. You need to get your product to market fast, and you need to do it right. We can help you get there.",
+    Icon: CubeIcon,
+  },
+  {
+    name: "Enterprise",
+    href: "#enterprise",
+    description:
+      "You're a large enterprise with a lot of moving parts. You need to get your product to market fast, and you need to do it right. We can help you get there.",
+    Icon: BriefcaseIcon,
+  },
+];
+
+// Full Astro Component Syntax:
+// https://docs.astro.build/core-concepts/astro-components/
+---
+
+<Body>
+  {/* Hero */}
+  <TopBar />
+
+  <section class="min-h-screen bg-noops-1000 text-noops-300">
+    <HowItWorksHeroGradient client:load />
+    <div class="relative z-30 flex h-screen items-center overflow-x-clip">
+      <div class="relative mx-auto max-w-2xl py-24 text-center md:py-40">
+        <div class="relative">
+          <h2 class="text-5xl font-bold tracking-tight text-white md:text-6xl">
+            <span
+              class="bg-gradient-to-b from-noops-900 to-accent bg-clip-text py-1 text-transparent"
+            >
+              How it works
+            </span>
+          </h2>
+          <p class="mt-6 text-lg leading-8 text-noops-600 [text-wrap:balance]">
+            An overview of our solution
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="relative mx-auto max-w-[110rem] overflow-x-clip md:overflow-visible"
+    >
+      <div
+        class="absolute -inset-x-20 inset-y-0 z-10 rounded-[100px] bg-noops-400 blur-3xl md:inset-2"
+      >
+      </div>
+      <div
+        class="absolute -inset-x-20 inset-y-0 z-20 rounded-[100px] bg-noops-100 mix-blend-overlay blur-3xl md:inset-2"
+      >
+      </div>
+
+      <div class="relative z-30">
+        <section class="relative px-6 py-24 sm:py-32 lg:px-8">
+          <div class="mx-auto flex max-w-5xl gap-8 text-center">
+            <div
+              class="flex aspect-square h-16 items-center justify-center rounded-full bg-gradient-to-b from-accent to-noops-500 text-5xl text-noops-200 shadow-inner shadow-white/20"
+            >
+              1
+            </div>
+            <div class="flex-1">
+              <h2
+                class="text-4xl font-bold tracking-tight text-slate-900 sm:text-6xl"
+              >
+                <span
+                  class="bg-gradient-to-r from-noops-600 to-accent bg-clip-text text-transparent"
+                >
+                  Connect your AWS regions
+                </span>
+              </h2>
+              <p class="mt-6 text-lg leading-8 text-slate-600">
+                This is where your infrastructure is provisioned
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="mx-auto mt-12 grid max-w-md grid-cols-1 gap-x-8 gap-y-12 px-4 md:max-w-3xl md:grid-cols-2 lg:mx-auto lg:max-w-[68rem] lg:grid-cols-3"
+          >
+            <article
+              class="relative flex flex-col items-start justify-between overflow-clip rounded-[28px] border border-noops-1000 bg-noops-1000/95 p-6"
+            >
+              <div
+                class="pointer-events-none absolute inset-0 bg-gradient-to-r from-accent/10 via-transparent to-accent/10"
+              >
+              </div>
+              <div
+                class="relative flex w-full items-center justify-center rounded-xl bg-noops-400/10 py-6"
+              >
+                <div class="flex h-28 items-center">
+                  <img
+                    src="/logos/AWS.svg"
+                    class="aspect-square h-[80%] rounded-full border-2 border-accent bg-gradient-to-br from-noops-100 to-accent p-2"
+                  />
+                </div>
+              </div>
+              <div class="relative max-w-xl">
+                <div class="relative">
+                  <h3
+                    class="mt-5 font-mono text-lg font-semibold leading-6 tracking-wide text-noops-200 transition"
+                  >
+                    01
+                    <span class="text-accent">//</span> Create AWS Account
+                  </h3>
+                  <p class="mt-2 line-clamp-3 text-sm leading-6 text-noops-300">
+                    Create or bring an existing AWS account
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="relative flex flex-col items-start justify-between overflow-clip rounded-[28px] border border-noops-1000 bg-noops-1000/95 p-6"
+            >
+              <div
+                class="pointer-events-none absolute inset-0 bg-gradient-to-r from-accent/10 via-transparent to-accent/10"
+              >
+              </div>
+              <div
+                class="relative flex w-full items-center justify-center rounded-xl bg-noops-400/10 py-6"
+              >
+                <div
+                  class="flex h-28 w-full flex-col items-center justify-center gap-2 px-4 font-mono"
+                >
+                  <div
+                    class="flex h-9 w-full gap-x-3 overflow-clip rounded-lg border border-noops-300/30 bg-noops-300/20"
+                  >
+                    <div class="flex w-10 items-center bg-noops-300/30 p-2">
+                      <KeyIcon />
+                    </div>
+                    <div
+                      class="flex items-center truncate overflow-ellipsis whitespace-nowrap"
+                    >
+                      5fa96759-****-****
+                    </div>
+                  </div>
+                  <div
+                    class="flex h-9 w-full gap-x-3 overflow-clip rounded-lg border border-noops-300/30 bg-noops-300/20"
+                  >
+                    <div class="flex w-10 items-center bg-noops-300/30 p-2">
+                      <LockClosedIcon />
+                    </div>
+                    <div
+                      class="flex items-center truncate overflow-ellipsis whitespace-nowrap"
+                    >
+                      e1fe10fd-****-****
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="relative max-w-xl">
+                <div class="relative">
+                  <h3
+                    class="mt-5 font-mono text-lg font-semibold leading-6 tracking-wide text-noops-200 transition"
+                  >
+                    02
+                    <span class="text-accent">//</span> Generate Access Keys
+                  </h3>
+                  <p class="mt-2 line-clamp-3 text-sm leading-6 text-noops-300">
+                    Generate your AWS access keys
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="relative flex flex-col items-start justify-between overflow-clip rounded-[28px] border border-noops-1000 bg-noops-1000/95 p-6"
+            >
+              <div
+                class="pointer-events-none absolute inset-0 bg-gradient-to-r from-accent/10 via-transparent to-accent/10"
+              >
+              </div>
+              <div
+                class="relative flex w-full items-center justify-center rounded-xl bg-noops-400/10 py-6"
+              >
+                <div class="flex h-28 w-full flex-col items-center gap-4 px-4">
+                  <div class="flex items-center">
+                    <img
+                      src="/logos/AWS.svg"
+                      class="aspect-square h-14 rounded-full border-2 border-accent bg-gradient-to-br from-noops-100 to-accent p-2"
+                    />
+                    <div class="h-1.5 w-4 scale-x-105 bg-accent"></div>
+                    <div class="rounded-full bg-accent p-1">
+                      <LinkIcon className="h-5 text-white" />
+                    </div>
+                    <div class="h-1.5 w-4 scale-x-105 bg-accent"></div>
+                    <img
+                      src="/logo_symbol.svg"
+                      class="aspect-square h-14 rounded-full border-2 border-accent bg-gradient-to-br from-noops-100 to-accent p-2"
+                    />
+                  </div>
+                  <div
+                    class="flex h-9 w-full gap-x-3 overflow-clip rounded-lg border border-noops-300/30 bg-noops-300/20"
+                  >
+                    <div
+                      class="flex items-center bg-noops-300/30 p-2 font-mono text-sm text-noops-100"
+                    >
+                      Region
+                    </div>
+                    <div
+                      class="flex items-center truncate overflow-ellipsis whitespace-nowrap font-mono"
+                    >
+                      Australia
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="relative max-w-xl">
+                <div class="relative">
+                  <h3
+                    class="mt-5 font-mono text-lg font-semibold leading-6 tracking-wide text-noops-200 transition"
+                  >
+                    03
+                    <span class="text-accent">//</span> Create Region
+                  </h3>
+                  <p class="mt-2 line-clamp-3 text-sm leading-6 text-noops-300">
+                    Create your region in No_Ops
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <div class="bg-noops-1000 py-40"></div>
+  <Footer />
+</Body>

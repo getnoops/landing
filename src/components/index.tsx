@@ -28,3 +28,4 @@ export { AWSGraphic } from "./AWSGraphic";
 export { StreamlineGraphic } from "./StreamlineGraphic";
 export { YourTechGraphic } from "./YourTechGraphic";
 export { EnvironmentGraphic } from "./EnvironmentGraphic";
+export { HowItWorksHeroGradient } from "./HowItWorksHeroGradient";

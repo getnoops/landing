@@ -14,8 +14,8 @@ const Links = [
         href: "/who-we-help",
       },
       {
-        title: "Leaders",
-        href: "/leaders",
+        title: "How It Works",
+        href: "/how-it-works",
       },
     ],
   },

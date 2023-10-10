@@ -6,7 +6,7 @@ import React from "react";
 
 const TopBar = () => {
   return (
-    <div className="absolute inset-x-0 top-0 z-50 mx-auto flex h-16 w-full max-w-7xl justify-between px-4 py-4 sm:px-8">
+    <div className="absolute inset-x-0 top-0 z-50 mx-auto flex h-16 w-full max-w-7xl justify-between bg-gradient-to-b from-noops-1000/90 to-noops-1000/20 px-4 py-4  sm:from-transparent sm:to-transparent  sm:px-8">
       <a href="/" className="max-h-full">
         <img src="/logo_smile.svg" className="h-full" />
       </a>
