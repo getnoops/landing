@@ -12,7 +12,7 @@ const variants: Variants = {
   },
 };
 
-const HowItWorksHeroGradient = () => {
+const HeroGradient = () => {
   return (
     <div className="absolute inset-0 top-0 mx-auto h-screen w-96 md:w-112">
       <motion.div
@@ -31,4 +31,4 @@ const HowItWorksHeroGradient = () => {
   );
 };
 
-export default HowItWorksHeroGradient;
+export default HeroGradient;

@@ -10,7 +10,8 @@ import {
   LockClosedIcon,
 } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
-import { Footer, HowItWorksHeroGradient, TopBar } from "../components";
+import { EnvironmentGraphic, Footer, TopBar } from "../components";
+import { HeroGradient, KeyAndSecret, Services } from "../components/HowItWorks";
 import Body from "../layouts/Body.astro";
 
 const sizes = [
@@ -46,7 +47,7 @@ const sizes = [
   <TopBar />
 
   <section class="min-h-screen bg-noops-1000 text-noops-300">
-    <HowItWorksHeroGradient client:load />
+    <HeroGradient client:load />
     <div class="relative z-30 flex h-screen items-center overflow-x-clip">
       <div class="relative mx-auto max-w-2xl py-24 text-center md:py-40">
         <div class="relative">
@@ -65,7 +66,7 @@ const sizes = [
     </div>
 
     <div
-      class="relative mx-auto max-w-[110rem] overflow-x-clip md:overflow-visible"
+      class="relative mx-auto max-w-[110rem] overflow-x-clip py-24 md:overflow-visible md:py-36"
     >
       <div
         class="absolute -inset-x-20 inset-y-0 z-10 rounded-[100px] bg-noops-400 blur-3xl md:inset-2"
@@ -77,16 +78,22 @@ const sizes = [
       </div>
 
       <div class="relative z-30">
-        <section class="relative px-6 py-24 sm:py-32 lg:px-8">
-          <div class="mx-auto flex max-w-5xl gap-8 text-center">
-            <div
-              class="flex aspect-square h-16 items-center justify-center rounded-full bg-gradient-to-b from-accent to-noops-500 text-5xl text-noops-200 shadow-inner shadow-white/20"
-            >
-              1
+        <section class="relative px-4 lg:px-8">
+          <div class="mx-auto grid max-w-5xl grid-cols-6">
+            <div class="grid grid-cols-1 items-center justify-center">
+              <div
+                class="mx-auto flex aspect-square h-12 items-center justify-center rounded-full bg-gradient-to-br from-accent to-noops-500 text-3xl text-noops-200 shadow-inner shadow-white/20 sm:h-14 sm:text-4xl md:h-16 md:text-5xl"
+              >
+                1
+              </div>
+              <div
+                class="mx-auto h-24 w-1 bg-gradient-to-b from-noops-500 via-accent"
+              >
+              </div>
             </div>
-            <div class="flex-1">
+            <div class="col-span-5">
               <h2
-                class="text-4xl font-bold tracking-tight text-slate-900 sm:text-6xl"
+                class="text-left text-4xl font-bold tracking-tight text-slate-900 [text-wrap:balance] sm:text-5xl md:text-center md:text-6xl"
               >
                 <span
                   class="bg-gradient-to-r from-noops-600 to-accent bg-clip-text text-transparent"
@@ -94,14 +101,15 @@ const sizes = [
                   Connect your AWS regions
                 </span>
               </h2>
-              <p class="mt-6 text-lg leading-8 text-slate-600">
+              <p
+                class="mt-3 text-left text-base leading-8 text-slate-600 md:mt-6 md:text-center md:text-lg"
+              >
                 This is where your infrastructure is provisioned
               </p>
             </div>
           </div>
-
           <div
-            class="mx-auto mt-12 grid max-w-md grid-cols-1 gap-x-8 gap-y-12 px-4 md:max-w-3xl md:grid-cols-2 lg:mx-auto lg:max-w-[68rem] lg:grid-cols-3"
+            class="mx-auto grid max-w-md grid-cols-1 gap-x-8 gap-y-12 px-4 md:max-w-3xl md:grid-cols-2 lg:mx-auto lg:max-w-[68rem] lg:grid-cols-3"
           >
             <article
               class="relative flex flex-col items-start justify-between overflow-clip rounded-[28px] border border-noops-1000 bg-noops-1000/95 p-6"
@@ -145,34 +153,7 @@ const sizes = [
               <div
                 class="relative flex w-full items-center justify-center rounded-xl bg-noops-400/10 py-6"
               >
-                <div
-                  class="flex h-28 w-full flex-col items-center justify-center gap-2 px-4 font-mono"
-                >
-                  <div
-                    class="flex h-9 w-full gap-x-3 overflow-clip rounded-lg border border-noops-300/30 bg-noops-300/20"
-                  >
-                    <div class="flex w-10 items-center bg-noops-300/30 p-2">
-                      <KeyIcon />
-                    </div>
-                    <div
-                      class="flex items-center truncate overflow-ellipsis whitespace-nowrap"
-                    >
-                      5fa96759-****-****
-                    </div>
-                  </div>
-                  <div
-                    class="flex h-9 w-full gap-x-3 overflow-clip rounded-lg border border-noops-300/30 bg-noops-300/20"
-                  >
-                    <div class="flex w-10 items-center bg-noops-300/30 p-2">
-                      <LockClosedIcon />
-                    </div>
-                    <div
-                      class="flex items-center truncate overflow-ellipsis whitespace-nowrap"
-                    >
-                      e1fe10fd-****-****
-                    </div>
-                  </div>
-                </div>
+                <KeyAndSecret client:visible />
               </div>
               <div class="relative max-w-xl">
                 <div class="relative">
@@ -245,6 +226,103 @@ const sizes = [
                 </div>
               </div>
             </article>
+          </div>
+        </section>
+        <!-- Separator -->
+        <div class="relative px-4 lg:px-8">
+          <div class="mx-auto grid max-w-5xl grid-cols-6">
+            <div class="grid grid-cols-1 items-center justify-center">
+              <div
+                class="mx-auto h-36 w-1 bg-gradient-to-b from-transparent via-accent to-accent md:h-52"
+              >
+              </div>
+            </div>
+            <div class="col-span-5"></div>
+          </div>
+        </div>
+
+        <section class="relative px-4 lg:px-8">
+          <div class="mx-auto grid max-w-5xl grid-cols-6">
+            <div class="grid grid-cols-1 items-center justify-center">
+              <div
+                class="mx-auto flex aspect-square h-12 items-center justify-center rounded-full bg-gradient-to-br from-accent to-noops-500 text-3xl text-noops-200 shadow-inner shadow-white/20 sm:h-14 sm:text-4xl md:h-16 md:text-5xl"
+              >
+                2
+              </div>
+              <div
+                class="mx-auto h-24 w-1 bg-gradient-to-b from-noops-500 via-accent"
+              >
+              </div>
+            </div>
+            <div class="col-span-5">
+              <h2
+                class="text-left text-4xl font-bold tracking-tight text-slate-900 [text-wrap:balance] sm:text-5xl md:text-center md:text-6xl"
+              >
+                <span
+                  class="bg-gradient-to-r from-noops-600 to-accent bg-clip-text text-transparent"
+                >
+                  Create your environments
+                </span>
+              </h2>
+              <p
+                class="mt-3 text-left text-base leading-8 text-slate-600 md:mt-6 md:text-center md:text-lg"
+              >
+                Create any number of environments in your region
+              </p>
+            </div>
+          </div>
+
+          <div class="mx-auto -mt-8 mb-4 max-w-5xl">
+            <EnvironmentGraphic client:visible />
+          </div>
+        </section>
+
+        <!-- Separator -->
+        <div class="relative px-4 lg:px-8">
+          <div class="mx-auto grid max-w-5xl grid-cols-6">
+            <div class="grid grid-cols-1 items-center justify-center">
+              <div
+                class="mx-auto h-36 w-1 bg-gradient-to-b from-transparent via-accent to-accent md:h-52"
+              >
+              </div>
+            </div>
+            <div class="col-span-5"></div>
+          </div>
+        </div>
+
+        <section class="relative px-4 lg:px-8">
+          <div class="mx-auto grid max-w-5xl grid-cols-6">
+            <div class="grid grid-cols-1 items-center justify-center">
+              <div
+                class="mx-auto flex aspect-square h-12 items-center justify-center rounded-full bg-gradient-to-br from-accent to-noops-500 text-3xl text-noops-200 shadow-inner shadow-white/20 sm:h-14 sm:text-4xl md:h-16 md:text-5xl"
+              >
+                3
+              </div>
+              <div
+                class="mx-auto h-24 w-1 bg-gradient-to-b from-noops-500 via-accent"
+              >
+              </div>
+            </div>
+            <div class="col-span-5">
+              <h2
+                class="text-left text-4xl font-bold tracking-tight text-slate-900 [text-wrap:balance] sm:text-5xl md:text-center md:text-6xl"
+              >
+                <span
+                  class="bg-gradient-to-r from-noops-600 to-accent bg-clip-text text-transparent"
+                >
+                  Define your services
+                </span>
+              </h2>
+              <p
+                class="mt-3 text-left text-base leading-8 text-slate-600 md:mt-6 md:text-center md:text-lg"
+              >
+                Define any number of services in your environment
+              </p>
+            </div>
+          </div>
+
+          <div class="mx-auto max-w-5xl">
+            <Services client:visible />
           </div>
         </section>
       </div>
