@@ -104,21 +104,21 @@ const Dropdown = ({ open, setOpen }: DropdownProps) => {
       leave="transition-all ease-in duration-150"
       leaveFrom="opacity-100 translate-y-0"
       leaveTo="opacity-0 -translate-y-2"
-      className="mt-3 max-w-7xl w-full rounded-3xl backdrop-blur-lg transition-all duration-1000"
+      className="mt-3 w-full max-w-7xl rounded-3xl backdrop-blur-lg transition-all duration-1000"
     >
       <div
         ref={ref}
-        className="w-full max-h-full overflow-y-auto  rounded-3xl border border-accent/30 bg-accent bg-opacity-[0.15] shadow-lg shadow-accent/10 ring-1 ring-gray-900/5 "
+        className="max-h-full w-full overflow-y-auto  rounded-3xl border border-accent/30 bg-accent bg-opacity-[0.15] shadow-lg shadow-accent/10 ring-1 ring-gray-900/5 "
       >
         <AnimatePresence>
           {open && (
-            <motion.div exit={{ opacity: 0 }} className="py-3 px-3">
+            <motion.div exit={{ opacity: 0 }} className="px-3 py-3">
               {nav.map((item, i) => (
-                <div className="mx-auto max-w-7xl w-full mt-2 first:mt-0 md:mt-0">
+                <div className="mx-auto mt-2 w-full max-w-7xl first:mt-0 md:mt-0">
                   {item.dropdown && (
                     <div
                       onClick={() => setOpen(item == open ? true : item)}
-                      className="md:hidden flex justify-between cursor-pointer items-center text-xl font-bold text-noops-400 px-2 py-0.5 rounded-xl  border border-transparent transition hover:bg-accent/10 hover:border-accent/20 "
+                      className="flex cursor-pointer items-center justify-between rounded-xl border border-transparent px-2 py-0.5 text-xl font-bold  text-noops-400 transition hover:border-accent/20 hover:bg-accent/10 md:hidden "
                     >
                       <div>{item.name}</div>
 
@@ -126,7 +126,7 @@ const Dropdown = ({ open, setOpen }: DropdownProps) => {
                         <ChevronDownIcon
                           className={classNames(
                             item.name == open.name && "rotate-180",
-                            "h-8 transition"
+                            "h-8 transition",
                           )}
                         />
                       </div>
@@ -136,7 +136,7 @@ const Dropdown = ({ open, setOpen }: DropdownProps) => {
                   {!item.dropdown && (
                     <a
                       href={item.href}
-                      className=" flex md:hidden justify-between cursor-pointer items-center text-xl font-bold text-noops-400 px-2 py-0.5  rounded-xl border border-transparent transition hover:bg-accent/10 hover:border-accent/20 "
+                      className=" flex cursor-pointer items-center justify-between rounded-xl border border-transparent px-2 py-0.5 text-xl  font-bold text-noops-400 transition hover:border-accent/20 hover:bg-accent/10 md:hidden "
                     >
                       <div>{item.name}</div>
 
@@ -147,7 +147,7 @@ const Dropdown = ({ open, setOpen }: DropdownProps) => {
                   )}
 
                   {item.name == open.name && item?.blocks && (
-                    <div className="mx-auto hidden  md:grid max-w-7xl grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3 p-2 overflow-hidden  ">
+                    <div className="mx-auto hidden  max-w-7xl grid-cols-1 gap-2 overflow-hidden p-2 sm:grid-cols-2 md:grid lg:grid-cols-3  ">
                       {item?.blocks.map((block: any) => (
                         <a
                           key={block.name}
@@ -156,7 +156,7 @@ const Dropdown = ({ open, setOpen }: DropdownProps) => {
                           className={classNames(
                             block.start,
                             block.end,
-                            "group relative flex h-36 cursor-pointer items-center gap-6 rounded-xl  bg-gradient-to-br p-3  text-sm leading-6 shadow-lg transition sm:flex-col sm:justify-end sm:p-6"
+                            "group relative flex h-36 cursor-pointer items-center gap-6 rounded-xl  bg-gradient-to-br p-3  text-sm leading-6 shadow-lg transition sm:flex-col sm:justify-end sm:p-6",
                           )}
                         >
                           <div className="absolute inset-y-0 right-0 transition-all group-hover:right-2">
@@ -195,7 +195,7 @@ const Dropdown = ({ open, setOpen }: DropdownProps) => {
                         closed: { opacity: 0, height: 0, marginTop: "0rem" },
                       }}
                       exit={{ opacity: 0, height: 0 }}
-                      className="mx-auto grid max-w-7xl grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3 px-2 overflow-hidden "
+                      className="mx-auto grid max-w-7xl grid-cols-1 gap-2 overflow-hidden px-2 sm:grid-cols-2 lg:grid-cols-3 "
                     >
                       {item?.blocks &&
                         item?.blocks.map((block: any) => (
@@ -206,7 +206,7 @@ const Dropdown = ({ open, setOpen }: DropdownProps) => {
                             className={classNames(
                               block.start,
                               block.end,
-                              "group relative flex h-36 cursor-pointer items-center gap-6 rounded-xl bg-gradient-to-br p-3  text-sm leading-6 shadow-lg transition sm:flex-col sm:justify-end sm:p-6"
+                              "group relative flex h-36 cursor-pointer items-center gap-6 rounded-xl bg-gradient-to-br p-3  text-sm leading-6 shadow-lg transition sm:flex-col sm:justify-end sm:p-6",
                             )}
                           >
                             <div className="absolute inset-y-0 right-0 transition-all group-hover:right-2">
@@ -243,7 +243,7 @@ const Navbar = () => {
   return (
     <header className="absolute z-50 w-full  p-4 ">
       <div
-        className="max-w-7xl mx-auto rounded-full border border-noops-500/30 bg-noops-600 bg-opacity-10 px-1.5 py-1.5 backdrop-blur-lg transition-all duration-1000"
+        className="mx-auto max-w-7xl rounded-full border border-noops-500/30 bg-noops-600 bg-opacity-10 px-1.5 py-1.5 backdrop-blur-lg transition-all duration-1000"
         id="header"
       >
         {/* <div className="absolute inset-0 bg-noops-600 opacity-5 blur-md"></div> */}

@@ -8,18 +8,18 @@ const NoSurprises = () => {
   });
 
   const backgroundColor = useTransform(scrollYProgress, (pos) =>
-    pos < 0.5 ? "#0b0217" : "white"
+    pos < 0.5 ? "#0b0217" : "white",
   );
   const noBottom = useTransform(scrollYProgress, (pos) => `${pos * 100}%`);
   const noScale = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
   const noPosition = useTransform(scrollYProgress, (pos) =>
-    pos < 0.5 ? "fixed" : "relative"
+    pos < 0.5 ? "fixed" : "relative",
   );
   const surBottom = useTransform(scrollYProgress, (pos) =>
-    pos < 0.5 ? "-100%" : "50%"
+    pos < 0.5 ? "-100%" : "50%",
   );
   const surPosition = useTransform(scrollYProgress, (pos) =>
-    pos > 0.5 && pos < 1 ? "fixed" : "relative"
+    pos > 0.5 && pos < 1 ? "fixed" : "relative",
   );
   const surOpacity = useTransform(scrollYProgress, [0.6, 1], [1, 0]);
 

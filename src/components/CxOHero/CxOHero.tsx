@@ -130,7 +130,7 @@ const CxOHero = ({ title, description, subtitle }: CxOHeroProps) => {
                       <div
                         className={classNames(
                           bar,
-                          "flex-1 rounded-t-sm border border-noops-900 bg-gradient-to-b from-noops-400/80 to-noops-900/50"
+                          "flex-1 rounded-t-sm border border-noops-900 bg-gradient-to-b from-noops-400/80 to-noops-900/50",
                         )}
                       ></div>
                     ))}

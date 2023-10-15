@@ -46,7 +46,7 @@ const NoOpsBar = ({ steps }: BarProps) => {
         totalWeight,
         prevWidth,
         steps,
-        i
+        i,
       );
       prevWidth = newWidth;
 

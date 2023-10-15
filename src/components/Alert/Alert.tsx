@@ -9,11 +9,7 @@ type AlertProps = {
   variant?: AlertVariant;
 };
 
-export const Alert = ({
-  content,
-  title,
-  variant = "success",
-}: AlertProps) => {
+export const Alert = ({ content, title, variant = "success" }: AlertProps) => {
   const defaultClass = "border px-4 py-3 rounded relative";
   const variants: Record<AlertVariant, string> = {
     error: "bg-red-100 border-red-400 text-red-700",

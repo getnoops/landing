@@ -152,7 +152,7 @@ const Pricing = ({ title, subtitle }: PricingProps) => {
                   tier.featured
                     ? "border-slate-900 bg-slate-900"
                     : "border-slate-200/50 bg-white bg-opacity-50 shadow-lg shadow-slate-100 backdrop-blur-md ",
-                  "rounded-3xl border p-8 "
+                  "rounded-3xl border p-8 ",
                 )}
               >
                 {/* <p className="mb-6 flex items-baseline gap-x-1 font-mono">
@@ -182,7 +182,7 @@ const Pricing = ({ title, subtitle }: PricingProps) => {
                   id={tier.id}
                   className={classNames(
                     tier.featured ? "text-white" : "text-slate-800",
-                    "text-2xl font-semibold leading-8"
+                    "text-2xl font-semibold leading-8",
                   )}
                 >
                   {tier.name}
@@ -192,13 +192,13 @@ const Pricing = ({ title, subtitle }: PricingProps) => {
                   className={classNames(
                     tier.iconBg,
                     tier.iconBorder,
-                    "my-3 flex items-center justify-center rounded-xl border border-opacity-20 bg-opacity-60 p-4"
+                    "my-3 flex items-center justify-center rounded-xl border border-opacity-20 bg-opacity-60 p-4",
                   )}
                 >
                   <tier.Icon
                     className={classNames(
                       tier.iconColor,
-                      "h-1/2 w-1/2 text-opacity-30"
+                      "h-1/2 w-1/2 text-opacity-30",
                     )}
                   />
                 </div>
@@ -206,7 +206,7 @@ const Pricing = ({ title, subtitle }: PricingProps) => {
                 <p
                   className={classNames(
                     tier.featured ? "text-slate-300" : "text-slate-600",
-                    "mt-4 leading-6"
+                    "mt-4 leading-6",
                   )}
                 >
                   {tier.description}

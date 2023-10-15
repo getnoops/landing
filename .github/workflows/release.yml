@@ -2,7 +2,7 @@ name: Deploy www.getnoops.com
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 permissions:
   id-token: write
@@ -24,7 +24,7 @@ jobs:
       - name: Login to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
-  
+
       - name: Build, tag, and push docker image to Amazon ECR
         id: build-image
         env:
@@ -43,7 +43,7 @@ jobs:
           task-definition: task-definition.json
           container-name: app
           image: ${{ steps.build-image.outputs.image }}
-    
+
       - name: Deploy Amazon ECS task definition
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:

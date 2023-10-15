@@ -4,15 +4,13 @@
  * service
  * OpenAPI spec version: 1.0.0
  */
-import {
-  useMutation
-} from '@tanstack/react-query'
+import { useMutation } from "@tanstack/react-query";
 import type {
   UseMutationOptions,
-  MutationFunction
-} from '@tanstack/react-query'
-import { customInstance } from './custom-instance';
-import type { ErrorType } from './custom-instance';
+  MutationFunction,
+} from "@tanstack/react-query";
+import { customInstance } from "./custom-instance";
+import type { ErrorType } from "./custom-instance";
 export interface ControllersCreateTrialInput {
   company: string;
   company_size: string;
@@ -33,15 +31,12 @@ export interface ControllersCreateLoginInput {
   id: string;
 }
 
-
-
 type AwaitedInput<T> = PromiseLike<T> | T;
 
-      type Awaited<O> = O extends AwaitedInput<infer T> ? T : never;
-
+type Awaited<O> = O extends AwaitedInput<infer T> ? T : never;
 
 // eslint-disable-next-line
-  type SecondParameter<T extends (...args: any) => any> = T extends (
+type SecondParameter<T extends (...args: any) => any> = T extends (
   config: any,
   args: infer P,
 ) => any
@@ -52,105 +47,148 @@ type AwaitedInput<T> = PromiseLike<T> | T;
  * @summary Create Trial User
  */
 export const createTrialUser = (
-    controllersCreateTrialInput: ControllersCreateTrialInput,
- options?: SecondParameter<typeof customInstance>,) => {
-      return customInstance<ControllersCreateServiceOutputType2>(
-      {url: `/alpha`, method: 'post',
-      headers: {'Content-Type': 'application/json', },
-      data: controllersCreateTrialInput
+  controllersCreateTrialInput: ControllersCreateTrialInput,
+  options?: SecondParameter<typeof customInstance>,
+) => {
+  return customInstance<ControllersCreateServiceOutputType2>(
+    {
+      url: `/alpha`,
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      data: controllersCreateTrialInput,
     },
-      options);
-    }
-  
+    options,
+  );
+};
 
+export const getCreateTrialUserMutationOptions = <
+  TError = ErrorType<unknown>,
+  TContext = unknown,
+>(options?: {
+  mutation?: UseMutationOptions<
+    Awaited<ReturnType<typeof createTrialUser>>,
+    TError,
+    { data: ControllersCreateTrialInput },
+    TContext
+  >;
+  request?: SecondParameter<typeof customInstance>;
+}): UseMutationOptions<
+  Awaited<ReturnType<typeof createTrialUser>>,
+  TError,
+  { data: ControllersCreateTrialInput },
+  TContext
+> => {
+  const { mutation: mutationOptions, request: requestOptions } = options ?? {};
 
-export const getCreateTrialUserMutationOptions = <TError = ErrorType<unknown>,
-    
-    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof createTrialUser>>, TError,{data: ControllersCreateTrialInput}, TContext>, request?: SecondParameter<typeof customInstance>}
-): UseMutationOptions<Awaited<ReturnType<typeof createTrialUser>>, TError,{data: ControllersCreateTrialInput}, TContext> => {
- const {mutation: mutationOptions, request: requestOptions} = options ?? {};
+  const mutationFn: MutationFunction<
+    Awaited<ReturnType<typeof createTrialUser>>,
+    { data: ControllersCreateTrialInput }
+  > = (props) => {
+    const { data } = props ?? {};
 
-      
+    return createTrialUser(data, requestOptions);
+  };
 
+  return { mutationFn, ...mutationOptions };
+};
 
-      const mutationFn: MutationFunction<Awaited<ReturnType<typeof createTrialUser>>, {data: ControllersCreateTrialInput}> = (props) => {
-          const {data} = props ?? {};
+export type CreateTrialUserMutationResult = NonNullable<
+  Awaited<ReturnType<typeof createTrialUser>>
+>;
+export type CreateTrialUserMutationBody = ControllersCreateTrialInput;
+export type CreateTrialUserMutationError = ErrorType<unknown>;
 
-          return  createTrialUser(data,requestOptions)
-        }
-
-        
-
- 
-   return  { mutationFn, ...mutationOptions }}
-
-    export type CreateTrialUserMutationResult = NonNullable<Awaited<ReturnType<typeof createTrialUser>>>
-    export type CreateTrialUserMutationBody = ControllersCreateTrialInput
-    export type CreateTrialUserMutationError = ErrorType<unknown>
-
-    /**
+/**
  * @summary Create Trial User
  */
-export const useCreateTrialUser = <TError = ErrorType<unknown>,
-    
-    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof createTrialUser>>, TError,{data: ControllersCreateTrialInput}, TContext>, request?: SecondParameter<typeof customInstance>}
-) => {
-    
-      const mutationOptions = getCreateTrialUserMutationOptions(options);
-     
-      return useMutation(mutationOptions);
-    }
-    
+export const useCreateTrialUser = <
+  TError = ErrorType<unknown>,
+  TContext = unknown,
+>(options?: {
+  mutation?: UseMutationOptions<
+    Awaited<ReturnType<typeof createTrialUser>>,
+    TError,
+    { data: ControllersCreateTrialInput },
+    TContext
+  >;
+  request?: SecondParameter<typeof customInstance>;
+}) => {
+  const mutationOptions = getCreateTrialUserMutationOptions(options);
+
+  return useMutation(mutationOptions);
+};
+
 /**
  * @summary Create Login
  */
 export const createLogin = (
-    controllersCreateLoginInput: ControllersCreateLoginInput,
- options?: SecondParameter<typeof customInstance>,) => {
-      return customInstance<ControllersCreateServiceOutput>(
-      {url: `/login`, method: 'post',
-      headers: {'Content-Type': 'application/json', },
-      data: controllersCreateLoginInput
+  controllersCreateLoginInput: ControllersCreateLoginInput,
+  options?: SecondParameter<typeof customInstance>,
+) => {
+  return customInstance<ControllersCreateServiceOutput>(
+    {
+      url: `/login`,
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      data: controllersCreateLoginInput,
     },
-      options);
-    }
-  
+    options,
+  );
+};
 
+export const getCreateLoginMutationOptions = <
+  TError = ErrorType<unknown>,
+  TContext = unknown,
+>(options?: {
+  mutation?: UseMutationOptions<
+    Awaited<ReturnType<typeof createLogin>>,
+    TError,
+    { data: ControllersCreateLoginInput },
+    TContext
+  >;
+  request?: SecondParameter<typeof customInstance>;
+}): UseMutationOptions<
+  Awaited<ReturnType<typeof createLogin>>,
+  TError,
+  { data: ControllersCreateLoginInput },
+  TContext
+> => {
+  const { mutation: mutationOptions, request: requestOptions } = options ?? {};
 
-export const getCreateLoginMutationOptions = <TError = ErrorType<unknown>,
-    
-    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof createLogin>>, TError,{data: ControllersCreateLoginInput}, TContext>, request?: SecondParameter<typeof customInstance>}
-): UseMutationOptions<Awaited<ReturnType<typeof createLogin>>, TError,{data: ControllersCreateLoginInput}, TContext> => {
- const {mutation: mutationOptions, request: requestOptions} = options ?? {};
+  const mutationFn: MutationFunction<
+    Awaited<ReturnType<typeof createLogin>>,
+    { data: ControllersCreateLoginInput }
+  > = (props) => {
+    const { data } = props ?? {};
 
-      
+    return createLogin(data, requestOptions);
+  };
 
+  return { mutationFn, ...mutationOptions };
+};
 
-      const mutationFn: MutationFunction<Awaited<ReturnType<typeof createLogin>>, {data: ControllersCreateLoginInput}> = (props) => {
-          const {data} = props ?? {};
+export type CreateLoginMutationResult = NonNullable<
+  Awaited<ReturnType<typeof createLogin>>
+>;
+export type CreateLoginMutationBody = ControllersCreateLoginInput;
+export type CreateLoginMutationError = ErrorType<unknown>;
 
-          return  createLogin(data,requestOptions)
-        }
-
-        
-
- 
-   return  { mutationFn, ...mutationOptions }}
-
-    export type CreateLoginMutationResult = NonNullable<Awaited<ReturnType<typeof createLogin>>>
-    export type CreateLoginMutationBody = ControllersCreateLoginInput
-    export type CreateLoginMutationError = ErrorType<unknown>
-
-    /**
+/**
  * @summary Create Login
  */
-export const useCreateLogin = <TError = ErrorType<unknown>,
-    
-    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof createLogin>>, TError,{data: ControllersCreateLoginInput}, TContext>, request?: SecondParameter<typeof customInstance>}
-) => {
-    
-      const mutationOptions = getCreateLoginMutationOptions(options);
-     
-      return useMutation(mutationOptions);
-    }
-    
+export const useCreateLogin = <
+  TError = ErrorType<unknown>,
+  TContext = unknown,
+>(options?: {
+  mutation?: UseMutationOptions<
+    Awaited<ReturnType<typeof createLogin>>,
+    TError,
+    { data: ControllersCreateLoginInput },
+    TContext
+  >;
+  request?: SecondParameter<typeof customInstance>;
+}) => {
+  const mutationOptions = getCreateLoginMutationOptions(options);
+
+  return useMutation(mutationOptions);
+};

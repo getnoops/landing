@@ -82,6 +82,9 @@ const SEHero = ({ title, description, subtitle }: SEHeroProps) => {
               </p>
             </div>
 
+
+
+
             <div className="max-w-1/2 relative flex flex-1 justify-center overflow-clip ">
               <div className="absolute inset-0 rounded-xl border-2 border-noops-500 bg-noops-600 bg-opacity-5 blur-3xl"></div>
               <div className="absolute inset-0 rounded-xl bg-gradient-to-tr from-noops-300/10 via-transparent to-noops-400/10  blur-2xl"></div>
@@ -178,7 +181,7 @@ const SEHero = ({ title, description, subtitle }: SEHeroProps) => {
                         <pre
                           className={classNames(
                             className,
-                            "flex overflow-x-auto"
+                            "flex overflow-x-auto",
                           )}
                           style={style}
                         >

@@ -67,7 +67,7 @@ const DevBar = ({
         totalWeight,
         prevWidth,
         steps,
-        i
+        i,
       );
       prevWidth = newWidth;
 
@@ -116,7 +116,7 @@ const DevBar = ({
         <div
           className={classNames(
             animationComplete && "rounded-t-none border-t-0",
-            " relative flex h-full overflow-clip rounded-lg border border-accent bg-gradient-to-r from-noops-300 to-noops-200 transition"
+            " relative flex h-full overflow-clip rounded-lg border border-accent bg-gradient-to-r from-noops-300 to-noops-200 transition",
           )}
         >
           {/* Animated Bar */}

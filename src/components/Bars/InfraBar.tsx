@@ -43,7 +43,7 @@ const InfraBar = ({ steps, animationComplete, setInfraComplete }: BarProps) => {
         totalWeight,
         prevWidth,
         steps,
-        i
+        i,
       );
       prevWidth = newWidth;
 
@@ -67,7 +67,7 @@ const InfraBar = ({ steps, animationComplete, setInfraComplete }: BarProps) => {
     <div
       className={classNames(
         !animationComplete && "mb-1",
-        "flex h-10 flex-col transition-all"
+        "flex h-10 flex-col transition-all",
       )}
     >
       {/* headers */}
@@ -95,7 +95,7 @@ const InfraBar = ({ steps, animationComplete, setInfraComplete }: BarProps) => {
         <div
           className={classNames(
             animationComplete && "rounded-b-none border-b-0",
-            " relative flex h-full overflow-clip rounded-lg border border-accent bg-gradient-to-r from-noops-300 to-noops-200 transition"
+            " relative flex h-full overflow-clip rounded-lg border border-accent bg-gradient-to-r from-noops-300 to-noops-200 transition",
           )}
         >
           {/* Animated Bar */}

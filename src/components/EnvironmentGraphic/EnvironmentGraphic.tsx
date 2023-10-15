@@ -33,7 +33,7 @@ const fade = {
 const EnvironmentGraphic = () => {
   return (
     <div className="relative mx-auto mt-12 max-w-6xl ">
-      <div className="absolute -inset-4  rounded-[32px] border border-noops-200 bg-noops-600 bg-opacity-5"></div>
+      <div className="absolute -inset-4  rounded-[32px] border border-noops-500/25 bg-noops-600 bg-opacity-5"></div>
 
       <div className="relative flex  w-full items-center justify-center overflow-clip rounded-2xl border border-noops-100 bg-white">
         <div className=" absolute inset-0 bg-gradient-to-r from-accent/10 via-transparent to-accent/10"></div>

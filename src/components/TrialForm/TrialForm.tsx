@@ -53,7 +53,7 @@ const TrialForm = () => {
           // redirect to email quick links page
           window.location.href = "/check-email";
         },
-      }
+      },
     );
   };
 

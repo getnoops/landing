@@ -12,7 +12,6 @@ import {
   CloudArrowUpIcon,
   Cog6ToothIcon,
 } from "@heroicons/react/20/solid";
-import React from "react";
 import { NoOpsBar } from "../Bars";
 import DualBars from "../Bars/DualBars";
 
@@ -139,7 +138,7 @@ const StreamlineGraphic = () => {
     <div className="relative mx-auto mt-12 max-w-6xl">
       <div className="absolute -inset-4 rounded-[32px] border border-noops-200 bg-noops-600 bg-opacity-5"></div>
 
-      <div className="relative w-full overflow-clip rounded-2xl border border-noops-100 bg-noops-1000 p-6 opacity-100 shadow-lg shadow-noops-200">
+      <div className="relative w-full overflow-clip rounded-2xl  border border-noops-100 bg-noops-1000 p-6 opacity-100 shadow-lg shadow-noops-200">
         <div className="absolute inset-0 bg-gradient-to-r from-accent/20 via-transparent to-accent/20"></div>
         <div className="relative grid items-center gap-4 md:grid-cols-7">
           <div className="relative flex md:justify-end">
@@ -150,6 +149,7 @@ const StreamlineGraphic = () => {
               className="absolute h-8 opacity-90 blur-sm"
             />
           </div>
+
           <div className="col-span-6">
             <NoOpsBar
               steps={[

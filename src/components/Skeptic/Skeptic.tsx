@@ -179,7 +179,7 @@ const Skeptic = ({ title, description, prompt, cta }: SkepticProps) => {
                   selectedTab.name === tab.name
                     ? "bg-slate-900/50"
                     : "hover:bg-slate-900/30",
-                  "flex-1 cursor-pointer  rounded-t-lg px-4 py-3 font-medium text-slate-300 transition"
+                  "flex-1 cursor-pointer  rounded-t-lg px-4 py-3 font-medium text-slate-300 transition",
                 )}
               >
                 {tab.name}
@@ -190,7 +190,7 @@ const Skeptic = ({ title, description, prompt, cta }: SkepticProps) => {
             className={classNames(
               selectedTab.name != tabs[0].name && "rounded-tl-lg",
               selectedTab.name != tabs[2].name && "rounded-tr-lg",
-              "rounded-b-lg bg-slate-900/50 p-4 transition"
+              "rounded-b-lg bg-slate-900/50 p-4 transition",
             )}
           >
             <AnimatePresence mode="wait">

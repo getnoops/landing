@@ -1,10 +1,3 @@
-import {
-  CommandLineIcon,
-  CubeTransparentIcon,
-  CogIcon,
-  RocketLaunchIcon,
-  SparklesIcon,
-} from "@heroicons/react/20/solid";
 import classNames from "classnames";
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -30,7 +23,7 @@ const DualBars = ({ infraSteps, devSteps }: DualBarProps) => {
     <div
       className={classNames(
         animationComplete && "my-0.5",
-        "relative col-span-6 transition-all"
+        "relative col-span-6 transition-all",
       )}
     >
       <InfraBar

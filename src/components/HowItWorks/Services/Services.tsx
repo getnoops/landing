@@ -59,8 +59,9 @@ string1: |
     password: root`;
 
   return (
-    <div className="relative flex flex-1 justify-center overflow-clip ">
-      <div className="relative w-full overflow-clip rounded-xl bg-noops-1050">
+    <div className="relative flex flex-1 justify-center  ">
+      <div className="absolute inset-0 blur-3xl"></div>
+      <div className="relative w-full overflow-clip rounded-2xl border-2 border-accent/80 bg-noops-1050">
         <div className="relative flex h-10 flex-row-reverse justify-between">
           <div className="flex h-full items-center gap-x-2 pr-4">
             <div className="h-3 w-3 rounded-full border border-noops-300/40"></div>
@@ -90,7 +91,7 @@ string1: |
         </div>
 
         {!closed && (
-          <div className="h-128 w-full  overflow-y-auto rounded-xl rounded-t-none bg-noops-400/10 p-4  scrollbar-thin scrollbar-track-transparent scrollbar-thumb-accent/80 scrollbar-thumb-rounded-full">
+          <div className="h-128 w-full  overflow-y-auto rounded-2xl rounded-t-none bg-noops-400/10 p-4  scrollbar-thin scrollbar-track-transparent scrollbar-thumb-accent/80 scrollbar-thumb-rounded-full">
             <div className="flex">
               <div
                 aria-hidden="true"

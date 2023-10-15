@@ -2,7 +2,6 @@ import { Tab } from "@headlessui/react";
 import classNames from "classnames";
 import React, { useState } from "react";
 
-
 // write type for steps
 interface StepsType {
   title: string;
@@ -17,7 +16,7 @@ interface StepsProps {
   steps?: StepsType[];
 }
 
-const Steps = ({title, description, steps}: StepsProps) => {
+const Steps = ({ title, description, steps }: StepsProps) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   return (
@@ -29,65 +28,64 @@ const Steps = ({title, description, steps}: StepsProps) => {
               {title}
             </span>
           </h2>
-          <p className="text-slate-600">
-            {description}
-          </p>
+          <p className="text-slate-600">{description}</p>
         </div>
 
         <div className="my-16 grid select-none grid-cols-3 gap-x-8">
-          {steps && steps.map((step, index) => (
-            <div
-              onClick={() => setSelectedIndex(index)}
-              key={index}
-              className={classNames(
-                index != selectedIndex && "opacity-80",
-                "group relative cursor-pointer text-left transition"
-              )}
-            >
-              <div className="absolute inset-0 scale-90 rounded-md bg-transparent transition group-hover:scale-100 group-hover:bg-slate-50" />
-              <div className="relative space-y-2 p-3">
-                <div
-                  className={classNames(
-                    index == selectedIndex ? "bg-noops-500" : "bg-slate-400",
-                    " flex h-8 w-8 items-center justify-center rounded-md font-medium text-white transition"
-                  )}
-                >
-                  {index + 1}
+          {steps &&
+            steps.map((step, index) => (
+              <div
+                onClick={() => setSelectedIndex(index)}
+                key={index}
+                className={classNames(
+                  index != selectedIndex && "opacity-80",
+                  "group relative cursor-pointer text-left transition",
+                )}
+              >
+                <div className="absolute inset-0 scale-90 rounded-md bg-transparent transition group-hover:scale-100 group-hover:bg-slate-50" />
+                <div className="relative space-y-2 p-3">
+                  <div
+                    className={classNames(
+                      index == selectedIndex ? "bg-noops-500" : "bg-slate-400",
+                      " flex h-8 w-8 items-center justify-center rounded-md font-medium text-white transition",
+                    )}
+                  >
+                    {index + 1}
+                  </div>
+                  <h5
+                    className={classNames(
+                      index == selectedIndex
+                        ? "text-noops-700"
+                        : "text-slate-500",
+                      "text-sm font-medium transition",
+                    )}
+                  >
+                    {step.subject}
+                  </h5>
+                  <h3
+                    className={classNames(
+                      index == selectedIndex
+                        ? "text-slate-800"
+                        : "text-slate-700",
+                      " text-xl transition",
+                    )}
+                  >
+                    {step.title}
+                  </h3>
+                  <p
+                    className={classNames(
+                      index == selectedIndex
+                        ? "text-slate-600"
+                        : "text-slate-500",
+                      "text-sm transition",
+                    )}
+                  >
+                    {step.description}
+                    {step?.cta && step.cta}
+                  </p>
                 </div>
-                <h5
-                  className={classNames(
-                    index == selectedIndex
-                      ? "text-noops-700"
-                      : "text-slate-500",
-                    "text-sm font-medium transition"
-                  )}
-                >
-                  {step.subject}
-                </h5>
-                <h3
-                  className={classNames(
-                    index == selectedIndex
-                      ? "text-slate-800"
-                      : "text-slate-700",
-                    " text-xl transition"
-                  )}
-                >
-                  {step.title}
-                </h3>
-                <p
-                  className={classNames(
-                    index == selectedIndex
-                      ? "text-slate-600"
-                      : "text-slate-500",
-                    "text-sm transition"
-                  )}
-                >
-                  {step.description}
-                  {step?.cta && step.cta}
-                </p>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
 
         {/* <div className="my-10 bg-slate-50 rounded-md w-full border border-slate-100 p-4 overflow-hidden">

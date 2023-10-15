@@ -33,7 +33,7 @@ const SelectMenu = ({
               <span
                 className={classNames(
                   isDefaultValue ? "text-noops-400/70" : "text-noops-400",
-                  "block truncate text-left transition"
+                  "block truncate text-left transition",
                 )}
               >
                 {isDefaultValue ? defaultValueMessage : value}
@@ -62,7 +62,7 @@ const SelectMenu = ({
                         active
                           ? "bg-noops-400/10 text-noops-50"
                           : "text-noops-400",
-                        "relative m-1 cursor-pointer select-none rounded-[4px] py-2 pl-3 pr-9 transition"
+                        "relative m-1 cursor-pointer select-none rounded-[4px] py-2 pl-3 pr-9 transition",
                       )
                     }
                     hidden={option.hidden}
@@ -73,7 +73,7 @@ const SelectMenu = ({
                         <span
                           className={classNames(
                             selected ? "font-semibold" : "font-normal",
-                            "block truncate"
+                            "block truncate",
                           )}
                         >
                           {option.name}
@@ -83,7 +83,7 @@ const SelectMenu = ({
                           <span
                             className={classNames(
                               active ? "text-white" : "text-noops-400",
-                              "absolute inset-y-0 right-0 flex items-center pr-4 transition"
+                              "absolute inset-y-0 right-0 flex items-center pr-4 transition",
                             )}
                           >
                             <CheckIcon className="h-5 w-5" aria-hidden="true" />

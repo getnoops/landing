@@ -12,7 +12,7 @@ const GenerateVariants = (
   totalWeight: number,
   prevWidth: number,
   steps: StepsType[],
-  i: number
+  i: number,
 ) => {
   let wWidth = 100 / (totalWeight / steps[i].weight) + prevWidth;
   let newWidth = wWidth;
