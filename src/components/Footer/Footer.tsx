@@ -20,25 +20,8 @@ const Links = [
     ],
   },
   {
-    title: "INFO",
-    links: [
-      {
-        title: "Docs",
-        href: "https://hub.getnoops.com/",
-      },
-      {
-        title: "Pricing",
-        href: "/pricing",
-      },
-    ],
-  },
-  {
     title: "COMPANY",
     links: [
-      {
-        title: "About",
-        href: "/about",
-      },
       {
         title: "Contact Us",
         href: "/contact",

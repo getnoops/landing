@@ -13,13 +13,6 @@ const TopBar = () => {
       <div className="flex items-center gap-x-4">
         <a
           className="inline-flex items-center gap-x-1 text-noops-300 transition hover:text-noops-400"
-          href="https://hub.getnoops.com"
-        >
-          <DocumentDuplicateIcon className="h-6" />
-          Docs
-        </a>
-        <a
-          className="inline-flex items-center gap-x-1 text-noops-300 transition hover:text-noops-400"
           href="https://portal.getnoops.com/login"
         >
           <ArrowLeftOnRectangleIcon className="h-6" />
