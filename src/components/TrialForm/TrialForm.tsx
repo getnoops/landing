@@ -97,7 +97,7 @@ const TrialForm = () => {
       <div className="pointer-events-none absolute inset-0 border-4 border-noops-600/50 blur-xl"></div>
       <img src="/logo_smile.svg" className="relative mx-auto my-8 h-16" />
 
-      <form className="relative space-y-6" onSubmit={handleSubmit(onSubmit)}>
+      <form id="alpha-signup-form" className="relative space-y-6" onSubmit={handleSubmit(onSubmit)}>
         <div>
           <label
             htmlFor="name"
