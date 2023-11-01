@@ -1,8 +1,6 @@
-import {
-  ArrowLeftOnRectangleIcon,
-} from "@heroicons/react/24/outline";
+import { ArrowLeftOnRectangleIcon } from "@heroicons/react/24/outline";
 
-const slackLogo = "/logos/slack.svg"
+const slackLogo = "/logos/slack.svg";
 
 const TopBar = () => {
   return (
@@ -10,16 +8,12 @@ const TopBar = () => {
       <a href="/" className="max-h-full">
         <img src="/logo_smile.svg" className="h-full" />
       </a>
-      <div className="flex items-center gap-x-4">
+      <div className="flex items-center gap-x-2 sm:gap-x-4">
         <a
-          className="inline-flex items-center gap-x-1 text-noops-300 transition hover:text-noops-400"
+          className="inline-flex items-center   gap-x-1.5 text-noops-300 transition hover:text-noops-400"
           href="https://join.slack.com/t/getnoops/shared_invite/zt-25fo11ewy-5z5iMXlaDvxRv6sfp8wZHA"
         >
-          <img
-            className="h-6 mr-1"
-            alt="Join Our slack"
-            src={slackLogo}
-                    />
+          <img className=" h-6" alt="Join Our slack" src={slackLogo} />
           Join Our Slack
         </a>
         <a

@@ -22,10 +22,11 @@ const GenerateVariants = (
   let delay = i == 0 ? 0.5 : 0;
 
   let values = {
-    width: `${wWidth}%`,
+    // width: `${wWidth}%`,
+    scaleX: `${wWidth}%`,
     transition: {
       duration: wDuration,
-      delay: delay,
+      // delay: delay,
     },
   };
 

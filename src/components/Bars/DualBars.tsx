@@ -17,7 +17,6 @@ interface DualBarProps {
 const DualBars = ({ infraSteps, devSteps }: DualBarProps) => {
   const [infraComplete, setInfraComplete] = useState(false);
   const [animationComplete, setAnimationComplete] = useState(false);
-  const codeWeight = 5;
 
   return (
     <div

@@ -6,6 +6,7 @@ import {
   RocketLaunchIcon,
 } from "@heroicons/react/20/solid";
 import { SparklesIcon } from "@heroicons/react/24/solid";
+import classNames from "classnames";
 import { motion, Variants } from "framer-motion";
 import { useEffect, useState } from "react";
 import GenerateVariants from "./GenerateVariants";
@@ -25,7 +26,7 @@ const NoOpsBar = ({ steps }: BarProps) => {
   const [finished, setFinished] = useState(false);
   const [variants, setVariants] = useState<Variants>({
     initial: {
-      width: "0%",
+      scaleX: "0%",
     },
   });
 
@@ -78,17 +79,31 @@ const NoOpsBar = ({ steps }: BarProps) => {
               <div
                 key={i}
                 className="relative h-full -translate-x-1"
-                style={{ left: variant.width.toString() }}
+                style={{ left: variant.scaleX.toString() }}
               >
-                {/* <div className="absolute -top-6 right-0 flex-1 text-right font-mono text-noops-100">
-                    {i + 1}. {variant.name}
-                  </div> */}
-                <div className="absolute left-0 top-0 z-10 h-full border-2 border-dashed border-noops-400"></div>
+                <div className="absolute left-0 top-0 h-full border-2 border-dashed border-noops-400"></div>
               </div>
             );
           })}
         </div>
         <div className=" relative flex h-full overflow-clip rounded-lg border border-accent bg-gradient-to-r from-noops-300 to-noops-200">
+          <motion.p
+            key={currentSection.name}
+            initial="initial"
+            animate={!finished ? "animate" : "initial"}
+            exit="exit"
+            variants={{
+              initial: { opacity: 0 },
+              animate: { opacity: 1 },
+              exit: { opacity: 0 },
+            }}
+            transition={{ duration: 0.5 }}
+            className="absolute left-0 top-1/2 z-[51] flex -translate-y-1/2 transform-gpu items-center gap-x-1 whitespace-nowrap px-2 font-mono font-medium text-noops-200"
+          >
+            <currentSection.Icon className="h-5" />
+            {currentSection.name}
+          </motion.p>
+
           {/* Animated Bar */}
           <motion.div
             variants={variants}
@@ -98,30 +113,17 @@ const NoOpsBar = ({ steps }: BarProps) => {
             }
             viewport={{ once: true }}
             onAnimationComplete={handleNextAnimation}
-            className="relative z-50 flex h-full w-full transform-gpu items-center justify-end bg-gradient-to-r from-noops-800 to-noops-600  shadow-lg"
+            className="relative z-[50] flex h-full w-full origin-[0%_50%] transform-gpu items-center justify-start bg-noops-800 will-change-transform  md:justify-end"
           >
             {/* Shimmer effect */}
-            {!finished && (
-              <div className="absolute inset-0 -translate-x-full transform-gpu animate-[shimmer_2s_infinite] border-y border-noops-100 bg-gradient-to-r from-transparent via-noops-100 to-transparent opacity-[0.15]"></div>
-            )}
+            <div
+              className={classNames(
+                finished && "opacity-0",
+                !finished && "opacity-[0.15]",
+                "absolute inset-0 -translate-x-full transform-gpu animate-[shimmer_2s_infinite] border-y border-noops-100 bg-gradient-to-r from-transparent via-noops-100 to-transparent transition-opacity",
+              )}
+            ></div>
             <div className="absolute left-full h-full w-1 bg-gradient-to-r from-noops-900 opacity-50 "></div>
-
-            <motion.p
-              key={currentSection.name}
-              initial="initial"
-              animate={!finished ? "animate" : "initial"}
-              exit="exit"
-              variants={{
-                initial: { opacity: 0 },
-                animate: { opacity: 1 },
-                exit: { opacity: 0 },
-              }}
-              transition={{ duration: 0.5 }}
-              className="z-20 flex transform-gpu items-center gap-x-1 whitespace-nowrap pr-2 font-mono font-medium text-noops-200"
-            >
-              <currentSection.Icon className="h-5" />
-              {currentSection.name}
-            </motion.p>
 
             <motion.div
               initial="initial"
