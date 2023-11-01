@@ -46,7 +46,7 @@ const EnvironmentGraphic = () => {
           fill="none"
           initial="hidden"
           animate="visible"
-          className="relative mr-[5%] py-10 sm:py-20"
+          className="relative mr-[5%] w-full py-10 sm:py-20"
           xmlns="http://www.w3.org/2000/svg"
         >
           {/* TOP LINES */}

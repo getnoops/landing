@@ -5,6 +5,7 @@ import {
 } from "@heroicons/react/24/outline";
 import { FolderOpenIcon } from "@heroicons/react/24/solid";
 import classNames from "classnames";
+import { motion } from "framer-motion";
 import { Highlight, themes } from "prism-react-renderer";
 import React, { Fragment, useState } from "react";
 
@@ -70,7 +71,14 @@ string1: |
           </div>
 
           {!closed && (
-            <div className="flex h-full">
+            <motion.div
+              animate={{ opacity: 1, filter: "blur(0px)" }}
+              initial={{ opacity: 0, filter: "blur(10px)" }}
+              transition={{
+                ease: "easeOut",
+              }}
+              className="flex h-full"
+            >
               <div className=" relative  inline-flex items-center gap-x-2  rounded-tl-xl bg-noops-400/10 py-2 pl-4 pr-0">
                 <Square3Stack3DIcon className="h-6" /> application.stack{" "}
                 <XMarkIcon
@@ -86,12 +94,19 @@ string1: |
               >
                 <path d="M20 10C10 10 10 0 0 0V10H20Z" fill="currentColor" />
               </svg>
-            </div>
+            </motion.div>
           )}
         </div>
 
         {!closed && (
-          <div className="h-128 w-full  overflow-y-auto rounded-2xl rounded-t-none bg-noops-400/10 p-4  scrollbar-thin scrollbar-track-transparent scrollbar-thumb-accent/80 scrollbar-thumb-rounded-full">
+          <motion.div
+            animate={{ opacity: 1, filter: "blur(0px)" }}
+            initial={{ opacity: 0, filter: "blur(10px)" }}
+            transition={{
+              ease: "easeOut",
+            }}
+            className="h-128 w-full  overflow-y-auto rounded-2xl rounded-t-none bg-noops-400/10 p-4  scrollbar-thin scrollbar-track-transparent scrollbar-thumb-accent/80 scrollbar-thumb-rounded-full"
+          >
             <div className="flex">
               <div
                 aria-hidden="true"
@@ -146,11 +161,18 @@ string1: |
                 </Highlight>
               </div>
             </div>
-          </div>
+          </motion.div>
         )}
 
         {closed && (
-          <div className="flex h-128 flex-col items-center justify-center">
+          <motion.div
+            animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+            initial={{ opacity: 0, scale: 0.7, filter: "blur(10px)" }}
+            transition={{
+              ease: "easeOut",
+            }}
+            className="flex h-128 flex-col items-center justify-center"
+          >
             <FolderOpenIcon className="h-16 " />
             <h1 className="text-xl font-bold">No Files Open</h1>
             <p className="text-center text-sm">Open a file to get started</p>
@@ -165,7 +187,7 @@ string1: |
                 Open Stack
               </div>
             </button>
-          </div>
+          </motion.div>
         )}
 
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-accent/10 via-transparent to-accent/10"></div>
