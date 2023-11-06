@@ -3,49 +3,20 @@
 
 import { CheckCircleIcon } from "@heroicons/react/20/solid";
 import {
-  ArrowUpTrayIcon,
   BriefcaseIcon,
   CommandLineIcon,
   CubeIcon,
   CubeTransparentIcon,
-  KeyIcon,
   LinkIcon,
-  LockClosedIcon,
 } from "@heroicons/react/24/outline";
 import {
-  ArrowLongRightIcon,
   CloudArrowUpIcon,
   CpuChipIcon,
   SparklesIcon,
 } from "@heroicons/react/24/solid";
-import { motion } from "framer-motion";
 import { EnvironmentGraphic, Footer, TopBar } from "../components";
 import { HeroGradient, KeyAndSecret, Services } from "../components/HowItWorks";
 import Body from "../layouts/Body.astro";
-
-const sizes = [
-  {
-    name: "Startup",
-    href: "#startup",
-    description:
-      "You're a small team with big dreams. You need to get your product to market fast, and you need to do it right. We can help you get there.",
-    Icon: CubeTransparentIcon,
-  },
-  {
-    name: "Medium / Large Business",
-    href: "#medium-large-business",
-    description:
-      "You're a medium to large business with a lot of moving parts. You need to get your product to market fast, and you need to do it right. We can help you get there.",
-    Icon: CubeIcon,
-  },
-  {
-    name: "Enterprise",
-    href: "#enterprise",
-    description:
-      "You're a large enterprise with a lot of moving parts. You need to get your product to market fast, and you need to do it right. We can help you get there.",
-    Icon: BriefcaseIcon,
-  },
-];
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/

@@ -77,7 +77,7 @@ const Typography = () => {
               MONA SANS
             </h2>
             <p className="text-slate-600">
-              NoOps is using the Mona Sans font from GitHub. It is a variable
+              No_Ops is using the Mona Sans font from GitHub. It is a variable
               font, which allows you to use 1 font file and change the font
               weight and width to your liking.
               <br />

@@ -12,6 +12,8 @@ const TopBar = () => {
         <a
           className="inline-flex items-center   gap-x-1.5 text-noops-300 transition hover:text-noops-400"
           href="https://join.slack.com/t/getnoops/shared_invite/zt-25fo11ewy-5z5iMXlaDvxRv6sfp8wZHA"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <img className=" h-6" alt="Join Our slack" src={slackLogo} />
           Join Our Slack
