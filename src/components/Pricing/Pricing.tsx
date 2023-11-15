@@ -159,7 +159,7 @@ const Pricing = () => {
               <p className="relative mt-4 text-sm leading-6">{description}</p>
 
               <p className="relative mt-6 flex items-baseline gap-x-1">
-                <span className="text-4xl font-bold tracking-tight">
+                <span className="text-4xl font-bold tabular-nums tracking-tight">
                   {id === "enterprise"
                     ? " "
                     : id === "free"

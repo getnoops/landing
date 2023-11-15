@@ -1,25 +1,29 @@
 export const plans: {
   id: "free" | "pro" | "enterprise";
-  name: string;
+  name: string | JSX.Element;
   description: string;
   href: string;
 }[] = [
   {
     id: "free",
-    name: "Free forever",
-    description: "The essentials to discover No_Ops.",
+    name: (
+      <>
+        Free, <i>Forever</i>
+      </>
+    ),
+    description: "The essentials to discover No_Ops",
     href: "#",
   },
   {
     id: "pro",
     name: "Pro",
-    description: "Pay only for what you need.",
+    description: "Pay only for what you need",
     href: "#",
   },
   {
     id: "enterprise",
     name: "Enterprise",
-    description: "Dedicated support.",
+    description: "Tailored for big businesses",
     href: "#",
   },
 ];
