@@ -23,7 +23,8 @@ export const plans: {
   {
     id: "enterprise",
     name: "Enterprise",
-    description: "Tailored for big businesses",
+    description:
+      "Tailored for big businesses, get in contact to see how we can help you",
     href: "#",
   },
 ];

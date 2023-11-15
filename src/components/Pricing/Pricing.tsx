@@ -173,37 +173,6 @@ const Pricing = () => {
               </p>
 
               {id === "pro" && (
-                <button className="group relative mt-6 inline-block w-full rounded-[10px] border-2 border-noops-700 bg-gradient-to-b from-noops-500 to-noops-600 px-6 py-2 tracking-wide text-white shadow-inner shadow-noops-100/50">
-                  <div className="absolute inset-0.5 rounded-md bg-noops-600 shadow-inner shadow-white/20 transition group-hover:opacity-30" />
-
-                  <div className="relative inline-flex  items-center justify-center gap-x-1">
-                    Select this plan
-                  </div>
-                </button>
-              )}
-              {id === "free" && (
-                <button className="group relative mt-6 inline-block w-full rounded-[10px] border-2 border-purple-700 bg-gradient-to-b from-purple-500 to-purple-600 px-6 py-2 tracking-wide text-white shadow-inner shadow-purple-100/50">
-                  <div className="absolute inset-0.5 rounded-md bg-purple-600 shadow-inner shadow-white/20 transition group-hover:opacity-30" />
-
-                  <div className="relative inline-flex  items-center justify-center gap-x-1">
-                    Select this plan
-                  </div>
-                </button>
-              )}
-              {id === "enterprise" && (
-                <a
-                  href="/contact"
-                  className="group relative mt-6 block w-full  rounded-[10px] border-2 border-noops-300 bg-gradient-to-b from-noops-100 to-noops-200 px-6 py-2 text-center tracking-wide text-white shadow-inner shadow-noops-300/20"
-                >
-                  <div className="absolute inset-0.5 rounded-md bg-noops-200 shadow-inner shadow-noops-300/20 transition group-hover:opacity-30" />
-
-                  <div className="relative inline-flex  items-center justify-center gap-x-1 font-medium text-noops-500">
-                    Contact Us
-                  </div>
-                </a>
-              )}
-
-              {id === "pro" && (
                 <div className="mt-4">
                   <label className="text-sm" htmlFor="numberOfMicroservices">
                     Add extra micro-services:
@@ -264,6 +233,10 @@ const Pricing = () => {
                   </Feature>
 
                   <Feature id={id}>Unlimited developers</Feature>
+
+                  {id === "free" && (
+                    <Feature id={id}>No credit card required</Feature>
+                  )}
                 </ul>
               )}
             </div>
