@@ -8,7 +8,7 @@ export const plans: {
     id: "free",
     name: (
       <>
-        Free, <i>Forever</i>
+        Free, <i>forever</i>
       </>
     ),
     description: "The essentials to discover No_Ops",
