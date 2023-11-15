@@ -20,6 +20,10 @@ const Links = [
         title: "How It Works",
         href: "/how-it-works",
       },
+      {
+        title: "Pricing",
+        href: "/pricing",
+      },
     ],
   },
   {

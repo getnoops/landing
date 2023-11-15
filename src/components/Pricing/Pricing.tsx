@@ -1,255 +1,297 @@
-import {
-  CubeIcon,
-  CubeTransparentIcon,
-  ExclamationTriangleIcon,
-  Squares2X2Icon,
-} from "@heroicons/react/24/outline";
-import { BriefcaseIcon } from "@heroicons/react/24/solid";
+import { CheckCircleIcon } from "@heroicons/react/24/solid";
+import * as RadioGroup from "@radix-ui/react-radio-group";
 import classNames from "classnames";
-import { useState } from "react";
+import { motion } from "framer-motion";
+import { FC, PropsWithChildren, useState } from "react";
+import { Slider } from "../Slider";
+import { plans } from "./consts";
+import CurvedShape from "./CurvedShape";
+import Grid from "./Grid";
 
-const frequencies = [
-  { value: "monthly", label: "Monthly", priceSuffix: "/month" },
-  { value: "annually", label: "Annually", priceSuffix: "/year" },
-];
+const Pricing = () => {
+  const [frequency, setFrequency] = useState<"monthly" | "annually">("monthly");
+  const [microservices, setMicroservices] = useState<number>(10);
+  const [databaseClusters, setDatabaseClusters] = useState<number>(2);
 
-const tiers = [
-  {
-    name: "Free Tier",
-    id: "tier-free",
-    href: "#",
-    price: { monthly: "$??", annually: "$??" },
-    description:
-      "A free playground to experience zero-effort deployments in your development workflow.",
-    features: [],
-    featured: false,
-    cta: "Start deploying",
-
-    iconBg: "bg-noops-200",
-    iconBorder: "border-noops-300",
-    iconColor: "text-noops-600",
-    Icon: Squares2X2Icon,
-  },
-  {
-    name: "Starter",
-    id: "tier-starter",
-    href: "#",
-    price: { monthly: "$??", annually: "$??" },
-    description:
-      "Everything you need to run Production workloads in the Cloud. Best suited for Startups and SMBs.",
-    features: [],
-    featured: false,
-    cta: "Purchase",
-
-    iconBg: "bg-noops-200",
-    iconBorder: "border-noops-300",
-    iconColor: "text-noops-600",
-    Icon: CubeTransparentIcon,
-  },
-  {
-    name: "Scale-Up",
-    id: "tier-scale-up",
-    href: "#",
-    price: { monthly: "$??", annually: "$??" },
-    description:
-      "All Starter features plus extras, needed for larger organisations. By committing to run 20 resources monthly you get a discounted management fee.",
-    features: [],
-    featured: false,
-    cta: "Purchase",
-
-    iconBg: "bg-noops-200",
-    iconBorder: "border-noops-300",
-    iconColor: "text-noops-600",
-    Icon: CubeIcon,
-  },
-  {
-    name: "Enterprise",
-    id: "tier-enterprise",
-    href: "#",
-    price: "Get in touch",
-    description:
-      "All Scale-up features plus additional compliance and audit controls.",
-    features: [],
-    featured: true,
-    cta: "Contact",
-
-    iconBg: "bg-slate-800",
-    iconBorder: "border-slate-400",
-    iconColor: "text-slate-400",
-    Icon: BriefcaseIcon,
-  },
-];
-
-interface PricingProps {
-  title: string;
-  subtitle: string;
-}
-
-const Pricing = ({ title, subtitle }: PricingProps) => {
-  const [frequency, setFrequency] = useState(frequencies[0]);
+  const proPrice =
+    300 + (microservices - 10) * 50 + (databaseClusters - 2) * 50;
 
   return (
-    <div className="relative overflow-hidden bg-white py-24 sm:py-32">
-      <div
-        className="absolute inset-0 transform-gpu blur-3xl"
-        aria-hidden="true"
-      >
-        <div
-          className="h-full w-full bg-gradient-to-r from-noops-600 to-accent opacity-25"
-          style={{
-            clipPath:
-              "polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)",
-          }}
-        ></div>
-      </div>
-
-      <div
-        className="absolute inset-0 transform-gpu blur-3xl"
-        aria-hidden="true"
-      >
-        <div
-          className="h-full w-full rotate-12 bg-gradient-to-r from-blue-600  opacity-25"
-          style={{
-            clipPath:
-              "polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)",
-          }}
-        ></div>
-      </div>
-
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="relative">
-          <div className="mx-auto max-w-5xl text-center">
-            <h2 className="text-base font-semibold leading-7 text-noops-600">
-              {subtitle}
-            </h2>
-            <p className="mt-2 text-4xl font-bold tracking-tight text-slate-800 sm:text-5xl">
-              {title}
-            </p>
-          </div>
-
-          <div className="mx-auto mt-6 flex max-w-3xl items-center gap-x-2 rounded-xl border border-noops-500/30 bg-noops-600 bg-opacity-10 p-4 text-noops-800">
-            <div className="flex-initial">
-              <ExclamationTriangleIcon className="h-14 w-14 " />
-            </div>
-            <div className="flex-1 sm:text-lg">
-              Our pricing model is still a Work in Progress, but it will look
-              something like this:
-            </div>
-          </div>
-
-          <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-slate-600">
-            We pass on the Cloud cost to you as-is.
-            <br />
-            We charge a small management fee on top, which gets cheaper as you
-            grow.
+    <>
+      <div className="flex items-end justify-between ">
+        <div className="flex flex-col space-y-2">
+          <h1 className="text-3xl font-bold tracking-tight text-noops-100 md:text-4xl">
+            Plan
+          </h1>
+          <p className="mt-2 text-sm text-noops-200 md:text-base">
+            Start for free, upgrade when you want, with only the features you
+            need.
           </p>
-
-          <div className="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-4">
-            {tiers.map((tier) => (
-              <div
-                key={tier.id}
-                className={classNames(
-                  tier.featured
-                    ? "border-slate-900 bg-slate-900"
-                    : "border-slate-200/50 bg-white bg-opacity-50 shadow-lg shadow-slate-100 backdrop-blur-md ",
-                  "rounded-3xl border p-8 ",
-                )}
-              >
-                {/* <p className="mb-6 flex items-baseline gap-x-1 font-mono">
-                  <span
-                    className={classNames(
-                      tier.featured ? "text-white" : "text-slate-800",
-                      "text-4xl font-bold tracking-tight"
-                    )}
-                  >
-                    {typeof tier.price === "string"
-                      ? tier.price
-                      : tier.price[frequency.value as "monthly" | "annually"]}
-                  </span>
-                  {typeof tier.price !== "string" ? (
-                    <span
-                      className={classNames(
-                        tier.featured ? "text-slate-300" : "text-slate-600",
-                        "text-sm font-semibold leading-6"
-                      )}
-                    >
-                      {frequency.priceSuffix}
-                    </span>
-                  ) : null}
-                </p> */}
-
-                <h3
-                  id={tier.id}
-                  className={classNames(
-                    tier.featured ? "text-white" : "text-slate-800",
-                    "text-2xl font-semibold leading-8",
-                  )}
-                >
-                  {tier.name}
-                </h3>
-
-                <div
-                  className={classNames(
-                    tier.iconBg,
-                    tier.iconBorder,
-                    "my-3 flex items-center justify-center rounded-xl border border-opacity-20 bg-opacity-60 p-4",
-                  )}
-                >
-                  <tier.Icon
-                    className={classNames(
-                      tier.iconColor,
-                      "h-1/2 w-1/2 text-opacity-30",
-                    )}
-                  />
-                </div>
-
-                <p
-                  className={classNames(
-                    tier.featured ? "text-slate-300" : "text-slate-600",
-                    "mt-4 leading-6",
-                  )}
-                >
-                  {tier.description}
-                </p>
-                {/* <a
-                  href={tier.href}
-                  aria-describedby={tier.id}
-                  className={classNames(
-                    tier.featured
-                      ? "bg-white/10 text-white hover:bg-white/20 focus-visible:outline-white"
-                      : "bg-noops-500 text-white shadow-sm hover:bg-noops-400 focus-visible:outline-noops-500",
-                    "mt-6 block rounded-full px-3 py-2 text-center text-sm font-semibold leading-6 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
-                  )}
-                >
-                  {tier.cta}
-                </a> */}
-                {/* <ul
-                  role="list"
-                  className={classNames(
-                    tier.featured ? "text-slate-300" : "text-slate-600",
-                    "mt-8 space-y-3 text-sm leading-6 xl:mt-10"
-                  )}
-                >
-                  {tier.features.map((feature) => (
-                    <li key={feature} className="flex gap-x-3">
-                      <CheckCircleIcon
-                        className={classNames(
-                          tier.featured ? "text-white" : "text-noops-600",
-                          "h-6 w-5 flex-none"
-                        )}
-                        aria-hidden="true"
-                      />
-                      {feature}
-                    </li>
-                  ))}
-                </ul> */}
-              </div>
-            ))}
-          </div>
         </div>
       </div>
-    </div>
+
+      <div className="my-10 text-white">
+        <div className="flex justify-center">
+          <RadioGroup.Root
+            value={frequency}
+            onValueChange={(newFrequency: any) =>
+              setFrequency(newFrequency as "monthly" | "annually")
+            }
+            className="grid grid-cols-2 gap-x-1 rounded-full p-1 text-center text-xs font-semibold leading-5 ring-1 ring-inset ring-accent/80"
+          >
+            {["monthly", "annually"].map((option) => (
+              <RadioGroup.Item
+                key={option}
+                value={option}
+                className={classNames(
+                  "relative cursor-pointer rounded-full px-2.5 py-1 transition",
+                  option === frequency && "text-white",
+                  option !== frequency && "text-accent/80",
+                )}
+              >
+                {option === frequency && (
+                  <motion.div
+                    className="absolute left-0 top-0 z-0 h-full w-full rounded-full bg-gradient-to-r from-noops-600 to-accent shadow-inner shadow-noops-300"
+                    layoutId="planFrequency"
+                  />
+                )}
+
+                <span className="relative z-10">
+                  {option === "monthly" ? "Monthly" : "Annually"}
+                </span>
+              </RadioGroup.Item>
+            ))}
+          </RadioGroup.Root>
+        </div>
+
+        <div className="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3 ">
+          {plans.map(({ id, name, description, href }) => (
+            <div
+              key={id}
+              className={classNames(
+                id === "free" && "",
+                "relative  overflow-clip  rounded-3xl bg-noops-1000 p-8 xl:p-10",
+              )}
+            >
+              {id === "pro" && (
+                <>
+                  {/* TOP */}
+                  <CurvedShape
+                    fill="#cab6fc"
+                    className="absolute right-0 top-0 w-full origin-top-right scale-75 blur-xl   "
+                    flipped
+                  />
+                  <CurvedShape
+                    fill="#8335e9"
+                    className="absolute right-0 top-0 w-full origin-top-right scale-125 mix-blend-overlay  blur-xl"
+                    flipped
+                  />
+                  <CurvedShape
+                    fill="#ffffff"
+                    className="absolute right-0 top-0 w-full origin-top-right  scale-[50%] mix-blend-overlay  blur-2xl "
+                    flipped
+                  />
+
+                  {/* BOTTOM */}
+                  <CurvedShape
+                    fill="#cab6fc"
+                    className="absolute bottom-0 left-0 w-full origin-bottom-left scale-[60%] blur-xl  "
+                  />
+                  <CurvedShape
+                    fill="#8335e9"
+                    className="absolute bottom-0 left-0 w-full origin-bottom-left scale-[100%] mix-blend-overlay  blur-lg"
+                  />
+                  <CurvedShape
+                    fill="#ffffff"
+                    className="absolute bottom-0 left-0 w-full origin-bottom-left  scale-[40%] mix-blend-overlay  blur-xl "
+                  />
+                </>
+              )}
+
+              {id === "enterprise" && (
+                <>
+                  {/* 
+                  <CurvedShape
+                  fill="#fff4ce"
+                  className="absolute right-0 top-0 w-full origin-top-right scale-75 blur-xl    "
+                  flipped
+                  />
+                  <CurvedShape
+                  fill="#eeaa5b"
+                  className="absolute right-0 top-0 w-full origin-top-right scale-125 mix-blend-overlay blur-xl  "
+                  flipped
+                  />
+                  <CurvedShape
+                  fill="#ffeaae"
+                  className="absolute right-0 top-0 w-full origin-top-right scale-[50%]  mix-blend-overlay blur-2xl   "
+                  flipped
+                /> */}
+
+                  <div className="absolute inset-x-0 -top-1/2 mx-auto h-[200%] w-24 rotate-[60deg] bg-[#fff4ce] blur-2xl grayscale  lg:rotate-[31deg]"></div>
+                  <div className="absolute inset-x-0 -top-1/2 mx-auto h-[200%] w-48 rotate-[60deg] bg-[#eeaa5b] mix-blend-overlay blur-2xl grayscale  lg:rotate-[31deg]"></div>
+
+                  <div className="absolute inset-0">
+                    <Grid className="mx-auto h-full w-full opacity-10 " />
+                  </div>
+                </>
+              )}
+
+              {id === "free" && (
+                <>
+                  <div className="absolute left-0 top-[90%] h-full w-full rounded-full bg-accent blur-3xl" />
+                  <div className="absolute left-0 top-[90%] h-full w-full rounded-full bg-accent mix-blend-overlay blur-3xl" />
+                </>
+              )}
+
+              {id === "free" && <></>}
+              <div className="relative flex items-center justify-between gap-x-4">
+                <h3
+                  id={id}
+                  className={classNames(
+                    id === "pro" ? "text-accent" : "",
+                    "text-xl font-bold leading-8",
+                  )}
+                >
+                  {name}
+                </h3>
+              </div>
+
+              <p className="relative mt-4 text-sm leading-6">{description}</p>
+
+              <p className="relative mt-6 flex items-baseline gap-x-1">
+                <span className="text-4xl font-bold tracking-tight">
+                  {id === "enterprise"
+                    ? " "
+                    : id === "free"
+                    ? "AU$0"
+                    : `AU$${proPrice * (frequency === "annually" ? 10 : 1)}`}
+                </span>
+                <span className="text-sm font-semibold leading-6">
+                  {id !== "enterprise" &&
+                    (frequency === "annually" ? "/year" : "/month")}
+                </span>
+              </p>
+
+              {id === "pro" && (
+                <button className="group relative mt-6 inline-block w-full rounded-[10px] border-2 border-noops-700 bg-gradient-to-b from-noops-500 to-noops-600 px-6 py-2 tracking-wide text-white shadow-inner shadow-noops-100/50">
+                  <div className="absolute inset-0.5 rounded-md bg-noops-600 shadow-inner shadow-white/20 transition group-hover:opacity-30" />
+
+                  <div className="relative inline-flex  items-center justify-center gap-x-1">
+                    Select this plan
+                  </div>
+                </button>
+              )}
+              {id === "free" && (
+                <button className="group relative mt-6 inline-block w-full rounded-[10px] border-2 border-purple-700 bg-gradient-to-b from-purple-500 to-purple-600 px-6 py-2 tracking-wide text-white shadow-inner shadow-purple-100/50">
+                  <div className="absolute inset-0.5 rounded-md bg-purple-600 shadow-inner shadow-white/20 transition group-hover:opacity-30" />
+
+                  <div className="relative inline-flex  items-center justify-center gap-x-1">
+                    Select this plan
+                  </div>
+                </button>
+              )}
+              {id === "enterprise" && (
+                <a
+                  href="/contact"
+                  className="group relative mt-6 block w-full  rounded-[10px] border-2 border-noops-300 bg-gradient-to-b from-noops-100 to-noops-200 px-6 py-2 text-center tracking-wide text-white shadow-inner shadow-noops-300/20"
+                >
+                  <div className="absolute inset-0.5 rounded-md bg-noops-200 shadow-inner shadow-noops-300/20 transition group-hover:opacity-30" />
+
+                  <div className="relative inline-flex  items-center justify-center gap-x-1 font-medium text-noops-500">
+                    Contact Us
+                  </div>
+                </a>
+              )}
+
+              {id === "pro" && (
+                <div className="mt-4">
+                  <label className="text-sm" htmlFor="numberOfMicroservices">
+                    Add extra micro-services:
+                  </label>
+
+                  <Slider
+                    className="mb-4 mt-1 cursor-pointer"
+                    id="numberOfMicroservices"
+                    noopsColor
+                    min={10}
+                    max={100}
+                    step={5}
+                    value={[microservices]}
+                    onValueChange={([newMicroservices]: any) =>
+                      setMicroservices(newMicroservices)
+                    }
+                  />
+
+                  <label className="text-sm" htmlFor="numberOfDatabaseClusters">
+                    Add extra database clusters:
+                  </label>
+
+                  <Slider
+                    className="mb-4 mt-1 cursor-pointer"
+                    id="numberOfDatabaseClusters"
+                    noopsColor
+                    min={2}
+                    max={30}
+                    value={[databaseClusters]}
+                    onValueChange={([newDatabaseClusters]: any) =>
+                      setDatabaseClusters(newDatabaseClusters)
+                    }
+                  />
+                </div>
+              )}
+
+              {id !== "enterprise" && (
+                <ul className="relative mt-6 space-y-3 text-sm leading-6">
+                  <Feature id={id}>
+                    {id === "free" ? 5 : microservices} micro-services
+                  </Feature>
+
+                  <Feature id={id}>
+                    {id === "free" ? 1 : databaseClusters} database cluster
+                    {id === "pro" && databaseClusters > 1 ? "s" : ""}
+                  </Feature>
+
+                  <Feature id={id}>
+                    {id === "free" ? 15 : microservices * 3} S3 buckets
+                  </Feature>
+
+                  <Feature id={id}>
+                    {id === "free" ? 5 : databaseClusters * 5} databases
+                  </Feature>
+
+                  <Feature id={id}>
+                    {id === "free" ? "1 environment" : "3 environments"}
+                  </Feature>
+
+                  <Feature id={id}>Unlimited developers</Feature>
+                </ul>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </>
   );
 };
+
+interface FeatureProps {
+  id: string;
+  children: React.ReactNode;
+}
+
+const Feature = ({ id, children }: FeatureProps) => (
+  <li className="flex gap-x-3">
+    <CheckCircleIcon
+      className={classNames(
+        id === "free" && "text-accent",
+        id === "pro" && "text-accent",
+        id === "enterprise" && "text-slate-500",
+        "h-6 w-5 flex-none text-noops-500",
+      )}
+      aria-hidden="true"
+    />
+    {children}
+  </li>
+);
 
 export default Pricing;

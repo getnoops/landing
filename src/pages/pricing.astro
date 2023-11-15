@@ -1,0 +1,55 @@
+---
+// Component Imports
+import { SparklesIcon } from "@heroicons/react/24/solid";
+import {
+  Footer,
+  TopBar,
+  PricingComponent,
+  StarryBackground,
+} from "../components";
+import Triangle from "../components/Pricing/Triangle";
+
+import Body from "../layouts/Body.astro";
+
+// Full Astro Component Syntax:
+// https://docs.astro.build/core-concepts/astro-components/
+---
+
+<Body title="Simple, Transparent Pricing">
+  <div class="flex min-h-screen flex-col justify-between bg-noops-1000">
+    <TopBar />
+
+    <div class="relative h-full bg-noops-1000">
+      <div class="pointer-events-none absolute inset-x-0 top-0 z-10 h-full">
+        <StarryBackground />
+      </div>
+      <div class="relative pt-24">
+        <div class="relative mx-auto w-full max-w-7xl items-center lg:flex">
+          <div
+            class="relative mx-auto w-full flex-1 space-y-4 p-8 pt-28 lg:pb-40 lg:pt-28"
+          >
+            <h6 class="text-noops-300">Pricing</h6>
+            <h1 class="text-5xl font-bold tracking-tight text-noops-100">
+              Platform <span
+                class="bg-gradient-to-r from-noops-600 to-accent bg-clip-text py-1 font-extrabold text-transparent"
+              >
+                Pricing
+              </span>
+            </h1>
+            <p class="text-2xl text-noops-200">
+              A simple, transparent pricing model that scales with your business
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mx-auto max-w-7xl md:mb-24">
+        <div class="px-8 pb-12 pt-8">
+          <PricingComponent client:load />
+        </div>
+      </div>
+    </div>
+
+    <Footer />
+  </div>
+</Body>

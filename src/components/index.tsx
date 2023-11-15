@@ -3,7 +3,6 @@ export { Steps } from "./Steps";
 export { Bridge } from "./Bridge";
 export { NoOpsSymbol } from "./NoOpsSymbol";
 export { Features } from "./Features";
-export { Pricing } from "./Pricing";
 export { FAQ } from "./FAQ";
 export { CTA } from "./CTA";
 export { Skeptic } from "./Skeptic";
@@ -23,8 +22,10 @@ export { QueryProviderHOC } from "./QueryProviderHOC";
 export { SelectMenu } from "./SelectMenu";
 export { EmailQuickLinks } from "./EmailQuickLinks";
 export { ContactUsForm } from "./ContactUsForm";
+export { Pricing as PricingComponent } from "./Pricing";
 
 export { AWSGraphic } from "./AWSGraphic";
 export { StreamlineGraphic } from "./StreamlineGraphic";
 export { YourTechGraphic } from "./YourTechGraphic";
 export { EnvironmentGraphic } from "./EnvironmentGraphic";
+export { StarryBackground } from "./StarryBackground";
