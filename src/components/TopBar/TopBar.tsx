@@ -27,7 +27,7 @@ const TopBar = () => {
         </a>
         <a
           className="inline-flex items-center gap-x-1 text-noops-300 transition hover:text-noops-400"
-          href="https://portal.getnoops.com/login"
+          href="/pricing"
         >
           <CurrencyDollarIcon className="h-6" />
           Pricing
