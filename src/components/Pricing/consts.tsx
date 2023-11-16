@@ -17,7 +17,7 @@ export const plans: {
   {
     id: "pro",
     name: "Pro",
-    description: "Pay only for what you need",
+    description: "Get support and pay only for what you need",
     href: "#",
   },
   {
