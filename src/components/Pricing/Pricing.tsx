@@ -10,6 +10,7 @@ import Grid from "./Grid";
 import {
   calculatePlanPrice,
   formatAmountAsCurrency,
+  toWholeAmount,
   type Interval,
 } from "utils/pricing";
 
@@ -18,7 +19,9 @@ const Pricing = () => {
   const [microservices, setMicroservices] = useState(10);
   const [databaseClusters, setDatabaseClusters] = useState(2);
 
-  const price = calculatePlanPrice(microservices, databaseClusters, interval);
+  const price = toWholeAmount(
+    calculatePlanPrice(microservices, databaseClusters, interval),
+  );
 
   return (
     <>

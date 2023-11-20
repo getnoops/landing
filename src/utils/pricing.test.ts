@@ -14,5 +14,11 @@ describe("Pricing Utilities", () => {
       const price = calculatePlanPrice(microservices, databases, "annually");
       expect(price).toEqual(6500);
     });
+    test("should return $60,500 for an annually billed pro plan with 100 services and 2 databases", () => {
+      const microservices = 100;
+      const databases = 2;
+      const price = calculatePlanPrice(microservices, databases, "annually");
+      expect(price).toEqual(60500);
+    });
   });
 });

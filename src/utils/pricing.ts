@@ -18,29 +18,36 @@ export const formatAmountAsCurrency = (
   const formattedAmount = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: currency,
-    minimumFractionDigits: 2,
+    minimumFractionDigits: 0,
   }).format(amount);
 
   return formattedAmount;
 };
 
+/** Returns the total cost of a plan in cents calculated based on the number of services provided */
 export const calculatePlanPrice = (
   microservices: number,
   databases: number,
   interval: Interval,
 ) => {
-  const microservicePrice =
-    serviceItemPriceMap.microservice * (microservices ?? 0);
-  const databasePrice = serviceItemPriceMap.database * (databases ?? 0);
-  const totalPrice = toWholeAmount(microservicePrice + databasePrice);
+  const { microservice: microservicePrice, database: databasePrice } =
+    serviceItemPriceMap;
 
   if (interval === "annually") {
-    const annualPrice = totalPrice * 12;
-    // take 10% of the total annual price
-    const discount = 0.1 * annualPrice;
-    const discountedPrice = annualPrice - discount;
-    return Math.ceil(discountedPrice / 50) * 50;
+    // this is the base cost of the annual pricing plan (10 microservices & 2 databases)
+    const baseAnnualCostInCents = 650000; // $6,500.00
+    const annualMicroservicePriceInCents = microservicePrice * 12; // $600.00
+    const annualDatabasePriceInCents = databasePrice * 12; // $600.00
+    // exclude 10 microservices as they are included in the base price
+    const microserviceCost =
+      (microservices - 10) * annualMicroservicePriceInCents;
+    // exclude 2 databases as they are included in the base price
+    const databaseCost = (databases - 2) * annualDatabasePriceInCents;
+    const annualPlanCost =
+      baseAnnualCostInCents + microserviceCost + databaseCost;
+
+    return annualPlanCost;
   }
 
-  return totalPrice;
+  return microservicePrice * microservices + databasePrice * databases;
 };
