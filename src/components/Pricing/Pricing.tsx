@@ -7,11 +7,7 @@ import { Slider } from "../Slider";
 import { plans } from "./consts";
 import CurvedShape from "./CurvedShape";
 import Grid from "./Grid";
-import {
-  calculatePlanPrice,
-  formatAmount,
-  type Interval,
-} from "utils/pricing";
+import { calculatePlanPrice, formatAmount, type Interval } from "utils/pricing";
 
 const Pricing = () => {
   const [interval, setInterval] = useState<Interval>("monthly");
