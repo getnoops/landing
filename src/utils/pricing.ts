@@ -11,7 +11,10 @@ export const toWholeAmount = (amount: number) => {
   return amount / 100;
 };
 
-export const formatAmount = (amount: number, currency: string): string => {
+export const formatAmountAsCurrency = (
+  amount: number,
+  currency: string,
+): string => {
   const formattedAmount = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: currency,

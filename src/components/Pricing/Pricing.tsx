@@ -7,7 +7,11 @@ import { Slider } from "../Slider";
 import { plans } from "./consts";
 import CurvedShape from "./CurvedShape";
 import Grid from "./Grid";
-import { calculatePlanPrice, formatAmount, type Interval } from "utils/pricing";
+import {
+  calculatePlanPrice,
+  formatAmountAsCurrency,
+  type Interval,
+} from "utils/pricing";
 
 const Pricing = () => {
   const [interval, setInterval] = useState<Interval>("monthly");
@@ -160,8 +164,8 @@ const Pricing = () => {
                   {id === "enterprise"
                     ? ""
                     : id === "free"
-                    ? formatAmount(0, "AUD")
-                    : formatAmount(price, "AUD")}
+                    ? formatAmountAsCurrency(0, "AUD")
+                    : formatAmountAsCurrency(price, "AUD")}
                 </span>
                 <span className="text-sm font-semibold leading-6">
                   {id !== "enterprise" &&
