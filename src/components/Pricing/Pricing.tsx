@@ -54,7 +54,7 @@ const Pricing = () => {
                 )}
 
                 <span className="relative z-10">
-                  {option === "monthly" ? "Monthly" : "Annually (10% off!)"}
+                  {option === "monthly" ? "Monthly" : "Annually"}
                 </span>
               </RadioGroup.Item>
             ))}
