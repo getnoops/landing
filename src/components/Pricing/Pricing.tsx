@@ -2,19 +2,23 @@ import { CheckCircleIcon } from "@heroicons/react/24/solid";
 import * as RadioGroup from "@radix-ui/react-radio-group";
 import classNames from "classnames";
 import { motion } from "framer-motion";
-import { FC, PropsWithChildren, useState } from "react";
+import { useState } from "react";
 import { Slider } from "../Slider";
 import { plans } from "./consts";
 import CurvedShape from "./CurvedShape";
 import Grid from "./Grid";
+import {
+  calculatePlanPrice,
+  formatAmount,
+  type Interval,
+} from "utils/pricing";
 
 const Pricing = () => {
-  const [frequency, setFrequency] = useState<"monthly" | "annually">("monthly");
-  const [microservices, setMicroservices] = useState<number>(10);
-  const [databaseClusters, setDatabaseClusters] = useState<number>(2);
+  const [interval, setInterval] = useState<Interval>("monthly");
+  const [microservices, setMicroservices] = useState(10);
+  const [databaseClusters, setDatabaseClusters] = useState(2);
 
-  const proPrice =
-    300 + (microservices - 10) * 50 + (databaseClusters - 2) * 50;
+  const price = calculatePlanPrice(microservices, databaseClusters, interval);
 
   return (
     <>
@@ -33,10 +37,8 @@ const Pricing = () => {
       <div className="my-10 text-white">
         <div className="flex justify-center">
           <RadioGroup.Root
-            value={frequency}
-            onValueChange={(newFrequency: any) =>
-              setFrequency(newFrequency as "monthly" | "annually")
-            }
+            value={interval}
+            onValueChange={(value: Interval) => setInterval(value)}
             className="grid grid-cols-2 gap-x-1 rounded-full p-1 text-center text-xs font-semibold leading-5 ring-1 ring-inset ring-accent/80"
           >
             {["monthly", "annually"].map((option) => (
@@ -45,11 +47,10 @@ const Pricing = () => {
                 value={option}
                 className={classNames(
                   "relative cursor-pointer rounded-full px-2.5 py-1 transition",
-                  option === frequency && "text-white",
-                  option !== frequency && "text-accent/80",
+                  option === interval ? "text-white" : "text-accent/80",
                 )}
               >
-                {option === frequency && (
+                {option === interval && (
                   <motion.div
                     className="absolute left-0 top-0 z-0 h-full w-full rounded-full bg-gradient-to-r from-noops-600 to-accent shadow-inner shadow-noops-300"
                     layoutId="planFrequency"
@@ -161,14 +162,14 @@ const Pricing = () => {
               <p className="relative mt-6 flex items-baseline gap-x-1">
                 <span className="text-4xl font-bold tabular-nums tracking-tight">
                   {id === "enterprise"
-                    ? " "
+                    ? ""
                     : id === "free"
-                    ? "AU$0"
-                    : `AU$${proPrice * (frequency === "annually" ? 10 : 1)}`}
+                    ? formatAmount(0, "AUD")
+                    : formatAmount(price, "AUD")}
                 </span>
                 <span className="text-sm font-semibold leading-6">
                   {id !== "enterprise" &&
-                    (frequency === "annually" ? "/year" : "/month")}
+                    (interval === "annually" ? "/year" : "/month")}
                 </span>
               </p>
 
