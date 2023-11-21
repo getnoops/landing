@@ -1,5 +1,3 @@
-import getSymbolFromCurrency from "currency-symbol-map";
-
 export type Service = "microservice" | "database";
 export type Interval = "monthly" | "annually";
 
@@ -17,8 +15,13 @@ export const formatAmountAsCurrency = (
   amount: number,
   currency: string,
 ): string => {
-  const symbol = getSymbolFromCurrency(currency);
-  return `${currency}${symbol ?? ""}${amount}`;
+  const formattedAmount = new Intl.NumberFormat("en-AU", {
+    currency,
+    currencyDisplay: "narrowSymbol",
+    maximumFractionDigits: 0,
+    style: "currency",
+  }).format(amount);
+  return `${formattedAmount} ${currency}`;
 };
 
 /** Returns the total cost of a plan in cents calculated based on the number of services provided */
