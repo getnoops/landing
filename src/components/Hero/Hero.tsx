@@ -1,9 +1,4 @@
-import {
-  ArrowLongRightIcon,
-  ArrowSmallRightIcon,
-} from "@heroicons/react/24/outline";
-import { motion } from "framer-motion";
-import type React from "react";
+import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
 import { StarryBackground } from "..";
 
 interface HomeProps {
@@ -42,11 +37,13 @@ const Hero = ({ description }: HomeProps) => {
                 href="/sign-up"
                 className="group relative mt-9 inline-block rounded-[10px] border-2 border-noops-700 bg-gradient-to-b from-noops-400 to-noops-600 px-6 py-2 font-medium text-white"
               >
-                <div className="absolute inset-0.5 rounded-md bg-noops-600 transition group-hover:opacity-30" />
+                <div className="absolute inset-0.5 rounded-md bg-black transition group-hover:opacity-30" />
                 <div className="pointer-events-none absolute -inset-3 rounded-2xl border border-noops-700/30 bg-noops-900/30 "></div>
 
-                <div className="relative inline-flex w-full items-center gap-x-1">
-                  Try the Alpha <ArrowLongRightIcon className="h-6" />
+                <div className="relative inline-flex w-full items-center gap-x-2 p-1">
+                  Try
+                  <img src="/logo_smile.svg" alt="No_Ops" className="h-6" />
+                  <ArrowLongRightIcon className="h-6" />
                 </div>
               </a>
             </div>
