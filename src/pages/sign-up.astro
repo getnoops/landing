@@ -9,7 +9,7 @@ import Body from "../layouts/Body.astro";
 // https://docs.astro.build/core-concepts/astro-components/
 ---
 
-<Body title="Sign Up - Try the No_Ops Alpha">
+<Body title="Sign Up - Try No_Ops">
   <div class="flex min-h-screen flex-col justify-between bg-noops-1000">
     <TopBar />
 
@@ -26,13 +26,17 @@ import Body from "../layouts/Body.astro";
           <Curve fill="#cab6fc" className="absolute right-0 h-full " />
         </div>
 
-        <div class="mx-auto w-full max-w-7xl lg:flex">
-          <div
+        <div class="mx-auto w-full max-w-7xl lg:flex items-center">
+           <div
             class="relative mx-auto w-full flex-1 space-y-4 p-8 pt-20 lg:pb-40 lg:pt-28"
           >
             <h6 class="text-noops-300">Sign Up</h6>
-            <h1 class="text-5xl font-bold tracking-tight text-noops-100 flex items-center gap-6">
-              Try <img src="/logo_smile.svg" alt="No_Ops" class="h-12 mt-2" />
+            <h1 class="text-5xl font-bold tracking-tight text-noops-100">
+              Explore our<span
+                class="bg-gradient-to-r from-noops-600 to-accent bg-clip-text py-1 font-extrabold text-transparent"
+              >
+                Solution
+              </span>
             </h1>
             <p class="text-2xl text-noops-200">
               We are currently in the process of building our platform, but you
