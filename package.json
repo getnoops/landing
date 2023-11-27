@@ -43,7 +43,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "jest-extended": "^4.0.2",
     "orval": "^6.20.0",
-    "prettier": "^3.0.3",
+    "prettier": "^3.1.0",
     "prettier-plugin-astro": "^0.12.1",
     "prettier-plugin-tailwindcss": "^0.5.7",
     "tailwind-merge": "^1.14.0",
