@@ -69,32 +69,32 @@ const Pricing = () => {
                 {/* TOP */}
                 <CurvedShape
                   fill="#cab6fc"
-                  className="absolute right-0 top-0 w-full origin-top-right scale-75 blur-xl   "
+                  className="pointer-events-none absolute right-0 top-0 w-full origin-top-right scale-75 blur-xl   "
                   flipped
                 />
                 <CurvedShape
                   fill="#8335e9"
-                  className="absolute right-0 top-0 w-full origin-top-right scale-125 mix-blend-overlay  blur-xl"
+                  className="pointer-events-none absolute right-0 top-0 w-full origin-top-right scale-125 mix-blend-overlay  blur-xl"
                   flipped
                 />
                 <CurvedShape
                   fill="#ffffff"
-                  className="absolute right-0 top-0 w-full origin-top-right  scale-[50%] mix-blend-overlay  blur-2xl "
+                  className="pointer-events-none absolute right-0 top-0 w-full origin-top-right  scale-[50%] mix-blend-overlay  blur-2xl "
                   flipped
                 />
 
                 {/* BOTTOM */}
                 <CurvedShape
                   fill="#cab6fc"
-                  className="absolute bottom-0 left-0 w-full origin-bottom-left scale-[60%] blur-xl  "
+                  className="pointer-events-none absolute bottom-0 left-0 w-full origin-bottom-left scale-[60%] blur-xl  "
                 />
                 <CurvedShape
                   fill="#8335e9"
-                  className="absolute bottom-0 left-0 w-full origin-bottom-left scale-[100%] mix-blend-overlay  blur-lg"
+                  className="pointer-events-none absolute bottom-0 left-0 w-full origin-bottom-left scale-[100%] mix-blend-overlay  blur-lg"
                 />
                 <CurvedShape
                   fill="#ffffff"
-                  className="absolute bottom-0 left-0 w-full origin-bottom-left  scale-[40%] mix-blend-overlay  blur-xl "
+                  className="pointer-events-none absolute bottom-0 left-0 w-full origin-bottom-left  scale-[40%] mix-blend-overlay  blur-xl "
                 />
               </>
             )}
@@ -164,11 +164,10 @@ const Pricing = () => {
             </p>
 
             {id === "pro" && (
-              <div className="mt-4">
+              <div className="relative mt-4">
                 <label className="text-sm" htmlFor="numberOfMicroservices">
-                  Add extra micro-services:
+                  Add extra microservices:
                 </label>
-
                 <Slider
                   className="mb-4 mt-1 cursor-pointer"
                   id="numberOfMicroservices"
@@ -185,7 +184,6 @@ const Pricing = () => {
                 <label className="text-sm" htmlFor="numberOfDatabaseClusters">
                   Add extra database clusters:
                 </label>
-
                 <Slider
                   className="mb-4 mt-1 cursor-pointer"
                   id="numberOfDatabaseClusters"
@@ -203,7 +201,7 @@ const Pricing = () => {
             {id !== "enterprise" && (
               <ul className="relative mt-6 space-y-3 text-sm leading-6">
                 <Feature id={id}>
-                  {id === "free" ? 5 : microservices} micro-services
+                  {id === "free" ? 5 : microservices} microservices
                 </Feature>
 
                 <Feature id={id}>
