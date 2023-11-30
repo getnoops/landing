@@ -41,7 +41,7 @@ const Hero = ({ description }: HomeProps) => {
                 <div className="pointer-events-none absolute -inset-3 rounded-2xl border border-noops-700/30 bg-noops-900/30 "></div>
 
                 <div className="relative inline-flex w-full items-center gap-x-1">
-                  Try it now <ArrowLongRightIcon className="h-6" />
+                  Try it for free <ArrowLongRightIcon className="h-6" />
                 </div>
               </a>
             </div>

@@ -60,7 +60,6 @@ const Pricing = () => {
           <div
             key={id}
             className={classNames(
-              id === "free" && "",
               "relative  overflow-clip  rounded-3xl bg-noops-1000 p-8 xl:p-10",
             )}
           >
@@ -129,6 +128,7 @@ const Pricing = () => {
 
             {id === "free" && (
               <>
+                <div className="absolute left-0 top-0 h-full w-full  bg-noops-1000 " />
                 <div className="absolute left-0 top-[90%] h-full w-full rounded-full bg-accent blur-3xl" />
                 <div className="absolute left-0 top-[90%] h-full w-full rounded-full bg-accent mix-blend-overlay blur-3xl" />
               </>

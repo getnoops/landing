@@ -2,30 +2,32 @@ import { motion, Variants } from "framer-motion";
 import React from "react";
 
 const variants: Variants = {
-  hidden: { width: 0 },
+  hidden: {
+    scaleX: 0,
+  },
   visible: {
-    width: "100%",
+    scaleX: 1,
     transition: {
       ease: "circOut",
-      duration: 1,
+      duration: 1.2,
     },
   },
 };
 
 const HeroGradient = () => {
   return (
-    <div className="absolute inset-0 top-0 mx-auto h-screen w-96 md:w-112">
+    <div className="absolute inset-0 top-0 mx-auto h-screen w-112 bg-noops-1000 md:w-[36rem]">
       <motion.div
         variants={variants}
         initial="hidden"
         animate="visible"
-        className="absolute inset-x-0 top-1/2 mx-auto h-[120%]  -translate-y-1/2 bg-noops-400 blur-3xl "
+        className="absolute inset-x-0  -top-[10%] mx-auto h-[120%] w-full -translate-y-1/2  bg-noops-400 blur-3xl "
       />
       <motion.div
         variants={variants}
         initial="hidden"
         animate="visible"
-        className="absolute inset-x-0 top-1/2 z-10 mx-auto h-[120%] -translate-y-1/2 bg-noops-100 mix-blend-overlay blur-3xl "
+        className="absolute inset-x-0  -top-[10%] z-10 mx-auto h-[120%] w-full -translate-y-1/2 bg-noops-100 mix-blend-overlay blur-3xl "
       />
     </div>
   );
