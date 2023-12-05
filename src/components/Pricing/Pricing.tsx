@@ -42,7 +42,7 @@ const Pricing = () => {
             >
               {option === interval && (
                 <motion.div
-                  className="absolute left-0 top-0 z-0 h-full w-full rounded-full bg-gradient-to-r from-noops-600 to-accent shadow-inner shadow-noops-300"
+                  className="absolute inset-0 z-0 h-full w-full rounded-full bg-gradient-to-r from-noops-600 to-accent shadow-inner shadow-noops-300"
                   layoutId="planFrequency"
                 />
               )}
@@ -128,9 +128,9 @@ const Pricing = () => {
 
             {id === "free" && (
               <>
-                <div className="absolute left-0 top-0 h-full w-full  bg-noops-1000 " />
-                <div className="absolute left-0 top-[90%] h-full w-full rounded-full bg-accent blur-3xl" />
-                <div className="absolute left-0 top-[90%] h-full w-full rounded-full bg-accent mix-blend-overlay blur-3xl" />
+                <div className="absolute inset-0 bg-noops-1000  " />
+                <div className="absolute left-0 top-[90%] z-50 h-full w-full rounded-full bg-noops-400 blur-[46px] " />
+                <div className="absolute left-0 top-[90%] z-50 h-full w-full rounded-full bg-noops-400 mix-blend-overlay blur-2xl" />
               </>
             )}
 

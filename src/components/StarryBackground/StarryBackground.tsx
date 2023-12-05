@@ -7,7 +7,7 @@ const StarryBackground: React.FC = () => {
 
   return (
     <svg
-      className="h-full w-full object-cover"
+      className="pointer-events-none h-full w-full object-cover"
       xmlns="http://www.w3.org/2000/svg"
     >
       <rect width="100%" height="100%" fill="transparent" />

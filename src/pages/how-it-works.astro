@@ -9,12 +9,7 @@ import {
   SparklesIcon,
 } from "@heroicons/react/24/solid";
 import { EnvironmentGraphic, Footer, TopBar } from "../components";
-import {
-  HeroGradient,
-  KeyAndSecret,
-  Services,
-  ServicesNew,
-} from "../components/HowItWorks";
+import { Deploy, HeroGradient, ServicesNew } from "../components/HowItWorks";
 import Body from "../layouts/Body.astro";
 
 // Full Astro Component Syntax:
@@ -54,11 +49,11 @@ import Body from "../layouts/Body.astro";
       class="relative mx-auto max-w-[110rem] overflow-x-clip py-24 md:overflow-visible md:py-36"
     >
       <div
-        class="absolute -inset-x-20 inset-y-0 z-0 rounded-[100px] bg-noops-400 blur-3xl md:inset-2"
+        class="pointer-events-none absolute -inset-x-20 inset-y-0 z-0 rounded-[100px] bg-noops-400 blur-2xl md:inset-2"
       >
       </div>
       <div
-        class="absolute -inset-x-20 inset-y-0 z-10 rounded-[100px] bg-noops-100 mix-blend-overlay blur-3xl md:inset-2"
+        class="pointer-events-none absolute -inset-x-20 inset-y-0 z-10 rounded-[100px] bg-noops-100 mix-blend-overlay blur-2xl md:inset-2"
       >
       </div>
       <div class="relative">
@@ -286,6 +281,7 @@ import Body from "../layouts/Body.astro";
           </div>
         </div>
 
+        <!-- <section class="relative z-20 px-4 lg:px-8"> -->
         <section class="relative px-4 lg:px-8">
           <div class="relative z-20 mx-auto flex max-w-5xl gap-2 md:gap-3">
             <div class="w-[1%] transition-all sm:w-[4%]"></div>

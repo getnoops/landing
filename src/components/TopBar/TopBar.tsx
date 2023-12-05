@@ -11,9 +11,22 @@ const TopBar = () => {
       <a href="/" className="max-h-full">
         <img src="/logo_smile.svg" className="h-full" />
       </a>
-      <div className="flex items-center gap-x-2 sm:gap-x-4">
+      <div className="flex items-center gap-x-2 text-sm sm:gap-x-4 sm:text-base">
         <a
-          className="group inline-flex items-center  gap-x-1.5 text-noops-300 transition hover:text-noops-400"
+          className="group mr-5 inline-flex items-center  gap-x-1 text-noops-300 transition hover:text-noops-400 sm:hidden"
+          href="https://join.slack.com/t/getnoops/shared_invite/zt-25fo11ewy-5z5iMXlaDvxRv6sfp8wZHA"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            className=" h-5  transition group-hover:saturate-50"
+            alt="Join Our slack"
+            src={slackLogo}
+          />
+          Slack
+        </a>
+        <a
+          className="group hidden items-center gap-x-1.5  text-noops-300 transition hover:text-noops-400 sm:inline-flex"
           href="https://join.slack.com/t/getnoops/shared_invite/zt-25fo11ewy-5z5iMXlaDvxRv6sfp8wZHA"
           target="_blank"
           rel="noopener noreferrer"
@@ -26,14 +39,14 @@ const TopBar = () => {
           Join Our Slack
         </a>
         <a
-          className="inline-flex items-center gap-x-1 text-noops-300 transition hover:text-noops-400"
+          className="inline-flex items-center gap-x-0.5 text-noops-300 transition hover:text-noops-400 sm:gap-x-1"
           href="/pricing"
         >
           <CurrencyDollarIcon className="h-6" />
           Pricing
         </a>
         <a
-          className="inline-flex items-center gap-x-1 text-noops-300 transition hover:text-noops-400"
+          className="inline-flex items-center gap-x-0.5 text-noops-300 transition hover:text-noops-400 sm:gap-x-1"
           href="https://portal.getnoops.com/login"
         >
           <ArrowLeftOnRectangleIcon className="h-6" />
