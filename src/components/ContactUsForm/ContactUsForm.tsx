@@ -44,7 +44,7 @@ const ContactUsForm = () => {
   };
 
   return (
-    <div className="relative mx-auto my-4 max-w-lg rounded-3xl border border-noops-400/30 bg-[#140b23] p-6 text-noops-200 backdrop-blur-xl">
+    <div className="relative mx-auto my-4 max-w-lg rounded-3xl border border-noops-400/30 bg-[#140b23] p-6 text-noops-200 ">
       <div className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-r from-noops-600/5 via-transparent to-noops-600/5"></div>
       <div className="pointer-events-none absolute inset-0 border-4 border-noops-600/50 blur-xl"></div>
       <h1 className="mb-8 mt-4 inline-flex w-full justify-center gap-x-2 text-center text-3xl font-medium tracking-tight text-noops-300">
