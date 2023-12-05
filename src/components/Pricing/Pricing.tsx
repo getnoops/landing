@@ -60,7 +60,7 @@ const Pricing = () => {
           <div
             key={id}
             className={classNames(
-              "relative  overflow-clip  rounded-3xl bg-noops-1000 p-8 xl:p-10",
+              "relative  min-h-[28rem]  overflow-clip rounded-3xl bg-noops-1000 p-8 xl:p-10",
             )}
           >
             {id === "pro" && (
