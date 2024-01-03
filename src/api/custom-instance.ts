@@ -3,8 +3,8 @@ import Axios, { AxiosError, AxiosRequestConfig } from "axios";
 const isProduction = process.env.NODE_ENV === "production";
 
 const BASE_URL = isProduction
-  ? "https://account.getnoops.com/api"
-  : "http://localhost:8080/api";
+  ? "https://account.getnoops.com/"
+  : "http://localhost:8080/";
 
 export const AXIOS_INSTANCE = Axios.create({ baseURL: BASE_URL }); // use your own URL here or environment variable
 

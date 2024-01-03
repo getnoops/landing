@@ -1,11 +1,11 @@
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import * as yup from "yup";
 import { useCreateTrialUser } from "../../api/service";
 import { QueryProviderHOC } from "../QueryProviderHOC";
 import { SelectMenu } from "../SelectMenu";
-import { InformationCircleIcon } from "@heroicons/react/24/solid";
+import { useCreatePlaygroundUser } from "api/authGalaxy";
+import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
 
 const schema = yup
   .object({
@@ -20,8 +20,6 @@ const schema = yup
   .required();
 
 const TrialForm = () => {
-  const [conditionsAccepted, setConditionsAccepted] = useState<boolean>(false);
-
   const {
     register,
     handleSubmit,
@@ -36,7 +34,7 @@ const TrialForm = () => {
       company_size: "",
     },
   });
-  const { mutateAsync, isLoading } = useCreateTrialUser();
+  const { mutateAsync, isLoading, isError } = useCreatePlaygroundUser();
 
   const onSubmit = async (data: any) => {
     await mutateAsync(
@@ -202,18 +200,19 @@ const TrialForm = () => {
           </div>
         </div>
 
-        {/* <div className="flex gap-x-2 rounded-lg border border-noops-500/30 bg-noops-500/20 p-3 text-lg text-noops-300">
-          <InformationCircleIcon className=" h-8 text-noops-400" />
-          <div className="flex-1">
-            In order to try No_Ops, you will need to connect an existing AWS
-            Account
+        {isError && (
+          <div className="flex w-full justify-center">
+            <span className="inline-flex w-fit items-center justify-end gap-x-1.5 rounded-xl border border-red-700/30 bg-red-800/30 px-3 py-2 text-sm font-medium text-red-400">
+              <ExclamationTriangleIcon className="h-6" />
+              There was an error creating your account
+            </span>
           </div>
-        </div> */}
+        )}
 
-        <div className="flex flex-row-reverse justify-between">
+        <div className="flex flex-row-reverse justify-between gap-x-2">
           <button
             type="submit"
-            className="group relative  inline-block rounded-[10px] border-2 border-noops-700 bg-gradient-to-b from-noops-400 to-noops-600 px-6 py-2 font-medium text-noops-300 outline-0 transition focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-noops-1000"
+            className="group relative inline-block  rounded-[10px] border-2 border-noops-700 bg-gradient-to-b from-noops-400 to-noops-600 px-6 py-2 font-medium text-noops-300 outline-0 transition focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-noops-1000"
           >
             <div className="absolute inset-0.5 rounded-md bg-noops-600 transition group-hover:opacity-30" />
             {/* <div className="pointer-events-none absolute -inset-3 rounded-2xl border border-noops-700/30 bg-noops-900/30 "></div> */}
