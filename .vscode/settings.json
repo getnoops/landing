@@ -17,5 +17,16 @@
 	"editor.quickSuggestions": {
 		"strings": true
 	},
-	"cSpell.words": ["Infima", "mxschmitt"]
+	"cSpell.words": [
+		"consts",
+		"headlessui",
+		"Infima",
+		"mxschmitt",
+		"nocompatible",
+		"noops",
+		"nums",
+		"orval",
+		"signup",
+		"Skeptic"
+	]
 }

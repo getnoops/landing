@@ -95,10 +95,6 @@ const config: Config = {
 				},
 			],
 		},
-		footer: {
-			style: "dark",
-			copyright: `Copyright © ${new Date().getFullYear()} No_Ops`,
-		},
 		prism: {
 			theme,
 			darkTheme,
