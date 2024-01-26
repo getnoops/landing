@@ -64,6 +64,9 @@ code {
 }
 
 html {
-	font-family: "Mona Sans" !important;
 	background-color: #0b0217;
+}
+
+* {
+	font-family: "Mona Sans" !important;
 }

@@ -1,3 +1,4 @@
+import { cn } from "@site/src/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 
@@ -167,6 +168,8 @@ const Skeptic = ({ title, description, prompt, cta }: SkepticProps) => {
 								key={i}
 								onClick={() => setSelectedTab(tab)}
 								className={cn(
+									"flex-1 cursor-pointer  rounded-t-lg px-4 py-3 font-medium text-slate-300 transition",
+
 									i == 0 &&
 										selectedTab.name !== tab.name &&
 										"hover:rounded-bl-lg",
@@ -178,7 +181,6 @@ const Skeptic = ({ title, description, prompt, cta }: SkepticProps) => {
 									selectedTab.name === tab.name
 										? "bg-slate-900/50"
 										: "hover:bg-slate-900/30",
-									"flex-1 cursor-pointer  rounded-t-lg px-4 py-3 font-medium text-slate-300 transition",
 								)}
 							>
 								{tab.name}
@@ -187,9 +189,9 @@ const Skeptic = ({ title, description, prompt, cta }: SkepticProps) => {
 					</div>
 					<div
 						className={cn(
+							"rounded-b-lg bg-slate-900/50 p-4 transition",
 							selectedTab.name != tabs[0].name && "rounded-tl-lg",
 							selectedTab.name != tabs[2].name && "rounded-tr-lg",
-							"rounded-b-lg bg-slate-900/50 p-4 transition",
 						)}
 					>
 						<AnimatePresence mode="wait">

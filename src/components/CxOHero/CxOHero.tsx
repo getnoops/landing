@@ -129,8 +129,8 @@ const CxOHero = ({ title, description, subtitle }: CxOHeroProps) => {
 										{bars.map((bar) => (
 											<div
 												className={cn(
-													bar,
 													"flex-1 rounded-t-sm border border-noops-900 bg-gradient-to-b from-noops-400/80 to-noops-900/50",
+													bar,
 												)}
 											></div>
 										))}

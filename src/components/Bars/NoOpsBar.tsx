@@ -12,9 +12,10 @@ interface StepsType {
 
 interface BarProps {
 	steps: StepsType[];
+	inView: boolean;
 }
 
-const NoOpsBar = ({ steps }: BarProps) => {
+const NoOpsBar = ({ steps, inView }: BarProps) => {
 	const [currentAnimation, setCurrentAnimation] = useState(0);
 	const [finished, setFinished] = useState(false);
 	const [variants, setVariants] = useState<Variants>({
@@ -50,6 +51,12 @@ const NoOpsBar = ({ steps }: BarProps) => {
 		setVariants({ ...variants, ...vars });
 	}, []);
 
+	useEffect(() => {
+		if (inView) {
+			setCurrentAnimation((prevCurrentAnimation) => prevCurrentAnimation + 1);
+		}
+	}, [inView]);
+
 	const handleNextAnimation = () => {
 		if (currentAnimation != steps.length) {
 			setCurrentAnimation(currentAnimation + 1);
@@ -74,12 +81,12 @@ const NoOpsBar = ({ steps }: BarProps) => {
 								className="relative h-full -translate-x-1"
 								style={{ left: variant.scaleX.toString() }}
 							>
-								<div className="border-noops-400 absolute left-0 top-0 h-full border-2 border-dashed"></div>
+								<div className="absolute left-0 top-0 h-full border-2 border-dashed border-noops-400"></div>
 							</div>
 						);
 					})}
 				</div>
-				<div className=" border-accent from-noops-300 to-noops-200 relative flex h-full overflow-clip rounded-lg border bg-gradient-to-r">
+				<div className=" relative flex h-full overflow-clip rounded-lg border border-accent bg-gradient-to-r from-noops-300 to-noops-200">
 					<motion.p
 						key={currentSection.name}
 						initial="initial"
@@ -91,7 +98,7 @@ const NoOpsBar = ({ steps }: BarProps) => {
 							exit: { opacity: 0 },
 						}}
 						transition={{ duration: 0.5 }}
-						className="text-noops-200 absolute left-0 top-1/2 z-[51] flex -translate-y-1/2 transform-gpu items-center gap-x-1 whitespace-nowrap px-2 font-mono font-medium"
+						className="absolute left-0 top-1/2 z-[51] flex -translate-y-1/2 transform-gpu items-center gap-x-1 whitespace-nowrap px-2 font-mono font-medium text-noops-200"
 					>
 						<currentSection.Icon className="h-5" />
 						{currentSection.name}
@@ -102,21 +109,19 @@ const NoOpsBar = ({ steps }: BarProps) => {
 						variants={variants}
 						initial="initial"
 						animate={
-							currentAnimation == 0 ? "initial" : `step${currentAnimation}`
+							currentAnimation == 0 ? undefined : `step${currentAnimation}`
 						}
-						viewport={{ once: true }}
 						onAnimationComplete={handleNextAnimation}
-						className="bg-noops-800 relative z-[50] flex h-full w-full origin-[0%_50%] transform-gpu items-center justify-start will-change-transform  md:justify-end"
+						className="relative z-[50] flex h-full w-full origin-[0%_50%] transform-gpu items-center justify-start bg-noops-800 will-change-transform  md:justify-end"
 					>
 						{/* Shimmer effect */}
 						<div
 							className={cn(
-								finished && "opacity-0",
-								!finished && "opacity-[0.15]",
-								"border-noops-100 via-noops-100 absolute inset-0 -translate-x-full transform-gpu animate-[shimmer_2s_infinite] border-y bg-gradient-to-r from-transparent to-transparent transition-opacity",
+								"absolute inset-0 -translate-x-full transform-gpu animate-[shimmer_2s_infinite] border-y border-noops-100 bg-gradient-to-r from-transparent via-noops-100 to-transparent transition-opacity",
+								finished ? "opacity-0" : "opacity-[0.15]",
 							)}
 						></div>
-						<div className="from-noops-900 absolute left-full h-full w-1 bg-gradient-to-r opacity-50 "></div>
+						<div className="absolute left-full h-full w-1 bg-gradient-to-r from-noops-900 opacity-50 "></div>
 
 						<motion.div
 							initial="initial"
@@ -130,7 +135,7 @@ const NoOpsBar = ({ steps }: BarProps) => {
 								letterSpacing: { duration: 1.5, ease: "easeOut" },
 							}}
 							animate={finished ? "animate" : "initial"}
-							className="text-noops-200 absolute inset-x-0 flex w-full transform-gpu items-center justify-center text-center text-2xl font-black"
+							className="absolute inset-x-0 flex w-full transform-gpu items-center justify-center text-center text-2xl font-black text-noops-200"
 						>
 							<SparklesIcon className="mr-0.5 h-6 scale-x-[-100%] animate-pulse" />{" "}
 							Deployed <SparklesIcon className="h-6 animate-pulse" />

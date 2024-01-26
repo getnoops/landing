@@ -59,9 +59,7 @@ const Pricing = () => {
 				{plans.map(({ id, name, description, href }) => (
 					<div
 						key={id}
-						className={cn(
-							"relative  min-h-[28rem]  overflow-clip rounded-3xl bg-noops-1000 p-8 xl:p-10",
-						)}
+						className="relative min-h-[28rem] overflow-clip rounded-3xl bg-noops-1000 p-8 xl:p-10"
 					>
 						{id === "pro" && (
 							<>
@@ -244,10 +242,10 @@ const Feature = ({ id, children }: FeatureProps) => (
 	<li className="flex gap-x-3">
 		<CheckCircleIcon
 			className={cn(
+				"h-6 w-5 flex-none text-noops-500",
 				id === "free" && "text-accent",
 				id === "pro" && "text-accent",
 				id === "enterprise" && "text-slate-500",
-				"h-6 w-5 flex-none text-noops-500",
 			)}
 			aria-hidden="true"
 		/>

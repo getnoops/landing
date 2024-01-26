@@ -85,9 +85,9 @@ const Footer = () => {
 					</div>
 					<div className="col-span-3 grid grid-cols-2 gap-8 sm:gap-4 lg:grid-cols-3">
 						{Links.map((link) => (
-							<div key={link.title} className="">
+							<div key={link.title}>
 								<div>
-									<h6 className="UPPERCASE  text-sm tracking-[0.25rem] text-noops-300">
+									<h6 className="text-sm uppercase tracking-[0.25rem] text-noops-300">
 										{link.title}
 									</h6>
 									<div className="mt-1 h-px w-full max-w-[200px] bg-noops-300"></div>

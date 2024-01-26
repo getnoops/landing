@@ -12,12 +12,17 @@ interface StepsType {
 
 interface BarProps {
 	steps: StepsType[];
-	infraComplete: boolean;
-	setInfraComplete: (value: boolean) => void;
 	animationComplete: boolean;
+	inView: boolean;
+	setInfraComplete: (value: boolean) => void;
 }
 
-const InfraBar = ({ steps, animationComplete, setInfraComplete }: BarProps) => {
+const InfraBar = ({
+	steps,
+	animationComplete,
+	inView,
+	setInfraComplete,
+}: BarProps) => {
 	const [currentAnimation, setCurrentAnimation] = useState(0);
 	const [finished, setFinished] = useState(false);
 	const [variants, setVariants] = useState<Variants>({
@@ -53,6 +58,12 @@ const InfraBar = ({ steps, animationComplete, setInfraComplete }: BarProps) => {
 		setVariants({ ...variants, ...vars });
 	}, []);
 
+	useEffect(() => {
+		if (inView) {
+			setCurrentAnimation((prevCurrentAnimation) => prevCurrentAnimation + 1);
+		}
+	}, [inView]);
+
 	const handleNextAnimation = () => {
 		if (currentAnimation != steps.length) {
 			setCurrentAnimation(currentAnimation + 1);
@@ -66,8 +77,8 @@ const InfraBar = ({ steps, animationComplete, setInfraComplete }: BarProps) => {
 	return (
 		<div
 			className={cn(
-				!animationComplete && "mb-1",
 				"flex h-10 flex-col transition-all",
+				!animationComplete && "mb-1",
 			)}
 		>
 			{/* headers */}
@@ -94,8 +105,8 @@ const InfraBar = ({ steps, animationComplete, setInfraComplete }: BarProps) => {
 				</div>
 				<div
 					className={cn(
+						"relative flex h-full overflow-clip rounded-lg border border-accent bg-gradient-to-r from-noops-300 to-noops-200 transition",
 						animationComplete && "rounded-b-none border-b-0",
-						" relative flex h-full overflow-clip rounded-lg border border-accent bg-gradient-to-r from-noops-300 to-noops-200 transition",
 					)}
 				>
 					<motion.p
@@ -132,9 +143,8 @@ const InfraBar = ({ steps, animationComplete, setInfraComplete }: BarProps) => {
 						variants={variants}
 						initial="initial"
 						animate={
-							currentAnimation == 0 ? "initial" : `step${currentAnimation}`
+							currentAnimation == 0 ? undefined : `step${currentAnimation}`
 						}
-						viewport={{ once: true }}
 						onAnimationComplete={handleNextAnimation}
 						className="relative z-[50] flex h-full w-full origin-[0%_50%] transform-gpu items-center justify-start bg-noops-800 will-change-transform  md:justify-end"
 					>

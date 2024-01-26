@@ -32,8 +32,8 @@ const SelectMenu = ({
 						<Listbox.Button className="block h-9 w-full rounded-md border-0 bg-noops-300/5 px-3 py-1.5 text-accent outline-0 ring-1 ring-noops-300/20 transition focus:bg-noops-1000 focus:ring-2 focus:ring-accent">
 							<span
 								className={cn(
-									isDefaultValue ? "text-noops-400/70" : "text-noops-400",
 									"block truncate text-left transition",
+									isDefaultValue ? "text-noops-400/70" : "text-noops-400",
 								)}
 							>
 								{isDefaultValue ? defaultValueMessage : value}
@@ -59,10 +59,10 @@ const SelectMenu = ({
 										key={i}
 										className={({ active }) =>
 											cn(
+												"relative m-1 cursor-pointer select-none rounded-[4px] py-2 pl-3 pr-9 transition",
 												active
 													? "bg-noops-400/10 text-noops-50"
 													: "text-noops-400",
-												"relative m-1 cursor-pointer select-none rounded-[4px] py-2 pl-3 pr-9 transition",
 											)
 										}
 										hidden={option.hidden}
@@ -72,8 +72,8 @@ const SelectMenu = ({
 											<>
 												<span
 													className={cn(
-														selected ? "font-semibold" : "font-normal",
 														"block truncate",
+														selected ? "font-semibold" : "font-normal",
 													)}
 												>
 													{option.name}
@@ -82,8 +82,8 @@ const SelectMenu = ({
 												{selected ? (
 													<span
 														className={cn(
-															active ? "text-white" : "text-noops-400",
 															"absolute inset-y-0 right-0 flex items-center pr-4 transition",
+															active ? "text-white" : "text-noops-400",
 														)}
 													>
 														<CheckIcon className="h-5 w-5" aria-hidden="true" />

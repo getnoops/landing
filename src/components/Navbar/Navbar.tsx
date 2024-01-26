@@ -125,8 +125,8 @@ const Dropdown = ({ open, setOpen }: DropdownProps) => {
 											<div>
 												<ChevronDownIcon
 													className={cn(
-														item.name == open.name && "rotate-180",
 														"h-8 transition",
+														item.name == open.name && "rotate-180",
 													)}
 												/>
 											</div>
@@ -154,9 +154,9 @@ const Dropdown = ({ open, setOpen }: DropdownProps) => {
 													href={block.href}
 													onClick={() => setOpen(null)}
 													className={cn(
+														"group relative flex h-36 cursor-pointer items-center gap-6 rounded-xl  bg-gradient-to-br p-3  text-sm leading-6 shadow-lg transition sm:flex-col sm:justify-end sm:p-6",
 														block.start,
 														block.end,
-														"group relative flex h-36 cursor-pointer items-center gap-6 rounded-xl  bg-gradient-to-br p-3  text-sm leading-6 shadow-lg transition sm:flex-col sm:justify-end sm:p-6",
 													)}
 												>
 													<div className="absolute inset-y-0 right-0 transition-all group-hover:right-2">
@@ -204,9 +204,9 @@ const Dropdown = ({ open, setOpen }: DropdownProps) => {
 														href={block.href}
 														onClick={() => setOpen(null)}
 														className={cn(
+															"group relative flex h-36 cursor-pointer items-center gap-6 rounded-xl bg-gradient-to-br p-3  text-sm leading-6 shadow-lg transition sm:flex-col sm:justify-end sm:p-6",
 															block.start,
 															block.end,
-															"group relative flex h-36 cursor-pointer items-center gap-6 rounded-xl bg-gradient-to-br p-3  text-sm leading-6 shadow-lg transition sm:flex-col sm:justify-end sm:p-6",
 														)}
 													>
 														<div className="absolute inset-y-0 right-0 transition-all group-hover:right-2">

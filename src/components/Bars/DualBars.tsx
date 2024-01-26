@@ -12,29 +12,31 @@ interface StepsType {
 interface DualBarProps {
 	infraSteps: StepsType[];
 	devSteps: StepsType[];
+	inView: boolean;
 }
 
-const DualBars = ({ infraSteps, devSteps }: DualBarProps) => {
+const DualBars = ({ infraSteps, devSteps, inView }: DualBarProps) => {
 	const [infraComplete, setInfraComplete] = useState(false);
 	const [animationComplete, setAnimationComplete] = useState(false);
 
 	return (
 		<div
 			className={cn(
-				animationComplete && "my-0.5",
 				"relative col-span-6 transition-all",
+				animationComplete && "my-0.5",
 			)}
 		>
 			<InfraBar
 				steps={infraSteps}
-				infraComplete={infraComplete}
-				setInfraComplete={setInfraComplete}
 				animationComplete={animationComplete}
+				inView={inView}
+				setInfraComplete={setInfraComplete}
 			/>
 			<DevBar
 				steps={devSteps}
 				infraComplete={infraComplete}
 				animationComplete={animationComplete}
+				inView={inView}
 				setAnimationComplete={setAnimationComplete}
 			/>
 

@@ -66,9 +66,7 @@ function Thumb(props: any) {
 			style={{
 				left: style?.left,
 			}}
-			className={cn(
-				"ring-offset-background absolute block h-5 w-5 -translate-y-1.5 cursor-pointer rounded-full border-2 border-accent bg-gradient-to-t from-noops-600 to-accent shadow-inner shadow-white/20 ring-accent transition-colors focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-0 disabled:pointer-events-none disabled:opacity-50",
-			)}
+			className="ring-offset-background absolute block h-5 w-5 -translate-y-1.5 cursor-pointer rounded-full border-2 border-accent bg-gradient-to-t from-noops-600 to-accent shadow-inner shadow-white/20 ring-accent transition-colors focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-0 disabled:pointer-events-none disabled:opacity-50"
 		>
 			<VisuallyHidden>
 				<input ref={inputRef} {...mergeProps(inputProps, focusProps)} />

@@ -1,13 +1,5 @@
-import {
-	Cog6ToothIcon,
-	CogIcon,
-	CommandLineIcon,
-	CubeTransparentIcon,
-	FaceFrownIcon,
-	RocketLaunchIcon,
-} from "@heroicons/react/20/solid";
-import { SparklesIcon } from "@heroicons/react/24/solid";
-import { motion, Variants } from "framer-motion";
+import { FaceFrownIcon } from "@heroicons/react/20/solid";
+import { Variants, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import GenerateVariants from "./GenerateVariants";
 
@@ -19,11 +11,12 @@ interface StepsType {
 
 interface BarProps {
 	steps: StepsType[];
+	inView: boolean;
 }
 
 const stopAt = 5;
 
-const NoOpsBar = ({ steps }: BarProps) => {
+const NoOpsBar = ({ steps, inView }: BarProps) => {
 	const [currentAnimation, setCurrentAnimation] = useState(0);
 	const [finished, setFinished] = useState(false);
 	const [variants, setVariants] = useState<Variants>({
@@ -58,6 +51,12 @@ const NoOpsBar = ({ steps }: BarProps) => {
 
 		setVariants({ ...variants, ...vars });
 	}, []);
+
+	useEffect(() => {
+		if (inView) {
+			setCurrentAnimation((prevCurrentAnimation) => prevCurrentAnimation + 1);
+		}
+	}, [inView]);
 
 	const handleNextAnimation = () => {
 		if (currentAnimation == stopAt) {
@@ -99,9 +98,8 @@ const NoOpsBar = ({ steps }: BarProps) => {
 						variants={variants}
 						initial="initial"
 						animate={
-							currentAnimation == 0 ? "initial" : `step${currentAnimation}`
+							currentAnimation == 0 ? undefined : `step${currentAnimation}`
 						}
-						viewport={{ once: true }}
 						onAnimationComplete={handleNextAnimation}
 						className="relative z-50 flex h-full w-full items-center justify-end bg-gradient-to-r from-noops-800 to-noops-600  shadow-lg"
 					>

@@ -37,46 +37,46 @@ const Steps = ({ title, description, steps }: StepsProps) => {
 								onClick={() => setSelectedIndex(index)}
 								key={index}
 								className={cn(
-									index != selectedIndex && "opacity-80",
 									"group relative cursor-pointer text-left transition",
+									index != selectedIndex && "opacity-80",
 								)}
 							>
 								<div className="absolute inset-0 scale-90 rounded-md bg-transparent transition group-hover:scale-100 group-hover:bg-slate-50" />
 								<div className="relative space-y-2 p-3">
 									<div
 										className={cn(
-											index == selectedIndex ? "bg-noops-500" : "bg-slate-400",
 											" flex h-8 w-8 items-center justify-center rounded-md font-medium text-white transition",
+											index == selectedIndex ? "bg-noops-500" : "bg-slate-400",
 										)}
 									>
 										{index + 1}
 									</div>
 									<h5
 										className={cn(
+											"text-sm font-medium transition",
 											index == selectedIndex
 												? "text-noops-700"
 												: "text-slate-500",
-											"text-sm font-medium transition",
 										)}
 									>
 										{step.subject}
 									</h5>
 									<h3
 										className={cn(
+											"text-xl transition",
 											index == selectedIndex
 												? "text-slate-800"
 												: "text-slate-700",
-											" text-xl transition",
 										)}
 									>
 										{step.title}
 									</h3>
 									<p
 										className={cn(
+											"text-sm transition",
 											index == selectedIndex
 												? "text-slate-600"
 												: "text-slate-500",
-											"text-sm transition",
 										)}
 									>
 										{step.description}

@@ -138,7 +138,7 @@ string1: |
 										getTokenProps,
 									}) => (
 										<pre
-											className={cn(className, "flex overflow-x-auto")}
+											className={cn("flex overflow-x-auto", className)}
 											style={style}
 										>
 											<code className="px-4">

@@ -1,4 +1,5 @@
-import { motion, Variants } from "framer-motion";
+import { motion, useInView, Variants } from "framer-motion";
+import { useRef } from "react";
 
 const shimmer = {
 	hidden: { pathLength: 0.1, pathOffset: 0, opacity: 0 },
@@ -127,19 +128,22 @@ const noopsShimmer: Variants = {
 };
 
 const AWSGraphic = () => {
-	return (
-		<div className="relative mx-auto mt-12 max-w-6xl">
-			<div className="border-noops-200 bg-noops-600 absolute -inset-4 rounded-[32px] border bg-opacity-5"></div>
+	const divRef = useRef<HTMLDivElement>(null);
+	const inView = useInView(divRef, { once: true });
 
-			<div className="border-noops-100 bg-noops-1000 shadow-noops-200 relative w-full overflow-hidden rounded-2xl border px-4 py-6 opacity-100 shadow-lg md:px-6 md:py-16">
-				<div className="from-accent/20 to-accent/20 pointer-events-none absolute inset-0 bg-gradient-to-r via-transparent"></div>
+	return (
+		<div ref={divRef} className="relative mx-auto mt-12 max-w-6xl">
+			<div className="absolute -inset-4 rounded-[32px] border border-noops-200 bg-noops-600 bg-opacity-5"></div>
+
+			<div className="relative w-full overflow-hidden rounded-2xl border border-noops-100 bg-noops-1000 px-4 py-6 opacity-100 shadow-lg shadow-noops-200 md:px-6 md:py-16">
+				<div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-accent/20 via-transparent to-accent/20"></div>
 				<div className="relative left-1/2 mx-auto w-[140%] -translate-x-1/2 transform md:left-0 md:w-[85%] md:translate-x-0"></div>
 				<motion.svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 400 195"
 					fill="none"
 					initial="hidden"
-					animate="visible"
+					animate={inView ? "visible" : undefined}
 					className="relative"
 					overflow="visible"
 				>

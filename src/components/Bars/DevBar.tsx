@@ -13,8 +13,8 @@ interface StepsType {
 interface BarProps {
 	steps: StepsType[];
 	infraComplete: boolean;
-
 	animationComplete: boolean;
+	inView: boolean;
 	setAnimationComplete: (value: boolean) => void;
 }
 
@@ -22,6 +22,7 @@ const DevBar = ({
 	steps,
 	infraComplete,
 	animationComplete,
+	inView,
 	setAnimationComplete,
 }: BarProps) => {
 	const [currentAnimation, setCurrentAnimation] = useState(0);
@@ -69,6 +70,12 @@ const DevBar = ({
 		setVariants({ ...variants, ...vars });
 	}, []);
 
+	useEffect(() => {
+		if (inView) {
+			setCurrentAnimation((prevCurrentAnimation) => prevCurrentAnimation + 1);
+		}
+	}, [inView]);
+
 	const handleNextAnimation = () => {
 		if (currentAnimation == 1) {
 			// wait for infra
@@ -107,8 +114,8 @@ const DevBar = ({
 				</div>
 				<div
 					className={cn(
+						"relative flex h-full overflow-clip rounded-lg border border-accent bg-gradient-to-r from-noops-300 to-noops-200 transition",
 						animationComplete && "rounded-t-none border-t-0",
-						" relative flex h-full overflow-clip rounded-lg border border-accent bg-gradient-to-r from-noops-300 to-noops-200 transition",
 					)}
 				>
 					<motion.p
@@ -143,9 +150,8 @@ const DevBar = ({
 						variants={variants}
 						initial="initial"
 						animate={
-							currentAnimation == 0 ? "initial" : `step${currentAnimation}`
+							currentAnimation == 0 ? undefined : `step${currentAnimation}`
 						}
-						viewport={{ once: true }}
 						onAnimationComplete={handleNextAnimation}
 						className="relative z-[50] flex h-full w-full origin-[0%_50%] transform-gpu items-center justify-start bg-noops-800 will-change-transform  md:justify-end"
 					>
