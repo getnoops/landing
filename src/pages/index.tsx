@@ -7,7 +7,7 @@ import { YourTech } from "../content/YourTech";
 
 export default () => {
 	return (
-		<Layout title="Hello" description="Hello React Page">
+		<Layout title="Deploy faster than ever - No_Ops">
 			<div className="bg-noops-50">
 				<TopBar />
 

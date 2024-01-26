@@ -17,8 +17,10 @@
 	"editor.quickSuggestions": {
 		"strings": true
 	},
+	"cSpell.enableFiletypes": ["dockerfile", "ignore", "mdx", "tailwindcss"],
 	"cSpell.words": [
 		"consts",
+		"getnoops",
 		"headlessui",
 		"Infima",
 		"mxschmitt",
@@ -26,6 +28,7 @@
 		"noops",
 		"nums",
 		"orval",
+		"rgba",
 		"signup",
 		"Skeptic"
 	]

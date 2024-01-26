@@ -8,13 +8,13 @@ import { SelectMenu } from "../SelectMenu";
 
 const schema = yup
 	.object({
-		name: yup.string().required("Name is Required"),
+		name: yup.string().required("Name is required"),
 		email: yup
 			.string()
-			.email("Must be a valid Email")
-			.required("Email is Required"),
-		company: yup.string().required("Company is Required"),
-		company_size: yup.string().required("Company Size is Required"),
+			.email("Must be a valid email")
+			.required("Email is required"),
+		company: yup.string().required("Company is required"),
+		company_size: yup.string().required("Company size is required"),
 	})
 	.required();
 

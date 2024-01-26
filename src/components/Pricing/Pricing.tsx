@@ -243,8 +243,6 @@ const Feature = ({ id, children }: FeatureProps) => (
 		<CheckCircleIcon
 			className={cn(
 				"h-6 w-5 flex-none text-noops-500",
-				id === "free" && "text-accent",
-				id === "pro" && "text-accent",
 				id === "enterprise" && "text-slate-500",
 			)}
 			aria-hidden="true"

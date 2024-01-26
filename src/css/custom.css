@@ -64,9 +64,18 @@ code {
 }
 
 html {
+	font-family: "Mona Sans";
 	background-color: #0b0217;
 }
 
-* {
-	font-family: "Mona Sans" !important;
+/* Override Infima styles   */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "Mona Sans";
+	line-height: inherit;
 }
