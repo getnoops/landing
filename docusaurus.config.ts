@@ -2,15 +2,15 @@ import type { Options, ThemeConfig } from "@docusaurus/preset-classic";
 import type { Config } from "@docusaurus/types";
 import dotenv from "dotenv";
 import { themes } from "prism-react-renderer";
-import { env, exit } from "process";
+import { exit } from "process";
 
 dotenv.config();
 
 const theme = themes.github;
 const darkTheme = themes.dracula;
 
-const DOMAIN = env.DOMAIN;
-const PLAUSIBLE_SCRIPT_SRC = env.PLAUSIBLE_SCRIPT_SRC;
+const DOMAIN = "getnoops.com"; // env.DOMAIN;
+const PLAUSIBLE_SCRIPT_SRC = "https://plsbl.zwyx.dev/js/script.js"; // env.PLAUSIBLE_SCRIPT_SRC;
 
 [DOMAIN].forEach((value) => {
 	if (!value) {
