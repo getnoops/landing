@@ -40,8 +40,6 @@ html {
 	background-color: #0b0217;
 }
 
-/* Override Infima styles   */
-
 h1,
 h2,
 h3,
@@ -49,25 +47,29 @@ h4,
 h5,
 h6 {
 	font-family: "Mona Sans";
-	line-height: inherit;
 }
 
-a:hover {
-	text-decoration: none;
-}
+/* Border reset (part of Tailwind's prefling) allowing to use simply `border` to draw a border; it doesn't interfere with Infima's styles */
 
-code {
-	tab-size: 4;
+*,
+::before,
+::after {
+	border-width: 0;
+	border-style: solid;
+	border-color: theme("borderColor.DEFAULT", currentColor);
 }
 
 /* Announcement bar */
 
 /* Yeah I know, WTF?! */
 .announcementBar_node_modules-\@docusaurus-theme-classic-lib-theme-AnnouncementBar-styles-module {
+	/* same as navbar, for pages with graphics like `how-it-works` */
+	z-index: var(--ifm-z-index-fixed);
+
 	background-color: #b980fa !important;
-	color: white !important;
-	font-size: larger;
 	padding: 1.5rem;
+	font-size: larger;
+	color: white !important;
 }
 
 /* Navbar  */

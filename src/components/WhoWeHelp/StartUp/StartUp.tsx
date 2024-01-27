@@ -1,14 +1,6 @@
-import React from "react";
-
-import {
-	CloudArrowUpIcon,
-	CodeBracketIcon,
-	LockClosedIcon,
-	ScaleIcon,
-	ServerIcon,
-} from "@heroicons/react/20/solid";
-import { BoltIcon, ServerStackIcon } from "@heroicons/react/24/solid";
+import { CodeBracketIcon, ScaleIcon } from "@heroicons/react/20/solid";
 import { CubeTransparentIcon } from "@heroicons/react/24/outline";
+import { BoltIcon, ServerStackIcon } from "@heroicons/react/24/solid";
 
 // Startups
 // Get of the ground fast
@@ -71,7 +63,7 @@ const StartUp = () => {
 							that.
 						</p>
 
-						<ul role="list" className="mt-8 grid gap-8 sm:grid-cols-2 ">
+						<ul role="list" className="mt-8 grid gap-8 p-0 sm:grid-cols-2">
 							{features.map((feature) => (
 								<li className="flex gap-x-3">
 									<feature.Icon

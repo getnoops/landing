@@ -3,9 +3,8 @@ export default {
 	content: ["./src/**/*.{js,jsx,ts,tsx,md,mdx}"],
 	darkMode: ["class", '[data-theme="dark"]'],
 	corePlugins: {
-		// to prevent Tailwind from overriding Docusaurus's style
-		// not sure yet if we want it or not...
-		// preflight: false,
+		// Prevent Tailwind from overriding Docusaurus's style
+		preflight: false,
 	},
 	theme: {
 		typography: require("./typography.cjs"),

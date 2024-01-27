@@ -17,7 +17,9 @@ export default () => {
 									<SparklesIcon className=" h-48 text-noops-400 blur-[10px] lg:h-96 lg:blur-[20px] xl:h-112" />
 									<SparklesIcon className=" absolute h-48 text-noops-300 mix-blend-overlay lg:h-96 xl:h-112" />
 								</div>
-								<h6 className="pt-4 text-noops-300">Community</h6>
+								<h6 className="pt-4 text-base font-normal text-noops-300">
+									Community
+								</h6>
 								<h1 className="text-5xl font-bold tracking-tight text-noops-100">
 									Get{" "}
 									<span className="bg-gradient-to-r from-noops-600 to-accent bg-clip-text py-1 font-extrabold text-transparent">
@@ -41,7 +43,7 @@ export default () => {
 					<div className="mx-auto max-w-7xl md:mb-24">
 						<div className="px-8 pb-12 pt-8">
 							<div>
-								<h3 className="text-3xl font-bold tracking-tight text-noops-100 md:text-4xl">
+								<h3 className="m-0 text-3xl font-bold tracking-tight text-noops-100 md:text-4xl">
 									Our social channels
 								</h3>
 								<p className="mt-2 text-sm text-noops-200 md:text-base">
@@ -54,12 +56,14 @@ export default () => {
 									href="https://join.slack.com/t/getnoops/shared_invite/zt-25fo11ewy-5z5iMXlaDvxRv6sfp8wZHA"
 									target="_blank"
 									rel="noopener noreferrer"
-									className="group relative flex items-center gap-3 overflow-clip rounded-2xl border-2 border-noops-400/20 bg-noops-400/5 p-4 shadow-inner shadow-noops-400/10"
+									className="group relative flex items-center gap-3 overflow-clip rounded-2xl border-2 border-noops-400/20 bg-noops-400/5 p-4 shadow-inner shadow-noops-400/10 hover:no-underline"
 								>
 									<div className="absolute inset-0 bg-gradient-to-t from-transparent to-noops-400/10 opacity-0 transition-opacity group-hover:opacity-100"></div>
 									<Slack className="h-8 text-noops-400" />
 									<div className="flex items-center">
-										<p className="text-base text-noops-400">Join our Slack</p>
+										<span className="text-base text-noops-400">
+											Join our Slack
+										</span>
 									</div>
 								</a>
 
@@ -67,12 +71,14 @@ export default () => {
 									href="https://x.com/getnoops"
 									target="_blank"
 									rel="noopener noreferrer"
-									className="group relative flex items-center gap-3 overflow-clip rounded-2xl border-2 border-noops-400/20 bg-noops-400/5 p-4 shadow-inner shadow-noops-400/10"
+									className="group relative flex items-center gap-3 overflow-clip rounded-2xl border-2 border-noops-400/20 bg-noops-400/5 p-4 shadow-inner shadow-noops-400/10 hover:no-underline"
 								>
 									<div className="absolute inset-0 bg-gradient-to-t from-transparent to-noops-400/10 opacity-0 transition-opacity group-hover:opacity-100"></div>
 									<X className="h-8 text-noops-400" />
 									<div className="flex items-center">
-										<p className="text-base text-noops-400">Connect on X</p>
+										<span className="text-base text-noops-400">
+											Connect on X
+										</span>
 									</div>
 								</a>
 
@@ -80,12 +86,14 @@ export default () => {
 									href="https://github.com/getnoops"
 									target="_blank"
 									rel="noopener noreferrer"
-									className="group relative flex items-center gap-3 overflow-clip rounded-2xl border-2 border-noops-400/20 bg-noops-400/5 p-4 shadow-inner shadow-noops-400/10"
+									className="group relative flex items-center gap-3 overflow-clip rounded-2xl border-2 border-noops-400/20 bg-noops-400/5 p-4 shadow-inner shadow-noops-400/10 hover:no-underline"
 								>
 									<div className="absolute inset-0 bg-gradient-to-t from-transparent to-noops-400/10 opacity-0 transition-opacity group-hover:opacity-100"></div>
 									<GitHub className="h-8 text-noops-400" />
 									<div className="flex items-center">
-										<p className="text-base text-noops-400">View our GitHub</p>
+										<span className="text-base text-noops-400">
+											View our GitHub
+										</span>
 									</div>
 								</a>
 							</div>

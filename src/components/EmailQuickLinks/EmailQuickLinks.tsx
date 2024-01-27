@@ -73,7 +73,7 @@ const EmailQuickLinks = () => {
 							<EnvelopeOpenIcon className="h-6 w-6" />
 							Quick Links
 						</h2>
-						<ul>
+						<ul className="p-0">
 							{emailProviders.map((provider) => (
 								<a
 									href={provider.domain}

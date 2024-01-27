@@ -1,20 +1,9 @@
-import React from "react";
-
-import { CodeBracketIcon, ScaleIcon } from "@heroicons/react/20/solid";
+import { CubeIcon } from "@heroicons/react/24/outline";
 import {
-	BoltIcon,
-	CurrencyDollarIcon,
 	LockClosedIcon,
 	MagnifyingGlassCircleIcon,
-	ServerStackIcon,
 	Square3Stack3DIcon,
 } from "@heroicons/react/24/solid";
-import {
-	BriefcaseIcon,
-	CubeIcon,
-	CubeTransparentIcon,
-	MapIcon,
-} from "@heroicons/react/24/outline";
 
 // Small-Medium-Business
 // Struggling to find good devops people
@@ -70,7 +59,7 @@ const MediumLargeBusiness = () => {
 							it alone, many companies struggle with these issues.
 						</p>
 
-						<ul role="list" className="mt-8 grid gap-8 sm:grid-cols-2">
+						<ul role="list" className="mt-8 grid gap-8 p-0 sm:grid-cols-2">
 							{features.map((feature) => (
 								<li className="flex gap-x-3">
 									<feature.Icon

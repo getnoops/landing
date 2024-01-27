@@ -1,17 +1,9 @@
-import React from "react";
-
 import { CodeBracketIcon, ScaleIcon } from "@heroicons/react/20/solid";
+import { BriefcaseIcon } from "@heroicons/react/24/outline";
 import {
-	BoltIcon,
 	CurrencyDollarIcon,
 	MagnifyingGlassCircleIcon,
-	ServerStackIcon,
 } from "@heroicons/react/24/solid";
-import {
-	BriefcaseIcon,
-	CubeTransparentIcon,
-	MapIcon,
-} from "@heroicons/react/24/outline";
 
 // Enterprise
 // Losing control for your DevOps environments
@@ -70,7 +62,7 @@ const Enterprise = () => {
 					<div className=" text-base leading-7 text-noops-200 lg:col-span-7">
 						<p>At this scale, you're probably facing some of these problems.</p>
 
-						<ul role="list" className="mt-8 grid gap-8 sm:grid-cols-2">
+						<ul role="list" className="mt-8 grid gap-8 p-0 sm:grid-cols-2">
 							{features.map((feature) => (
 								<li className="flex gap-x-3">
 									<feature.Icon

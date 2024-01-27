@@ -36,7 +36,7 @@ const Pricing = () => {
 							key={option}
 							value={option}
 							className={cn(
-								"relative cursor-pointer rounded-full px-2.5 py-1 transition",
+								"relative cursor-pointer rounded-full bg-transparent px-2.5 py-1 transition",
 								option === interval ? "text-white" : "text-accent/80",
 							)}
 						>
@@ -137,8 +137,8 @@ const Pricing = () => {
 							<h3
 								id={id}
 								className={cn(
+									"m-0 text-xl font-bold leading-8",
 									id === "pro" ? "text-accent" : "",
-									"text-xl font-bold leading-8",
 								)}
 							>
 								{name}
@@ -147,7 +147,7 @@ const Pricing = () => {
 
 						<p className="relative mt-4 text-sm leading-6">{description}</p>
 
-						<p className="relative mt-6 flex items-baseline gap-x-1">
+						<p className="relative mb-0 mt-6 flex items-baseline gap-x-1">
 							<span className="text-4xl font-bold tabular-nums tracking-tight">
 								{id === "enterprise"
 									? ""
@@ -197,7 +197,7 @@ const Pricing = () => {
 						)}
 
 						{id !== "enterprise" && (
-							<ul className="relative mt-6 space-y-3 text-sm leading-6">
+							<ul className="relative mb-0 mt-6 space-y-3 p-0 text-sm leading-6">
 								<Feature id={id}>
 									{id === "free" ? 5 : microservices} microservices
 								</Feature>

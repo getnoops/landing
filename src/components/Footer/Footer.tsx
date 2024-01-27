@@ -87,7 +87,7 @@ const Footer = () => {
 						{Links.map((link) => (
 							<div key={link.title}>
 								<div>
-									<h6 className="text-sm uppercase tracking-[0.25rem] text-noops-300">
+									<h6 className="m-0 text-sm font-normal uppercase tracking-[0.25rem] text-noops-300">
 										{link.title}
 									</h6>
 									<div className="mt-1 h-px w-full max-w-[200px] bg-noops-300"></div>
@@ -98,7 +98,7 @@ const Footer = () => {
 										<a
 											key={l.href}
 											href={l.href}
-											className="group mt-4 flex max-w-fit  items-center gap-x-2 text-sm tracking-wide text-noops-200 transition hover:text-noops-400"
+											className="group mt-4 flex max-w-fit items-center gap-x-2 text-sm tracking-wide text-noops-200 transition hover:text-noops-400 hover:no-underline"
 										>
 											{l.title}
 											<ArrowRightIcon className="h-5 text-noops-200 opacity-0 transition group-hover:text-noops-400 group-hover:opacity-100" />

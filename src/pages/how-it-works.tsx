@@ -21,7 +21,7 @@ export default () => {
 				<div className="relative z-30 flex h-screen items-center overflow-x-clip">
 					<div className="relative mx-auto max-w-2xl py-12 text-center md:py-28">
 						<div className="relative">
-							<h2 className="text-5xl font-bold tracking-tight text-white md:text-6xl">
+							<h2 className="m-0 text-5xl font-bold tracking-tight text-white md:text-6xl">
 								<span className="bg-gradient-to-b from-noops-900 to-accent bg-clip-text py-1 text-transparent">
 									How it works
 								</span>
@@ -47,7 +47,7 @@ export default () => {
 									<div className="mx-auto h-24 w-1 bg-gradient-to-b from-noops-500 via-accent"></div>
 								</div>
 								<div className="flex-1 flex-shrink">
-									<h2 className="text-left text-4xl font-bold tracking-tighter [text-wrap:balance] sm:text-5xl">
+									<h2 className="m-0 text-left text-4xl font-bold tracking-tighter [text-wrap:balance] sm:text-5xl">
 										<span className="bg-gradient-to-r from-noops-600 to-accent bg-clip-text py-1 pr-2 text-transparent">
 											Connect your AWS account
 										</span>
@@ -71,11 +71,11 @@ export default () => {
 									</div>
 									<div className="relative max-w-xl">
 										<div className="relative">
-											<h3 className="mt-5 font-mono text-lg font-semibold leading-6 tracking-wide text-noops-200 transition">
+											<h3 className="mb-0 mt-5 font-mono text-lg font-semibold leading-6 tracking-wide text-noops-200 transition">
 												01 <span className="text-accent">//</span> Have an AWS
 												Account
 											</h3>
-											<p className="mt-2 line-clamp-3 text-sm leading-6 text-noops-300">
+											<p className="mb-0 mt-2 line-clamp-3 text-sm leading-6 text-noops-300">
 												Create or bring an existing AWS account
 											</p>
 										</div>
@@ -105,11 +105,11 @@ export default () => {
 									</div>
 									<div className="relative max-w-xl">
 										<div className="relative">
-											<h3 className="mt-5 font-mono text-lg font-semibold leading-6 tracking-wide text-noops-200 transition">
+											<h3 className="mb-0 mt-5 font-mono text-lg font-semibold leading-6 tracking-wide text-noops-200 transition">
 												02 <span className="text-accent">//</span> Connect to
 												No_Ops
 											</h3>
-											<p className="mt-2 line-clamp-3 text-sm leading-6 text-noops-300">
+											<p className="mb-0 mt-2 line-clamp-3 text-sm leading-6 text-noops-300">
 												Follow the 2 step process to connect your account
 											</p>
 										</div>
@@ -137,7 +137,7 @@ export default () => {
 									<div className="mx-auto h-24 w-1 bg-gradient-to-b from-noops-500 via-accent"></div>
 								</div>
 								<div className="flex-1 flex-shrink">
-									<h2 className="text-left text-4xl font-bold tracking-tighter [text-wrap:balance] sm:text-5xl">
+									<h2 className="m-0 text-left text-4xl font-bold tracking-tighter [text-wrap:balance] sm:text-5xl">
 										<span className="bg-gradient-to-r from-noops-600 to-accent bg-clip-text py-1 pr-2 text-transparent">
 											Create your environments
 										</span>
@@ -173,7 +173,7 @@ export default () => {
 									<div className="mx-auto h-24 w-1 bg-gradient-to-b from-noops-500 via-accent"></div>
 								</div>
 								<div className="flex-1 flex-shrink">
-									<h2 className="text-left text-4xl font-bold tracking-tighter [text-wrap:balance] sm:text-5xl">
+									<h2 className="m-0 text-left text-4xl font-bold tracking-tighter [text-wrap:balance] sm:text-5xl">
 										<span className="bg-gradient-to-r from-noops-600 to-accent bg-clip-text py-1 pr-2 text-transparent">
 											Define your services
 										</span>
@@ -210,7 +210,7 @@ export default () => {
 									<div className="mx-auto h-24 w-1 bg-gradient-to-b from-noops-500 via-accent"></div>
 								</div>
 								<div className="flex-1 flex-shrink">
-									<h2 className="text-left text-4xl font-bold tracking-tighter [text-wrap:balance] sm:text-5xl">
+									<h2 className="m-0 text-left text-4xl font-bold tracking-tighter [text-wrap:balance] sm:text-5xl">
 										<span className="bg-gradient-to-r from-noops-600 to-accent bg-clip-text py-1 pr-2 text-transparent">
 											Deploy
 										</span>
@@ -252,7 +252,7 @@ export default () => {
 											</div>
 											<div className="relative max-w-xl">
 												<div className="relative">
-													<h3 className="mt-5 inline-flex w-full items-center justify-center gap-x-2 font-mono text-xl font-semibold leading-6 tracking-wide text-noops-200 transition">
+													<h3 className="mb-0 mt-5 inline-flex w-full items-center justify-center gap-x-2 font-mono text-xl font-semibold leading-6 tracking-wide text-noops-200 transition">
 														<CloudArrowUpIcon className=" h-7 rounded" />
 														Push
 													</h3>
@@ -290,7 +290,7 @@ export default () => {
 											</div>
 											<div className="relative max-w-xl">
 												<div className="relative">
-													<h3 className="mt-5 inline-flex w-full items-center justify-center gap-x-2 font-mono text-xl font-semibold leading-6 tracking-wide text-noops-200 transition">
+													<h3 className="mb-0 mt-5 inline-flex w-full items-center justify-center gap-x-2 font-mono text-xl font-semibold leading-6 tracking-wide text-noops-200 transition">
 														<CpuChipIcon className=" h-7 rounded" />
 														Build
 													</h3>
@@ -313,7 +313,7 @@ export default () => {
 														<div className="pointer-events-none absolute inset-x-0 top-[90%] aspect-square rounded-[90px] bg-noops-400 blur"></div>
 														<div className="pointer-events-none absolute inset-x-0 top-[90%] aspect-square rounded-[90px] bg-noops-100 mix-blend-overlay blur"></div>
 
-														<p className="mt-3 text-center text-xs font-bold tracking-tight [text-wrap:balance]">
+														<p className="mb-2 mt-3 text-center text-xs font-bold tracking-tight [text-wrap:balance]">
 															<span className="bg-gradient-to-b from-noops-100 to-noops-300 bg-clip-text py-1 text-transparent">
 																DevOps{" "}
 															</span>
@@ -339,7 +339,7 @@ export default () => {
 											</div>
 											<div className="relative max-w-xl">
 												<div className="relative">
-													<h3 className="mt-5 inline-flex w-full items-center justify-center gap-x-2 font-mono text-xl font-semibold leading-6 tracking-wide text-noops-200 transition">
+													<h3 className="mb-0 mt-5 inline-flex w-full items-center justify-center gap-x-2 font-mono text-xl font-semibold leading-6 tracking-wide text-noops-200 transition">
 														<SparklesIcon className=" h-7 rounded" />
 														Deliver
 													</h3>

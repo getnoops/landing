@@ -53,7 +53,9 @@ const config: Config = {
 		[
 			"classic",
 			{
-				docs: false,
+				docs: {
+					sidebarPath: "./docs-sidebar.ts",
+				},
 				blog: {
 					blogTitle: "No_Ops's blog",
 					blogDescription: "Deploy faster than ever",
@@ -85,7 +87,6 @@ const config: Config = {
 		},
 		image: "logo_smile.svg",
 		announcementBar: {
-			id: "lol",
 			content: "We are launching!",
 			isCloseable: false,
 		},
@@ -97,10 +98,14 @@ const config: Config = {
 				href: "/",
 			},
 			items: [
-				// {
-				// 	to: "blog",
-				// 	label: "Blog",
-				// },
+				{
+					to: "docs",
+					label: "Docs",
+				},
+				{
+					to: "blog",
+					label: "News",
+				},
 
 				{
 					className: "navbar-link navbar-link-slack",

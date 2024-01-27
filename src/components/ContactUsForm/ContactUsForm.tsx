@@ -73,7 +73,7 @@ const ContactUsForm = () => {
 							type="name"
 							autoComplete="off"
 							{...register("name")}
-							className="block w-full rounded-md border-0 bg-noops-300/5 px-3 py-1.5 text-accent outline-0 ring-1 ring-noops-300/20 transition focus:bg-noops-1000 focus:ring-2 focus:ring-accent  "
+							className="block w-full rounded-md border-0 bg-noops-300/5 px-3 py-1.5 text-base text-accent outline-0 ring-1 ring-noops-300/20 transition focus:bg-noops-1000 focus:ring-2 focus:ring-accent"
 						/>
 					</div>
 				</div>
@@ -96,7 +96,7 @@ const ContactUsForm = () => {
 							id="email"
 							autoComplete="email"
 							{...register("email")}
-							className="block w-full rounded-md border-0 bg-noops-300/5 px-3 py-1.5 text-accent outline-0 ring-1 ring-noops-300/20 transition focus:bg-noops-1000 focus:ring-2 focus:ring-accent   "
+							className="block w-full rounded-md border-0 bg-noops-300/5 px-3 py-1.5 text-base text-accent outline-0 ring-1 ring-noops-300/20 transition focus:bg-noops-1000 focus:ring-2 focus:ring-accent   "
 						/>
 					</div>
 				</div>
@@ -120,7 +120,7 @@ const ContactUsForm = () => {
 							type="subject"
 							autoComplete="off"
 							{...register("subject")}
-							className="block w-full rounded-md border-0 bg-noops-300/5 px-3 py-1.5 text-accent outline-0 ring-1 ring-noops-300/20 transition focus:bg-noops-1000 focus:ring-2 focus:ring-accent"
+							className="block w-full rounded-md border-0 bg-noops-300/5 px-3 py-1.5 text-base text-accent outline-0 ring-1 ring-noops-300/20 transition focus:bg-noops-1000 focus:ring-2 focus:ring-accent"
 						/>
 					</div>
 				</div>
@@ -142,7 +142,7 @@ const ContactUsForm = () => {
 							autoComplete="off"
 							{...register("message")}
 							rows={4}
-							className="block w-full rounded-md border-0 bg-noops-300/5 px-3 py-1.5 text-accent outline-0 ring-1 ring-noops-300/20 transition focus:bg-noops-1000 focus:ring-2 focus:ring-accent"
+							className="block w-full resize-y rounded-md border-0 bg-noops-300/5 px-3 py-1.5 text-base text-accent outline-0 ring-1 ring-noops-300/20 transition focus:bg-noops-1000 focus:ring-2 focus:ring-accent"
 						/>
 					</div>
 				</div>
@@ -161,7 +161,7 @@ const ContactUsForm = () => {
 						{/* <div className="pointer-events-none absolute -inset-3 rounded-2xl border border-noops-700/30 bg-noops-900/30 "></div> */}
 
 						<div className="relative inline-flex w-full items-center gap-x-1 text-white">
-							{false ? "Submitting" : "Send Message"}
+							{false ? "Submitting" : "Send message"}
 						</div>
 					</button>
 				</div>
