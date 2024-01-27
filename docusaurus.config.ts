@@ -53,22 +53,24 @@ const config: Config = {
 		[
 			"classic",
 			{
-				docs: {
-					sidebarPath: "./docs-sidebar.ts",
-				},
-				blog: {
-					blogTitle: "No_Ops's blog",
-					blogDescription: "Deploy faster than ever",
-					blogSidebarTitle: "Latest posts",
-					blogSidebarCount: "ALL",
-					postsPerPage: "ALL",
-					feedOptions: {
-						type: "all",
-						title: "No_Ops's blog",
-						description: "Deploy faster than ever",
-						copyright: `Copyright © ${new Date().getFullYear()} No_Ops.`,
-					},
-				},
+				// docs: {
+				// 	sidebarPath: "./docs-sidebar.ts",
+				// },
+				// blog: {
+				// 	blogTitle: "No_Ops's blog",
+				// 	blogDescription: "Deploy faster than ever",
+				// 	blogSidebarTitle: "Latest posts",
+				// 	blogSidebarCount: "ALL",
+				// 	postsPerPage: "ALL",
+				// 	feedOptions: {
+				// 		type: "all",
+				// 		title: "No_Ops's blog",
+				// 		description: "Deploy faster than ever",
+				// 		copyright: `Copyright © ${new Date().getFullYear()} No_Ops.`,
+				// 	},
+				// },
+				docs: false,
+				blog: false,
 				theme: {
 					customCss: require.resolve("./src/css/custom.css"),
 				},
@@ -86,10 +88,10 @@ const config: Config = {
 			defaultMode: "dark",
 		},
 		image: "logo_smile.svg",
-		announcementBar: {
-			content: "We are launching!",
-			isCloseable: false,
-		},
+		// announcementBar: {
+		// 	content: "We are launching!",
+		// 	isCloseable: false,
+		// },
 		navbar: {
 			hideOnScroll: true,
 			logo: {
@@ -98,14 +100,14 @@ const config: Config = {
 				href: "/",
 			},
 			items: [
-				{
-					to: "docs",
-					label: "Docs",
-				},
-				{
-					to: "blog",
-					label: "News",
-				},
+				// {
+				// 	to: "docs",
+				// 	label: "Docs",
+				// },
+				// {
+				// 	to: "blog",
+				// 	label: "News",
+				// },
 
 				{
 					className: "navbar-link navbar-link-slack",
