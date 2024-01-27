@@ -1,0 +1,118 @@
+{
+  "containerDefinitions": [
+    {
+      "name": "app",
+      "image": "--replaced--",
+      "cpu": 0,
+      "portMappings": [
+        {
+          "containerPort": 8080,
+          "hostPort": 8080,
+          "protocol": "tcp"
+        }
+      ],
+      "essential": true,
+      "environment": [],
+      "mountPoints": [],
+      "volumesFrom": [],
+      "linuxParameters": {
+        "initProcessEnabled": true
+      },
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/aws/ecs/prod-ecs-cluser",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "prod-landing-app"
+        }
+      },
+      "healthCheck": {
+        "command": ["CMD-SHELL", "curl -f http://localhost:8080/ || exit 1"],
+        "interval": 5,
+        "timeout": 2,
+        "retries": 3,
+        "startPeriod": 10
+      }
+    },
+    {
+      "name": "envoy",
+      "image": "840364872350.dkr.ecr.us-east-1.amazonaws.com/aws-appmesh-envoy:v1.25.4.0-prod",
+      "cpu": 0,
+      "portMappings": [],
+      "essential": true,
+      "environment": [
+        {
+          "name": "ENABLE_ENVOY_DOG_STATSD",
+          "value": "1"
+        },
+        {
+          "name": "STATSD_PORT",
+          "value": "8125"
+        },
+        {
+          "name": "APPMESH_RESOURCE_ARN",
+          "value": "arn:aws:appmesh:us-east-1:888821167166:mesh/prod/virtualNode/landing"
+        },
+        {
+          "name": "ENABLE_ENVOY_STATS_TAGS",
+          "value": "1"
+        }
+      ],
+      "mountPoints": [],
+      "volumesFrom": [],
+      "user": "1337",
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/aws/ecs/prod-ecs-cluser",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "prod-landing-envoy"
+        }
+      },
+      "healthCheck": {
+        "command": [
+          "CMD-SHELL",
+          "curl -s http://localhost:9901/server_info | grep state | grep -q LIVE"
+        ],
+        "interval": 5,
+        "timeout": 2,
+        "retries": 3
+      }
+    }
+  ],
+  "family": "prod-landing",
+  "taskRoleArn": "arn:aws:iam::888821167166:role/prod-landing-task",
+  "executionRoleArn": "arn:aws:iam::888821167166:role/prod-landing-task-execution",
+  "networkMode": "awsvpc",
+  "volumes": [],
+  "placementConstraints": [],
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "256",
+  "memory": "512",
+  "proxyConfiguration": {
+    "type": "APPMESH",
+    "containerName": "envoy",
+    "properties": [
+      {
+        "name": "ProxyIngressPort",
+        "value": "15000"
+      },
+      {
+        "name": "AppPorts",
+        "value": "8080"
+      },
+      {
+        "name": "EgressIgnoredIPs",
+        "value": "169.254.170.2,169.254.169.254"
+      },
+      {
+        "name": "IgnoredUID",
+        "value": "1337"
+      },
+      {
+        "name": "ProxyEgressPort",
+        "value": "15001"
+      }
+    ]
+  }
+}
