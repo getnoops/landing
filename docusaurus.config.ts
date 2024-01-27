@@ -84,6 +84,11 @@ const config: Config = {
 			defaultMode: "dark",
 		},
 		image: "logo_smile.svg",
+		announcementBar: {
+			id: "lol",
+			content: "We are launching!",
+			isCloseable: false,
+		},
 		navbar: {
 			hideOnScroll: true,
 			logo: {

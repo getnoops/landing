@@ -60,11 +60,21 @@ code {
 	tab-size: 4;
 }
 
+/* Announcement bar */
+
+/* Yeah I know, WTF?! */
+.announcementBar_node_modules-\@docusaurus-theme-classic-lib-theme-AnnouncementBar-styles-module {
+	background-color: #b980fa !important;
+	color: white !important;
+	font-size: larger;
+	padding: 1.5rem;
+}
+
 /* Navbar  */
 
 .navbar {
 	background-color: #0b0217;
-	box-shadow: 0 0 5px #0b0217;
+	box-shadow: 0 1px 3px #0b0217;
 }
 
 .navbar__inner {
