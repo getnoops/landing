@@ -1,13 +1,11 @@
 import Layout from "@theme/Layout";
-import { Footer, TopBar, TrialForm } from "../components";
+import { Footer, TrialForm } from "../components";
 import Curve from "../components/SVGs/Curve/Curve";
 
 export default () => {
 	return (
 		<Layout title="Sign Up - Try No_Ops">
 			<div className="flex min-h-screen flex-col justify-between bg-noops-1000">
-				<TopBar />
-
 				<div className="bg-noops-1000">
 					<div className="relative min-h-screen overflow-clip pt-10">
 						<div className="absolute -bottom-0 -right-0 h-1/3 w-[1679px] blur-2xl md:h-1/2 md:blur-[80px] xl:h-2/3 2xl:h-[70%]">

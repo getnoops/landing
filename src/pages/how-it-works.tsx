@@ -6,7 +6,7 @@ import {
 	SparklesIcon,
 } from "@heroicons/react/24/solid";
 import Layout from "@theme/Layout";
-import { EnvironmentGraphic, Footer, TopBar } from "../components";
+import { EnvironmentGraphic, Footer } from "../components";
 import { HeroGradient, ServicesNew } from "../components/HowItWorks";
 
 // have to do some funky stuff to get the background glow gradient to work.
@@ -16,13 +16,10 @@ import { HeroGradient, ServicesNew } from "../components/HowItWorks";
 export default () => {
 	return (
 		<Layout title="An Overview of our Solution">
-			{/* Hero */}
-			<TopBar />
-
 			<section className="min-h-screen bg-noops-1000 text-noops-300">
 				<HeroGradient />
 				<div className="relative z-30 flex h-screen items-center overflow-x-clip">
-					<div className="relative mx-auto max-w-2xl py-24 text-center md:py-40">
+					<div className="relative mx-auto max-w-2xl py-12 text-center md:py-28">
 						<div className="relative">
 							<h2 className="text-5xl font-bold tracking-tight text-white md:text-6xl">
 								<span className="bg-gradient-to-b from-noops-900 to-accent bg-clip-text py-1 text-transparent">

@@ -8,7 +8,7 @@ interface HomeProps {
 const Hero = ({ description }: HomeProps) => {
 	return (
 		<>
-			<div className="relative  bg-noops-1000 pt-28 sm:pt-40">
+			<div className="relative bg-noops-1000 pt-14 sm:pt-28">
 				<div className="absolute inset-x-0 top-0 z-10 h-[750px] sm:h-[900px]">
 					<StarryBackground />
 				</div>
@@ -35,7 +35,7 @@ const Hero = ({ description }: HomeProps) => {
 
 							<a
 								href="/sign-up"
-								className="group relative mt-9 inline-block rounded-[10px] border-2 border-noops-700 bg-gradient-to-b from-noops-400 to-noops-600 px-6 py-2 font-medium text-white"
+								className="group relative mt-9 inline-block rounded-[10px] border-2 border-noops-700 bg-gradient-to-b from-noops-400 to-noops-600 px-6 py-2 font-medium text-white hover:text-white"
 							>
 								<div className="absolute inset-0.5 rounded-md bg-noops-600 transition group-hover:opacity-30" />
 								<div className="pointer-events-none absolute -inset-3 rounded-2xl border border-noops-700/30 bg-noops-900/30 "></div>

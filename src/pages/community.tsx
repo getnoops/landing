@@ -1,6 +1,6 @@
 import { SparklesIcon } from "@heroicons/react/24/solid";
 import Layout from "@theme/Layout";
-import { Footer, TopBar } from "../components";
+import { Footer } from "../components";
 import GitHub from "../components/SVGs/GitHub/GitHub";
 import Slack from "../components/SVGs/Slack/Slack";
 import X from "../components/SVGs/X/X";
@@ -9,17 +9,15 @@ export default () => {
 	return (
 		<Layout title="Community - Get Involved">
 			<div className="flex min-h-screen flex-col justify-between bg-noops-1000">
-				<TopBar />
-
 				<div className="h-full bg-noops-1000">
-					<div className="relative pt-10">
+					<div className="relative">
 						<div className="mx-auto w-full max-w-7xl items-center lg:flex">
 							<div className="relative mx-auto w-full flex-1 space-y-4 p-8 pt-28 lg:pb-40 lg:pt-28">
 								<div className="relative flex h-1 items-center justify-end lg:hidden">
-									<SparklesIcon className=" h-48  text-noops-400 blur-[10px] lg:h-96 lg:blur-[20px] xl:h-112 " />
-									<SparklesIcon className=" absolute h-48   text-noops-300 mix-blend-overlay lg:h-96 xl:h-112  " />
+									<SparklesIcon className=" h-48 text-noops-400 blur-[10px] lg:h-96 lg:blur-[20px] xl:h-112" />
+									<SparklesIcon className=" absolute h-48 text-noops-300 mix-blend-overlay lg:h-96 xl:h-112" />
 								</div>
-								<h6 className="text-noops-300">Community</h6>
+								<h6 className="pt-4 text-noops-300">Community</h6>
 								<h1 className="text-5xl font-bold tracking-tight text-noops-100">
 									Get{" "}
 									<span className="bg-gradient-to-r from-noops-600 to-accent bg-clip-text py-1 font-extrabold text-transparent">
@@ -33,8 +31,8 @@ export default () => {
 
 							<div className="relative mx-auto hidden w-full flex-1 px-4 pb-12 pt-8 lg:flex lg:px-8">
 								<div className="relative flex items-center justify-center">
-									<SparklesIcon className=" h-48  text-noops-400 blur-[10px] lg:h-96 lg:blur-[20px] xl:h-112 " />
-									<SparklesIcon className=" absolute h-48   text-noops-300 mix-blend-overlay lg:h-96 xl:h-112  " />
+									<SparklesIcon className=" h-48 text-noops-400 blur-[10px] lg:h-96 lg:blur-[20px] xl:h-112" />
+									<SparklesIcon className=" absolute h-48 text-noops-300 mix-blend-overlay lg:h-96 xl:h-112" />
 								</div>
 							</div>
 						</div>

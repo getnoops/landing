@@ -4,7 +4,7 @@ import {
 	CubeTransparentIcon,
 } from "@heroicons/react/24/outline";
 import Layout from "@theme/Layout";
-import { Footer, TopBar } from "../components";
+import { Footer } from "../components";
 import {
 	Enterprise,
 	MediumLargeBusiness,
@@ -38,12 +38,9 @@ const sizes = [
 export default () => {
 	return (
 		<Layout title="How we can help">
-			{/* Hero */}
-			<TopBar />
-
 			<section className="min-h-screen bg-noops-1000 pt-24 text-noops-300">
 				<div className="overflow-x-clip px-6 py-14">
-					<div className="relative mx-auto mt-24 max-w-2xl text-center md:mt-40">
+					<div className="relative mx-auto mt-12 max-w-2xl text-center md:mt-28">
 						<div className="pointer-events-none absolute -inset-[325%] flex items-center justify-center">
 							<div className="absolute mx-auto aspect-square h-full -rotate-6 scale-y-[30%] rounded-full blur-2xl">
 								<div className="absolute -inset-[80px] rounded-full border-[250px] border-noops-400 md:-inset-[280px] md:border-[280px]"></div>

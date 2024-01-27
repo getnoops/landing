@@ -79,19 +79,41 @@ const config: Config = {
 			{ name: "keywords", content: "software development, web, devops" },
 		],
 		colorMode: {
-			respectPrefersColorScheme: true,
+			// respectPrefersColorScheme: true,
+			disableSwitch: true,
+			defaultMode: "dark",
 		},
-		image: "img/logo_symbol.svg",
+		image: "logo_smile.svg",
 		navbar: {
+			hideOnScroll: true,
 			logo: {
-				alt: "Zwyx logo",
-				src: "img/logo_symbol.svg",
+				alt: "No_Ops logo",
+				src: "logo_smile.svg",
 				href: "/",
 			},
 			items: [
+				// {
+				// 	to: "blog",
+				// 	label: "Blog",
+				// },
+
 				{
-					to: "blog",
-					label: "Blog",
+					className: "navbar-link navbar-link-slack",
+					href: "https://join.slack.com/t/getnoops/shared_invite/zt-25fo11ewy-5z5iMXlaDvxRv6sfp8wZHA",
+					"aria-label": "Slack",
+					position: "right",
+				},
+				{
+					className: "navbar-link navbar-link-pricing",
+					to: "pricing",
+					"aria-label": "Pricing",
+					position: "right",
+				},
+				{
+					className: "navbar-link navbar-link-login",
+					href: "https://portal.getnoops.com/login",
+					"aria-label": "Login",
+					position: "right",
 				},
 			],
 		},

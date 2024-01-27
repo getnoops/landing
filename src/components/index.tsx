@@ -21,7 +21,6 @@ export { SelectMenu } from "./SelectMenu";
 export { Skeptic } from "./Skeptic";
 export { Stack } from "./Stack";
 export { Steps } from "./Steps";
-export { TopBar } from "./TopBar";
 export { TrialForm } from "./TrialForm";
 
 export { AwsGraphic } from "./AwsGraphic";

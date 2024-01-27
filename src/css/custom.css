@@ -3,55 +3,27 @@
 @tailwind utilities;
 
 :root {
-	--ifm-color-primary: #2e8555;
-	--ifm-color-primary-dark: #29784c;
-	--ifm-color-primary-darker: #277148;
-	--ifm-color-primary-darkest: #205d3b;
-	--ifm-color-primary-light: #33925d;
-	--ifm-color-primary-lighter: #359962;
-	--ifm-color-primary-lightest: #3cad6e;
+	/* Create the palette at https://docusaurus.io/docs/next/styling-layout */
+	--ifm-color-primary: #b980fa;
+	--ifm-color-primary-dark: #a55cf9;
+	--ifm-color-primary-darker: #9b49f8;
+	--ifm-color-primary-darkest: #7d13f6;
+	--ifm-color-primary-light: #cda4fb;
+	--ifm-color-primary-lighter: #d7b7fc;
+	--ifm-color-primary-lightest: #f5edfe;
 	--ifm-code-font-size: 95%;
 	--docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-
-	/* Create the palette at https://docusaurus.io/docs/next/styling-layout */
-
-	/* Teal from Radix Colors */
-	/* --ifm-color-primary: #068475;
-	--ifm-color-primary-dark: #057769;
-	--ifm-color-primary-darker: #057063;
-	--ifm-color-primary-darkest: #045c52;
-	--ifm-color-primary-light: #079181;
-	--ifm-color-primary-lighter: #079887;
-	--ifm-color-primary-lightest: #08ac98; */
-
-	/* Purple from Radix Colors */
-	/* --ifm-color-primary: #8e4ec6;
-	--ifm-color-primary-dark: #803dbc;
-	--ifm-color-primary-darker: #7939b1;
-	--ifm-color-primary-darkest: #642f92;
-	--ifm-color-primary-light: #9b63cd;
-	--ifm-color-primary-lighter: #a26dd0;
-	--ifm-color-primary-lightest: #b68dda; */
 }
 
 [data-theme="dark"] {
-	--ifm-color-primary: #25c2a0;
-	--ifm-color-primary-dark: #21af90;
-	--ifm-color-primary-darker: #1fa588;
-	--ifm-color-primary-darkest: #1a8870;
-	--ifm-color-primary-light: #29d5b0;
-	--ifm-color-primary-lighter: #32d8b4;
-	--ifm-color-primary-lightest: #4fddbf;
+	--ifm-color-primary: #b980fa;
+	--ifm-color-primary-dark: #a55cf9;
+	--ifm-color-primary-darker: #9b49f8;
+	--ifm-color-primary-darkest: #7d13f6;
+	--ifm-color-primary-light: #cda4fb;
+	--ifm-color-primary-lighter: #d7b7fc;
+	--ifm-color-primary-lightest: #f5edfe;
 	--docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-}
-
-.navbar__logo {
-	overflow: hidden;
-	border-radius: 3px;
-}
-
-code {
-	tab-size: 4;
 }
 
 @font-face {
@@ -78,4 +50,75 @@ h5,
 h6 {
 	font-family: "Mona Sans";
 	line-height: inherit;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+code {
+	tab-size: 4;
+}
+
+/* Navbar  */
+
+.navbar {
+	background-color: #0b0217;
+	box-shadow: 0 0 5px #0b0217;
+}
+
+.navbar__inner {
+	max-width: 1250px;
+	margin: 0 auto;
+}
+
+.navbar__logo {
+	@apply hidden sm:block;
+}
+
+.navbar-link {
+	padding: 0.5rem;
+	display: flex;
+	gap: 0.25rem;
+	@apply text-noops-300;
+	@apply transition-all;
+}
+
+.navbar-link:hover {
+	opacity: 0.8;
+	@apply text-noops-400;
+}
+
+.navbar-link::before {
+	content: "";
+	width: 24px;
+	height: 24px;
+	background-size: cover;
+}
+
+.navbar-link-slack::before {
+	background-image: url("/logos/slack.svg");
+}
+
+.navbar-link-slack::after {
+	content: "Slack";
+	@apply sm:content-["Join_our_Slack"];
+}
+
+.navbar-link-pricing::before {
+	/* `%23cab6fc` is `text-noops-300` */
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%23cab6fc' viewBox='0 0 24 24' stroke-width='1.5' aria-hidden='true' class='h-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.navbar-link-pricing::after {
+	content: "Pricing";
+}
+
+.navbar-link-login::before {
+	/* `%23cab6fc` is `text-noops-300` */
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='%23cab6fc' aria-hidden='true' class='h-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.navbar-link-login::after {
+	content: "Login";
 }
