@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	/* Create the palette at https://docusaurus.io/docs/next/styling-layout */
+	--ifm-color-primary: #b980fa;
+	--ifm-color-primary-dark: #a55cf9;
+	--ifm-color-primary-darker: #9b49f8;
+	--ifm-color-primary-darkest: #7d13f6;
+	--ifm-color-primary-light: #cda4fb;
+	--ifm-color-primary-lighter: #d7b7fc;
+	--ifm-color-primary-lightest: #f5edfe;
+	--ifm-code-font-size: 95%;
+	--docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+	--ifm-color-primary: #b980fa;
+	--ifm-color-primary-dark: #a55cf9;
+	--ifm-color-primary-darker: #9b49f8;
+	--ifm-color-primary-darkest: #7d13f6;
+	--ifm-color-primary-light: #cda4fb;
+	--ifm-color-primary-lighter: #d7b7fc;
+	--ifm-color-primary-lightest: #f5edfe;
+	--docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+@font-face {
+	font-family: "Mona Sans";
+	src:
+		url("/fonts/Mona-Sans.woff2") format("woff2 supports variations"),
+		url("/fonts/Mona-Sans.woff2") format("woff2-variations");
+	font-weight: 200 900;
+	font-stretch: 75% 125%;
+}
+
+html {
+	font-family: "Mona Sans";
+	background-color: #0b0217;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
+	font-family: "Mona Sans";
+}
+
+/* Border reset (part of Tailwind's prefling) allowing to use simply `border` to draw a border; it doesn't interfere with Infima's styles */
+
+*,
+::before,
+::after {
+	border-width: 0;
+	border-style: solid;
+	border-color: theme("borderColor.DEFAULT", currentColor);
+}
+
+/* Announcement bar */
+
+/* Yeah I know, WTF?! */
+.announcementBar_node_modules-\@docusaurus-theme-classic-lib-theme-AnnouncementBar-styles-module {
+	/* same as navbar, for pages with graphics like `how-it-works` */
+	z-index: var(--ifm-z-index-fixed);
+
+	background-color: #b980fa !important;
+	padding: 1.5rem;
+	font-size: larger;
+	color: white !important;
+}
+
+/* Navbar  */
+
+.navbar {
+	background-color: #0b0217;
+	box-shadow: 0 1px 3px #0b0217;
+}
+
+.navbar__inner {
+	max-width: 1250px;
+	margin: 0 auto;
+}
+
+.navbar__logo {
+	@apply hidden sm:block;
+}
+
+.navbar-link {
+	padding: 0.5rem;
+	display: flex;
+	gap: 0.25rem;
+	@apply text-noops-300;
+	@apply transition-all;
+}
+
+.navbar-link:hover {
+	opacity: 0.8;
+	@apply text-noops-400;
+}
+
+.navbar-link::before {
+	content: "";
+	width: 24px;
+	height: 24px;
+	background-size: cover;
+}
+
+.navbar-link-slack::before {
+	background-image: url("/logos/slack.svg");
+}
+
+.navbar-link-slack::after {
+	content: "Slack";
+	@apply sm:content-["Join_our_Slack"];
+}
+
+.navbar-link-pricing::before {
+	/* `%23cab6fc` is `text-noops-300` */
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%23cab6fc' viewBox='0 0 24 24' stroke-width='1.5' aria-hidden='true' class='h-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.navbar-link-pricing::after {
+	content: "Pricing";
+}
+
+.navbar-link-login::before {
+	/* `%23cab6fc` is `text-noops-300` */
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='%23cab6fc' aria-hidden='true' class='h-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.navbar-link-login::after {
+	content: "Login";
+}
