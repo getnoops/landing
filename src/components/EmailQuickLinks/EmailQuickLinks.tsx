@@ -34,7 +34,8 @@ const emailProviders = [
 
 const EmailQuickLinks = () => {
 	// load email from localStorage
-	const email = localStorage.getItem("signup-email");
+	const email =
+		typeof window !== "undefined" ? localStorage.getItem("signup-email") : "";
 
 	useEffect(() => {
 		if (!email) {

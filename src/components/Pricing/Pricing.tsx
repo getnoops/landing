@@ -36,7 +36,7 @@ const Pricing = () => {
 							key={option}
 							value={option}
 							className={cn(
-								"relative cursor-pointer rounded-full bg-transparent px-2.5 py-1 transition",
+								"relative cursor-pointer rounded-full bg-transparent px-2.5 py-1.5 font-semibold transition",
 								option === interval ? "text-white" : "text-accent/80",
 							)}
 						>
