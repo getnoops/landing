@@ -19,6 +19,8 @@ const PLAUSIBLE_SCRIPT_SRC = "https://plsbl.zwyx.dev/js/script.js"; // env.PLAUS
 	}
 });
 
+const prod = process.env.NODE_ENV === "production";
+
 const config: Config = {
 	title: "No_Ops",
 	tagline: "Deploy faster than ever",
@@ -29,11 +31,15 @@ const config: Config = {
 	trailingSlash: false,
 
 	scripts: [
-		{
-			src: PLAUSIBLE_SCRIPT_SRC,
-			defer: true,
-			"data-domain": DOMAIN,
-		},
+		...(prod
+			? [
+					{
+						src: PLAUSIBLE_SCRIPT_SRC,
+						defer: true,
+						"data-domain": DOMAIN,
+					},
+				]
+			: []),
 	],
 
 	i18n: {
