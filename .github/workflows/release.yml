@@ -5,7 +5,7 @@ on:
     branches: [main]
 
 concurrency:
-  group: "build-website"
+  group: "release"
   cancel-in-progress: true
 
 permissions:
