@@ -49,11 +49,6 @@ h5,
 h6,
 button {
 	font-family: "Mona Sans";
-	@apply text-noops-400;
-}
-
-strong {
-	@apply text-noops-400;
 }
 
 /* Border reset (part of Tailwind's prefling) allowing to use simply `border` to draw a border; it doesn't interfere with Infima's styles */
@@ -148,5 +143,9 @@ strong {
 /* Blog's 'Latest posts' title */
 
 [class^="sidebarItemTitle_"] {
-	@apply text-noops-400;
+	@apply text-noops-200;
+}
+
+[class^="sidebarItemLink_"]:not(::hover) {
+	@apply text-noops-200 !important;
 }
