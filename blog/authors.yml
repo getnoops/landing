@@ -2,6 +2,15 @@ chris:
   name: Chris
   title: No_Ops founder
   email: chris@getnoops.com
+  url: https://www.linkedin.com/in/kolenko/
+  image_url: /chris.webp
+
+sam:
+  name: Sam
+  title: No_Ops CEO
+  email: sam@getnoops.com
+  url: https://www.linkedin.com/in/samuelrjhunt/
+  image_url: /sam.webp
 
 alex:
   name: Alex

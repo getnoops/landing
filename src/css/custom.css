@@ -38,6 +38,7 @@
 html {
 	font-family: "Mona Sans";
 	background-color: #0b0217;
+	@apply text-noops-200;
 }
 
 h1,
@@ -48,6 +49,11 @@ h5,
 h6,
 button {
 	font-family: "Mona Sans";
+	@apply text-noops-400;
+}
+
+strong {
+	@apply text-noops-400;
 }
 
 /* Border reset (part of Tailwind's prefling) allowing to use simply `border` to draw a border; it doesn't interfere with Infima's styles */
@@ -89,7 +95,11 @@ button {
 	@apply hidden sm:block;
 }
 
-.navbar-link {
+.navbar__link {
+	@apply text-noops-300;
+}
+
+.header-right-link {
 	padding: 0.5rem;
 	display: flex;
 	gap: 0.25rem;
@@ -97,41 +107,47 @@ button {
 	@apply transition-all;
 }
 
-.navbar-link:hover {
+.header-right-link:hover {
 	opacity: 0.8;
 	@apply text-noops-400;
 }
 
-.navbar-link::before {
+.header-right-link::before {
 	content: "";
 	width: 24px;
 	height: 24px;
 	background-size: cover;
 }
 
-.navbar-link-slack::before {
+.header-right-link-slack::before {
 	background-image: url("/logos/slack.svg");
 }
 
-.navbar-link-slack::after {
+.header-right-link-slack::after {
 	content: "Slack";
 	@apply sm:content-["Join_our_Slack"];
 }
 
-.navbar-link-pricing::before {
+.header-right-link-pricing::before {
 	/* `%23cab6fc` is `text-noops-300` */
 	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%23cab6fc' viewBox='0 0 24 24' stroke-width='1.5' aria-hidden='true' class='h-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z'%3E%3C/path%3E%3C/svg%3E");
 }
 
-.navbar-link-pricing::after {
+.header-right-link-pricing::after {
 	content: "Pricing";
 }
 
-.navbar-link-login::before {
+.header-right-link-login::before {
 	/* `%23cab6fc` is `text-noops-300` */
 	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='%23cab6fc' aria-hidden='true' class='h-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75'%3E%3C/path%3E%3C/svg%3E");
 }
 
-.navbar-link-login::after {
+.header-right-link-login::after {
 	content: "Login";
+}
+
+/* Blog's 'Latest posts' title */
+
+.sidebarItemTitle_node_modules-\@docusaurus-theme-classic-lib-theme-BlogSidebar-Desktop-styles-module {
+	@apply text-noops-400;
 }

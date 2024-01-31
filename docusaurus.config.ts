@@ -62,21 +62,19 @@ const config: Config = {
 				// docs: {
 				// 	sidebarPath: "./docs-sidebar.ts",
 				// },
-				// blog: {
-				// 	blogTitle: "No_Ops's blog",
-				// 	blogDescription: "Deploy faster than ever",
-				// 	blogSidebarTitle: "Latest posts",
-				// 	blogSidebarCount: "ALL",
-				// 	postsPerPage: "ALL",
-				// 	feedOptions: {
-				// 		type: "all",
-				// 		title: "No_Ops's blog",
-				// 		description: "Deploy faster than ever",
-				// 		copyright: `Copyright © ${new Date().getFullYear()} No_Ops.`,
-				// 	},
-				// },
+				blog: {
+					blogDescription: "Deploy faster than ever",
+					blogSidebarTitle: "Latest posts",
+					blogSidebarCount: "ALL",
+					postsPerPage: "ALL",
+					feedOptions: {
+						type: "all",
+						title: "No_Ops's blog",
+						description: "Deploy faster than ever",
+						copyright: `Copyright © ${new Date().getFullYear()} No_Ops.`,
+					},
+				},
 				docs: false,
-				blog: false,
 				theme: {
 					customCss: require.resolve("./src/css/custom.css"),
 				},
@@ -110,25 +108,25 @@ const config: Config = {
 				// 	to: "docs",
 				// 	label: "Docs",
 				// },
-				// {
-				// 	to: "blog",
-				// 	label: "News",
-				// },
+				{
+					to: "blog",
+					label: "News",
+				},
 
 				{
-					className: "navbar-link navbar-link-slack",
+					className: "header-right-link header-right-link-slack",
 					href: "https://join.slack.com/t/getnoops/shared_invite/zt-25fo11ewy-5z5iMXlaDvxRv6sfp8wZHA",
 					"aria-label": "Slack",
 					position: "right",
 				},
 				{
-					className: "navbar-link navbar-link-pricing",
+					className: "header-right-link header-right-link-pricing",
 					to: "pricing",
 					"aria-label": "Pricing",
 					position: "right",
 				},
 				{
-					className: "navbar-link navbar-link-login",
+					className: "header-right-link header-right-link-login",
 					href: "https://portal.getnoops.com/login",
 					"aria-label": "Login",
 					position: "right",
