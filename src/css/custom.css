@@ -68,9 +68,8 @@ strong {
 
 /* Announcement bar */
 
-/* Yeah I know, WTF?! */
-.announcementBar_node_modules-\@docusaurus-theme-classic-lib-theme-AnnouncementBar-styles-module {
-	/* same as navbar, for pages with graphics like `how-it-works` */
+[class^="announcementBar_"][role="banner"] {
+	/* same as navbar; important for pages with graphics like `how-it-works` */
 	z-index: var(--ifm-z-index-fixed);
 
 	background-color: #b980fa !important;
@@ -148,6 +147,6 @@ strong {
 
 /* Blog's 'Latest posts' title */
 
-.sidebarItemTitle_node_modules-\@docusaurus-theme-classic-lib-theme-BlogSidebar-Desktop-styles-module {
+[class^="sidebarItemTitle_"] {
 	@apply text-noops-400;
 }

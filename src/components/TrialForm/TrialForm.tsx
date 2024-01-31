@@ -94,7 +94,7 @@ const TrialForm = () => {
 			<div className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-r from-noops-600/5 via-transparent to-noops-600/5"></div>
 
 			<div className="pointer-events-none absolute inset-0 border-4 border-noops-600/50 blur-xl"></div>
-			<img src="/logo_smile.svg" className="relative mx-auto my-8 h-16" />
+			<img src="/logo_smile.svg" className="relative mx-auto my-8 block h-16" />
 
 			<form
 				id="alpha-signup-form"
@@ -211,7 +211,7 @@ const TrialForm = () => {
 				<div className="flex flex-row-reverse justify-between gap-x-2">
 					<button
 						type="submit"
-						className="group relative inline-block  rounded-[10px] border-2 border-noops-700 bg-gradient-to-b from-noops-400 to-noops-600 px-6 py-2 font-medium text-noops-300 outline-0 transition focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-noops-1000"
+						className="group relative inline-block cursor-pointer rounded-[10px] border-2 border-noops-700 bg-gradient-to-b from-noops-400 to-noops-600 px-6 py-2 font-medium text-noops-300 outline-0 transition focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-noops-1000"
 					>
 						<div className="absolute inset-0.5 rounded-md bg-noops-600 transition group-hover:opacity-30" />
 						{/* <div className="pointer-events-none absolute -inset-3 rounded-2xl border border-noops-700/30 bg-noops-900/30 "></div> */}
