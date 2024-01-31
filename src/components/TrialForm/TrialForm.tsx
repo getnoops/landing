@@ -120,7 +120,7 @@ const TrialForm = () => {
 							type="name"
 							autoComplete="off"
 							{...register("name")}
-							className="block w-full rounded-md border-0 bg-noops-300/5 px-3 py-1.5 text-accent outline-0 ring-1 ring-noops-300/20 transition focus:bg-noops-1000 focus:ring-2 focus:ring-accent  "
+							className="block w-full rounded-md border-0 bg-noops-300/5 px-3 py-1.5 text-base text-accent outline-0 ring-1 ring-noops-300/20 transition focus:bg-noops-1000 focus:ring-2 focus:ring-accent  "
 						/>
 					</div>
 				</div>
@@ -143,7 +143,7 @@ const TrialForm = () => {
 							id="email"
 							autoComplete="email"
 							{...register("email")}
-							className="block w-full rounded-md border-0 bg-noops-300/5 px-3 py-1.5 text-accent outline-0 ring-1 ring-noops-300/20 transition focus:bg-noops-1000 focus:ring-2 focus:ring-accent   "
+							className="block w-full rounded-md border-0 bg-noops-300/5 px-3 py-1.5 text-base text-accent outline-0 ring-1 ring-noops-300/20 transition focus:bg-noops-1000 focus:ring-2 focus:ring-accent   "
 						/>
 					</div>
 				</div>
@@ -167,14 +167,14 @@ const TrialForm = () => {
 							type="company"
 							autoComplete="company"
 							{...register("company")}
-							className="block w-full rounded-md border-0 bg-noops-300/5 px-3 py-1.5 text-accent outline-0 ring-1 ring-noops-300/20 transition focus:bg-noops-1000 focus:ring-2 focus:ring-accent"
+							className="block w-full rounded-md border-0 bg-noops-300/5 px-3 py-1.5 text-base text-accent outline-0 ring-1 ring-noops-300/20 transition focus:bg-noops-1000 focus:ring-2 focus:ring-accent"
 						/>
 					</div>
 				</div>
 
 				<div>
 					<label className="block text-sm font-medium leading-6 text-noops-400">
-						Company Size{" "}
+						Company size{" "}
 						{errors.company_size && (
 							<span className="font-medium text-red-600">
 								{" "}
