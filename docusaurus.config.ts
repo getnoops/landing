@@ -110,7 +110,7 @@ const config: Config = {
 				// },
 				{
 					to: "blog",
-					label: "News",
+					label: "Events",
 				},
 
 				{
