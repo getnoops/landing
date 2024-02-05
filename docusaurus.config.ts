@@ -47,6 +47,28 @@ const config: Config = {
 		locales: ["en"],
 	},
 
+	headTags: [
+		{
+			tagName: "link",
+			attributes: {
+				rel: "preload",
+				href: "/fonts/Mona-Sans.woff2",
+				as: "font",
+				type: "font/woff2",
+				crossorigin: "anonymous",
+			},
+		},
+		// Preloading image
+		{
+			tagName: "link",
+			attributes: {
+				rel: "preload",
+				href: "/images/noops_bg.webp",
+				as: "image",
+			},
+		},
+	],
+
 	markdown: {
 		mdx1Compat: {
 			admonitions: false,
