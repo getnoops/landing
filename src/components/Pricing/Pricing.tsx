@@ -98,23 +98,6 @@ const Pricing = () => {
 
 						{id === "enterprise" && (
 							<>
-								{/*
-                  <CurvedShape
-                  fill="#fff4ce"
-                  className="absolute right-0 top-0 w-full origin-top-right scale-75 blur-xl    "
-                  flipped
-                  />
-                  <CurvedShape
-                  fill="#eeaa5b"
-                  className="absolute right-0 top-0 w-full origin-top-right scale-125 mix-blend-overlay blur-xl  "
-                  flipped
-                  />
-                  <CurvedShape
-                  fill="#ffeaae"
-                  className="absolute right-0 top-0 w-full origin-top-right scale-[50%]  mix-blend-overlay blur-2xl   "
-                  flipped
-                /> */}
-
 								<div className="absolute inset-x-0 -top-1/2 mx-auto h-[200%] w-24 rotate-[60deg] bg-[#fff4ce] blur-2xl grayscale  lg:rotate-[31deg]"></div>
 								<div className="absolute inset-x-0 -top-1/2 mx-auto h-[200%] w-48 rotate-[60deg] bg-[#eeaa5b] mix-blend-overlay blur-2xl grayscale  lg:rotate-[31deg]"></div>
 
@@ -132,7 +115,6 @@ const Pricing = () => {
 							</>
 						)}
 
-						{id === "free" && <></>}
 						<div className="relative flex items-center justify-between gap-x-4">
 							<h3
 								id={id}
