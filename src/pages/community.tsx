@@ -17,7 +17,7 @@ export default () => {
 									<SparklesIcon className=" h-48 text-noops-400 blur-[10px] lg:h-96 lg:blur-[20px] xl:h-112" />
 									<SparklesIcon className=" absolute h-48 text-noops-300 mix-blend-overlay lg:h-96 xl:h-112" />
 								</div>
-								<h6 className="pt-4 text-base font-normal text-noops-300">
+								<h6 className="pt-4 text-base  font-normal text-noops-300">
 									Community
 								</h6>
 								<h1 className="text-5xl font-bold tracking-tight text-noops-100">

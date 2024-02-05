@@ -12,7 +12,9 @@ export default () => {
 					<div className="relative pt-12">
 						<div className="relative mx-auto w-full max-w-7xl items-center lg:flex">
 							<div className="relative mx-auto w-full flex-1 space-y-4 p-8 pt-28 lg:pb-16">
-								<h6 className="text-noops-300">Pricing</h6>
+								<h6 className="text-base font-normal text-noops-300">
+									Pricing
+								</h6>
 								<h1 className="text-5xl font-bold tracking-tight text-noops-100">
 									Platform{" "}
 									<span className="bg-gradient-to-r from-noops-600 to-accent bg-clip-text py-1 font-extrabold text-transparent">

@@ -30,6 +30,10 @@ const Links = [
 		title: "COMPANY",
 		links: [
 			{
+				title: "About Us",
+				href: "/about",
+			},
+			{
 				title: "Contact Us",
 				href: "/contact",
 			},
@@ -87,7 +91,7 @@ const Footer = () => {
 						{Links.map((link) => (
 							<div key={link.title}>
 								<div>
-									<h6 className="m-0 text-sm font-normal uppercase tracking-[0.25rem] text-noops-300">
+									<h6 className="m-0 text-sm font-normal  uppercase tracking-[0.25rem] text-noops-300">
 										{link.title}
 									</h6>
 									<div className="mt-1 h-px w-full max-w-[200px] bg-noops-300"></div>

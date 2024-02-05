@@ -28,3 +28,7 @@ export { EnvironmentGraphic } from "./EnvironmentGraphic";
 export { StarryBackground } from "./StarryBackground";
 export { StreamlineGraphic } from "./StreamlineGraphic";
 export { YourTechGraphic } from "./YourTechGraphic";
+
+export { Founders } from "./Founders";
+export { OurStory } from "./OurStory";
+export { Values } from "./Values";

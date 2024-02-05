@@ -54,11 +54,11 @@ export default () => {
 						</div>
 
 						<div className="relative">
-							<h2 className="text-5xl font-bold tracking-tight text-white md:text-6xl">
+							<h1 className="text-5xl font-bold tracking-tight text-white md:text-6xl">
 								<span className="bg-gradient-to-b from-noops-100 to-noops-300 bg-clip-text py-1 text-transparent">
 									Who we help
 								</span>
-							</h2>
+							</h1>
 							<p className="mt-6 text-lg leading-8 text-noops-200 [text-wrap:balance]">
 								Whether you're a startup or a large enterprise, we can help you
 								streamline your DevOps pipeline
