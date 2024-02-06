@@ -52,13 +52,13 @@ const SelectMenu = ({
 						leaveFrom="opacity-100"
 						leaveTo="opacity-0"
 					>
-						<Listbox.Options className="absolute z-10 mt-1 max-h-60 w-full list-none overflow-auto rounded-md bg-noops-1000 text-base shadow-inner shadow-noops-950/50 ring-1 ring-accent/10  transition focus:outline-none sm:text-sm">
+						<Listbox.Options className="absolute z-10 mt-1 max-h-60 w-full list-none overflow-auto rounded-md bg-noops-1000 p-0 text-base shadow-inner shadow-noops-950/50 ring-1 ring-accent/10  transition focus:outline-none sm:text-sm">
 							{options.map((option, i) => (
 								<Listbox.Option
 									key={i}
 									className={({ active }) =>
 										cn(
-											"relative m-1 cursor-pointer select-none rounded-[4px] py-2 pl-3 pr-9 transition",
+											"relative m-1 cursor-pointer select-none rounded-[4px] px-6 py-2 transition",
 											active
 												? "bg-noops-400/10 text-noops-50"
 												: "text-noops-400",
