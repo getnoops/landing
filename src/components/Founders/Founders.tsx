@@ -7,7 +7,7 @@ const people = [
 	{
 		name: "Chris Kolenko",
 		role: "CTO & Founder",
-		imageUrl: "/chris.jpg",
+		imageUrl: "/chris.webp",
 	},
 ];
 
