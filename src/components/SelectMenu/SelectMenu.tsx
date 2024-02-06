@@ -58,7 +58,7 @@ const SelectMenu = ({
 									key={i}
 									className={({ active }) =>
 										cn(
-											"relative m-1 cursor-pointer select-none rounded-[4px] px-6 py-2 transition",
+											"relative mx-1 cursor-pointer select-none rounded-[4px] px-6 py-2 transition",
 											active
 												? "bg-noops-400/10 text-noops-50"
 												: "text-noops-400",
