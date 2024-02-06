@@ -21,14 +21,18 @@ export default () => {
 									Sign up
 								</h6>
 								<h1 className="text-5xl font-bold tracking-tight text-noops-100">
-									Explore our{" "}
+									Join the{" "}
+									<span className="bg-gradient-to-r from-noops-600 to-accent bg-clip-text py-1 font-extrabold text-transparent">
+										wait list
+									</span>
+									{/* Explore our{" "}
 									<span className="bg-gradient-to-r from-noops-600 to-accent bg-clip-text py-1 font-extrabold text-transparent">
 										Solution
-									</span>
+									</span> */}
 								</h1>
 								<p className="text-2xl text-noops-200">
-									We are currently in the process of building our platform, but
-									you can try what we have so far by signing up
+									We are currently preparing for launch, but you can sign up to
+									be notified when we do
 								</p>
 							</div>
 

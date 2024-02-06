@@ -1,9 +1,13 @@
+import { useMemo } from "react";
+
 const StarryBackground: React.FC = () => {
-	const stars = Array.from({ length: 100 }, () => ({
-		cx: `${Math.random() * 100}%`,
-		cy: `${Math.random() * 100}%`,
-		r: Math.random(),
-	}));
+	const stars = useMemo(() => {
+		return Array.from({ length: 100 }, () => ({
+			cx: `${Math.random() * 100}%`,
+			cy: `${Math.random() * 100}%`,
+			r: Math.random(),
+		}));
+	}, []); // Empty dependency array means this only runs once
 
 	return (
 		<svg

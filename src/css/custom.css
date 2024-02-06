@@ -24,6 +24,7 @@
 	--ifm-color-primary-lighter: #d7b7fc;
 	--ifm-color-primary-lightest: #f5edfe;
 	--docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+	--docusaurus-tag-list-border: hsl(261, 36%, 17%) !important;
 }
 
 @font-face {

@@ -1,6 +1,5 @@
 import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useCreatePlaygroundUser } from "@site/src/api/authGalaxy";
 import { Controller, useForm } from "react-hook-form";
 import * as yup from "yup";
 import { QueryProviderHOC } from "../QueryProviderHOC";
@@ -33,27 +32,10 @@ const TrialForm = () => {
 			company_size: "",
 		},
 	});
-	const { mutateAsync, isPending, isError } = useCreatePlaygroundUser();
 
 	const onSubmit = async (data: any) => {
-		await mutateAsync(
-			{
-				data: {
-					name: data.name,
-					email: data.email,
-					company: data.company,
-					company_size: data.company_size,
-				},
-			},
-			{
-				onSuccess: () => {
-					// store email in localstorage
-					localStorage.setItem("signup-email", data.email);
-					// redirect to email quick links page
-					window.location.href = "/check-email";
-				},
-			},
-		);
+		// TODO: send to slack
+		// there are some elements that used to rely on react query's isPending and isError that i've made just false for now
 	};
 
 	const options = [
@@ -199,7 +181,8 @@ const TrialForm = () => {
 					</div>
 				</div>
 
-				{isError && (
+				{/* isError */}
+				{false && (
 					<div className="flex w-full justify-center">
 						<span className="inline-flex w-fit items-center justify-end gap-x-1.5 rounded-xl border border-red-700/30 bg-red-800/30 px-3 py-2 text-sm font-medium text-red-400">
 							<ExclamationTriangleIcon className="h-6" />
@@ -217,7 +200,8 @@ const TrialForm = () => {
 						{/* <div className="pointer-events-none absolute -inset-3 rounded-2xl border border-noops-700/30 bg-noops-900/30 "></div> */}
 
 						<div className="relative inline-flex w-full items-center gap-x-1 text-white">
-							{isPending ? "Submitting" : "Try No_Ops"}
+							{/* isPending */}
+							{false ? "Submitting" : "Try No_Ops"}
 						</div>
 					</button>
 				</div>

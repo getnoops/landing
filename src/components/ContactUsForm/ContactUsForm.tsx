@@ -161,7 +161,7 @@ const ContactUsForm = () => {
 						{/* <div className="pointer-events-none absolute -inset-3 rounded-2xl border border-noops-700/30 bg-noops-900/30 "></div> */}
 
 						<div className="relative inline-flex w-full items-center gap-x-1 text-white">
-							{false ? "Submitting" : "Send message"}
+							{false ? "Submitting" : "Send"}
 						</div>
 					</button>
 				</div>
