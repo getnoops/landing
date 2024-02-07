@@ -40,6 +40,12 @@ const config: Config = {
 					},
 				]
 			: []),
+		{
+			src: '//js.hs-scripts.com/39503831.js',
+			defer: true,
+			async: true,
+			id: 'hs-script-loader',
+		},
 	],
 
 	i18n: {

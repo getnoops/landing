@@ -1,5 +1,5 @@
 import Layout from "@theme/Layout";
-import { Footer, TrialForm } from "../components";
+import { Footer, SignUpForm } from "../components";
 import Curve from "../components/SVGs/Curve/Curve";
 
 export default () => {
@@ -37,7 +37,7 @@ export default () => {
 							</div>
 
 							<div className="relative mx-auto w-full flex-1 px-4 pb-12 pt-8 lg:px-8 lg:pb-40 lg:pt-32">
-								<TrialForm />
+								<SignUpForm />
 							</div>
 						</div>
 					</div>

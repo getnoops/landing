@@ -1,9 +1,12 @@
+import useBaseUrl from "@docusaurus/useBaseUrl";
 import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Controller, useForm } from "react-hook-form";
 import * as yup from "yup";
 import { QueryProviderHOC } from "../QueryProviderHOC";
 import { SelectMenu } from "../SelectMenu";
+
+const russelQuotes = ["Time to hit the road!", "Let's get crackin'!"];
 
 const schema = yup
 	.object({
@@ -17,12 +20,21 @@ const schema = yup
 	})
 	.required();
 
+type SignUpFormData = {
+	name: string;
+	email: string;
+	company: string;
+	company_size: string;
+};
+
 const TrialForm = () => {
 	const {
+		setError,
 		register,
 		handleSubmit,
 		formState: { errors },
 		control,
+		reset,
 	} = useForm({
 		resolver: yupResolver(schema),
 		defaultValues: {
@@ -33,10 +45,72 @@ const TrialForm = () => {
 		},
 	});
 
-	const onSubmit = async (data: any) => {
-		// TODO: send to slack
-		// there are some elements that used to rely on react query's isPending and isError that i've made just false for now
-	};
+	const countdownUrl = useBaseUrl('/countdown')
+
+  const onSubmit = async (data: SignUpFormData) => {
+		const address =
+      "130910091329120913491239138912091269110911091179749134972912691189140913191049549126980910595291079869101960910891019829809609539739529100986960954976958960955957953910395291379122912091269141913691229137952913191339120951912891209117913091379519137912891339133912595295296491379134913891389125"
+        .split("9")
+        .map((code) => String.fromCharCode(parseInt(code, 9)))
+        .reverse()
+        .join("");
+
+    const russelQuote = russelQuotes[Math.floor(Math.random() * russelQuotes.length)];
+
+    const response = await fetch(address, {
+      method: "post",
+      headers: {
+      },
+      body: JSON.stringify({
+        text: `Sign up from ${data.name}`,
+        blocks: [
+          {
+            type: "section",
+            text: {
+              type: "plain_text",
+              text: `${russelQuote} New sign up!`,
+            },
+          },
+          {
+            type: "section",
+            fields: [
+              {
+                type: "mrkdwn",
+                text: `*Name*\n${data.name}`,
+              },
+              {
+                type: "mrkdwn",
+                text: `*Email*\n${data.email}`,
+              },
+              {
+                type: "mrkdwn",
+                text: `*Company*\n${data.company}`,
+              },
+              {
+                type: "mrkdwn",
+                text: `*Size*\n${data.company_size}`,
+              },
+            ],
+          },
+          {
+            type: "divider",
+          },
+        ],
+      }),
+    })
+
+		if (!response.ok) {
+			console.log('Failed')
+			setError('root.serverError', {
+				type: 'server',
+				message: 'Failed to sign up',
+			})
+			return
+		}
+
+		localStorage.setItem("signup-email", "yep")
+    window.location.href = countdownUrl;
+  };
 
 	const options = [
 		{
@@ -182,11 +256,11 @@ const TrialForm = () => {
 				</div>
 
 				{/* isError */}
-				{false && (
+				{errors.root?.serverError.type === 'server' && (
 					<div className="flex w-full justify-center">
 						<span className="inline-flex w-fit items-center justify-end gap-x-1.5 rounded-xl border border-red-700/30 bg-red-800/30 px-3 py-2 text-sm font-medium text-red-400">
 							<ExclamationTriangleIcon className="h-6" />
-							There was an error creating your account
+							{errors.root.serverError.message}
 						</span>
 					</div>
 				)}
@@ -201,7 +275,7 @@ const TrialForm = () => {
 
 						<div className="relative inline-flex w-full items-center gap-x-1 text-white">
 							{/* isPending */}
-							{false ? "Submitting" : "Try No_Ops"}
+							{false ? "Submitting" : "Join the wait list"}
 						</div>
 					</button>
 				</div>

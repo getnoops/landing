@@ -18,10 +18,10 @@ export { RoleSelect } from "./RoleSelect";
 export { SEFeatures } from "./SEFeatures";
 export { SEHero } from "./SEHero";
 export { SelectMenu } from "./SelectMenu";
+export { SignUpForm } from "./SignUpForm";
 export { Skeptic } from "./Skeptic";
 export { Stack } from "./Stack";
 export { Steps } from "./Steps";
-export { TrialForm } from "./TrialForm";
 
 export { AwsGraphic } from "./AwsGraphic";
 export { EnvironmentGraphic } from "./EnvironmentGraphic";
