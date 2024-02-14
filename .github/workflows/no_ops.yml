@@ -1,0 +1,22 @@
+name: No_Ops deployment
+
+on:
+  push:
+    branches: [main]
+
+concurrency:
+  group: "release"
+  cancel-in-progress: true
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: getnoops/action-ops@v0.1
+      - run: |
+          ops version
