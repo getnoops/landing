@@ -5,7 +5,7 @@ on:
     branches: [main]
 
 concurrency:
-  group: "release"
+  group: "no_ops"
   cancel-in-progress: true
 
 permissions:
