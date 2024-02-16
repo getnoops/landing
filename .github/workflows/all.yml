@@ -20,10 +20,10 @@ jobs:
       - uses: getnoops/action-ops@v0.1
       - id: repository
         run: |
-          ops container-registry get website website --format=json >> $GITHUB_OUTPUT
+          ops container-repository get website website --format=json >> $GITHUB_OUTPUT
       - run: |
-          ops container-registry login website website | docker login --username ${{steps.repository.username}} --password-stdin ${{steps.repository.repository_uri}}
+          ops container-repository login website website | docker login --username ${{steps.repository.username}} --password-stdin ${{steps.repository.repository_uri}}
           docker build -t ${{steps.repository.repository_uri}}:${GITHUB_SHA::7} .
           docker push ${{steps.repository.repository_uri}}:${GITHUB_SHA::7}
       - run: |
-          echo "Deployed to ${{steps.repository.repository_uri}}:${GITHUB_SHA::7}"
+          echo "Deployed to ${{steps.repository.repository_uri}}:${GITHUB_SHA::7} successfully!"
