@@ -25,3 +25,5 @@ jobs:
           ops container-repository login website website | docker login --username ${{steps.repository.username}} --password-stdin ${{steps.repository.repository_uri}}
           docker build -t ${{steps.repository.repository_uri}}:${GITHUB_SHA::7} .
           docker push ${{steps.repository.repository_uri}}:${GITHUB_SHA::7}
+      - run: |
+          echo "Deployed to ${{steps.repository.repository_uri}}:${GITHUB_SHA::7}"
