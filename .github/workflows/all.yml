@@ -31,8 +31,8 @@ jobs:
         run: |
           ops container-repository get website website --format=env >> $GITHUB_OUTPUT
       - run: |
-          ops container-repository login website website | docker login --username ${{steps.repository.Username}} --password-stdin ${{steps.repository.RepositoryUri}}
-          docker build -t ${{steps.repository.RepositoryUri}}:${GITHUB_SHA::7} .
-          docker push ${{steps.repository.RepositoryUri}}:${GITHUB_SHA::7}
+          ops container-repository login website website | docker login --username ${{steps.repository.outputs.Username}} --password-stdin ${{steps.repository.outputs.RepositoryUri}}
+          docker build -t ${{steps.repository.outputs.RepositoryUri}}:${GITHUB_SHA::7} .
+          docker push ${{steps.repository.outputs.RepositoryUri}}:${GITHUB_SHA::7}
       - run: |
-          echo "Deployed to ${{steps.repository.RepositoryUri}}:${GITHUB_SHA::7} successfully!"
+          echo "Deployed to ${{steps.repository.outputs.RepositoryUri}}:${GITHUB_SHA::7} successfully!"
