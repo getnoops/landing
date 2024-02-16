@@ -18,6 +18,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: getnoops/action-ops@v0.1
+        with:
+          tag: v0.2
       - run: |
           ops version
       - id: repository
