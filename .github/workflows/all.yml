@@ -15,7 +15,6 @@ permissions:
 env:
   NOOPS_ORGANISATION: ${{ vars.NOOPS_ORGANISATION }}
   NOOPS_API_GRAPHQL: ${{ vars.NOOPS_API_GRAPHQL }}
-  NOOPS_API_TOKEN: ${{ secrets.NOOPS_API_TOKEN }}
 
 jobs:
   deploy:
@@ -30,9 +29,13 @@ jobs:
       - id: repository
         run: |
           ops container-repository get website website --format=json >> $GITHUB_OUTPUT
+        env:
+          NOOPS_API_TOKEN: ${{ secrets.NOOPS_API_TOKEN }}
       - run: |
           ops container-repository login website website | docker login --username ${{steps.repository.username}} --password-stdin ${{steps.repository.repository_uri}}
           docker build -t ${{steps.repository.repository_uri}}:${GITHUB_SHA::7} .
           docker push ${{steps.repository.repository_uri}}:${GITHUB_SHA::7}
+        env:
+          NOOPS_API_TOKEN: ${{ secrets.NOOPS_API_TOKEN }}
       - run: |
           echo "Deployed to ${{steps.repository.repository_uri}}:${GITHUB_SHA::7} successfully!"
