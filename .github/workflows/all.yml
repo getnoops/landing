@@ -18,6 +18,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: getnoops/action-ops@v0.1
+      - run: |
+          ops version
       - id: repository
         run: |
           ops container-repository get website website --format=json >> $GITHUB_OUTPUT
