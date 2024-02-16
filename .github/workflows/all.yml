@@ -24,15 +24,15 @@ jobs:
       - uses: actions/checkout@v4
       - uses: getnoops/action-ops@v0.1
         with:
-          tag: v0.3
+          tag: v0.3.1
       - run: |
           ops version
       - id: repository
         run: |
-          ops container-repository get website website --format=json >> $GITHUB_OUTPUT
+          ops container-repository get website website --format=env >> $GITHUB_OUTPUT
       - run: |
-          ops container-repository login website website | docker login --username ${{steps.repository.username}} --password-stdin ${{steps.repository.repository_uri}}
-          docker build -t ${{steps.repository.repository_uri}}:${GITHUB_SHA::7} .
-          docker push ${{steps.repository.repository_uri}}:${GITHUB_SHA::7}
+          ops container-repository login website website | docker login --username ${{steps.repository.Username}} --password-stdin ${{steps.repository.RepositoryUri}}
+          docker build -t ${{steps.repository.RepositoryUri}}:${GITHUB_SHA::7} .
+          docker push ${{steps.repository.RepositoryUri}}:${GITHUB_SHA::7}
       - run: |
-          echo "Deployed to ${{steps.repository.repository_uri}}:${GITHUB_SHA::7} successfully!"
+          echo "Deployed to ${{steps.repository.RepositoryUri}}:${GITHUB_SHA::7} successfully!"
