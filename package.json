@@ -31,7 +31,7 @@
 		"axios": "^1.6.7",
 		"clsx": "^2.1.0",
 		"fireworks-js": "^2.10.7",
-		"framer-motion": "^11.0.3",
+		"framer-motion": "^11.0.5",
 		"postcss": "^8.4.35",
 		"prism-react-renderer": "^2.1.0",
 		"react": "^18.0.0",
