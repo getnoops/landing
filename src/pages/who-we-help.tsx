@@ -37,7 +37,10 @@ const sizes = [
 
 export default () => {
 	return (
-		<Layout title="How we can help">
+		<Layout
+			title="Who we help"
+			description="Whether you're a startup or a large enterprise, we can help you streamline your DevOps pipeline."
+		>
 			<section className="min-h-screen bg-noops-1000 pt-24 text-noops-300">
 				<div className="overflow-x-clip px-6 py-14">
 					<div className="relative mx-auto mt-12 max-w-2xl text-center md:mt-28">

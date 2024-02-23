@@ -45,7 +45,10 @@ export default () => {
 	});
 
 	return (
-		<Layout title="Launch Countdown">
+		<Layout
+			title="Launch countdown"
+			description="The countdown until the launch of the No_Ops platform."
+		>
 			<div className="relative flex h-[calc(100vh-6.813rem)] flex-col items-center bg-noops-1000">
 				<div
 					id="container"
@@ -132,7 +135,7 @@ export default () => {
 							<div className="absolute inset-0.5 rounded-md bg-noops-600 transition group-hover:opacity-30" />
 
 							<div className="relative flex w-full items-center gap-x-1 text-white">
-								{!countDownComplete ? "Contact Us" : "Try Now"}
+								{!countDownComplete ? "Contact us" : "Try now"}
 							</div>
 						</a>
 					</div>

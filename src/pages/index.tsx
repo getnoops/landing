@@ -7,7 +7,10 @@ import { YourTech } from "../content/YourTech";
 
 export default () => {
 	return (
-		<Layout title="Deploy faster than ever - No_Ops">
+		<Layout
+			title="Deploy faster than ever"
+			description="Deploy your projects faster than ever while keeping best practices and security in mind."
+		>
 			<div className="bg-noops-50">
 				<Hero />
 

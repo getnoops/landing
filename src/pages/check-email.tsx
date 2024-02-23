@@ -3,7 +3,7 @@ import { EmailQuickLinks, Footer } from "../components";
 
 export default () => {
 	return (
-		<Layout title="Check your Email">
+		<Layout title="Check your email">
 			<div className="bg-noops-50">
 				<div className="bg-noops-1000">
 					<div className="relative isolate">

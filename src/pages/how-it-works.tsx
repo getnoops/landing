@@ -15,7 +15,10 @@ import { HeroGradient, ServicesNew } from "../components/HowItWorks";
 
 export default () => {
 	return (
-		<Layout title="An Overview of our Solution">
+		<Layout
+			title="How it works"
+			description="An overview of the No_Ops solution"
+		>
 			<section className="min-h-screen bg-noops-1000 text-noops-300">
 				<HeroGradient />
 				<div className="relative z-30 flex h-screen items-center overflow-x-clip">

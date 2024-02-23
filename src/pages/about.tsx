@@ -9,7 +9,10 @@ import {
 
 export default () => {
 	return (
-		<Layout title="About Us - No_Ops">
+		<Layout
+			title="About Us - No_Ops"
+			description="Bridging developers to the cloud."
+		>
 			<div className="bg-noops-1000">
 				<div className="relative flex h-full min-h-[calc(100vh-8rem)] items-center justify-center bg-noops-1000">
 					<div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-full">
@@ -23,7 +26,7 @@ export default () => {
 								</h6>
 								<h1 className="mb-4 mt-2 text-5xl font-bold tracking-tight text-white md:text-6xl">
 									<span className="bg-gradient-to-b from-noops-100 to-noops-300 bg-clip-text py-1 text-transparent">
-										Bridging Developers to the Cloud
+										Bridging developers to the cloud
 									</span>
 								</h1>
 								<p className="mx-auto max-w-3xl text-balance text-2xl text-noops-300">

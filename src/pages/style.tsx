@@ -4,7 +4,10 @@ import { Colours, Logo, Typography } from "../components/Style";
 
 export default () => {
 	return (
-		<Layout title="No_Ops Style Guide">
+		<Layout
+			title="Style guide"
+			description="The official guidelines for No_Ops."
+		>
 			<div className="min-h-screen bg-slate-50 p-4">
 				<div className="mx-auto max-w-7xl py-24">
 					<div className="flex">

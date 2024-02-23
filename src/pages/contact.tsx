@@ -4,7 +4,10 @@ import Curve from "../components/SVGs/Curve/Curve";
 
 export default () => {
 	return (
-		<Layout title="Contact us">
+		<Layout
+			title="Contact us"
+			description="Whatever's on your mind, let us know"
+		>
 			<div className="flex flex-col justify-between bg-noops-1000">
 				<div className="bg-noops-1000">
 					<div className="relative min-h-screen overflow-clip">

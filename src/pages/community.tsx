@@ -7,7 +7,10 @@ import X from "../components/SVGs/X/X";
 
 export default () => {
 	return (
-		<Layout title="Community - Get Involved">
+		<Layout
+			title="Community"
+			description="Join the community and help us build the future of DevOps."
+		>
 			<div className="flex min-h-screen flex-col justify-between bg-noops-1000">
 				<div className="h-full bg-noops-1000">
 					<div className="relative">
@@ -23,7 +26,7 @@ export default () => {
 								<h1 className="text-5xl font-bold tracking-tight text-noops-100">
 									Get{" "}
 									<span className="bg-gradient-to-r from-noops-600 to-accent bg-clip-text py-1 font-extrabold text-transparent">
-										Involved
+										involved
 									</span>
 								</h1>
 								<p className="text-2xl text-noops-200">

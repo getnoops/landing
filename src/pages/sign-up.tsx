@@ -4,7 +4,7 @@ import Curve from "../components/SVGs/Curve/Curve";
 
 export default () => {
 	return (
-		<Layout title="Sign up - Try No_Ops">
+		<Layout title="Sign up" description="Sign up to No_Ops.">
 			<div className="flex flex-col justify-between bg-noops-1000">
 				<div className="bg-noops-1000">
 					<div className="relative min-h-screen overflow-clip">
