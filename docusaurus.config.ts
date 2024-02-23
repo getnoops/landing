@@ -41,10 +41,10 @@ const config: Config = {
 				]
 			: []),
 		{
-			src: '//js.hs-scripts.com/39503831.js',
+			src: "//js.hs-scripts.com/39503831.js",
 			defer: true,
 			async: true,
-			id: 'hs-script-loader',
+			id: "hs-script-loader",
 		},
 	],
 
@@ -81,15 +81,16 @@ const config: Config = {
 			comments: false,
 			headingIds: false,
 		},
+		mermaid: true,
 	},
 
 	presets: [
 		[
 			"classic",
 			{
-				// docs: {
-				// 	sidebarPath: "./docs-sidebar.ts",
-				// },
+				docs: {
+					sidebarPath: "./docs-sidebar.ts",
+				},
 				blog: {
 					blogDescription: "Deploy faster than ever",
 					blogSidebarTitle: "Latest posts",
@@ -102,7 +103,6 @@ const config: Config = {
 						copyright: `Copyright © ${new Date().getFullYear()} No_Ops.`,
 					},
 				},
-				docs: false,
 				theme: {
 					customCss: require.resolve("./src/css/custom.css"),
 				},
@@ -167,6 +167,8 @@ const config: Config = {
 			additionalLanguages: ["bash", "json"],
 		},
 	} satisfies ThemeConfig,
+
+	themes: ["@docusaurus/theme-mermaid"],
 
 	plugins: [
 		async function docusaurusTailwindcss(context, options) {

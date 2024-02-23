@@ -1,13 +1,90 @@
 ---
-id: welcome
+id: introduction
+description: The documentation of the No_Ops platform.
 ---
 
-# Welcome to the No_Ops docs!
+# Introduction
 
-## You'll be good here
+## Welcome to No_Ops!
+
+No_Ops is the modern infrastructure platform for web developers. Rather than being slowed down by DevOps and worried about security and performance, No_Ops allows you to focus on your product.
+
+## Getting starting
+
+Start by [setting up your organisation](./getting-starting/setup-organisation.mdx) and [linking your AWS account](./getting-starting/link-aws-account.mdx), then [create your first services](./getting-starting/create-first-service.mdx) and [invite your team members](./getting-starting/invite-team-members.mdx)!
+
+---
+
+## Tips about Docusaurus
+
+### Admonitions
+
+:::note[You can personalise the title ← see how you can personalise the title?]
+Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+:::
+
+:::tip
+Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+:::
 
 :::info
+Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+:::
 
-The rest is coming soon!
+:::warning
+Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+:::
+
+:::danger
+
+If Prettier annoys you in some cases, leave a blank line between the `:::` and the content. Also note that Prettier only supports MDX v1 at the moment, and this is MDX v3, so there might be bigger problems (see [here](https://docusaurus.io/docs/markdown-features/react)).
 
 :::
+
+### React and JSX
+
+import TabItem from "@theme/TabItem";
+import Tabs from "@theme/Tabs";
+
+<Tabs groupId="operating-systems">
+	<TabItem value="win" label="Windows">
+		Use Ctrl + C to copy.
+	</TabItem>
+	<TabItem value="mac" label="macOS">
+		Use Command + C to copy.
+	</TabItem>
+</Tabs>
+
+<Tabs groupId="operating-systems">
+	<TabItem value="win" label="Windows">
+		Use Ctrl + V to paste.
+	</TabItem>
+	<TabItem value="mac" label="macOS">
+		Use Command + V to paste.
+	</TabItem>
+</Tabs>
+
+### Diagrams
+
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
+
+See all diagram types available: https://mermaid.js.org/intro/
+
+### Apart from that it's regular Markdown
+
+- **Bold**, _italic_, `code`, [link](#) (start typing `.` then directly link to a `.mdx` file, VS Code should autocomplete).
+
+- Code block:
+
+```tsx title="/path/to/the/file.tsx"
+// This is TSX code
+<div>{theThing}</div>
+```
+
+- Titles level 2 (`##`) and 3 (`###`) appears in the side bar on the right.

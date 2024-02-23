@@ -1,0 +1,118 @@
+---
+description: Create your first No_Ops service.
+---
+
+import { Image } from "@site/src/components/Image";
+import environmentCreated from "./create-first-service--environment-created.webp";
+import domainCreated from "./create-first-service--domain-created.webp";
+import environments from "./create-first-service--environments.webp";
+import addEnvironment from "./create-first-service--add-environment.webp";
+import displayNameAndCode from "./create-first-service--display-name-and-code.webp";
+import awsAccount from "./create-first-service--aws-account.webp";
+import availabilityZonesAndRegions from "./create-first-service--availability-zones-and-regions.webp";
+import add from "./create-first-service--add.webp";
+import domains from "./create-first-service--domains.webp";
+import addDomain from "./create-first-service--add-domain.webp";
+import domainNameAndEnvironment from "./create-first-service--domain-name-and-environment.webp";
+import compute from "./create-first-service--compute.webp";
+import createCompute from "./create-first-service--create-compute.webp";
+import computeDisplayNameAndCode from "./create-first-service--compute-display-name-and-code.webp";
+import create from "./create-first-service--create.webp";
+
+# Create your first service
+
+Once you have [linked your AWS account](./link-aws-account.mdx), you are ready to create your first service.
+
+## 1. Create a new environment
+
+- In your organisation's settings, select `Environments` on the side bar.
+
+<Image
+	src={environments}
+	legend="'Environments' in your organisation settings"
+/>
+
+- Click `Add environment`.
+
+<Image src={addEnvironment} alt="Add environment" />
+
+- Enter a display name and a code for your new environment. The code can be similar to the name, but cannot contain spaces.
+
+<Image src={displayNameAndCode} legend="Enter a display name and a code" />
+
+- Select the linked AWS account in which to create this new environment.
+
+<Image src={awsAccount} legend="Select the AWS account for this environment" />
+
+- Select the number of availability zones, and the region, you would like for this environment.
+
+<Image
+	src={availabilityZonesAndRegions}
+	legend="Availability zones and region"
+/>
+
+- Click `Add`.
+
+<Image src={add} alt="'Add' button" />
+
+The new environment will be created. Once done, the portal will show it as `Created`:
+
+<Image src={environmentCreated} legend="Environment created" />
+
+## 2. Create a domain
+
+:::tip
+This step is only necessary if you wish to use your own domain for your service. If you are happy using the default domain provided by No_Ops, you can skip this step.
+:::
+
+- Still in your organisation's settings, select `Domains` on the side bar.
+
+<Image src={domains} legend="Environment created" />
+
+- Click `Add domain`.
+
+<Image src={addDomain} legend="Environment created" />
+
+- Enter the domain name, and select the environment you just created above.
+
+<Image src={domainNameAndEnvironment} legend="Environment created" />
+
+- Click `Add`.
+
+<Image src={add} alt="'Add' button" />
+
+The new domain will be set up and verified. Once done, the portal will show it as `Created` and `Verified`:
+
+<Image src={domainCreated} legend="Domain created and verified" />
+
+## 3. Create a compute
+
+:::tip[Info]
+
+In No_Ops, the main building block for services are called **compute**.
+
+:::
+
+- On the top left of the No_Ops portal, click `Compute`.
+
+<Image src={compute} legend="'Compute' in your company main navigation bar" />
+
+- Click `Create compute`.
+
+<Image src={createCompute} alt="Create compute" />
+
+- Enter a display name and a code for your new compute. The code can be similar to the name, but cannot contain spaces.
+
+<Image src={computeDisplayNameAndCode} legend="Display name and code" />
+
+- Click `Create`.
+
+<Image src={create} alt="'Create' button" />
+
+## 4. Add a container
+
+TODO
+
+## 5. Deploy
+
+TODO

@@ -1,0 +1,60 @@
+---
+description: Link your AWS account to your No_Ops organisation.
+---
+
+import { Image } from "@site/src/components/Image";
+import organisationSettings from "./link-aws-account--organisation-settings.webp";
+import awsAccount from "./link-aws-account--aws-account.webp";
+import addAccount from "./link-aws-account--add-account.webp";
+import displayName from "./link-aws-account--display-name.webp";
+import connectAccount from "./link-aws-account--connect-account.webp";
+import createStack from "./link-aws-account--create-stack.webp";
+
+# Link your AWS account
+
+Once you have [created a new organisation](./setup-organisation.mdx), you can link your AWS account to it.
+
+## 1. Log in to your AWS account
+
+- In the AWS console, simply log in to your AWS account.
+
+:::info[note]
+Please make sure you log in to the right AWS account, the one you want to link with No_Ops.
+:::
+
+## 2. Link your AWS account with No_Ops
+
+- On the top left of the No_Ops portal, click on the arrow next to your organisation's name, and select `Settings`.
+
+<Image src={organisationSettings} legend="Organisation settings" />
+
+- Click `AWS accounts` on the side bar.
+
+<Image
+	src={awsAccount}
+	legend="'AWS accounts' in your organisation settings side bar"
+/>
+
+- Click the button `Add account`.
+
+<Image src={addAccount} alt="Add account" />
+
+- Type a display name of your choosing. This is only use in No_Ops to help identify this account should you link more than one AWS accounts.
+
+<Image src={displayName} legend="Enter a name for your account" />
+
+- Click the `Connect your AWS account` button.
+
+<Image src={connectAccount} alt="Connect your AWS account" />
+
+- In the AWS console, click `Create stack` on the bottom right of the page.
+
+<Image src={createStack} alt="Create stack" />
+
+:::note[Next step]
+You are now ready to [create your first service](./create-first-service.mdx)!
+:::
+
+:::tip
+In the future, if you want to revoke all No_Ops access, simply remove this entry from CloudFormation in the AWS console.
+:::

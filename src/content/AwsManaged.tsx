@@ -9,7 +9,7 @@ export const AwsManaged = () => {
 						AWS{" "}
 					</span>
 					<span className="bg-gradient-to-r from-noops-600 to-accent bg-clip-text text-transparent">
-						Supercharged
+						supercharged
 					</span>
 				</h2>
 				<p className="mt-6 text-lg leading-8 text-slate-600">

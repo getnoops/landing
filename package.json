@@ -19,6 +19,7 @@
 	"dependencies": {
 		"@docusaurus/core": "^3.1.1",
 		"@docusaurus/preset-classic": "^3.1.1",
+		"@docusaurus/theme-mermaid": "^3.1.1",
 		"@fireworks-js/react": "^2.10.7",
 		"@headlessui/react": "^1.7.18",
 		"@heroicons/react": "^2.1.1",

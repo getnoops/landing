@@ -13,11 +13,11 @@ const Links = [
 				href: "/",
 			},
 			{
-				title: "Who We Help",
+				title: "Who we help",
 				href: "/who-we-help",
 			},
 			{
-				title: "How It Works",
+				title: "How it works",
 				href: "/how-it-works",
 			},
 			{
@@ -30,11 +30,11 @@ const Links = [
 		title: "COMPANY",
 		links: [
 			{
-				title: "About Us",
+				title: "About us",
 				href: "/about",
 			},
 			{
-				title: "Contact Us",
+				title: "Contact us",
 				href: "/contact",
 			},
 			{
