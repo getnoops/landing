@@ -1,0 +1,16 @@
+code: website
+class: compute
+name: Website
+
+resources:
+  - code: website
+    type: container
+    data:
+      image: ${Repositories_Website_RepositoryUri}:${Image_Tag}
+      cpu: 256
+      memory: 512
+      desired: 2
+      port: 80
+      environment:
+        - name: "DATABASE_URL"
+          value: ${Database_Url}
