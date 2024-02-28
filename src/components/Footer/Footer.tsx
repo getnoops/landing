@@ -21,6 +21,10 @@ const Links = [
 				href: "/how-it-works",
 			},
 			{
+				title: "Documentation",
+				href: "/docs",
+			},
+			{
 				title: "Pricing",
 				href: "/pricing",
 			},

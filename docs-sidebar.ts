@@ -5,12 +5,23 @@ const docsSidebar: SidebarsConfig = {
 		"introduction",
 		{
 			type: "category",
-			label: "Getting starting",
+			label: "Getting started",
 			items: [
-				"getting-starting/setup-organisation",
-				"getting-starting/link-aws-account",
-				"getting-starting/create-first-service",
-				"getting-starting/invite-team-members",
+				{
+					type: "category",
+					label: "Setup organisation",
+					items: [
+						"getting-started/setup-organisation/create-organisation",
+						"getting-started/setup-organisation/invite-team-members",
+					],
+				},
+				"getting-started/connect-aws-account",
+				"getting-started/create-environment",
+				"getting-started/add-domain",
+				"getting-started/add-edge",
+				"getting-started/cli",
+				"getting-started/deploy-first-compute",
+				"getting-started/ci-cd-cli",
 			],
 		},
 		{

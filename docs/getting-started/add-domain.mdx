@@ -1,0 +1,37 @@
+---
+description: Add a domain.
+---
+
+import { Image } from "@site/src/components/Image";
+
+# Add a domain
+
+Once you have [created an environment](./create-environment.mdx), you can add a domain.
+
+1. On the top left of the No_Ops portal, click on the arrow next to your organisation's name, and select `Settings`.
+
+   <Image src="/docs/organisation_settings.webp" />
+
+2. Click `Domains` on the sidebar and then `Add domain`.
+
+   <Image src="/docs/domain/add_domain.webp" />
+
+3. Specify your domain name, select the environment you want to assign this domain to and click `Add`.
+
+   <Image src="/docs/domain/add_domain_dialog.webp" />
+
+4. Once your domain has been created, you need to verify the nameservers with your domain provider.
+
+   <Image src="/docs/domain/verify.webp" />
+
+5. Copy each nameserver into your DNS management console and click `Verify`.
+
+   <Image src="/docs/domain/nameservers.webp" />
+
+6. Once AWS verifies your domain, No_Ops will display the domain as `Verified`.
+
+   <Image src="/docs/domain/verified.webp" />
+
+:::note[Next step]
+You are now ready to [create an edge](./add-edge.mdx)!
+:::

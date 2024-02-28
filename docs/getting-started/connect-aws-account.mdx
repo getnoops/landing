@@ -1,0 +1,50 @@
+---
+description: Connect your AWS account to your No_Ops organisation.
+---
+
+import { Image } from "@site/src/components/Image";
+
+# Connect your AWS account
+
+Once you have [created an organisation](./setup-organisation/create-organisation.mdx), you can connect your AWS account to it.
+
+## Log in to your AWS account
+
+- No_Ops creates a `CloudFormation` stack by redirecting to the [AWS console](https://console.aws.amazon.com/console/home), make sure you are logged in to the right AWS account.
+
+  <Image src="/docs/awsaccount/aws_console.webp" />
+
+---
+
+## Connect your AWS account to No_Ops
+
+1. On the top left of the No_Ops portal, click on the arrow next to your organisation's name, and select `Settings`.
+
+   <Image src="/docs/organisation_settings.webp" />
+
+2. Click `AWS accounts` on the sidebar and then `Add account`.
+
+   <Image src="/docs/awsaccount/add_aws_account.webp" alt="Add account" />
+
+3. Type a display name (used to help identify this AWS account should you link more than one) and select `connect your AWS account`.
+
+   <Image src="/docs/awsaccount/add_aws_account_dialog.webp" />
+
+4. You will be redirected to the AWS console to create a CloudFormation stack. Scroll to the bottom, acknowledge and select `Create stack`.
+   :::danger
+   Do not modify any of the prefilled values including the stack name. No_Ops references these values when creating infrastructure.
+   :::
+
+   <Image src="/docs/awsaccount/create_stack.webp" />
+
+5. Once the CloudFormation stack completes, you can view your AWS account by selecting the circled chevron on the right of the account.
+
+   <Image src="/docs/awsaccount/view_account.webp" />
+
+:::tip
+If you want to revoke all No_Ops access, simply remove this entry from CloudFormation in the AWS console.
+:::
+
+:::note[Next step]
+You are now ready to [create your first environment](./create-environment.mdx)!
+:::
