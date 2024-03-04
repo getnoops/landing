@@ -52,6 +52,12 @@ button {
 	font-family: "Mona Sans";
 }
 
+hr {
+	/* noops-400 */
+	background-color: hsl(259, 88%, 76%);
+	opacity: 30%;
+}
+
 /* Border reset (part of Tailwind's prefling) allowing to use simply `border` to draw a border; it doesn't interfere with Infima's styles */
 
 *,

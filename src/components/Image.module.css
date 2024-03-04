@@ -1,8 +1,8 @@
 .imageWrapper {
-	margin-bottom: 32px;
+	margin-bottom: 60px;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	align-items: start;
 }
 
 .imageWrapper.withLegend {

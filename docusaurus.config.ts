@@ -132,13 +132,13 @@ const config: Config = {
 				href: "/",
 			},
 			items: [
-				// {
-				// 	to: "docs",
-				// 	label: "Docs",
-				// },
 				{
 					to: "blog",
 					label: "Events",
+				},
+				{
+					to: "docs",
+					label: "Documentation",
 				},
 
 				{

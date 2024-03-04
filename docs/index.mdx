@@ -7,84 +7,103 @@ description: The documentation of the No_Ops platform.
 
 ## Welcome to No_Ops!
 
-No_Ops is the modern infrastructure platform for web developers. Rather than being slowed down by DevOps and worried about security and performance, No_Ops allows you to focus on your product.
+No_Ops is the modern infrastructure platform for software engineers.
 
-## Getting starting
-
-Start by [setting up your organisation](./getting-starting/setup-organisation.mdx) and [linking your AWS account](./getting-starting/link-aws-account.mdx), then [create your first services](./getting-starting/create-first-service.mdx) and [invite your team members](./getting-starting/invite-team-members.mdx)!
+Rather than being slowed down by DevOps and worried about security and performance, No_Ops allows you to focus on your product.
 
 ---
 
-## Tips about Docusaurus
+## Getting started
 
-### Admonitions
+Before getting into any setup, we'd like to go over some No_Ops specific concepts:
 
-:::note[You can personalise the title ← see how you can personalise the title?]
-Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+### Configs
+
+:::tip[Configs]
+Configs are the main building block in No_Ops, you will spend most of your time creating and managing configs.
 :::
 
-:::tip
-Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+There are three types of configs:
+
+- Compute _(EC2 instances)_
+
+- Storage _(RDS database clusters)_
+
+- Integration _(SNS topics and SQS queues)_
+
+### Resources
+
+:::tip[Resources]
+Resources are the actual infrastructure behind your configs. Each config has at least once resource.
 :::
 
-:::info
-Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+- Compute:
+
+  ```mermaid
+  flowchart LR
+  compute["Compute"]
+
+  container["Container"]
+  bucket["Bucket"]
+  database["Database"]
+  queue["Queue"]
+
+  compute --> container
+  compute --> bucket
+  compute --> database
+  compute --> queue
+  ```
+
+- Storage:
+
+  ```mermaid
+  flowchart LR
+  storage["Storage"]
+
+  cluster["Cluster"]
+
+
+  storage --> cluster
+  ```
+
+- Integration:
+
+  ```mermaid
+  flowchart LR
+  queue["Queue"]
+
+  notification["Notification"]
+  ```
+
+### FAQ
+
+<details>
+	<summary>
+		What is the difference between an integration `Queue` and a resource `Queue`?
+	</summary>
+
+    <div>
+    You may have noticed that there is an integration config type called `Queue` and a compute resource type called `Queue`.
+
+<ol>
+	<li>
+		If you want a globally accessible queue for multiple computes, use the
+		`integration` config type `Queue`.
+	</li>
+
+    <li>
+    If you want a queue that is only accessible by a single compute, use the `resource`
+    type `Queue`.
+    </li>
+
+</ol>
+
+This rule applies to the `Notification` config and resource types as well.
+
+   </div>
+
+</details>
+
+:::note[Next step]
+Start by [creating your own organisation](./getting-started/setup-organisation/create-organisation.mdx).
 :::
-
-:::warning
-Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
-:::
-
-:::danger
-
-If Prettier annoys you in some cases, leave a blank line between the `:::` and the content. Also note that Prettier only supports MDX v1 at the moment, and this is MDX v3, so there might be bigger problems (see [here](https://docusaurus.io/docs/markdown-features/react)).
-
-:::
-
-### React and JSX
-
-import TabItem from "@theme/TabItem";
-import Tabs from "@theme/Tabs";
-
-<Tabs groupId="operating-systems">
-	<TabItem value="win" label="Windows">
-		Use Ctrl + C to copy.
-	</TabItem>
-	<TabItem value="mac" label="macOS">
-		Use Command + C to copy.
-	</TabItem>
-</Tabs>
-
-<Tabs groupId="operating-systems">
-	<TabItem value="win" label="Windows">
-		Use Ctrl + V to paste.
-	</TabItem>
-	<TabItem value="mac" label="macOS">
-		Use Command + V to paste.
-	</TabItem>
-</Tabs>
-
-### Diagrams
-
-```mermaid
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
-```
-
-See all diagram types available: https://mermaid.js.org/intro/
-
-### Apart from that it's regular Markdown
-
-- **Bold**, _italic_, `code`, [link](#) (start typing `.` then directly link to a `.mdx` file, VS Code should autocomplete).
-
-- Code block:
-
-```tsx title="/path/to/the/file.tsx"
-// This is TSX code
-<div>{theThing}</div>
-```
-
-- Titles level 2 (`##`) and 3 (`###`) appears in the side bar on the right.

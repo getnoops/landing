@@ -1,0 +1,71 @@
+---
+description: Create your first compute.
+---
+
+import { Image } from "@site/src/components/Image";
+
+# Create your first compute
+
+Once you have an [environment](./create-environment.mdx), you can create & deploy your first compute.
+
+1. In the top left of the No_Ops portal, click `Compute`, then select `Create compute` on the right.
+
+   <Image src="/docs/compute/create_compute.webp" />
+
+2. Give your compute a name and code, along with an optional folder to place it in. Then click `Create`.
+
+   <Image src="/docs/compute/create_compute_form.webp" />
+
+---
+
+### Add a container repository
+
+Each compute requires a separate container repository (ECR) which will store your container images.
+
+3. On the compute's dashboard, click `Repositories` in the top navbar or `Create a container repository`.
+
+   <Image src="/docs/compute/no_container_repositories.webp" />
+
+4. Click `Create repository`.
+
+   <Image src="/docs/compute/create_repository.webp" />
+
+5. Enter a code for your container repository and click `Create`.
+
+   <Image src="/docs/compute/create_repository_dialog.webp" />
+
+6. You can now view information about your repository.
+
+   <Image src="/docs/compute/view_repository.webp" />
+
+---
+
+### Configure a container resource
+
+7. Go back to the compute dashboard in the top navbar and click the `Add a resource for [compute-code]` button.
+
+   <Image src="/docs/compute/add_compute_resource.webp" />
+
+8. Add the image URI of your container (will be pushed to ECR in the [Add the CLI to your pipeline](./cli/ci-cd-cli) step) and configure options such as CPU & memory.
+
+   <Image src="/docs/compute/container_info.webp" />
+
+9. If you want your compute to be publicly accessible, click the `Edges` tab.
+
+   <Image src="/docs/compute/compute_edges.webp" />
+
+### Allow communication to / from your compute
+
+10. Configs are zero trust by default. If you have services that communicate between each other, you'll have to explicitly specify them.
+
+    <Image src="/docs/compute/allow_access.webp" />
+
+---
+
+11. You're ready to go! Click `Save` in the bottom right.
+
+    <Image src="/docs/compute/save_compute.webp" />
+
+:::note[Next step]
+You are now ready to [learn about the No_Ops CLI](./cli/learn-cli)
+:::

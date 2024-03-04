@@ -5,30 +5,48 @@ const docsSidebar: SidebarsConfig = {
 		"introduction",
 		{
 			type: "category",
-			label: "Getting starting",
+			label: "Getting started",
 			items: [
-				"getting-starting/setup-organisation",
-				"getting-starting/link-aws-account",
-				"getting-starting/create-first-service",
-				"getting-starting/invite-team-members",
-			],
-		},
-		{
-			type: "category",
-			label: "Reference",
-			items: [
-				"reference/organisations",
-				"reference/folders",
-				"reference/compute",
-				"reference/storage",
-				"reference/integration",
 				{
 					type: "category",
-					label: "Routing",
-					items: ["reference/routing/domains", "reference/routing/edges"],
+					label: "Setup organisation",
+					items: [
+						"getting-started/setup-organisation/create-organisation",
+						"getting-started/setup-organisation/invite-team-members",
+					],
+				},
+				"getting-started/connect-aws-account",
+				"getting-started/create-environment",
+				"getting-started/add-domain",
+				"getting-started/add-edge",
+				"getting-started/create-first-compute",
+				{
+					type: "category",
+					label: "CLI",
+					items: [
+						"getting-started/cli/learn-cli",
+						"getting-started/cli/ci-cd-cli",
+					],
 				},
 			],
 		},
+		// TODO: Reference
+		// {
+		// 	type: "category",
+		// 	label: "Reference",
+		// 	items: [
+		// 		"reference/organisations",
+		// 		"reference/folders",
+		// 		"reference/compute",
+		// 		"reference/storage",
+		// 		"reference/integration",
+		// 		{
+		// 			type: "category",
+		// 			label: "Routing",
+		// 			items: ["reference/routing/domains", "reference/routing/edges"],
+		// 		},
+		// 	],
+		// },
 	],
 };
 
