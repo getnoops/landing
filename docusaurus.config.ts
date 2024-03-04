@@ -120,10 +120,10 @@ const config: Config = {
 			defaultMode: "dark",
 		},
 		image: "logo_smile.svg",
-		announcementBar: {
-			content: `🎉️ <b>Come meet us at <a href="/blog/no_ops-launch-party">No_Ops's launch party</a> in Sydney on February 29th!</b> 🥳️`,
-			isCloseable: false,
-		},
+		// announcementBar: {
+		// 	content: `🎉️ <b>Come meet us at <a href="/blog/no_ops-launch-party">No_Ops's launch party</a> in Sydney on February 29th!</b> 🥳️`,
+		// 	isCloseable: false,
+		// },
 		navbar: {
 			hideOnScroll: true,
 			logo: {
