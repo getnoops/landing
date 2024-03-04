@@ -19,27 +19,34 @@ const docsSidebar: SidebarsConfig = {
 				"getting-started/create-environment",
 				"getting-started/add-domain",
 				"getting-started/add-edge",
-				"getting-started/cli",
-				"getting-started/deploy-first-compute",
-				"getting-started/ci-cd-cli",
-			],
-		},
-		{
-			type: "category",
-			label: "Reference",
-			items: [
-				"reference/organisations",
-				"reference/folders",
-				"reference/compute",
-				"reference/storage",
-				"reference/integration",
+				"getting-started/create-first-compute",
 				{
 					type: "category",
-					label: "Routing",
-					items: ["reference/routing/domains", "reference/routing/edges"],
+					label: "CLI",
+					items: [
+						"getting-started/cli/learn-cli",
+						"getting-started/cli/ci-cd-cli",
+					],
 				},
 			],
 		},
+		// TODO: Reference
+		// {
+		// 	type: "category",
+		// 	label: "Reference",
+		// 	items: [
+		// 		"reference/organisations",
+		// 		"reference/folders",
+		// 		"reference/compute",
+		// 		"reference/storage",
+		// 		"reference/integration",
+		// 		{
+		// 			type: "category",
+		// 			label: "Routing",
+		// 			items: ["reference/routing/domains", "reference/routing/edges"],
+		// 		},
+		// 	],
+		// },
 	],
 };
 

@@ -1,0 +1,139 @@
+---
+description: Use the No_Ops CLI in your build pipeline.
+---
+
+import { Image } from "@site/src/components/Image";
+
+# Add the CLI to your pipeline
+
+Automate deployments to No_Ops in GitHub actions using the No_Ops CLI.
+
+---
+
+## Application configuration file
+
+The GitHub Actions workflow requires a configuration file in your repository to define the deployment process.
+
+`Why do I need to create a configuration file and store it in my repository if I've already defined resources in No_Ops?`
+  - You can overwrite any configuration defined for a compute resource using the configuration file in your repository
+  - This allows you to:
+    - Use environment variables in your configuration file (eg. image name, database URL, etc.)
+    - Define different configurations for different environments
+    - Use the same configuration file across multiple repositories
+
+---
+
+1. Create a `noops.yaml` file in the root directory of your repository.
+2. We've provided a template below, but if you want to generate a more specific configuration file, you can use the `ops compute get` command.
+<details>
+<summary>Sample `noops.yaml` file to be stored in the root directory of your repository</summary>
+```yaml
+code: website
+class: compute
+
+resources:
+  - code: website
+    type: container
+    data:
+      # Environment variables passed from the GitHub Actions workflow
+      image: ${Repositories_Website_RepositoryUri}:${Image_Tag}
+
+      # These values are optional & will overwrite the values defined in No_Ops
+      cpu: 256
+      memory: 512
+      desired: 2
+      port: 80
+```
+</details>
+   
+```bash
+ops compute get [compute-code] --format=yaml
+```
+
+3. Commit this to your repository.
+
+---
+
+## Create an API key
+
+Create a No_Ops API key and store it as a secret in GitHub actions.
+
+1. On the top left of the No_Ops portal, click on the arrow next to your organisation's name, and select `Settings`.
+
+   <Image src="/docs/organisation_settings.webp" />
+
+2. Click on `API Keys` in the left-hand menu, then select `Create` on the right.
+
+   <Image src="/docs/keys/create_key.webp" />
+
+3. Generate a new key and copy it to your clipboard. Store it as a secret in your GitHub repository.
+
+   <Image src="/docs/keys/generate_key.gif" />
+
+If you're unsure about how to add secrets to a GitHub repository, see the following article:
+
+- [Creating secrets for a repository - GitHub Docs](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions#creating-secrets-for-a-repository)
+
+---
+
+## Setup GitHub Actions Workflow
+
+We've provided a sample GitHub Actions configuration file below to help you get started.
+
+You can use this as a starting point and modify it to fit your needs.
+
+<details>
+<summary>Sample GitHub Actions Workflow</summary>
+```yaml
+name: No_Ops deployment
+
+on:
+  push:
+    branches: "main"
+
+concurrency:
+  group: "no_ops"
+  cancel-in-progress: true
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  NOOPS_API_TOKEN: ${{ secrets.NOOPS_API_TOKEN }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: getnoops/action-ops@v0.1
+        with:
+          tag: v0.4.0
+
+      - id: repository
+        run: |
+          ops this info --format=env >> $GITHUB_OUTPUT
+
+      - id: build
+        run: |
+          ops container-repository login | docker login --username ${{steps.repository.outputs.RegistryUsername}} --password-stdin ${{steps.repository.outputs.RegistryUri}}
+          docker build -t ${{steps.repository.outputs.Repositories_Website_RepositoryUri}}:${GITHUB_SHA::7} .
+          docker push ${{steps.repository.outputs.Repositories_Website_RepositoryUri}}:${GITHUB_SHA::7}
+          echo "Image_Tag=${GITHUB_SHA::7}" >> $GITHUB_OUTPUT
+      - run: |
+          echo $GITHUB_OUTPUT
+      - run: |
+          ops this update --deploy=dev --next --vars-file .env --vars-file $GITHUB_OUTPUT
+        env:
+          Repositories_Website_RepositoryUri: ${{steps.repository.outputs.Repositories_Website_RepositoryUri}}
+          Image_Tag: ${{steps.build.outputs.Image_Tag}}
+
+```
+</details>
+
+- The `ops this` command refers to the `noops.yaml` file in your repository.
+- The `ops container-repository login` command logs you into the No_Ops container repository.
+- The `ops this update` command updates the deployment with the new image
+  - `--next` flag uses the next minor version
+  - `--vars-file` flag uses the environment variables from your `.env` file

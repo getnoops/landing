@@ -1,0 +1,90 @@
+---
+description: Learn about the No_Ops CLI.
+---
+
+import { Image } from "@site/src/components/Image";
+
+# Learn about the No_Ops CLI
+
+:::info
+This page is mainly for power users, if you just want to deploy an application, see [Add the CLI to your pipeline](./ci-cd-cli).
+:::
+
+The main use of the CLI is to:
+
+- Allow power users to interact with the No_Ops platform from the command line
+- Automate deployments to an environment using GitHub Actions (see [Add the CLI to your pipeline](./ci-cd-cli))
+
+## Installation
+
+You can install the CLI directly from our [GitHub releases](https://github.com/getnoops/ops/releases) page.
+
+## Usage
+
+:::tip
+You can get a full list of commands by running `ops --help`
+:::
+
+We'll go over some basic commands to get you started.
+
+### Login
+
+Authenticates the CLI with your No_Ops account
+
+```bash
+ops login
+```
+
+### Select an organisation
+
+Sets the current organisation for the CLI
+
+```bash
+ops orgs list
+```
+
+```bash
+ops settings set orgs [org-code]
+```
+
+### Container repository (ECR)
+
+```bash
+ops container-repository list [compute-code]
+```
+
+```bash
+ops container-repository create [compute-code] [new-ecr-repo-code]
+```
+
+```bash
+ops container-repository delete [compute-code] [ecr-repo-code]
+```
+
+### API keys
+
+:::danger
+If you lose your API key it's gone forever. You'll need to create a new one and update your GitHub secrets.
+:::
+
+```bash
+ops keys create
+```
+
+If you've lost your key and need to generate a new one, you can use the following command:
+
+```bash
+ops keys update [key-id]
+```
+
+### Deployments
+
+```bash
+ops deploy apply [env-code] [config-code] [version-number] [flags]
+```
+
+---
+
+:::note[Next step]
+We'll go over [adding the CLI to your pipeline](./ci-cd-cli.mdx) which will automate your deployments to an environment.
+:::

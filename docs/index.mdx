@@ -17,6 +17,8 @@ Rather than being slowed down by DevOps and worried about security and performan
 
 Before getting into any setup, we'd like to go over some No_Ops specific concepts:
 
+### Configs
+
 :::tip[Configs]
 Configs are the main building block in No_Ops, you will spend most of your time creating and managing configs.
 :::
@@ -28,6 +30,79 @@ There are three types of configs:
 - Storage _(RDS database clusters)_
 
 - Integration _(SNS topics and SQS queues)_
+
+### Resources
+
+:::tip[Resources]
+Resources are the actual infrastructure behind your configs. Each config has at least once resource.
+:::
+
+- Compute:
+
+  ```mermaid
+  flowchart LR
+  compute["Compute"]
+
+  container["Container"]
+  bucket["Bucket"]
+  database["Database"]
+  queue["Queue"]
+
+  compute --> container
+  compute --> bucket
+  compute --> database
+  compute --> queue
+  ```
+
+- Storage:
+
+  ```mermaid
+  flowchart LR
+  storage["Storage"]
+
+  cluster["Cluster"]
+
+
+  storage --> cluster
+  ```
+
+- Integration:
+
+  ```mermaid
+  flowchart LR
+  queue["Queue"]
+
+  notification["Notification"]
+  ```
+
+### FAQ
+
+<details>
+	<summary>
+		What is the difference between an integration `Queue` and a resource `Queue`?
+	</summary>
+
+    <div>
+    You may have noticed that there is an integration config type called `Queue` and a compute resource type called `Queue`.
+
+<ol>
+	<li>
+		If you want a globally accessible queue for multiple computes, use the
+		`integration` config type `Queue`.
+	</li>
+
+    <li>
+    If you want a queue that is only accessible by a single compute, use the `resource`
+    type `Queue`.
+    </li>
+
+</ol>
+
+This rule applies to the `Notification` config and resource types as well.
+
+   </div>
+
+</details>
 
 :::note[Next step]
 Start by [creating your own organisation](./getting-started/setup-organisation/create-organisation.mdx).
