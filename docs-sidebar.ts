@@ -24,10 +24,11 @@ const docsSidebar: SidebarsConfig = {
 					type: "category",
 					label: "CLI",
 					items: [
-						"getting-started/cli/learn-cli",
 						"getting-started/cli/ci-cd-cli",
+						"getting-started/cli/learn-cli",
 					],
 				},
+				"getting-started/promoting-deployments",
 			],
 		},
 		// TODO: Reference

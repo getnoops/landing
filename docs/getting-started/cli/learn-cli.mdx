@@ -35,6 +35,8 @@ Authenticates the CLI with your No_Ops account
 ops login
 ```
 
+---
+
 ### Select an organisation
 
 Sets the current organisation for the CLI
@@ -47,19 +49,35 @@ ops orgs list
 ops settings set orgs [org-code]
 ```
 
-### Container repository (ECR)
+---
+
+### This
+
+:::note
+`this` is a special keyword that accesses a specified `noops.yaml` configuration file.
+:::
+
+Create a new config using a `noops.yaml` file:
 
 ```bash
-ops container-repository list [compute-code]
+ops this create -f=[noops.yaml directory]
 ```
 
-```bash
-ops container-repository create [compute-code] [new-ecr-repo-code]
-```
+Update a config with changes in your `noops.yaml` file to the next patch version:
 
 ```bash
-ops container-repository delete [compute-code] [ecr-repo-code]
+ops this update -f=[noops.yaml directory] --next
 ```
+
+---
+
+### Deployments
+
+```bash
+ops deploy apply [env-code] [config-code] [version-number] [flags]
+```
+
+---
 
 ### API keys
 
@@ -77,14 +95,24 @@ If you've lost your key and need to generate a new one, you can use the followin
 ops keys update [key-id]
 ```
 
-### Deployments
+---
+
+### Container repository (ECR)
 
 ```bash
-ops deploy apply [env-code] [config-code] [version-number] [flags]
+ops container-repository list [compute-code]
+```
+
+```bash
+ops container-repository create [compute-code] [new-ecr-repo-code]
+```
+
+```bash
+ops container-repository delete [compute-code] [ecr-repo-code]
 ```
 
 ---
 
 :::note[Next step]
-We'll go over [adding the CLI to your pipeline](./ci-cd-cli.mdx) which will automate your deployments to an environment.
+You can now [see how to promote deployments to another environment](../promoting-deployments).
 :::

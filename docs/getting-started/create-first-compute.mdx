@@ -18,54 +18,58 @@ Once you have an [environment](./create-environment.mdx), you can create & deplo
 
 ---
 
-### Add a container repository
+### Create your first revision
 
-Each compute requires a separate container repository (ECR) which will store your container images.
+Specify your container resource options and add any extra resources such as a bucket, database or queue.
 
-3. On the compute's dashboard, click `Repositories` in the top navbar or `Create a container repository`.
+:::note[What is a revision?]
+A revision is a version of your compute. You can have multiple revisions of a compute, each with different configurations.
+:::
 
-   <Image src="/docs/compute/no_container_repositories.webp" />
+3. Click `Create revision`.
 
-4. Click `Create repository`.
+   <Image src="/docs/compute/create_revision.webp" />
 
-   <Image src="/docs/compute/create_repository.webp" />
-
-5. Enter a code for your container repository and click `Create`.
-
-   <Image src="/docs/compute/create_repository_dialog.webp" />
-
-6. You can now view information about your repository.
-
-   <Image src="/docs/compute/view_repository.webp" />
-
----
-
-### Configure a container resource
-
-7. Go back to the compute dashboard in the top navbar and click the `Add a resource for [compute-code]` button.
-
-   <Image src="/docs/compute/add_compute_resource.webp" />
-
-8. Add the image URI of your container (will be pushed to ECR in the [Add the CLI to your pipeline](./cli/ci-cd-cli) step) and configure options such as CPU & memory.
+4. Add the image tag of your container (will be pushed to ECR in the [Add the CLI to your pipeline](./cli/ci-cd-cli) step) and configure options such as CPU & memory.
 
    <Image src="/docs/compute/container_info.webp" />
 
-9. If you want your compute to be publicly accessible, click the `Edges` tab.
+5. If you want your compute to be publicly accessible, click the `Edges` tab.
 
    <Image src="/docs/compute/compute_edges.webp" />
 
 ### Allow communication to / from your compute
 
-10. Configs are zero trust by default. If you have services that communicate between each other, you'll have to explicitly specify them.
+6. Configs are zero trust by default. If you have services that communicate between each other, you'll have to explicitly specify them.
 
-    <Image src="/docs/compute/allow_access.webp" />
+   <Image src="/docs/compute/allow_access.webp" />
 
 ---
 
-11. You're ready to go! Click `Save` in the bottom right.
+7. You're ready to go! Click `Save` in the bottom right.
 
-    <Image src="/docs/compute/save_compute.webp" />
+   <Image src="/docs/compute/save_compute.webp" />
+
+---
+
+### Container repositories
+
+:::note
+Each compute requires a separate container repository (ECR) which will store your container images.
+:::
+
+Each time a compute is created, you'll notice that a container repository is also created by default:
+
+<Image src="/docs/compute/repository_notification.webp" />
+
+<Image src="/docs/compute/view_repository.webp" />
+
+:::tip
+You can add as many container repositories as you like for a compute.
+:::
+
+---
 
 :::note[Next step]
-You are now ready to [learn about the No_Ops CLI](./cli/learn-cli)
+You can now learn about [deploying your compute to an environment using the CLI](./cli/ci-cd-cli.mdx).
 :::

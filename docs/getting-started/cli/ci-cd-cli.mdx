@@ -28,21 +28,58 @@ The GitHub Actions workflow requires a configuration file in your repository to 
 <details>
 <summary>Sample `noops.yaml` file to be stored in the root directory of your repository</summary>
 ```yaml
-code: website
+code: graphql-api
 class: compute
+name: GraphQL API
 
 resources:
-  - code: website
+  - code: db
+    type: database
+    data:
+      cluster: database
+
+  - code: api
     type: container
     data:
-      # Environment variables passed from the GitHub Actions workflow
+       # Environment variables passed from the GitHub Actions workflow
       image: ${Repositories_Website_RepositoryUri}:${Image_Tag}
 
-      # These values are optional & will overwrite the values defined in No_Ops
+      # Configuration options
+      port: 8080
+      desired: 2
       cpu: 256
       memory: 512
-      desired: 2
-      port: 80
+
+      # Environment variables
+      env_vars:
+        PORT: :8080
+        SRVADDR: :8080
+        METRICSADDR: :8081
+        HEALTHADDR: :8082
+        DATA_TYPE: pg
+        DATA_PG_HOST: "{{this:db:host}}" # `this` refers to the `db` resource defined above
+        DATA_PG_PORT: "{{this:db:port}}"
+        DATA_PG_DATABASE: "{{this:db:name}}"
+        DATA_PG_SSLMODE: require
+        UGLYDOMAIN_DOMAIN: dev-cc.net
+
+      # Secrets stored in secrets manager
+      secret:
+        DATA_PG_USERNAME: "{{this:db:userpass:username}}"
+        DATA_PG_PASSWORD: "{{this:db:userpass:password}}"
+
+    # You can override specific values for different environments
+    overrides:
+      environment:
+        prod:
+          env_vars:
+            UGLYDOMAIN_DOMAIN: n-cc.net
+
+# Inbound and outbound traffic rules
+access:
+  inbound: []
+  outbound: []
+
 ```
 </details>
    
@@ -137,3 +174,9 @@ jobs:
 - The `ops this update` command updates the deployment with the new image
   - `--next` flag increments to the next patch version
   - `--vars-file` flag uses the environment variables from your `.env` file
+
+---
+
+:::note[Next step]
+You can now [learn more about the No_Ops CLI](./learn-cli) or [see how to promote deployments to another environment](../promoting-deployments).
+:::
