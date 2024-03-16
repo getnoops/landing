@@ -25,81 +25,106 @@ Configs are the main building block in No_Ops, you will spend most of your time 
 
 There are three types of configs:
 
-- Compute _(EC2 instances)_
+1. Compute
 
-- Storage _(RDS database clusters)_
+   - EC2 instances
 
-- Integration _(SNS topics and SQS queues)_
+2. Storage
+
+   - RDS database clusters
+
+3. Integration
+
+   - SNS topics
+   - SQS queues
 
 ### Resources
 
 :::tip[Resources]
-Resources are the actual infrastructure behind your configs. Each config has at least once resource.
+Resources are the actual infrastructure behind your configs. **Each config has at least once resource.**
 :::
 
-- Compute:
+```mermaid
+flowchart LR
+config["Config"]
 
-  ```mermaid
-  flowchart LR
-  compute["Compute"]
-
-  container["Container"]
-  bucket["Bucket"]
-  database["Database"]
-  queue["Queue"]
-
-  compute --> container
-  compute --> bucket
-  compute --> database
-  compute --> queue
-  ```
-
-- Storage:
-
-  ```mermaid
-  flowchart LR
-  storage["Storage"]
-
-  cluster["Cluster"]
+resource["Resource"]
 
 
-  storage --> cluster
-  ```
+config --> resource
+```
 
-- Integration:
+<br />
 
-  ```mermaid
-  flowchart LR
-  queue["Queue"]
+A config by itself is just a placeholder, it doesn't do anything until a resource is added to it.
 
-  notification["Notification"]
-  ```
+See each config mapped to its possible resources below:
+
+<br />
+
+```mermaid
+flowchart LR
+compute["Compute"]
+
+container["Container"]
+bucket["Bucket"]
+database["Database"]
+queue["Queue"]
+
+compute --> container
+compute --> bucket
+compute --> database
+compute --> queue
+```
+
+<br />
+<br />
+<br />
+
+```mermaid
+flowchart LR
+storage["Storage"]
+
+cluster["Cluster"]
+
+
+storage --> cluster
+```
+
+<br />
+<br />
+<br />
+
+```mermaid
+flowchart LR
+queue["Queue"]
+queue --> queue
+
+notification["Notification"]
+notification --> notification
+```
 
 ### FAQ
 
 <details>
 	<summary>
-		What is the difference between an integration `Queue` and a resource `Queue`?
+		What is the difference between an `Integration Config Queue` and a `Compute Resource Queue`?
 	</summary>
 
     <div>
-    You may have noticed that there is an integration config type called `Queue` and a compute resource type called `Queue`.
+    You may have noticed that there is an integration config type named queue and a compute resource type named queue.
 
 <ol>
 	<li>
-		If you want a globally accessible queue for multiple computes, use the
-		`integration` config type `Queue`.
+		`If you want a globally accessible queue for multiple computes, use the
+		integration config queue`.
 	</li>
 
     <li>
-    If you want a queue that is only accessible by a single compute, use the `resource`
-    type `Queue`.
+    `If you want a queue that is only accessible by a single compute, use the compute resource queue`.
     </li>
 
 </ol>
-
-This rule applies to the `Notification` config and resource types as well.
-
    </div>
 
 </details>
