@@ -20,19 +20,16 @@ export default () => {
 								<h6 className="text-base font-normal text-noops-300">
 									Sign up
 								</h6>
+
 								<h1 className="text-5xl font-bold tracking-tight text-noops-100">
-									Join the{" "}
+									Explore our{" "}
 									<span className="bg-gradient-to-r from-noops-600 to-accent bg-clip-text py-1 font-extrabold text-transparent">
-										wait list
+										solution
 									</span>
-									{/* Explore our{" "}
-									<span className="bg-gradient-to-r from-noops-600 to-accent bg-clip-text py-1 font-extrabold text-transparent">
-										Solution
-									</span> */}
 								</h1>
+
 								<p className="text-2xl text-noops-200">
-									We are currently preparing for launch, but you can sign up to
-									be notified when we do
+									Accelerate your development journey
 								</p>
 							</div>
 

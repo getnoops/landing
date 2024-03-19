@@ -28,10 +28,23 @@ export default {
 				"noops-800": "hsl(267, 67%, 42%)",
 				"noops-900": "hsl(267, 65%, 35%)",
 				"noops-950": "hsl(265, 71%, 23%)",
-
 				"noops-975": "hsl(265, 71%, 10%)",
 				"noops-1000": "hsl(266, 84%, 5%)",
 				"noops-1050": "hsl(266, 81%, 3%)",
+
+				"noops-accent": "hsl(268, 92%, 74%)",
+				"noops-accent-50": "hsl(270, 100%, 98%)",
+				"noops-accent-100": "hsl(266, 100%, 95%)",
+				"noops-accent-200": "hsl(267, 95%, 92%)",
+				"noops-accent-300": "hsl(268, 95%, 85%)",
+				"noops-accent-400": "hsl(268, 92%, 74%)",
+				"noops-accent-500": "hsl(269, 89%, 65%)",
+				"noops-accent-600": "hsl(269, 79%, 56%)",
+				"noops-accent-700": "hsl(270, 69%, 47%)",
+				"noops-accent-800": "hsl(271, 65%, 39%)",
+				"noops-accent-900": "hsl(272, 63%, 32%)",
+				"noops-accent-950": "hsl(272, 85%, 21%)",
+
 				accent: "#b980fa",
 			},
 			spacing: {
