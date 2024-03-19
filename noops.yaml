@@ -1,0 +1,27 @@
+code: landing
+class: compute
+name: Landing
+
+resources:
+  - code: landing
+    type: container
+    data:
+      image: 211125614781.dkr.ecr.us-east-1.amazonaws.com/noops/landing:v0.1
+      port: 8080
+      desired: 2
+      cpu: 256
+      memory: 512
+      # edge:
+      #   edges:
+      #     - edge: www.getnoops.com
+      #       environment: prod
+      #   health:
+      #     path: /
+      #     port: 8080
+      #     timeout: 25
+      #     interval: 30
+      #     unhealthy_threshold: 5
+      #     healthy_threshold: 5
+      #   rules:
+      #     - path: '*'
+      #       priority: 1
