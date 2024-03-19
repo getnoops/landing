@@ -143,7 +143,7 @@ const TrialForm = () => {
 			)}
 
 			{signedUp ? (
-				<div className="w-[464px]">
+				<div className="w-full max-w-[464px]">
 					<div className="flex flex-col items-center justify-center">
 						<h2 className="mb-1 text-3xl font-bold tracking-tight">
 							<span className="to-noops-accent bg-gradient-to-r from-noops-600 bg-clip-text py-1 font-extrabold text-transparent">
