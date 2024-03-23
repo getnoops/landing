@@ -6,7 +6,7 @@ resources:
   - code: landing
     type: container
     data:
-      image: 211125614781.dkr.ecr.us-east-1.amazonaws.com/noops/landing:v0.5
+      image: ${Repositories_Default_RepositoryUri}:${Image_Tag}
       port: 8080
       desired: 2
       cpu: 256

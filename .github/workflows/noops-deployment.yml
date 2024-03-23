@@ -1,0 +1,44 @@
+name: No_Ops Deployment
+
+on:
+  push:
+    branches:
+      - "main"
+
+concurrency:
+  group: "no_ops"
+  cancel-in-progress: true
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  NOOPS_API_TOKEN: ${{ secrets.NOOPS_API_TOKEN }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: getnoops/action-ops@v0.1
+        with:
+          tag: v1.0.0
+
+      - id: repository
+        run: |
+          ops this info -f "noops.yaml" --format=env >> $GITHUB_OUTPUT
+
+      - id: build
+        run: |
+          ops container-repository login | docker login --username ${{steps.repository.outputs.Registry_Username}} --password-stdin ${{steps.repository.outputs.Registry_RegistryUrl}}
+          docker build -t ${{steps.repository.outputs.Repositories_Default_RepositoryUri}}:${GITHUB_SHA::7} .
+          docker push ${{steps.repository.outputs.Repositories_Default_RepositoryUri}}:${GITHUB_SHA::7}
+          echo "Image_Tag=${GITHUB_SHA::7}" >> $GITHUB_OUTPUT
+      - run: |
+          echo $GITHUB_OUTPUT
+      - run: |
+          ops this update -f "noops.yaml" --deploy=prod --next
+        env:
+          Repositories_Default_RepositoryUri: ${{steps.repository.outputs.Repositories_Default_RepositoryUri}}
+          Image_Tag: ${{steps.build.outputs.Image_Tag}}
