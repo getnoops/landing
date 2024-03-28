@@ -1,8 +1,9 @@
 import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useCreatePlaygroundUser } from "@site/src/api/authGalaxy";
+import * as RadioGroup from "@radix-ui/react-radio-group";
+import { useSignUpUser } from "@site/src/api/authGalaxy";
 import { cn } from "@site/src/lib/utils";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import * as yup from "yup";
 import { EmailQuickLinks } from "..";
@@ -56,16 +57,19 @@ const schema = yup
 			.email("Must be a valid email")
 			.required("Email is required"),
 		company: yup.string().required("Company is required"),
-		company_size: yup.string().required("Company size is required"),
+		company_size: yup.string().required("Size is required"),
+		org_name: yup.string().required("Required"),
+		org_code: yup
+			.string()
+			.matches(
+				new RegExp("^[a-zA-Z0-9-]*$"),
+				"Can only contain alphanumeric characters and dashes",
+			)
+			.required("Required"),
 	})
 	.required();
 
-export type SignUpFormData = {
-	name: string;
-	email: string;
-	company: string;
-	company_size: string;
-};
+export type SignUpFormData = typeof schema.__outputType;
 
 const TrialForm = () => {
 	const [loading, setLoading] = useState(false);
@@ -77,6 +81,9 @@ const TrialForm = () => {
 		handleSubmit,
 		formState: { errors },
 		control,
+		watch,
+		setValue,
+		trigger,
 	} = useForm({
 		resolver: yupResolver(schema),
 		defaultValues: {
@@ -84,36 +91,46 @@ const TrialForm = () => {
 			email: "",
 			company: "",
 			company_size: "",
+			org_name: "",
+			org_code: "",
 		},
 	});
 
-	const { mutateAsync: createPlaygroundUserMutationAsync } =
-		useCreatePlaygroundUser({
-			request: {
-				baseURL: BASE_AUTH_GALAXY_URL,
-				headers: {
-					"Content-Type": "application/json",
-				},
+	const orgNameField = watch("org_name");
+	useEffect(() => {
+		setValue("org_code", orgNameField.toLowerCase().replace(/ /g, "-"));
+		if (orgNameField !== "") {
+			trigger("org_code");
+		}
+	}, [orgNameField]);
+
+	const { mutateAsync: signUpUserMutateAsync } = useSignUpUser({
+		mutation: {
+			onError: (err) => {
+				setLoading(false);
+
+				setError("root.serverError", {
+					type: "server",
+					message:
+						err.response.status === 409
+							? "Organisation already exists"
+							: err.message,
+				});
 			},
-			mutation: {
-				onError: (err) => {
-					setError("root.serverError", {
-						type: "server",
-						message: err.message,
-					});
-				},
-			},
-		});
+		},
+	});
 
 	const onSubmit = async (data: SignUpFormData) => {
 		setLoading(true);
 
-		await createPlaygroundUserMutationAsync({
+		await signUpUserMutateAsync({
 			data: {
 				company: data.company,
 				email: data.email,
 				name: data.name,
 				company_size: data.company_size,
+				organisation_name: data.org_name,
+				organisation_code: data.org_code,
 			},
 		});
 
@@ -146,7 +163,7 @@ const TrialForm = () => {
 				<div className="w-full max-w-[464px]">
 					<div className="flex flex-col items-center justify-center">
 						<h2 className="mb-1 text-3xl font-bold tracking-tight">
-							<span className="to-noops-accent bg-gradient-to-r from-noops-600 bg-clip-text py-1 font-extrabold text-transparent">
+							<span className="bg-gradient-to-r from-noops-600 to-noops-accent bg-clip-text py-1 font-extrabold text-transparent">
 								Welcome to No_Ops!
 							</span>
 						</h2>
@@ -211,54 +228,116 @@ const TrialForm = () => {
 						</div>
 					</div>
 
-					<div>
-						<label
-							htmlFor="company"
-							className="block text-sm font-medium leading-6 text-noops-400"
-						>
-							Company{" "}
-							{errors.company && (
-								<span className="font-medium text-red-600">
-									{" "}
-									- {errors.company?.message}
-								</span>
-							)}
-						</label>
-						<div className="mt-2">
-							<input
-								id="company"
-								type="company"
-								autoComplete="company"
-								{...register("company")}
-								className="block w-full rounded-md border-0 bg-noops-300/5 px-3 py-1.5 text-base text-accent outline-0 ring-1 ring-noops-300/20 transition focus:bg-noops-1000 focus:ring-2 focus:ring-accent"
-							/>
+					<div className="flex space-x-5">
+						<div className="w-full">
+							<label
+								htmlFor="company"
+								className="block text-sm font-medium leading-6 text-noops-400"
+							>
+								Company{" "}
+								{errors.company && (
+									<span className="font-medium text-red-600">
+										{" "}
+										- {errors.company?.message}
+									</span>
+								)}
+							</label>
+							<div className="mt-2">
+								<input
+									id="company"
+									type="company"
+									autoComplete="company"
+									{...register("company")}
+									className="block w-full rounded-md border-0 bg-noops-300/5 px-3 py-1.5 text-base text-accent outline-0 ring-1 ring-noops-300/20 transition focus:bg-noops-1000 focus:ring-2 focus:ring-accent"
+								/>
+							</div>
+						</div>
+
+						<div className="w-full">
+							<label className="block text-sm font-medium leading-6 text-noops-400">
+								Company size{" "}
+								{errors.company_size && (
+									<span className="font-medium text-red-600">
+										{" "}
+										- {errors.company_size?.message}
+									</span>
+								)}
+							</label>
+
+							<div className="w-full">
+								<Controller
+									name="company_size"
+									control={control}
+									render={({ field: { value, onChange } }) => (
+										<SelectMenu
+											value={value}
+											onChange={onChange}
+											options={COMPANY_OPTIONS}
+											defaultValueMessage="Select a size"
+										/>
+									)}
+								/>
+							</div>
 						</div>
 					</div>
 
-					<div>
-						<label className="block text-sm font-medium leading-6 text-noops-400">
-							Company size{" "}
-							{errors.company_size && (
-								<span className="font-medium text-red-600">
-									{" "}
-									- {errors.company_size?.message}
+					<div className="pt-2">
+						<RadioGroup.Root className="w-full gap-x-1 rounded-full p-1 text-center text-xs font-semibold leading-5 ring-1 ring-inset ring-accent/80">
+							<RadioGroup.Item
+								value="create"
+								className="relative w-full rounded-full bg-transparent px-2.5 py-1.5 font-semibold text-white transition"
+							>
+								<div className="absolute inset-0 z-0 h-full w-full rounded-full bg-gradient-to-r from-noops-600 to-accent/90 shadow-inner shadow-noops-300" />
+
+								<span className="relative">Create your organisation</span>
+							</RadioGroup.Item>
+						</RadioGroup.Root>
+					</div>
+
+					<div className="flex justify-between space-x-5">
+						<div className="w-full">
+							<label
+								htmlFor="org_name"
+								className="block text-sm font-medium leading-6 text-noops-400"
+							>
+								Organisation name
+								{errors.org_name && (
+									<span className="font-medium text-red-600">
+										{" "}
+										- {errors.org_name.message}
+									</span>
+								)}
+							</label>
+							<div className="mt-2">
+								<input
+									id="org_name"
+									autoComplete="off"
+									{...register("org_name")}
+									className="block w-full rounded-md border-0 bg-noops-300/5 px-3 py-1.5 text-base text-accent outline-0 ring-1 ring-noops-300/20 transition focus:bg-noops-1000 focus:ring-2 focus:ring-accent  "
+								/>
+							</div>
+						</div>
+
+						<div className="w-full">
+							<label
+								htmlFor="org_code"
+								className="block text-sm font-medium leading-6 text-noops-400"
+							>
+								Organisation code
+							</label>
+							<div className="mt-2">
+								<input
+									id="org_code"
+									autoComplete="off"
+									{...register("org_code")}
+									className="block w-full rounded-md border-0 bg-noops-300/5 px-3 py-1.5 text-base text-accent outline-0 ring-1 ring-noops-300/20 transition focus:bg-noops-1000 focus:ring-2 focus:ring-accent  "
+								/>
+							</div>
+							{errors.org_code && (
+								<span className="pt-5 text-sm font-medium text-red-600">
+									{errors.org_code.message}
 								</span>
 							)}
-						</label>
-
-						<div>
-							<Controller
-								name="company_size"
-								control={control}
-								render={({ field: { value, onChange } }) => (
-									<SelectMenu
-										value={value}
-										onChange={onChange}
-										options={COMPANY_OPTIONS}
-										defaultValueMessage={"Select your Company Size"}
-									/>
-								)}
-							/>
 						</div>
 					</div>
 
@@ -271,7 +350,7 @@ const TrialForm = () => {
 						</div>
 					)}
 
-					<div className="flex flex-row-reverse justify-between gap-x-2 py-4">
+					<div className="flex flex-row-reverse justify-between gap-x-2 pb-4">
 						<button
 							type="submit"
 							className="group relative inline-block cursor-pointer rounded-[10px] border-2 border-noops-700 bg-gradient-to-b from-noops-400 to-noops-600 px-6 py-2 font-medium text-noops-300 outline-0 transition focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-noops-1000 disabled:pointer-events-none disabled:opacity-50"
@@ -311,9 +390,9 @@ const LoaderCircle = ({ className }: { className?: string }) => (
 		viewBox="0 0 24 24"
 		fill="none"
 		stroke="currentColor"
-		stroke-width="2"
-		stroke-linecap="round"
-		stroke-linejoin="round"
+		strokeWidth="2"
+		strokeLinecap="round"
+		strokeLinejoin="round"
 	>
 		<path d="M21 12a9 9 0 1 1-6.219-8.56" />
 	</svg>

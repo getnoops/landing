@@ -13,6 +13,26 @@
 	--ifm-color-primary-lightest: #f5edfe;
 	--ifm-code-font-size: 95%;
 	--docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+	/* Below is from the portal */
+	--background: 266, 84%, 5%; /* noops-1000 */
+	--foreground: 210 40% 98%;
+	--muted: 259, 89%, 76%, 80%; /* noops-accent/30% */
+	--muted-foreground: 253, 90%, 92%; /* noops-200 */
+	--popover: 262 52% 9%; /* noops-300/5 */
+	--popover-foreground: 210 40% 98%;
+	--card: 262 52% 9%; /* noops-300/5 */
+	--card-foreground: 210 40% 98%;
+	--border: 259, 89%, 76%, 30%; /* noops-400/30% */
+	--input: 268, 92%, 74%, 30%; /* noops-accent/30% */
+	--primary: 253 92% 95%; /* noops-100 */
+	--primary-foreground: 265, 71%, 23%; /* noops-950 */
+	--secondary: 257, 92%, 85%; /* noops-300 */
+	--secondary-foreground: 253, 92%, 95%; /* noops-100 */
+	--destructive: 0 72% 51%;
+	--destructive-foreground: 0 85.7% 97.3%;
+	--ring: 268 92% 74%; /* noops-accent */
+	--inbetween: 263 60% 7%; /* in between noops-300/5 and noops-1000 */
 }
 
 [data-theme="dark"] {
