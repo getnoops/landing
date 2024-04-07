@@ -6,29 +6,65 @@ const docsSidebar: SidebarsConfig = {
 		{
 			type: "category",
 			label: "Getting started",
+			collapsed: false,
+			items: [
+				"getting-started/connect-aws-account",
+				"getting-started/create-environment",
+				"getting-started/create-first-compute",
+				"getting-started/promoting-deployments",
+			],
+		},
+		{
+			type: "category",
+			label: "Edge",
+			items: [
+				"edge/add-domain",
+				"edge/add-edge",
+			],
+		},
+		{
+			type: "category",
+			label: "Resources",
 			items: [
 				{
 					type: "category",
-					label: "Setup organisation",
+					label: "Compute",
 					items: [
-						"getting-started/setup-organisation/create-organisation",
-						"getting-started/setup-organisation/invite-team-members",
+						"resources/compute/container",
+						"resources/compute/database",
+						"resources/compute/queue",
 					],
 				},
-				"getting-started/connect-aws-account",
-				"getting-started/create-environment",
-				"getting-started/add-domain",
-				"getting-started/add-edge",
-				"getting-started/create-first-compute",
 				{
 					type: "category",
-					label: "CLI",
+					label: "Storage",
 					items: [
-						"getting-started/cli/ci-cd-cli",
-						"getting-started/cli/learn-cli",
+						"resources/storage/rds",
 					],
 				},
-				"getting-started/promoting-deployments",
+				{
+					type: "category",
+					label: "Integration",
+					items: [
+						"resources/integration/notification",
+					],
+				},
+			],
+		},
+		{
+			type: "category",
+			label: "CLI",
+			items: [
+				"cli/ci-cd-cli",
+				"cli/learn-cli",
+			],
+		},
+		{
+			type: "category",
+			label: "Administration",
+			items: [
+				"administration/create-organisation",
+				"administration/invite-team-members",
 			],
 		},
 		// TODO: Reference
