@@ -1,5 +1,5 @@
-import type { Options, ThemeConfig } from "@docusaurus/preset-classic";
-import type { Config } from "@docusaurus/types";
+import type { Options } from "@docusaurus/preset-classic";
+import type { Config, ThemeConfig } from "@docusaurus/types";
 import dotenv from "dotenv";
 import { themes } from "prism-react-renderer";
 import { exit } from "process";
@@ -73,6 +73,20 @@ const config: Config = {
 				as: "image",
 			},
 		},
+
+		{
+			tagName: "script",
+			attributes: {
+				type: "application/ld+json",
+			},
+			innerHTML: JSON.stringify({
+				"@context": "https://schema.org/",
+				"@type": "Organization",
+				name: "Meta Open Source",
+				url: "https://opensource.fb.com/",
+				logo: "https://opensource.fb.com/img/logos/Meta-Open-Source.svg",
+			}),
+		},
 	],
 
 	markdown: {
@@ -92,6 +106,7 @@ const config: Config = {
 					sidebarPath: "./docs-sidebar.ts",
 				},
 				blog: {
+					authorsMapPath: "../authors/authors.yml",
 					blogDescription: "Deploy faster than ever",
 					blogSidebarTitle: "Latest posts",
 					blogSidebarCount: "ALL",
@@ -113,6 +128,7 @@ const config: Config = {
 	themeConfig: {
 		metadata: [
 			{ name: "keywords", content: "software development, web, devops" },
+			{ name: "twitter:card", content: "summary_large_image" },
 		],
 		colorMode: {
 			// respectPrefersColorScheme: true,
@@ -133,24 +149,32 @@ const config: Config = {
 			},
 			items: [
 				{
-					to: "blog",
-					label: "Events",
+					to: "docs",
+					label: "Docs",
 				},
 				{
-					to: "docs",
-					label: "Documentation",
+					to: "pricing",
+					label: "Pricing",
+					position: "left",
+				},
+				{
+					to: "platform",
+					label: "Platform",
+				},
+				{
+					to: "community",
+					label: "Community",
+					position: "left",
+				},
+				{
+					to: "about",
+					label: "About",
+					position: "left",
 				},
 
 				{
-					className: "header-right-link header-right-link-slack",
-					href: "https://join.slack.com/t/getnoops/shared_invite/zt-25fo11ewy-5z5iMXlaDvxRv6sfp8wZHA",
-					"aria-label": "Slack",
-					position: "right",
-				},
-				{
-					className: "header-right-link header-right-link-pricing",
-					to: "pricing",
-					"aria-label": "Pricing",
+					to: "help",
+					label: "Help",
 					position: "right",
 				},
 				{
@@ -181,6 +205,16 @@ const config: Config = {
 				},
 			};
 		},
+		[
+			"@docusaurus/plugin-content-blog",
+			{
+				id: "events",
+				path: "./events",
+				routeBasePath: "events",
+				blogSidebarTitle: "AAA posts",
+				authorsMapPath: "../authors/authors.yml",
+			},
+		],
 	],
 };
 

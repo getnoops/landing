@@ -18,9 +18,9 @@
 		"prettier": "prettier -w ."
 	},
 	"dependencies": {
-		"@docusaurus/core": "^3.1.1",
-		"@docusaurus/preset-classic": "^3.1.1",
-		"@docusaurus/theme-mermaid": "^3.1.1",
+		"@docusaurus/core": "^3.2.1",
+		"@docusaurus/preset-classic": "^3.2.1",
+		"@docusaurus/theme-mermaid": "^3.2.1",
 		"@fireworks-js/react": "^2.10.7",
 		"@headlessui/react": "^1.7.18",
 		"@heroicons/react": "^2.1.1",
@@ -36,7 +36,7 @@
 		"fireworks-js": "^2.10.7",
 		"framer-motion": "^11.0.6",
 		"postcss": "^8.4.35",
-		"prism-react-renderer": "^2.1.0",
+		"prism-react-renderer": "^2.3.1",
 		"react": "^18.0.0",
 		"react-dom": "^18.0.0",
 		"react-hook-form": "^7.50.1",

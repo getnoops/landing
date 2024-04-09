@@ -1,0 +1,31 @@
+---
+description: Queue resource docs
+---
+
+# Queue
+
+Queues require a parent `Notification` (Simple Notification Service) to be assigned to them.
+
+:::info
+If you do not have a notification created, go to the `Integration` config tab and create a new notification.
+:::
+
+## Base Properties
+
+```yaml
+resources:
+  - code: events
+    type: queue
+    data:
+      is_fifo: true
+      subscription: notification-events # references the notification config code
+```
+
+The following properties can be accessed from a queue using the `this` keyword:
+
+- `{{this:queue-code:property}}`
+
+| Property  | Usage                       | Description         |
+| --------- | --------------------------- | ------------------- |
+| name      | `{{this:events:name}}`      | The queue name      |
+| topic-arn | `{{this:events:topic-arn}}` | The queue topic ARN |

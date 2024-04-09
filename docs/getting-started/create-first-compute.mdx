@@ -30,23 +30,17 @@ A revision is a version of your compute. You can have multiple revisions of a co
 
    <Image src="/docs/compute/create_revision.webp" />
 
-4. Add the image tag of your container (will be pushed to ECR in the [Add the CLI to your pipeline](./cli/ci-cd-cli) step) and configure options such as CPU & memory.
+4. Add the image tag of your container (will be pushed to ECR in the [Add the CLI to your pipeline](../deploying/ci-cd-cli) step) and configure options such as CPU & memory.
 
    <Image src="/docs/compute/container_info.webp" />
 
-5. If you want your compute to be publicly accessible, click the `Edges` tab.
-
-   <Image src="/docs/compute/compute_edges.webp" />
-
-### Allow communication to / from your compute
-
-6. Configs are zero trust by default. If you have services that communicate between each other, you'll have to explicitly specify them.
+5. Configs are zero trust by default. If you have services that communicate between each other, you'll have to explicitly specify them.
 
    <Image src="/docs/compute/allow_access.webp" />
 
 ---
 
-7. You're ready to go! Click `Save` in the bottom right.
+6. You're ready to go! Click `Save` in the bottom right.
 
    <Image src="/docs/compute/save_compute.webp" />
 
@@ -64,12 +58,12 @@ Each time a compute is created, you'll notice that a container repository is als
 
 <Image src="/docs/compute/view_repository.webp" />
 
-:::tip
-You can add as many container repositories as you like for a compute.
-:::
-
 ---
 
+:::info[info]
+If you want to connect your compute to the outside world, check out [adding an edge](../edge/add-edge).
+:::
+
 :::note[Next step]
-You can now learn about [deploying your compute to an environment using the CLI](./cli/ci-cd-cli.mdx).
+You can now learn about [adding the No_Ops CLI to your pipeline](../deploying/ci-cd-cli).
 :::
