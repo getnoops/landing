@@ -6,15 +6,15 @@ import { Image } from "@site/src/components/Image";
 
 # Add an edge
 
+A compute is not publicly accessible by default.
+
+Edges allow your computes to be publicly accessible by routing traffic to a specific path.
+
+---
+
 Once you have [a domain](./add-domain.mdx), you can add an edge.
 
-- You can use the _ugly domain_ that is generated from when you [create an environment](./create-environment.mdx).
-
-Edges allow your computes to be publicly accessible. You can assign an edge to a compute, which we'll get into later.
-
-:::info
-If you don't want a compute to be publicly accessible, you can skip assigning an edge to it.
-:::
+- You can use the _ugly domain_ that is generated from when you [create an environment](../getting-started/create-environment.mdx).
 
 1. On the top left of the No_Ops portal, click on the arrow next to your organisation's name, and select `Settings`.
 
@@ -32,6 +32,21 @@ If you don't want a compute to be publicly accessible, you can skip assigning an
 
    <Image src="/docs/edge/view_edge.webp" />
 
-:::note[Next step]
-You can now [create your first compute](./create-first-compute.mdx)!
-:::
+---
+
+# Assigning an edge to a compute
+
+1. Create a new compute revision by selecting the `New revision` button on the right.
+
+   <Image src="/docs/edge/compute_new_revision.webp" />
+
+2. Click on the `Resources` tab on the left, then select `Edges`.
+
+You can add multiple paths to an edge, each with their own priority.
+
+- The example below directs all paths on the selected domains to this compute.
+- The priority is set to `1000` incase other computes want to prioritise a specific path and override this catch all rule.
+
+{" "}
+
+<Image src="/docs/edge/compute_edges.webp" />

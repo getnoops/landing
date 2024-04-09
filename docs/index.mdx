@@ -84,9 +84,7 @@ compute --> queue
 ```mermaid
 flowchart LR
 storage["Storage"]
-
 cluster["Cluster"]
-
 
 storage --> cluster
 ```
@@ -97,38 +95,14 @@ storage --> cluster
 
 ```mermaid
 flowchart LR
-queue["Queue"]
-queue --> queue
-
 notification["Notification"]
 notification --> notification
 ```
 
-### FAQ
-
-<details>
-	<summary>
-		What is the difference between an `Integration Config Queue` and a `Compute Resource Queue`?
-	</summary>
-
-    <div>
-    You may have noticed that there is an integration config type named queue and a compute resource type named queue.
-
-<ol>
-	<li>
-		`If you want a globally accessible queue for multiple computes, use the
-		integration config queue`.
-	</li>
-
-    <li>
-    `If you want a queue that is only accessible by a single compute, use the compute resource queue`.
-    </li>
-
-</ol>
-   </div>
-
-</details>
+<br />
+<br />
+<br />
 
 :::note[Next step]
-Start by [creating your own organisation](./getting-started/setup-organisation/create-organisation.mdx).
+Start by [connecting your AWS account](./getting-started/connect-aws-account.mdx).
 :::

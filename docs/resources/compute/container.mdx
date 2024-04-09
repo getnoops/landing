@@ -3,3 +3,171 @@ description: Container resource docs
 ---
 
 # Container
+
+Containers are the main resource type for a compute.
+
+## Base Properties
+
+asdasd
+
+```yaml
+resources:
+  - code: website
+    type: container
+    data:
+      image: website:latest
+      port: 8080
+      desired: 2
+      cpu: 256
+      memory: 512
+```
+
+## Using environment variables from GitHub Actions
+
+You can access environment variable outputs from previous steps to generate dynamic values such as image names.
+
+```yaml
+resources:
+  - code: website
+    type: container
+    data:
+      image: ${Repositories_Default_RepositoryUri}:${Image_Tag}
+```
+
+## Container Environment Variables
+
+You can set environment variables for your container.
+
+```yaml
+resources:
+  - code: website
+	type: container
+	data:
+      image: ${Repositories_Default_RepositoryUri}:${Image_Tag}
+	  port: 8080
+	  desired: 2
+	  cpu: 256
+	  memory: 512
+	  env:
+		SERVICE: website
+		DATA_TYPE: pg
+		DATA_PG_SSLMODE: require
+```
+
+You can also use the `this` keyword to grab values from any current resource specified in the file.
+
+Any use of `this` must be wrapped inside double curly braces `{{ }}` and is formatted in the following way:
+
+- `{{this:resource-code:property}}`
+
+For example, the below `noops.yaml` has two resources, the `website` container and the `db` database. We can access the `db` resource to set the `DATABASE_URL` environment variable.
+
+```yaml
+resources:
+  - code: db
+    type: database
+    data:
+      cluster: website-cluster
+  - code: website
+    type: container
+    data:
+      image: ${Repositories_Default_RepositoryUri}:${Image_Tag}
+      port: 8080
+      desired: 2
+      cpu: 256
+      memory: 512
+      env_vars:
+		SERVICE: website
+		DATA_TYPE: pg
+		DATA_PG_SSLMODE: require
+        DATA_PG_HOST: "{{this:db:host}}"
+        DATA_PG_PORT: "{{this:db:port}}"
+```
+
+## Secrets
+
+Access secrets stored in Amazon Secrets Manager using the `{{secret:secret-name}}` format
+
+Secrets can also use the `this` keyword to grab values another resource (such as a database username / password).
+
+```yaml
+resources:
+  - code: db
+    type: database
+    data:
+      cluster: website-cluster
+  - code: website
+    type: container
+    data:
+      image: ${Repositories_Default_RepositoryUri}:${Image_Tag}
+      port: 8080
+      desired: 2
+      cpu: 256
+      memory: 512
+      env_vars:
+		SERVICE: website
+		DATA_TYPE: pg
+		DATA_PG_SSLMODE: require
+        DATA_PG_HOST: "{{this:db:host}}"
+        DATA_PG_PORT: "{{this:db:port}}"
+      secrets:
+        DATA_PG_USERNAME: "{{this:db:userpass:username}}"
+        DATA_PG_PASSWORD: "{{this:db:userpass:password}}"
+        SECURITY_SIGNKEY: "{{secret:signkey}}"
+```
+
+## Edges
+
+Edges are used to connect your compute to the internet. If do not want your compute exposed publicly, exclude adding one to your container.
+
+The `edges` field refers to edges created in No_Ops. If you haven't created an edge yet, see [how to create an edge](../../edge/add-edge).
+
+```yaml
+resources:
+  - code: website
+	type: container
+	data:
+	  image: ${Repositories_Default_RepositoryUri}:${Image_Tag}
+	  port: 8080
+	  desired: 2
+	  cpu: 256
+	  memory: 512
+      edge:
+        edges:
+          - edge: www.getnoops.com
+            environment: prod
+        rules:
+          - path: "*"
+            priority: 1000
+        health:
+          path: /
+          port: 8080
+          timeout: 25
+          interval: 30
+          unhealthy_threshold: 5
+          healthy_threshold: 5
+```
+
+## Overrides
+
+You can override the default values of a container resource per environment by specifying the `overrides` field.
+
+```yaml
+resources:
+  - code: website
+	type: container
+	data:
+	  image: ${Repositories_Default_RepositoryUri}:${Image_Tag}
+	  port: 8080
+	  desired: 2
+	  cpu: 256
+	  memory: 512
+      env_vars:
+        API_URL: https://test.myapi.com
+    overrides:
+      environments:
+        - environment: prod
+          data:
+            env_vars:
+              API_URL: https://myapi.com
+```

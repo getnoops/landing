@@ -3,3 +3,28 @@ description: Database Cluster resource docs
 ---
 
 # Database Cluster
+
+Database clusters represent an RDS instance in AWS.
+
+All [compute databases](../compute/database) must be assigned to a cluster.
+
+## Base Properties
+
+```yaml
+code: database-cluster
+class: storage
+name: Database Cluster
+
+resources:
+  - code: database-cluster # This code must be identical to the config code above
+    type: cluster
+    data:
+      cluster_type: aurora-postgresql
+      engine_version: "13.12"
+      port: 5432
+      instances:
+        - environment: dev
+          instance: db.t3.medium
+        - environment: prod
+          instance: db.t3.large
+```

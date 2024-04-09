@@ -11,16 +11,21 @@ const docsSidebar: SidebarsConfig = {
 				"getting-started/connect-aws-account",
 				"getting-started/create-environment",
 				"getting-started/create-first-compute",
-				"getting-started/promoting-deployments",
+			],
+		},
+		{
+			type: "category",
+			label: "Deploying",
+			items: [
+				"deploying/learn-cli",
+				"deploying/ci-cd-cli",
+				"deploying/promoting-deployments",
 			],
 		},
 		{
 			type: "category",
 			label: "Edge",
-			items: [
-				"edge/add-domain",
-				"edge/add-edge",
-			],
+			items: ["edge/add-domain", "edge/add-edge"],
 		},
 		{
 			type: "category",
@@ -38,27 +43,16 @@ const docsSidebar: SidebarsConfig = {
 				{
 					type: "category",
 					label: "Storage",
-					items: [
-						"resources/storage/rds",
-					],
+					items: ["resources/storage/rds"],
 				},
 				{
 					type: "category",
 					label: "Integration",
-					items: [
-						"resources/integration/notification",
-					],
+					items: ["resources/integration/notification"],
 				},
 			],
 		},
-		{
-			type: "category",
-			label: "CLI",
-			items: [
-				"cli/ci-cd-cli",
-				"cli/learn-cli",
-			],
-		},
+
 		{
 			type: "category",
 			label: "Administration",

@@ -75,17 +75,17 @@ const config: Config = {
 		},
 
 		{
-      tagName: 'script',
-      attributes: {
-        type: 'application/ld+json',
-      },
-      innerHTML: JSON.stringify({
-        '@context': 'https://schema.org/',
-        '@type': 'Organization',
-        name: 'Meta Open Source',
-        url: 'https://opensource.fb.com/',
-        logo: 'https://opensource.fb.com/img/logos/Meta-Open-Source.svg',
-      }),
+			tagName: "script",
+			attributes: {
+				type: "application/ld+json",
+			},
+			innerHTML: JSON.stringify({
+				"@context": "https://schema.org/",
+				"@type": "Organization",
+				name: "Meta Open Source",
+				url: "https://opensource.fb.com/",
+				logo: "https://opensource.fb.com/img/logos/Meta-Open-Source.svg",
+			}),
 		},
 	],
 
@@ -128,7 +128,7 @@ const config: Config = {
 	themeConfig: {
 		metadata: [
 			{ name: "keywords", content: "software development, web, devops" },
-      {name: 'twitter:card', content: 'summary_large_image'},
+			{ name: "twitter:card", content: "summary_large_image" },
 		],
 		colorMode: {
 			// respectPrefersColorScheme: true,
@@ -149,10 +149,6 @@ const config: Config = {
 			},
 			items: [
 				{
-					to: "platform",
-					label: "Platform",
-				},
-				{
 					to: "docs",
 					label: "Docs",
 				},
@@ -160,6 +156,10 @@ const config: Config = {
 					to: "pricing",
 					label: "Pricing",
 					position: "left",
+				},
+				{
+					to: "platform",
+					label: "Platform",
 				},
 				{
 					to: "community",
@@ -206,11 +206,11 @@ const config: Config = {
 			};
 		},
 		[
-      '@docusaurus/plugin-content-blog',
-      {
-        id: 'events',
-        path: './events',
-        routeBasePath: 'events',
+			"@docusaurus/plugin-content-blog",
+			{
+				id: "events",
+				path: "./events",
+				routeBasePath: "events",
 				blogSidebarTitle: "AAA posts",
 				authorsMapPath: "../authors/authors.yml",
 			},

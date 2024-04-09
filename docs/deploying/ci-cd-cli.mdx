@@ -14,10 +14,14 @@ Automate deployments to No_Ops in GitHub actions using the No_Ops CLI.
 
 The GitHub Actions workflow requires a configuration file in your repository to define the deployment process.
 
-`Why do I need to create a configuration file and store it in my repository if I've already defined resources in No_Ops?`
+
+:::note[FAQ]
+*Why do I need to create a configuration file and store it in my repository if I've already defined resources in No_Ops?*
+:::
+
   - You can overwrite any configuration defined for a compute resource using the configuration file in your repository
   - This allows you to:
-    - Use environment variables in your configuration file (eg. image name, database URL, etc.)
+    - Use environment variables in your configuration file (eg. image URI, database URL, etc.)
     - Define different configurations for different environments
     - Use the same configuration file across multiple repositories
 
@@ -178,5 +182,5 @@ jobs:
 ---
 
 :::note[Next step]
-You can now [learn more about the No_Ops CLI](./learn-cli) or [see how to promote deployments to another environment](../promoting-deployments).
+See how to [promote deployments to another environment](./promoting-deployments).
 :::

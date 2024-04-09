@@ -3,3 +3,19 @@ description: Notification resource docs
 ---
 
 # Notification
+
+Notifications represent SNS (Simple Notification Service) in AWS.
+
+All [Queues](../compute/queue) require a parent notification to be assigned to them.
+
+```yaml
+code: notification-events
+class: notification
+name: Notification Events
+
+resources:
+  - code: notification-events
+    type: notification
+    data:
+      is_fifo: true
+```

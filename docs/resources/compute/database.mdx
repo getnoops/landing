@@ -3,3 +3,32 @@ description: Database resource docs
 ---
 
 # Database
+
+Databases require a parent database server to be assigned to them.
+
+:::info
+If you do not have a cluster created, go to the `Storage` config tab and create a new database server.
+
+You can also use the [Database Cluster](../storage/rds) reference page.
+:::
+
+## Base Properties
+
+```yaml
+resources:
+  - code: db
+    type: database
+    data:
+      cluster: database-server # references the storage config code
+```
+
+The following properties can be accessed from a database using the `this` keyword:
+
+- `{{this:database-code:property}}`
+
+| Property | Usage                                                           | Description                                         |
+| -------- | --------------------------------------------------------------- | --------------------------------------------------- |
+| host     | `{{this:db:host}}`                                              | The database host                                   |
+| name     | `{{this:db:name}}`                                              | The database name                                   |
+| port     | `{{this:db:port}}`                                              | The database port                                   |
+| userpass | `{{this:db:userpass:username}}` `{{this:db:userpass:password}}` | Contains two properties - `username` and `password` |
