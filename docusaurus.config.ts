@@ -157,10 +157,10 @@ const config: Config = {
 					label: "Pricing",
 					position: "left",
 				},
-				{
-					to: "platform",
-					label: "Platform",
-				},
+				// {
+				// 	to: "platform",
+				// 	label: "Platform",
+				// },
 				{
 					to: "community",
 					label: "Community",
@@ -172,11 +172,11 @@ const config: Config = {
 					position: "left",
 				},
 
-				{
-					to: "help",
-					label: "Help",
-					position: "right",
-				},
+				// {
+				// 	to: "help",
+				// 	label: "Help",
+				// 	position: "right",
+				// },
 				{
 					className: "header-right-link header-right-link-login",
 					href: "https://portal.getnoops.com/login",
