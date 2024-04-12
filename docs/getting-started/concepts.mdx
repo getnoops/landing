@@ -1,0 +1,97 @@
+---
+description: A brief explanation of No_Ops concepts.
+---
+
+# Concepts
+
+Before getting into any setup, we'd like to go over some No_Ops specific concepts:
+
+## Configs
+
+:::tip[Configs]
+Configs are the main building block in No_Ops, you will spend most of your time creating and managing configs.
+:::
+
+There are three types of configs:
+
+1. Compute
+
+   - EC2 instances
+
+2. Storage
+
+   - RDS database clusters
+
+3. Integration
+
+   - SNS topics
+   - SQS queues
+
+## Resources
+
+:::tip[Resources]
+Resources are the actual infrastructure behind your configs. **Each config has at least once resource.**
+:::
+
+```mermaid
+flowchart LR
+config["Config"]
+
+resource["Resource"]
+
+
+config --> resource
+```
+
+<br />
+
+A config by itself is just a placeholder, it doesn't do anything until a resource is added to it.
+
+See each config mapped to its possible resources below:
+
+<br />
+
+```mermaid
+flowchart LR
+compute["Compute"]
+
+container["Container"]
+bucket["Bucket"]
+database["Database"]
+queue["Queue"]
+
+compute --> container
+compute --> bucket
+compute --> database
+compute --> queue
+```
+
+<br />
+<br />
+<br />
+
+```mermaid
+flowchart LR
+storage["Storage"]
+cluster["Cluster"]
+
+storage --> cluster
+```
+
+<br />
+<br />
+<br />
+
+```mermaid
+flowchart LR
+notification["Notification"]
+notification --> notification
+```
+
+<br />
+<br />
+<br />
+
+:::note[Next step]
+Start by [connecting your AWS account](./connect-aws-account.mdx).
+:::
