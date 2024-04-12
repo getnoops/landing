@@ -8,6 +8,7 @@ const docsSidebar: SidebarsConfig = {
 			label: "Getting started",
 			collapsed: false,
 			items: [
+				"getting-started/concepts",
 				"getting-started/connect-aws-account",
 				"getting-started/create-environment",
 				"getting-started/create-first-compute",
