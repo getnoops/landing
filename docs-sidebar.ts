@@ -25,8 +25,8 @@ const docsSidebar: SidebarsConfig = {
 		},
 		{
 			type: "category",
-			label: "Edge",
-			items: ["edge/add-domain", "edge/add-edge"],
+			label: "Guide",
+			items: ["guide/custom-domains", "guide/internet-access"],
 		},
 		{
 			type: "category",
