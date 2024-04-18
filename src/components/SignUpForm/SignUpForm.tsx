@@ -1,6 +1,8 @@
-import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
+import {
+	BuildingOffice2Icon,
+	ExclamationTriangleIcon,
+} from "@heroicons/react/24/outline";
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as RadioGroup from "@radix-ui/react-radio-group";
 import { useSignUpUser } from "@site/src/api/authGalaxy";
 import { cn } from "@site/src/lib/utils";
 import { useEffect, useState } from "react";
@@ -281,74 +283,87 @@ const TrialForm = () => {
 						</div>
 					</div>
 
-					<div className="pt-2">
-						<RadioGroup.Root className="w-full gap-x-1 rounded-full p-1 text-center text-xs font-semibold leading-5 ring-1 ring-inset ring-accent/80">
-							<RadioGroup.Item
-								value="create"
-								className="relative w-full rounded-full bg-transparent px-2.5 py-1.5 font-semibold text-white transition"
-							>
-								<div className="absolute inset-0 z-0 h-full w-full rounded-full bg-gradient-to-r from-noops-600 to-accent/90 shadow-inner shadow-noops-300" />
+					<div className="rounded-2xl border border-noops-300/10 border-t-noops-300/20 bg-noops-300/5 p-4 shadow-md shadow-noops-1000/50">
+						{/* <div className="pt-2">
+							<RadioGroup.Root className="w-full gap-x-1 rounded-full p-1 text-center text-xs font-semibold leading-5 ring-1 ring-inset ring-accent/80">
+								<RadioGroup.Item
+									value="create"
+									className="relative w-full rounded-full bg-transparent px-2.5 py-1.5 font-semibold text-white transition"
+								>
+									<div className="absolute inset-0 z-0 h-full w-full rounded-full bg-gradient-to-r from-noops-600 to-accent/90 shadow-inner shadow-noops-300" />
 
-								<span className="relative">Create your organisation</span>
-							</RadioGroup.Item>
-						</RadioGroup.Root>
-					</div>
+									<span className="relative">Create your organisation</span>
+								</RadioGroup.Item>
+							</RadioGroup.Root>
+						</div> */}
 
-					<div className="flex justify-between space-x-5">
-						<div className="w-full">
-							<label
-								htmlFor="org_name"
-								className="block text-sm font-medium leading-6 text-noops-400"
-							>
-								Organisation name
-								{errors.org_name && (
-									<span className="font-medium text-red-600">
-										{" "}
-										- {errors.org_name.message}
+						<div className="mb-2 flex items-center gap-x-2">
+							<div className="flex items-center rounded-md border border-noops-300/5 border-t-noops-300/10 bg-noops-300/5 p-2 shadow shadow-noops-1000/30">
+								<BuildingOffice2Icon className="size-6" />
+							</div>
+
+							<div className="flex flex-col">
+								<h5 className="m-0 text-base font-normal leading-none text-noops-200">
+									Create your organisation
+								</h5>
+							</div>
+						</div>
+
+						<div className="flex justify-between space-x-5">
+							<div className="w-full">
+								<label
+									htmlFor="org_name"
+									className="block text-sm font-medium leading-6 text-noops-400"
+								>
+									Organisation name
+									{errors.org_name && (
+										<span className="font-medium text-red-600">
+											{" "}
+											- {errors.org_name.message}
+										</span>
+									)}
+								</label>
+								<div className="mt-2">
+									<input
+										id="org_name"
+										autoComplete="off"
+										{...register("org_name")}
+										className="block w-full rounded-md border-0 bg-noops-300/5 px-3 py-1.5 text-base text-accent outline-0 ring-1 ring-noops-300/20 transition focus:bg-noops-1000 focus:ring-2 focus:ring-accent  "
+									/>
+								</div>
+							</div>
+
+							<div className="w-full">
+								<label
+									htmlFor="org_code"
+									className="block text-sm font-medium leading-6 text-noops-400"
+								>
+									Organisation code
+								</label>
+								<div className="mt-2">
+									<input
+										id="org_code"
+										autoComplete="off"
+										{...register("org_code")}
+										className="block w-full rounded-md border-0 bg-noops-300/5 px-3 py-1.5 text-base text-accent outline-0 ring-1 ring-noops-300/20 transition focus:bg-noops-1000 focus:ring-2 focus:ring-accent  "
+									/>
+								</div>
+								{errors.org_code && (
+									<span className="pt-5 text-sm font-medium text-red-600">
+										{errors.org_code.message}
 									</span>
 								)}
-							</label>
-							<div className="mt-2">
-								<input
-									id="org_name"
-									autoComplete="off"
-									{...register("org_name")}
-									className="block w-full rounded-md border-0 bg-noops-300/5 px-3 py-1.5 text-base text-accent outline-0 ring-1 ring-noops-300/20 transition focus:bg-noops-1000 focus:ring-2 focus:ring-accent  "
-								/>
 							</div>
 						</div>
-
-						<div className="w-full">
-							<label
-								htmlFor="org_code"
-								className="block text-sm font-medium leading-6 text-noops-400"
-							>
-								Organisation code
-							</label>
-							<div className="mt-2">
-								<input
-									id="org_code"
-									autoComplete="off"
-									{...register("org_code")}
-									className="block w-full rounded-md border-0 bg-noops-300/5 px-3 py-1.5 text-base text-accent outline-0 ring-1 ring-noops-300/20 transition focus:bg-noops-1000 focus:ring-2 focus:ring-accent  "
-								/>
-							</div>
-							{errors.org_code && (
-								<span className="pt-5 text-sm font-medium text-red-600">
-									{errors.org_code.message}
+						{errors.root?.serverError.type === "server" && (
+							<div className="flex w-full justify-center">
+								<span className="inline-flex w-fit items-center justify-end gap-x-1.5 rounded-xl border border-red-700/30 bg-red-800/30 px-3 py-2 text-sm font-medium text-red-400">
+									<ExclamationTriangleIcon className="h-6" />
+									{errors.root.serverError.message}
 								</span>
-							)}
-						</div>
+							</div>
+						)}
 					</div>
-
-					{errors.root?.serverError.type === "server" && (
-						<div className="flex w-full justify-center">
-							<span className="inline-flex w-fit items-center justify-end gap-x-1.5 rounded-xl border border-red-700/30 bg-red-800/30 px-3 py-2 text-sm font-medium text-red-400">
-								<ExclamationTriangleIcon className="h-6" />
-								{errors.root.serverError.message}
-							</span>
-						</div>
-					)}
 
 					<div className="flex flex-row-reverse justify-between gap-x-2 pb-4">
 						<button
@@ -357,7 +372,6 @@ const TrialForm = () => {
 							disabled={loading}
 						>
 							<div className="absolute inset-0.5 rounded-md bg-noops-600 transition group-hover:opacity-30" />
-							<div className="pointer-events-none absolute -inset-[6px] rounded-2xl border border-noops-700/30 bg-noops-900/30 " />
 
 							<div className="relative inline-flex w-full items-center gap-x-1 text-white">
 								<div className={cn(loading && "invisible")}>Sign up</div>
