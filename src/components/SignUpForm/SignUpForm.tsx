@@ -365,7 +365,7 @@ const TrialForm = () => {
 						)}
 					</div>
 
-					<div className="flex flex-row-reverse justify-between gap-x-2 pb-4">
+					<div className="flex flex-row-reverse justify-between gap-x-2">
 						<button
 							type="submit"
 							className="group relative inline-block cursor-pointer rounded-[10px] border-2 border-noops-700 bg-gradient-to-b from-noops-400 to-noops-600 px-6 py-2 font-medium text-noops-300 outline-0 transition focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-noops-1000 disabled:pointer-events-none disabled:opacity-50"
