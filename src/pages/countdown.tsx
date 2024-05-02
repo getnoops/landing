@@ -1,7 +1,7 @@
 import Layout from "@theme/Layout";
 import { Fireworks } from "fireworks-js";
 import { useEffect, useState } from "react";
-import { CountdownText, Footer, StarryBackground } from "../components";
+import { CountdownText, StarryBackground } from "../components";
 import { cn } from "../lib/utils";
 
 export default () => {
@@ -141,8 +141,6 @@ export default () => {
 					</div>
 				</div>
 			</div>
-
-			<Footer />
 		</Layout>
 	);
 };

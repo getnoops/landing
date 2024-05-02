@@ -1,5 +1,5 @@
 import Layout from "@theme/Layout";
-import { Footer, PricingComponent, StarryBackground } from "../components";
+import { PricingComponent, StarryBackground } from "../components";
 
 export default () => {
 	return (
@@ -37,8 +37,6 @@ export default () => {
 						</div>
 					</div>
 				</div>
-
-				<Footer />
 			</div>
 		</Layout>
 	);

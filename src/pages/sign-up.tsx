@@ -1,5 +1,5 @@
 import Layout from "@theme/Layout";
-import { Footer, SignUpForm } from "../components";
+import { SignUpForm } from "../components";
 import Curve from "../components/SVGs/Curve/Curve";
 
 export default () => {
@@ -39,8 +39,6 @@ export default () => {
 						</div>
 					</div>
 				</div>
-
-				<Footer />
 			</div>
 		</Layout>
 	);

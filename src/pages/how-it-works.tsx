@@ -6,7 +6,7 @@ import {
 	SparklesIcon,
 } from "@heroicons/react/24/solid";
 import Layout from "@theme/Layout";
-import { EnvironmentGraphic, Footer } from "../components";
+import { EnvironmentGraphic } from "../components";
 import { HeroGradient, ServicesNew } from "../components/HowItWorks";
 
 // have to do some funky stuff to get the background glow gradient to work.
@@ -357,8 +357,7 @@ export default () => {
 				</div>
 			</section>
 
-			<div className="bg-noops-1000 py-40"></div>
-			<Footer />
+			<div className="bg-noops-1000 py-40" />
 		</Layout>
 	);
 };

@@ -1,5 +1,5 @@
 import Layout from "@theme/Layout";
-import { Footer, Hero } from "../components";
+import { Hero } from "../components";
 import { AwsManaged } from "../content/AwsManaged";
 import { Environment } from "../content/Environment";
 import { Streamline } from "../content/Streamline";
@@ -21,8 +21,6 @@ export default () => {
 				<YourTech />
 
 				<Environment />
-
-				<Footer />
 			</div>
 		</Layout>
 	);

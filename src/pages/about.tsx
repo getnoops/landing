@@ -1,11 +1,5 @@
 import Layout from "@theme/Layout";
-import {
-	Footer,
-	Founders,
-	OurStory,
-	StarryBackground,
-	Values,
-} from "../components";
+import { Founders, OurStory, StarryBackground, Values } from "../components";
 
 export default () => {
 	return (
@@ -45,8 +39,6 @@ export default () => {
 			<Values />
 
 			<Founders />
-
-			<Footer />
 		</Layout>
 	);
 };

@@ -1,5 +1,5 @@
 import Layout from "@theme/Layout";
-import { ContactUsForm, Footer } from "../components";
+import { ContactUsForm } from "../components";
 import Curve from "../components/SVGs/Curve/Curve";
 
 export default () => {
@@ -40,8 +40,6 @@ export default () => {
 						</div>
 					</div>
 				</div>
-
-				<Footer />
 			</div>
 		</Layout>
 	);

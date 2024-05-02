@@ -4,7 +4,6 @@ import {
 	CubeTransparentIcon,
 } from "@heroicons/react/24/outline";
 import Layout from "@theme/Layout";
-import { Footer } from "../components";
 import {
 	Enterprise,
 	MediumLargeBusiness,
@@ -113,8 +112,6 @@ export default () => {
 				<MediumLargeBusiness />
 				<Enterprise />
 			</section>
-
-			<Footer />
 		</Layout>
 	);
 };

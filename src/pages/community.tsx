@@ -1,6 +1,5 @@
 import { SparklesIcon } from "@heroicons/react/24/solid";
 import Layout from "@theme/Layout";
-import { Footer } from "../components";
 import GitHub from "../components/SVGs/GitHub/GitHub";
 import Slack from "../components/SVGs/Slack/Slack";
 import X from "../components/SVGs/X/X";
@@ -103,8 +102,6 @@ export default () => {
 						</div>
 					</div>
 				</div>
-
-				<Footer />
 			</div>
 		</Layout>
 	);
