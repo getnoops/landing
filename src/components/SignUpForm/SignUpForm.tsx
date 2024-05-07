@@ -53,7 +53,8 @@ const COMPANY_OPTIONS = [
 
 const schema = yup
 	.object({
-		name: yup.string().required("Name is required"),
+		first_name: yup.string().required("First name is required"),
+		last_name: yup.string().required("Last name is required"),
 		email: yup
 			.string()
 			.email("Must be a valid email")
@@ -89,7 +90,8 @@ const TrialForm = () => {
 	} = useForm({
 		resolver: yupResolver(schema),
 		defaultValues: {
-			name: "",
+			first_name: "",
+			last_name: "",
 			email: "",
 			company: "",
 			company_size: "",
@@ -129,7 +131,8 @@ const TrialForm = () => {
 			data: {
 				company: data.company,
 				email: data.email,
-				name: data.name,
+				first_name: data.first_name,
+				last_name: data.last_name,
 				company_size: data.company_size,
 				organisation_name: data.org_name,
 				organisation_code: data.org_code,
@@ -185,14 +188,14 @@ const TrialForm = () => {
 				>
 					<div>
 						<label
-							htmlFor="name"
+							htmlFor="first_name"
 							className="block text-sm font-medium leading-6 text-noops-400"
 						>
-							Name
-							{errors.name && (
+							First Name
+							{errors.first_name && (
 								<span className="font-medium text-red-600">
 									{" "}
-									- {errors.name?.message}
+									- {errors.first_name?.message}
 								</span>
 							)}
 						</label>
@@ -201,7 +204,31 @@ const TrialForm = () => {
 								id="name"
 								type="name"
 								autoComplete="off"
-								{...register("name")}
+								{...register("first_name")}
+								className="block w-full rounded-md border-0 bg-noops-300/5 px-3 py-1.5 text-base text-accent outline-0 ring-1 ring-noops-300/20 transition focus:bg-noops-1000 focus:ring-2 focus:ring-accent  "
+							/>
+						</div>
+					</div>
+
+					<div>
+						<label
+							htmlFor="last_name"
+							className="block text-sm font-medium leading-6 text-noops-400"
+						>
+							Last Name
+							{errors.last_name && (
+								<span className="font-medium text-red-600">
+									{" "}
+									- {errors.last_name?.message}
+								</span>
+							)}
+						</label>
+						<div className="mt-2">
+							<input
+								id="name"
+								type="name"
+								autoComplete="off"
+								{...register("last_name")}
 								className="block w-full rounded-md border-0 bg-noops-300/5 px-3 py-1.5 text-base text-accent outline-0 ring-1 ring-noops-300/20 transition focus:bg-noops-1000 focus:ring-2 focus:ring-accent  "
 							/>
 						</div>

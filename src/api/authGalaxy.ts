@@ -4,593 +4,500 @@
  * auth-galaxy
  * OpenAPI spec version: 1.0.0
  */
-import { useMutation, useQuery } from "@tanstack/react-query";
+import {
+  useMutation,
+  useQuery
+} from '@tanstack/react-query'
 import type {
-	MutationFunction,
-	QueryFunction,
-	QueryKey,
-	UseMutationOptions,
-	UseQueryOptions,
-	UseQueryResult,
-} from "@tanstack/react-query";
-import { customInstance } from "./custom-instance";
-import type { ErrorType } from "./custom-instance";
+  MutationFunction,
+  QueryFunction,
+  QueryKey,
+  UseMutationOptions,
+  UseQueryOptions,
+  UseQueryResult
+} from '@tanstack/react-query'
+import { customInstance } from './custom-instance';
+import type { ErrorType } from './custom-instance';
 export type GetLoginParams = {
-	auth_request: string;
+auth_request: string;
 };
 
 export type VerifyAuthParams = {
-	token: string;
+token: string;
 };
 
 export interface XesReturn {
-	id: string;
+  id: string;
+}
+
+/**
+ * Application context.
+ */
+export type RestErrResponseContext = {[key: string]: {}};
+
+export interface RestErrResponse {
+  /** Application-specific error code. */
+  code?: number;
+  /** Application context. */
+  context?: RestErrResponseContext;
+  /** Error message. */
+  error?: string;
+  /** Status text. */
+  status?: string;
 }
 
 export interface IdentityAggregatesInvitation {
-	created_at?: string;
-	deleted_at?: string | null;
-	email?: string;
-	id?: string;
-	namespace?: string;
-	organisation_id?: string;
-	state?: string;
-	updated_at?: string | null;
-	version?: number | null;
+  created_at?: string;
+  deleted_at?: string | null;
+  email?: string;
+  id?: string;
+  namespace?: string;
+  organisation_id?: string;
+  state?: string;
+  updated_at?: string | null;
+  version?: number | null;
 }
 
 export interface ControllersSignUpUserOutput {
-	id: string;
+  id: string;
 }
 
 export interface ControllersSignUpUserInput {
-	company: string;
-	company_size: string;
-	email: string;
-	name: string;
-	organisation_code: string;
-	organisation_name: string;
+  company: string;
+  company_size: string;
+  email: string;
+  first_name: string;
+  last_name: string;
+  organisation_code: string;
+  organisation_name: string;
 }
 
 export interface ControllersCreateServiceOutput {
-	id: string;
+  id: string;
 }
 
 export interface ControllersCreateLoginInput {
-	email: string;
-	id: string;
+  email: string;
+  id: string;
 }
 
 export interface ControllersAcceptInvitationInput {
-	email: string;
+  email: string;
 }
 
+
+
+
 type SecondParameter<T extends (...args: any) => any> = Parameters<T>[1];
+
 
 /**
  * @summary Verify Auth
  */
 export const verifyAuth = (
-	params: VerifyAuthParams,
-	options?: SecondParameter<typeof customInstance>,
-	signal?: AbortSignal,
+    params: VerifyAuthParams,
+ options?: SecondParameter<typeof customInstance>,signal?: AbortSignal
 ) => {
-	return customInstance<unknown>(
-		{ url: `/api/auth`, method: "GET", params, signal },
-		options,
-	);
-};
+      
+      
+      return customInstance<unknown>(
+      {url: `/api/auth`, method: 'GET',
+        params, signal
+    },
+      options);
+    }
+  
 
-export const getVerifyAuthQueryKey = (params: VerifyAuthParams) => {
-	return [`/api/auth`, ...(params ? [params] : [])] as const;
-};
+export const getVerifyAuthQueryKey = (params: VerifyAuthParams,) => {
+    return [`/api/auth`, ...(params ? [params]: [])] as const;
+    }
 
-export const getVerifyAuthQueryOptions = <
-	TData = Awaited<ReturnType<typeof verifyAuth>>,
-	TError = ErrorType<void>,
->(
-	params: VerifyAuthParams,
-	options?: {
-		query?: Partial<
-			UseQueryOptions<Awaited<ReturnType<typeof verifyAuth>>, TError, TData>
-		>;
-		request?: SecondParameter<typeof customInstance>;
-	},
+    
+export const getVerifyAuthQueryOptions = <TData = Awaited<ReturnType<typeof verifyAuth>>, TError = ErrorType<void>>(params: VerifyAuthParams, options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof verifyAuth>>, TError, TData>>, request?: SecondParameter<typeof customInstance>}
 ) => {
-	const { query: queryOptions, request: requestOptions } = options ?? {};
 
-	const queryKey = queryOptions?.queryKey ?? getVerifyAuthQueryKey(params);
+const {query: queryOptions, request: requestOptions} = options ?? {};
 
-	const queryFn: QueryFunction<Awaited<ReturnType<typeof verifyAuth>>> = ({
-		signal,
-	}) => verifyAuth(params, requestOptions, signal);
+  const queryKey =  queryOptions?.queryKey ?? getVerifyAuthQueryKey(params);
 
-	return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
-		Awaited<ReturnType<typeof verifyAuth>>,
-		TError,
-		TData
-	> & { queryKey: QueryKey };
-};
+  
 
-export type VerifyAuthQueryResult = NonNullable<
-	Awaited<ReturnType<typeof verifyAuth>>
->;
-export type VerifyAuthQueryError = ErrorType<void>;
+    const queryFn: QueryFunction<Awaited<ReturnType<typeof verifyAuth>>> = ({ signal }) => verifyAuth(params, requestOptions, signal);
+
+      
+
+      
+
+   return  { queryKey, queryFn, ...queryOptions} as UseQueryOptions<Awaited<ReturnType<typeof verifyAuth>>, TError, TData> & { queryKey: QueryKey }
+}
+
+export type VerifyAuthQueryResult = NonNullable<Awaited<ReturnType<typeof verifyAuth>>>
+export type VerifyAuthQueryError = ErrorType<void>
 
 /**
  * @summary Verify Auth
  */
-export const useVerifyAuth = <
-	TData = Awaited<ReturnType<typeof verifyAuth>>,
-	TError = ErrorType<void>,
->(
-	params: VerifyAuthParams,
-	options?: {
-		query?: Partial<
-			UseQueryOptions<Awaited<ReturnType<typeof verifyAuth>>, TError, TData>
-		>;
-		request?: SecondParameter<typeof customInstance>;
-	},
-): UseQueryResult<TData, TError> & { queryKey: QueryKey } => {
-	const queryOptions = getVerifyAuthQueryOptions(params, options);
+export const useVerifyAuth = <TData = Awaited<ReturnType<typeof verifyAuth>>, TError = ErrorType<void>>(
+ params: VerifyAuthParams, options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof verifyAuth>>, TError, TData>>, request?: SecondParameter<typeof customInstance>}
 
-	const query = useQuery(queryOptions) as UseQueryResult<TData, TError> & {
-		queryKey: QueryKey;
-	};
+  ):  UseQueryResult<TData, TError> & { queryKey: QueryKey } => {
 
-	query.queryKey = queryOptions.queryKey;
+  const queryOptions = getVerifyAuthQueryOptions(params,options)
 
-	return query;
-};
+  const query = useQuery(queryOptions) as  UseQueryResult<TData, TError> & { queryKey: QueryKey };
+
+  query.queryKey = queryOptions.queryKey ;
+
+  return query;
+}
+
+
+
 
 /**
  * @summary Get Invitation
  */
 export const getInvitation = (
-	id: string,
-	options?: SecondParameter<typeof customInstance>,
-	signal?: AbortSignal,
+    id: string,
+ options?: SecondParameter<typeof customInstance>,signal?: AbortSignal
 ) => {
-	return customInstance<IdentityAggregatesInvitation>(
-		{ url: `/api/invitation/${id}`, method: "GET", signal },
-		options,
-	);
-};
+      
+      
+      return customInstance<IdentityAggregatesInvitation>(
+      {url: `/api/invitation/${id}`, method: 'GET', signal
+    },
+      options);
+    }
+  
 
-export const getGetInvitationQueryKey = (id: string) => {
-	return [`/api/invitation/${id}`] as const;
-};
+export const getGetInvitationQueryKey = (id: string,) => {
+    return [`/api/invitation/${id}`] as const;
+    }
 
-export const getGetInvitationQueryOptions = <
-	TData = Awaited<ReturnType<typeof getInvitation>>,
-	TError = ErrorType<unknown>,
->(
-	id: string,
-	options?: {
-		query?: Partial<
-			UseQueryOptions<Awaited<ReturnType<typeof getInvitation>>, TError, TData>
-		>;
-		request?: SecondParameter<typeof customInstance>;
-	},
+    
+export const getGetInvitationQueryOptions = <TData = Awaited<ReturnType<typeof getInvitation>>, TError = ErrorType<RestErrResponse>>(id: string, options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getInvitation>>, TError, TData>>, request?: SecondParameter<typeof customInstance>}
 ) => {
-	const { query: queryOptions, request: requestOptions } = options ?? {};
 
-	const queryKey = queryOptions?.queryKey ?? getGetInvitationQueryKey(id);
+const {query: queryOptions, request: requestOptions} = options ?? {};
 
-	const queryFn: QueryFunction<Awaited<ReturnType<typeof getInvitation>>> = ({
-		signal,
-	}) => getInvitation(id, requestOptions, signal);
+  const queryKey =  queryOptions?.queryKey ?? getGetInvitationQueryKey(id);
 
-	return {
-		queryKey,
-		queryFn,
-		enabled: !!id,
-		...queryOptions,
-	} as UseQueryOptions<
-		Awaited<ReturnType<typeof getInvitation>>,
-		TError,
-		TData
-	> & { queryKey: QueryKey };
-};
+  
 
-export type GetInvitationQueryResult = NonNullable<
-	Awaited<ReturnType<typeof getInvitation>>
->;
-export type GetInvitationQueryError = ErrorType<unknown>;
+    const queryFn: QueryFunction<Awaited<ReturnType<typeof getInvitation>>> = ({ signal }) => getInvitation(id, requestOptions, signal);
+
+      
+
+      
+
+   return  { queryKey, queryFn, enabled: !!(id), ...queryOptions} as UseQueryOptions<Awaited<ReturnType<typeof getInvitation>>, TError, TData> & { queryKey: QueryKey }
+}
+
+export type GetInvitationQueryResult = NonNullable<Awaited<ReturnType<typeof getInvitation>>>
+export type GetInvitationQueryError = ErrorType<RestErrResponse>
 
 /**
  * @summary Get Invitation
  */
-export const useGetInvitation = <
-	TData = Awaited<ReturnType<typeof getInvitation>>,
-	TError = ErrorType<unknown>,
->(
-	id: string,
-	options?: {
-		query?: Partial<
-			UseQueryOptions<Awaited<ReturnType<typeof getInvitation>>, TError, TData>
-		>;
-		request?: SecondParameter<typeof customInstance>;
-	},
-): UseQueryResult<TData, TError> & { queryKey: QueryKey } => {
-	const queryOptions = getGetInvitationQueryOptions(id, options);
+export const useGetInvitation = <TData = Awaited<ReturnType<typeof getInvitation>>, TError = ErrorType<RestErrResponse>>(
+ id: string, options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getInvitation>>, TError, TData>>, request?: SecondParameter<typeof customInstance>}
 
-	const query = useQuery(queryOptions) as UseQueryResult<TData, TError> & {
-		queryKey: QueryKey;
-	};
+  ):  UseQueryResult<TData, TError> & { queryKey: QueryKey } => {
 
-	query.queryKey = queryOptions.queryKey;
+  const queryOptions = getGetInvitationQueryOptions(id,options)
 
-	return query;
-};
+  const query = useQuery(queryOptions) as  UseQueryResult<TData, TError> & { queryKey: QueryKey };
+
+  query.queryKey = queryOptions.queryKey ;
+
+  return query;
+}
+
+
+
 
 /**
  * @summary Accept Invitation
  */
 export const acceptInvitation = (
-	id: string,
-	controllersAcceptInvitationInput: ControllersAcceptInvitationInput,
-	options?: SecondParameter<typeof customInstance>,
-) => {
-	return customInstance<XesReturn>(
-		{
-			url: `/api/invitation/${id}/accept`,
-			method: "POST",
-			headers: { "Content-Type": "application/json" },
-			data: controllersAcceptInvitationInput,
-		},
-		options,
-	);
-};
+    id: string,
+    controllersAcceptInvitationInput: ControllersAcceptInvitationInput,
+ options?: SecondParameter<typeof customInstance>,) => {
+      
+      
+      return customInstance<XesReturn>(
+      {url: `/api/invitation/${id}/accept`, method: 'POST',
+      headers: {'Content-Type': 'application/json', },
+      data: controllersAcceptInvitationInput
+    },
+      options);
+    }
+  
 
-export const getAcceptInvitationMutationOptions = <
-	TError = ErrorType<unknown>,
-	TContext = unknown,
->(options?: {
-	mutation?: UseMutationOptions<
-		Awaited<ReturnType<typeof acceptInvitation>>,
-		TError,
-		{ id: string; data: ControllersAcceptInvitationInput },
-		TContext
-	>;
-	request?: SecondParameter<typeof customInstance>;
-}): UseMutationOptions<
-	Awaited<ReturnType<typeof acceptInvitation>>,
-	TError,
-	{ id: string; data: ControllersAcceptInvitationInput },
-	TContext
-> => {
-	const { mutation: mutationOptions, request: requestOptions } = options ?? {};
 
-	const mutationFn: MutationFunction<
-		Awaited<ReturnType<typeof acceptInvitation>>,
-		{ id: string; data: ControllersAcceptInvitationInput }
-	> = (props) => {
-		const { id, data } = props ?? {};
+export const getAcceptInvitationMutationOptions = <TError = ErrorType<unknown>,
+    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof acceptInvitation>>, TError,{id: string;data: ControllersAcceptInvitationInput}, TContext>, request?: SecondParameter<typeof customInstance>}
+): UseMutationOptions<Awaited<ReturnType<typeof acceptInvitation>>, TError,{id: string;data: ControllersAcceptInvitationInput}, TContext> => {
+ const {mutation: mutationOptions, request: requestOptions} = options ?? {};
 
-		return acceptInvitation(id, data, requestOptions);
-	};
+      
 
-	return { mutationFn, ...mutationOptions };
-};
 
-export type AcceptInvitationMutationResult = NonNullable<
-	Awaited<ReturnType<typeof acceptInvitation>>
->;
-export type AcceptInvitationMutationBody = ControllersAcceptInvitationInput;
-export type AcceptInvitationMutationError = ErrorType<unknown>;
+      const mutationFn: MutationFunction<Awaited<ReturnType<typeof acceptInvitation>>, {id: string;data: ControllersAcceptInvitationInput}> = (props) => {
+          const {id,data} = props ?? {};
 
-/**
+          return  acceptInvitation(id,data,requestOptions)
+        }
+
+        
+
+
+   return  { mutationFn, ...mutationOptions }}
+
+    export type AcceptInvitationMutationResult = NonNullable<Awaited<ReturnType<typeof acceptInvitation>>>
+    export type AcceptInvitationMutationBody = ControllersAcceptInvitationInput
+    export type AcceptInvitationMutationError = ErrorType<unknown>
+
+    /**
  * @summary Accept Invitation
  */
-export const useAcceptInvitation = <
-	TError = ErrorType<unknown>,
-	TContext = unknown,
->(options?: {
-	mutation?: UseMutationOptions<
-		Awaited<ReturnType<typeof acceptInvitation>>,
-		TError,
-		{ id: string; data: ControllersAcceptInvitationInput },
-		TContext
-	>;
-	request?: SecondParameter<typeof customInstance>;
-}) => {
-	const mutationOptions = getAcceptInvitationMutationOptions(options);
+export const useAcceptInvitation = <TError = ErrorType<unknown>,
+    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof acceptInvitation>>, TError,{id: string;data: ControllersAcceptInvitationInput}, TContext>, request?: SecondParameter<typeof customInstance>}
+) => {
 
-	return useMutation(mutationOptions);
-};
+      const mutationOptions = getAcceptInvitationMutationOptions(options);
 
+      return useMutation(mutationOptions);
+    }
+    
 /**
  * @summary Get Login
  */
 export const getLogin = (
-	params: GetLoginParams,
-	options?: SecondParameter<typeof customInstance>,
-	signal?: AbortSignal,
+    params: GetLoginParams,
+ options?: SecondParameter<typeof customInstance>,signal?: AbortSignal
 ) => {
-	return customInstance<unknown>(
-		{ url: `/api/login`, method: "GET", params, signal },
-		options,
-	);
-};
+      
+      
+      return customInstance<unknown>(
+      {url: `/api/login`, method: 'GET',
+        params, signal
+    },
+      options);
+    }
+  
 
-export const getGetLoginQueryKey = (params: GetLoginParams) => {
-	return [`/api/login`, ...(params ? [params] : [])] as const;
-};
+export const getGetLoginQueryKey = (params: GetLoginParams,) => {
+    return [`/api/login`, ...(params ? [params]: [])] as const;
+    }
 
-export const getGetLoginQueryOptions = <
-	TData = Awaited<ReturnType<typeof getLogin>>,
-	TError = ErrorType<void>,
->(
-	params: GetLoginParams,
-	options?: {
-		query?: Partial<
-			UseQueryOptions<Awaited<ReturnType<typeof getLogin>>, TError, TData>
-		>;
-		request?: SecondParameter<typeof customInstance>;
-	},
+    
+export const getGetLoginQueryOptions = <TData = Awaited<ReturnType<typeof getLogin>>, TError = ErrorType<void>>(params: GetLoginParams, options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getLogin>>, TError, TData>>, request?: SecondParameter<typeof customInstance>}
 ) => {
-	const { query: queryOptions, request: requestOptions } = options ?? {};
 
-	const queryKey = queryOptions?.queryKey ?? getGetLoginQueryKey(params);
+const {query: queryOptions, request: requestOptions} = options ?? {};
 
-	const queryFn: QueryFunction<Awaited<ReturnType<typeof getLogin>>> = ({
-		signal,
-	}) => getLogin(params, requestOptions, signal);
+  const queryKey =  queryOptions?.queryKey ?? getGetLoginQueryKey(params);
 
-	return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
-		Awaited<ReturnType<typeof getLogin>>,
-		TError,
-		TData
-	> & { queryKey: QueryKey };
-};
+  
 
-export type GetLoginQueryResult = NonNullable<
-	Awaited<ReturnType<typeof getLogin>>
->;
-export type GetLoginQueryError = ErrorType<void>;
+    const queryFn: QueryFunction<Awaited<ReturnType<typeof getLogin>>> = ({ signal }) => getLogin(params, requestOptions, signal);
+
+      
+
+      
+
+   return  { queryKey, queryFn, ...queryOptions} as UseQueryOptions<Awaited<ReturnType<typeof getLogin>>, TError, TData> & { queryKey: QueryKey }
+}
+
+export type GetLoginQueryResult = NonNullable<Awaited<ReturnType<typeof getLogin>>>
+export type GetLoginQueryError = ErrorType<void>
 
 /**
  * @summary Get Login
  */
-export const useGetLogin = <
-	TData = Awaited<ReturnType<typeof getLogin>>,
-	TError = ErrorType<void>,
->(
-	params: GetLoginParams,
-	options?: {
-		query?: Partial<
-			UseQueryOptions<Awaited<ReturnType<typeof getLogin>>, TError, TData>
-		>;
-		request?: SecondParameter<typeof customInstance>;
-	},
-): UseQueryResult<TData, TError> & { queryKey: QueryKey } => {
-	const queryOptions = getGetLoginQueryOptions(params, options);
+export const useGetLogin = <TData = Awaited<ReturnType<typeof getLogin>>, TError = ErrorType<void>>(
+ params: GetLoginParams, options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getLogin>>, TError, TData>>, request?: SecondParameter<typeof customInstance>}
 
-	const query = useQuery(queryOptions) as UseQueryResult<TData, TError> & {
-		queryKey: QueryKey;
-	};
+  ):  UseQueryResult<TData, TError> & { queryKey: QueryKey } => {
 
-	query.queryKey = queryOptions.queryKey;
+  const queryOptions = getGetLoginQueryOptions(params,options)
 
-	return query;
-};
+  const query = useQuery(queryOptions) as  UseQueryResult<TData, TError> & { queryKey: QueryKey };
+
+  query.queryKey = queryOptions.queryKey ;
+
+  return query;
+}
+
+
+
 
 /**
  * @summary Create Login
  */
 export const createLogin = (
-	controllersCreateLoginInput: ControllersCreateLoginInput,
-	options?: SecondParameter<typeof customInstance>,
-) => {
-	return customInstance<ControllersCreateServiceOutput>(
-		{
-			url: `/api/login`,
-			method: "POST",
-			headers: { "Content-Type": "application/json" },
-			data: controllersCreateLoginInput,
-		},
-		options,
-	);
-};
+    controllersCreateLoginInput: ControllersCreateLoginInput,
+ options?: SecondParameter<typeof customInstance>,) => {
+      
+      
+      return customInstance<ControllersCreateServiceOutput>(
+      {url: `/api/login`, method: 'POST',
+      headers: {'Content-Type': 'application/json', },
+      data: controllersCreateLoginInput
+    },
+      options);
+    }
+  
 
-export const getCreateLoginMutationOptions = <
-	TError = ErrorType<unknown>,
-	TContext = unknown,
->(options?: {
-	mutation?: UseMutationOptions<
-		Awaited<ReturnType<typeof createLogin>>,
-		TError,
-		{ data: ControllersCreateLoginInput },
-		TContext
-	>;
-	request?: SecondParameter<typeof customInstance>;
-}): UseMutationOptions<
-	Awaited<ReturnType<typeof createLogin>>,
-	TError,
-	{ data: ControllersCreateLoginInput },
-	TContext
-> => {
-	const { mutation: mutationOptions, request: requestOptions } = options ?? {};
 
-	const mutationFn: MutationFunction<
-		Awaited<ReturnType<typeof createLogin>>,
-		{ data: ControllersCreateLoginInput }
-	> = (props) => {
-		const { data } = props ?? {};
+export const getCreateLoginMutationOptions = <TError = ErrorType<RestErrResponse>,
+    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof createLogin>>, TError,{data: ControllersCreateLoginInput}, TContext>, request?: SecondParameter<typeof customInstance>}
+): UseMutationOptions<Awaited<ReturnType<typeof createLogin>>, TError,{data: ControllersCreateLoginInput}, TContext> => {
+ const {mutation: mutationOptions, request: requestOptions} = options ?? {};
 
-		return createLogin(data, requestOptions);
-	};
+      
 
-	return { mutationFn, ...mutationOptions };
-};
 
-export type CreateLoginMutationResult = NonNullable<
-	Awaited<ReturnType<typeof createLogin>>
->;
-export type CreateLoginMutationBody = ControllersCreateLoginInput;
-export type CreateLoginMutationError = ErrorType<unknown>;
+      const mutationFn: MutationFunction<Awaited<ReturnType<typeof createLogin>>, {data: ControllersCreateLoginInput}> = (props) => {
+          const {data} = props ?? {};
 
-/**
+          return  createLogin(data,requestOptions)
+        }
+
+        
+
+
+   return  { mutationFn, ...mutationOptions }}
+
+    export type CreateLoginMutationResult = NonNullable<Awaited<ReturnType<typeof createLogin>>>
+    export type CreateLoginMutationBody = ControllersCreateLoginInput
+    export type CreateLoginMutationError = ErrorType<RestErrResponse>
+
+    /**
  * @summary Create Login
  */
-export const useCreateLogin = <
-	TError = ErrorType<unknown>,
-	TContext = unknown,
->(options?: {
-	mutation?: UseMutationOptions<
-		Awaited<ReturnType<typeof createLogin>>,
-		TError,
-		{ data: ControllersCreateLoginInput },
-		TContext
-	>;
-	request?: SecondParameter<typeof customInstance>;
-}) => {
-	const mutationOptions = getCreateLoginMutationOptions(options);
+export const useCreateLogin = <TError = ErrorType<RestErrResponse>,
+    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof createLogin>>, TError,{data: ControllersCreateLoginInput}, TContext>, request?: SecondParameter<typeof customInstance>}
+) => {
 
-	return useMutation(mutationOptions);
-};
+      const mutationOptions = getCreateLoginMutationOptions(options);
 
+      return useMutation(mutationOptions);
+    }
+    
 /**
  * @summary Get Logout
  */
 export const getLogout = (
-	options?: SecondParameter<typeof customInstance>,
-	signal?: AbortSignal,
+    
+ options?: SecondParameter<typeof customInstance>,signal?: AbortSignal
 ) => {
-	return customInstance<unknown>(
-		{ url: `/api/logout`, method: "GET", signal },
-		options,
-	);
-};
+      
+      
+      return customInstance<unknown>(
+      {url: `/api/logout`, method: 'GET', signal
+    },
+      options);
+    }
+  
 
 export const getGetLogoutQueryKey = () => {
-	return [`/api/logout`] as const;
-};
+    return [`/api/logout`] as const;
+    }
 
-export const getGetLogoutQueryOptions = <
-	TData = Awaited<ReturnType<typeof getLogout>>,
-	TError = ErrorType<void>,
->(options?: {
-	query?: Partial<
-		UseQueryOptions<Awaited<ReturnType<typeof getLogout>>, TError, TData>
-	>;
-	request?: SecondParameter<typeof customInstance>;
-}) => {
-	const { query: queryOptions, request: requestOptions } = options ?? {};
+    
+export const getGetLogoutQueryOptions = <TData = Awaited<ReturnType<typeof getLogout>>, TError = ErrorType<void>>( options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getLogout>>, TError, TData>>, request?: SecondParameter<typeof customInstance>}
+) => {
 
-	const queryKey = queryOptions?.queryKey ?? getGetLogoutQueryKey();
+const {query: queryOptions, request: requestOptions} = options ?? {};
 
-	const queryFn: QueryFunction<Awaited<ReturnType<typeof getLogout>>> = ({
-		signal,
-	}) => getLogout(requestOptions, signal);
+  const queryKey =  queryOptions?.queryKey ?? getGetLogoutQueryKey();
 
-	return { queryKey, queryFn, ...queryOptions } as UseQueryOptions<
-		Awaited<ReturnType<typeof getLogout>>,
-		TError,
-		TData
-	> & { queryKey: QueryKey };
-};
+  
 
-export type GetLogoutQueryResult = NonNullable<
-	Awaited<ReturnType<typeof getLogout>>
->;
-export type GetLogoutQueryError = ErrorType<void>;
+    const queryFn: QueryFunction<Awaited<ReturnType<typeof getLogout>>> = ({ signal }) => getLogout(requestOptions, signal);
+
+      
+
+      
+
+   return  { queryKey, queryFn, ...queryOptions} as UseQueryOptions<Awaited<ReturnType<typeof getLogout>>, TError, TData> & { queryKey: QueryKey }
+}
+
+export type GetLogoutQueryResult = NonNullable<Awaited<ReturnType<typeof getLogout>>>
+export type GetLogoutQueryError = ErrorType<void>
 
 /**
  * @summary Get Logout
  */
-export const useGetLogout = <
-	TData = Awaited<ReturnType<typeof getLogout>>,
-	TError = ErrorType<void>,
->(options?: {
-	query?: Partial<
-		UseQueryOptions<Awaited<ReturnType<typeof getLogout>>, TError, TData>
-	>;
-	request?: SecondParameter<typeof customInstance>;
-}): UseQueryResult<TData, TError> & { queryKey: QueryKey } => {
-	const queryOptions = getGetLogoutQueryOptions(options);
+export const useGetLogout = <TData = Awaited<ReturnType<typeof getLogout>>, TError = ErrorType<void>>(
+  options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getLogout>>, TError, TData>>, request?: SecondParameter<typeof customInstance>}
 
-	const query = useQuery(queryOptions) as UseQueryResult<TData, TError> & {
-		queryKey: QueryKey;
-	};
+  ):  UseQueryResult<TData, TError> & { queryKey: QueryKey } => {
 
-	query.queryKey = queryOptions.queryKey;
+  const queryOptions = getGetLogoutQueryOptions(options)
 
-	return query;
-};
+  const query = useQuery(queryOptions) as  UseQueryResult<TData, TError> & { queryKey: QueryKey };
+
+  query.queryKey = queryOptions.queryKey ;
+
+  return query;
+}
+
+
+
 
 /**
  * @summary Sign Up User
  */
 export const signUpUser = (
-	controllersSignUpUserInput: ControllersSignUpUserInput,
-	options?: SecondParameter<typeof customInstance>,
-) => {
-	return customInstance<ControllersSignUpUserOutput>(
-		{
-			url: `/api/signup`,
-			method: "POST",
-			headers: { "Content-Type": "application/json" },
-			data: controllersSignUpUserInput,
-		},
-		options,
-	);
-};
+    controllersSignUpUserInput: ControllersSignUpUserInput,
+ options?: SecondParameter<typeof customInstance>,) => {
+      
+      
+      return customInstance<ControllersSignUpUserOutput>(
+      {url: `/api/signup`, method: 'POST',
+      headers: {'Content-Type': 'application/json', },
+      data: controllersSignUpUserInput
+    },
+      options);
+    }
+  
 
-export const getSignUpUserMutationOptions = <
-	TError = ErrorType<unknown>,
-	TContext = unknown,
->(options?: {
-	mutation?: UseMutationOptions<
-		Awaited<ReturnType<typeof signUpUser>>,
-		TError,
-		{ data: ControllersSignUpUserInput },
-		TContext
-	>;
-	request?: SecondParameter<typeof customInstance>;
-}): UseMutationOptions<
-	Awaited<ReturnType<typeof signUpUser>>,
-	TError,
-	{ data: ControllersSignUpUserInput },
-	TContext
-> => {
-	const { mutation: mutationOptions, request: requestOptions } = options ?? {};
 
-	const mutationFn: MutationFunction<
-		Awaited<ReturnType<typeof signUpUser>>,
-		{ data: ControllersSignUpUserInput }
-	> = (props) => {
-		const { data } = props ?? {};
+export const getSignUpUserMutationOptions = <TError = ErrorType<RestErrResponse>,
+    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof signUpUser>>, TError,{data: ControllersSignUpUserInput}, TContext>, request?: SecondParameter<typeof customInstance>}
+): UseMutationOptions<Awaited<ReturnType<typeof signUpUser>>, TError,{data: ControllersSignUpUserInput}, TContext> => {
+ const {mutation: mutationOptions, request: requestOptions} = options ?? {};
 
-		return signUpUser(data, requestOptions);
-	};
+      
 
-	return { mutationFn, ...mutationOptions };
-};
 
-export type SignUpUserMutationResult = NonNullable<
-	Awaited<ReturnType<typeof signUpUser>>
->;
-export type SignUpUserMutationBody = ControllersSignUpUserInput;
-export type SignUpUserMutationError = ErrorType<unknown>;
+      const mutationFn: MutationFunction<Awaited<ReturnType<typeof signUpUser>>, {data: ControllersSignUpUserInput}> = (props) => {
+          const {data} = props ?? {};
 
-/**
+          return  signUpUser(data,requestOptions)
+        }
+
+        
+
+
+   return  { mutationFn, ...mutationOptions }}
+
+    export type SignUpUserMutationResult = NonNullable<Awaited<ReturnType<typeof signUpUser>>>
+    export type SignUpUserMutationBody = ControllersSignUpUserInput
+    export type SignUpUserMutationError = ErrorType<RestErrResponse>
+
+    /**
  * @summary Sign Up User
  */
-export const useSignUpUser = <
-	TError = ErrorType<unknown>,
-	TContext = unknown,
->(options?: {
-	mutation?: UseMutationOptions<
-		Awaited<ReturnType<typeof signUpUser>>,
-		TError,
-		{ data: ControllersSignUpUserInput },
-		TContext
-	>;
-	request?: SecondParameter<typeof customInstance>;
-}) => {
-	const mutationOptions = getSignUpUserMutationOptions(options);
+export const useSignUpUser = <TError = ErrorType<RestErrResponse>,
+    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof signUpUser>>, TError,{data: ControllersSignUpUserInput}, TContext>, request?: SecondParameter<typeof customInstance>}
+) => {
 
-	return useMutation(mutationOptions);
-};
+      const mutationOptions = getSignUpUserMutationOptions(options);
+
+      return useMutation(mutationOptions);
+    }
+    
