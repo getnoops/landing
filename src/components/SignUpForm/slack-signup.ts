@@ -17,7 +17,7 @@ export const slackSignup = async (data: SignUpFormData) => {
 		method: "post",
 		headers: {},
 		body: JSON.stringify({
-			text: `Sign up from ${data.name}`,
+			text: `Sign up from ${data.first_name} ${data.last_name}`,
 			blocks: [
 				{
 					type: "section",
@@ -31,7 +31,7 @@ export const slackSignup = async (data: SignUpFormData) => {
 					fields: [
 						{
 							type: "mrkdwn",
-							text: `*Name*\n${data.name}`,
+							text: `*Name*\n${data.first_name} ${data.last_name}`,
 						},
 						{
 							type: "mrkdwn",
