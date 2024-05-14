@@ -13,6 +13,7 @@
 	--ifm-color-primary-lightest: #f5edfe;
 	--ifm-code-font-size: 95%;
 	--docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+	--ifm-dropdown-background-color: #0b0217;
 
 	/* Below is from the portal */
 	--background: 266, 84%, 5%; /* noops-1000 */

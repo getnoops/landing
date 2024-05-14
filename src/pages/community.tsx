@@ -1,3 +1,4 @@
+import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import { SparklesIcon } from "@heroicons/react/24/solid";
 import Layout from "@theme/Layout";
 import GitHub from "../components/SVGs/GitHub/GitHub";
@@ -58,14 +59,21 @@ export default () => {
 									href="https://join.slack.com/t/getnoops/shared_invite/zt-25fo11ewy-5z5iMXlaDvxRv6sfp8wZHA"
 									target="_blank"
 									rel="noopener noreferrer"
-									className="group relative flex items-center gap-3 overflow-clip rounded-2xl border-2 border-noops-400/20 bg-noops-400/5 p-4 shadow-inner shadow-noops-400/10 hover:no-underline"
+									className="group relative flex items-center gap-3 overflow-clip rounded-2xl border border-noops-300/5 border-t-noops-300/10 bg-noops-300/5 p-4 shadow-md shadow-black/10 hover:no-underline"
 								>
-									<div className="absolute inset-0 bg-gradient-to-t from-transparent to-noops-400/10 opacity-0 transition-opacity group-hover:opacity-100"></div>
-									<Slack className="h-8 text-noops-400" />
-									<div className="flex items-center">
-										<span className="text-base text-noops-400">
-											Join our Slack
-										</span>
+									<div className="absolute inset-0 bg-noops-300/5 opacity-0 transition-opacity group-hover:opacity-100"></div>
+
+									<div className="flex w-full items-center justify-between">
+										<div className="flex w-full items-center  gap-3">
+											<Slack className="h-8 text-noops-300" />
+											<div className="flex items-center">
+												<span className="text-base text-noops-300">
+													Join our Slack
+												</span>
+											</div>
+										</div>
+
+										<ArrowTopRightOnSquareIcon className="size-6 text-noops-300/80" />
 									</div>
 								</a>
 
@@ -73,14 +81,21 @@ export default () => {
 									href="https://x.com/getnoops"
 									target="_blank"
 									rel="noopener noreferrer"
-									className="group relative flex items-center gap-3 overflow-clip rounded-2xl border-2 border-noops-400/20 bg-noops-400/5 p-4 shadow-inner shadow-noops-400/10 hover:no-underline"
+									className="group relative flex items-center gap-3 overflow-clip rounded-2xl border border-noops-300/5 border-t-noops-300/10 bg-noops-300/5 p-4 shadow-md shadow-black/10 hover:no-underline"
 								>
-									<div className="absolute inset-0 bg-gradient-to-t from-transparent to-noops-400/10 opacity-0 transition-opacity group-hover:opacity-100"></div>
-									<X className="h-8 text-noops-400" />
-									<div className="flex items-center">
-										<span className="text-base text-noops-400">
-											Connect on X
-										</span>
+									<div className="absolute inset-0 bg-noops-300/5 opacity-0 transition-opacity group-hover:opacity-100"></div>
+
+									<div className="flex w-full items-center justify-between">
+										<div className="flex w-full items-center  gap-3">
+											<X className="h-8 text-noops-300" />
+											<div className="flex items-center">
+												<span className="text-base text-noops-300">
+													Connect on X
+												</span>
+											</div>
+										</div>
+
+										<ArrowTopRightOnSquareIcon className="size-6 text-noops-300/80" />
 									</div>
 								</a>
 
@@ -88,14 +103,21 @@ export default () => {
 									href="https://github.com/getnoops"
 									target="_blank"
 									rel="noopener noreferrer"
-									className="group relative flex items-center gap-3 overflow-clip rounded-2xl border-2 border-noops-400/20 bg-noops-400/5 p-4 shadow-inner shadow-noops-400/10 hover:no-underline"
+									className="group relative flex items-center gap-3 overflow-clip rounded-2xl border border-noops-300/5 border-t-noops-300/10 bg-noops-300/5 p-4 shadow-md shadow-black/10 hover:no-underline"
 								>
-									<div className="absolute inset-0 bg-gradient-to-t from-transparent to-noops-400/10 opacity-0 transition-opacity group-hover:opacity-100"></div>
-									<GitHub className="h-8 text-noops-400" />
-									<div className="flex items-center">
-										<span className="text-base text-noops-400">
-											View our GitHub
-										</span>
+									<div className="absolute inset-0 bg-noops-300/5 opacity-0 transition-opacity group-hover:opacity-100"></div>
+
+									<div className="flex w-full items-center justify-between">
+										<div className="flex w-full items-center  gap-3">
+											<GitHub className="h-8 text-noops-300" />
+											<div className="flex items-center">
+												<span className="text-base text-noops-300">
+													View our GitHub
+												</span>
+											</div>
+										</div>
+
+										<ArrowTopRightOnSquareIcon className="size-6 text-noops-300/80" />
 									</div>
 								</a>
 							</div>

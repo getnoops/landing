@@ -171,11 +171,12 @@ const config: Config = {
 					label: "About",
 					position: "left",
 				},
-
+				// custom dropdown needed for the platform pages which aren't done yet
 				// {
-				// 	to: "help",
-				// 	label: "Help",
-				// 	position: "right",
+				// 	type: "custom-horizontalDropdown",
+				// 	position: "left",
+				// 	itemProp: 44,
+				// 	anotherProp: "xyz",
 				// },
 				{
 					className: "header-right-link header-right-link-login",
