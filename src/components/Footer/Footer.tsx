@@ -45,6 +45,10 @@ const Links = [
 				title: "Community",
 				href: "/community",
 			},
+			{
+				title: "Privacy Policy",
+				href: "/legal/privacy-policy",
+			},
 		],
 	},
 ];

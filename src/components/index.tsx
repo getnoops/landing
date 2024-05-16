@@ -33,3 +33,5 @@ export { CountdownText } from "./CountdownText";
 export { Founders } from "./Founders";
 export { OurStory } from "./OurStory";
 export { Values } from "./Values";
+
+export { PrivacyHeader } from "./PrivacyHeader";
