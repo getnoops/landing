@@ -18,7 +18,7 @@
 		"prettier": "prettier -w ."
 	},
 	"dependencies": {
-		"@docusaurus/core": "^3.2.1",
+		"@docusaurus/core": "^3.4.0",
 		"@docusaurus/preset-classic": "^3.2.1",
 		"@docusaurus/theme-mermaid": "^3.2.1",
 		"@fireworks-js/react": "^2.10.7",
