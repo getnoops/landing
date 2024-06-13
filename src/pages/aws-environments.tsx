@@ -183,7 +183,7 @@ export default () => {
 						3. Ready for Deployment
 					</h4>
 					<p className="mb-0   text-sm text-slate-500 sm:text-base/6">
-						In minutes, you can have a new environment ready for deployment
+						In minutes, you have a new environment ready for deployment
 					</p>
 				</div>
 				<div className="relative mx-auto mb-32 max-h-[36rem] max-w-7xl overflow-clip">
