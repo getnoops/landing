@@ -16,17 +16,16 @@ const Hero = ({ description }: HomeProps) => {
 					<div className="relative z-10 mx-auto max-w-7xl px-2 lg:px-8">
 						<div className="relative mx-auto text-center ">
 							<h1 className="text-6xl font-bold tracking-tight [text-wrap:balance]  sm:text-7xl md:leading-[5rem]">
-								<span className="bg-gradient-to-b from-noops-100 to-noops-300 bg-clip-text py-1 text-transparent">
+								<span className="bg-gradient-to-t from-noops-600 to-accent  bg-clip-text py-1 font-extrabold text-transparent">
 									DevOps{" "}
 								</span>
-
-								<span className="bg-gradient-to-r from-noops-600 to-accent  bg-clip-text py-1 font-extrabold text-transparent">
-									slowing{" "}
+								<span className="bg-gradient-to-b from-noops-100 to-noops-300 bg-clip-text py-1 text-transparent">
+									as a Service
 								</span>
 
-								<span className="bg-gradient-to-b from-noops-100 to-noops-300 bg-clip-text py-1 text-transparent ">
+								{/* <span className="bg-gradient-to-b from-noops-100 to-noops-300 bg-clip-text py-1 text-transparent ">
 									you down?
-								</span>
+								</span> */}
 							</h1>
 							<p className=" mt-6 text-xl leading-8 text-noops-200 [text-wrap:balance]">
 								Deploy your projects faster than ever while keeping best
