@@ -20,7 +20,10 @@ const features = [
 
 export default () => {
 	return (
-		<Layout title="Platform - No_Ops" description="A look at our platform.">
+		<Layout
+			title="AWS Environments - No_Ops"
+			description="Simple Dev Environments"
+		>
 			<div className="min-h-[100dvh] overflow-x-clip bg-noops-50">
 				<div className="relative  h-full  flex-col  ">
 					<div className="relative mx-auto flex max-w-7xl flex-col">

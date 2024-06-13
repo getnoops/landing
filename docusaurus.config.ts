@@ -172,12 +172,12 @@ const config: Config = {
 					position: "left",
 				},
 				// custom dropdown needed for the platform pages which aren't done yet
-				// {
-				// 	type: "custom-horizontalDropdown",
-				// 	position: "left",
-				// 	// itemProp: 44,
-				// 	// anotherProp: "xyz",
-				// },
+				{
+					type: "custom-horizontalDropdown",
+					position: "left",
+					// itemProp: 44,
+					// anotherProp: "xyz",
+				},
 				{
 					className: "header-right-link header-right-link-login",
 					href: "https://portal.getnoops.com/login",
