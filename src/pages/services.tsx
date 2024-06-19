@@ -200,8 +200,8 @@ export default () => {
 							<div className="col-span-full m-0 mx-auto my-6 rounded-full border border-noops-200 bg-noops-100 px-0 py-1.5 leading-none tracking-tight text-noops-600 sm:my-10 lg:my-12">
 								<div className="flex items-center gap-x-1">
 									<InformationCircleIcon className="ml-2 size-6" />
-									<p className="m-0 text-base">
-										View our docs to learn about supported services
+									<p className="m-0 text-sm sm:text-base">
+										Learn more about supported services
 									</p>
 									<Link
 										to="/docs"
