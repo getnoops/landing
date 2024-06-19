@@ -2,7 +2,11 @@ import Link from "@docusaurus/Link";
 import { Popover } from "@headlessui/react";
 
 import { Transition } from "@headlessui/react";
-import { ChevronDownIcon, CloudIcon } from "@heroicons/react/20/solid";
+import {
+	ChevronDownIcon,
+	CloudIcon,
+	ServerStackIcon,
+} from "@heroicons/react/20/solid";
 import { Fragment, useEffect } from "react";
 
 // other pages aren't done yet.
@@ -19,12 +23,12 @@ const solutions = [
 		href: "/aws-environments",
 		icon: CloudIcon,
 	},
-	// {
-	// 	name: "Services",
-	// 	description: "View supported AWS services and resources",
-	// 	href: "#",
-	// 	icon: ServerStackIcon,
-	// },
+	{
+		name: "AWS Services",
+		description: "View supported AWS services and resources",
+		href: "/services",
+		icon: ServerStackIcon,
+	},
 	// {
 	// 	name: "Deploy and Observe",
 	// 	description: "View metrics for your services and environments",
