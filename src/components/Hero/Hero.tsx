@@ -44,19 +44,6 @@ const Hero = ({ description }: HomeProps) => {
 										Get started <ArrowLongRightIcon className="h-6" />
 									</div>
 								</a>
-
-								<a
-									href="https://savvycal.com/noops/intro"
-									target="_blank"
-									className="group relative mt-9 inline-block rounded-[10px] border-2 border-noops-300 bg-gradient-to-b from-white to-noops-200 px-6 py-2 font-medium text-noops-975 hover:text-noops-975"
-								>
-									<div className="absolute inset-0.5 rounded-md bg-noops-200 transition group-hover:opacity-30" />
-									<div className="pointer-events-none absolute -inset-3 rounded-2xl border border-noops-100/20 bg-noops-100/10 "></div>
-
-									<div className="relative inline-flex w-full items-center gap-x-1">
-										Book a demo <ArrowLongRightIcon className="h-6" />
-									</div>
-								</a>
 							</div>
 						</div>
 					</div>

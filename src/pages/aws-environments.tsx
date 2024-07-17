@@ -210,9 +210,6 @@ export default () => {
 								<h2 className=" m-0 max-w-2xl text-2xl font-bold tracking-tight text-white sm:text-4xl">
 									Ready to deploy fast?
 								</h2>
-								<p className=" m-0 mt-2 max-w-xl text-base leading-none text-noops-100 sm:mt-4">
-									Try now for free or book a demo to see how we can help you
-								</p>
 							</div>
 
 							<div className="flex flex-row items-center  justify-center gap-4 sm:flex-col sm:gap-2">
@@ -224,18 +221,6 @@ export default () => {
 
 									<div className="relative inline-flex w-full items-center gap-x-1">
 										Get started
-									</div>
-								</a>
-
-								<a
-									href="https://savvycal.com/noops/intro"
-									target="_blank"
-									className="group relative inline-block rounded-[10px] border-2 border-noops-300 bg-gradient-to-b from-white to-noops-200 px-4 py-2 text-sm font-medium text-noops-975 hover:text-noops-975"
-								>
-									<div className="absolute inset-0.5 rounded-md bg-noops-200 transition group-hover:opacity-30" />
-
-									<div className="relative inline-flex w-full items-center gap-x-1">
-										Book demo
 									</div>
 								</a>
 							</div>

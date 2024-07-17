@@ -312,9 +312,6 @@ export default () => {
 								<h2 className=" m-0 max-w-2xl text-2xl font-bold tracking-tight text-white sm:text-4xl">
 									Ready to deploy fast?
 								</h2>
-								<p className=" m-0 mt-2 max-w-xl text-base leading-none text-noops-100 sm:mt-4">
-									Try now for free or book a demo to see how we can help you
-								</p>
 							</div>
 
 							<div className="flex flex-row items-center  justify-center gap-4 sm:flex-col sm:gap-2">
