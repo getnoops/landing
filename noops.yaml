@@ -8,7 +8,7 @@ resources:
     data:
       image: ${Repositories_Default_RepositoryUri}:${Image_Tag}
       port: 8080
-      desired: 2
+      desired: 1
       cpu: 256
       memory: 512
       edge:
