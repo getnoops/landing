@@ -172,18 +172,18 @@ const config: Config = {
 					// itemProp: 44,
 					// anotherProp: "xyz",
 				},
-				{
-					className: "header-right-link header-right-link-login",
-					href: "https://portal.getnoops.com/login",
-					"aria-label": "Login",
-					position: "right",
-				},
-				{
-					className: "header-right-link header-right-link-signup",
-					href: "/sign-up",
-					"aria-label": "Sign up",
-					position: "right",
-				},
+				// {
+				// 	className: "header-right-link header-right-link-login",
+				// 	href: "https://portal.getnoops.com/login",
+				// 	"aria-label": "Login",
+				// 	position: "right",
+				// },
+				// {
+				// 	className: "header-right-link header-right-link-signup",
+				// 	href: "/sign-up",
+				// 	"aria-label": "Sign up",
+				// 	position: "right",
+				// },
 			],
 		},
 		prism: {
